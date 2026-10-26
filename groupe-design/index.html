@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Groupe Design Inc. — Aménagement extérieur & déneigement à Longueuil</title>
+<meta name="description" content="Groupe Design Inc. : aménagements extérieurs créatifs et durables — pavé uni, asphalte, clôtures, tourbe, gazon synthétique et plantations. Nouveau : déneigement résidentiel saisonnier à Longueuil. Demandez une soumission : (514) 706-2076.">
+<style>
+:root{
+  --rouge:#E4022D;
+  --rouge-fonce:#B80224;
+  --noir:#141414;
+  --gris:#565d66;
+  --gris-clair:#f5f5f6;
+  --ligne:#e7e7ea;
+  --glace:#0c1e2e;
+  --glace-2:#12314a;
+  --glace-txt:#cfe3f2;
+  --ombre:0 10px 30px rgba(20,20,20,.10);
+  --rayon:16px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--noir);background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+h1,h2,h3{line-height:1.15;letter-spacing:-.01em}
+h2{font-size:clamp(1.7rem,3.4vw,2.5rem);font-weight:800}
+.sec{padding:84px 0}
+.sec-alt{background:var(--gris-clair)}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--rouge);margin-bottom:14px}
+.kicker::before{content:"";width:26px;height:3px;background:var(--rouge);border-radius:2px}
+.sec-head{max-width:720px;margin-bottom:44px}
+.sec-head p{color:var(--gris);margin-top:12px;font-size:1.05rem}
+.btn{display:inline-flex;align-items:center;gap:9px;background:var(--rouge);color:#fff;font-weight:700;font-size:1rem;padding:14px 26px;border-radius:999px;text-decoration:none;border:2px solid var(--rouge);transition:.25s;cursor:pointer}
+.btn:hover{background:var(--rouge-fonce);border-color:var(--rouge-fonce);transform:translateY(-2px);box-shadow:0 12px 24px rgba(228,2,45,.28)}
+.btn-ghost{background:transparent;color:var(--noir);border-color:#cfcfd4}
+.btn-ghost:hover{background:var(--noir);color:#fff;border-color:var(--noir);box-shadow:0 12px 24px rgba(20,20,20,.18)}
+.btn-light{background:#fff;color:var(--glace);border-color:#fff}
+.btn-light:hover{background:transparent;color:#fff;border-color:#fff;box-shadow:none}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  *{animation:none!important;transition:none!important}
+}
+
+/* ── Barre supérieure + en-tête ─────────── */
+.topbar{background:var(--noir);color:#fff;font-size:.86rem;position:relative;z-index:61}
+.topbar .wrap{display:flex;justify-content:space-between;gap:14px;padding-top:7px;padding-bottom:7px}
+.topbar a{color:#fff;text-decoration:none;font-weight:700}
+.topbar .tb-new{color:#ff8fa5;font-weight:700}
+@media(max-width:700px){.topbar .tb-left{display:none}.topbar .wrap{justify-content:center}}
+header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);transition:box-shadow .3s}
+header.solid{box-shadow:0 4px 24px rgba(20,20,20,.13)}
+.header-in{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:10px 0}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none}
+.brand img{height:64px;width:auto}
+.brand-name{font-weight:800;font-size:1.06rem;line-height:1.15}
+.brand-name span{display:block;font-size:.7rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gris)}
+nav#menu{display:flex;align-items:center;gap:30px}
+nav#menu a{text-decoration:none;font-weight:600;font-size:.97rem;position:relative;padding:4px 0}
+nav#menu a:not(.btn)::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--rouge);transition:width .25s}
+nav#menu a:not(.btn):hover::after{width:100%}
+nav#menu .btn{padding:11px 22px;font-size:.95rem}
+#burger{display:none;background:none;border:0;cursor:pointer;padding:8px}
+#burger span{display:block;width:26px;height:3px;background:var(--noir);border-radius:2px;margin:5px 0}
+@media(max-width:900px){
+  #burger{display:block}
+  nav#menu{position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;align-items:stretch;gap:0;padding:10px 22px 20px;box-shadow:0 24px 30px rgba(20,20,20,.14);display:none}
+  nav#menu.open{display:flex}
+  nav#menu a{padding:12px 0;border-bottom:1px solid var(--ligne)}
+  nav#menu .btn{margin-top:14px;justify-content:center;border-bottom:0}
+  .brand-name{display:none}
+}
+
+/* ── Hero ────────────────────────────────── */
+.hero{position:relative;min-height:88vh;display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:var(--noir)}
+.hero-bg{position:absolute;inset:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;animation:kenburns 22s ease-in-out infinite alternate}
+@keyframes kenburns{from{transform:scale(1)}to{transform:scale(1.09) translateY(-1.5%)}}
+.hero-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.32) 0%,rgba(10,10,10,.06) 34%,rgba(10,10,10,.80) 100%)}
+.hero-in{position:relative;z-index:2;padding:150px 0 74px;width:100%}
+.hero .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(6px);padding:7px 15px;border-radius:999px;font-size:.85rem;font-weight:700;margin-bottom:20px}
+.hero .badge i{width:8px;height:8px;border-radius:50%;background:#ff5b7f;display:inline-block}
+.hero h1{font-size:clamp(2.3rem,5.4vw,4rem);font-weight:900;max-width:16ch}
+.hero h1 em{font-style:normal;color:#ff4d6e}
+.hero p{margin:18px 0 30px;max-width:56ch;font-size:clamp(1rem,1.6vw,1.18rem);color:#ececec}
+.hero-cta{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.hero-tel{color:#fff;text-decoration:none;font-weight:800;font-size:1.08rem;display:inline-flex;gap:9px;align-items:center}
+.hero-tel:hover{text-decoration:underline}
+.hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}
+.hero-tags span{border:1px solid rgba(255,255,255,.4);background:rgba(0,0,0,.25);padding:6px 13px;border-radius:999px;font-size:.85rem;font-weight:600}
+
+/* ── Bande compteurs ─────────────────────── */
+.stats{background:var(--noir);color:#fff}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding-top:34px;padding-bottom:34px}
+.stat{text-align:center;padding:6px 8px}
+.stat b{display:block;font-size:clamp(1.7rem,3vw,2.4rem);font-weight:900}
+.stat b i{font-style:normal;color:var(--rouge)}
+.stat span{font-size:.9rem;color:#c9c9cd;font-weight:600}
+@media(max-width:760px){.stats .wrap{grid-template-columns:repeat(2,1fr)}}
+
+/* ── Cartes services ─────────────────────── */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media(max-width:980px){.cards{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.cards{grid-template-columns:1fr}}
+.card{background:#fff;border:1px solid var(--ligne);border-radius:var(--rayon);overflow:hidden;transition:.3s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-6px);box-shadow:var(--ombre);border-color:#dcdce0}
+.card .ph{height:180px;overflow:hidden}
+.card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.card:hover .ph img{transform:scale(1.07)}
+.card .tx{padding:24px 24px 26px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card .ic{width:48px;height:48px;border-radius:12px;background:#fdeef0;color:var(--rouge);display:flex;align-items:center;justify-content:center;font-size:1.35rem;margin-bottom:4px}
+.card h3{font-size:1.16rem;font-weight:800}
+.card p{color:var(--gris);font-size:.97rem}
+.card .plus{margin-top:auto;padding-top:8px;font-weight:700;color:var(--rouge);font-size:.93rem;text-decoration:none}
+.card .plus:hover{text-decoration:underline}
+.band-photo{margin-top:22px;border-radius:var(--rayon);overflow:hidden;position:relative;min-height:300px;display:flex;align-items:flex-end}
+.band-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.band-photo .cap{position:relative;z-index:2;color:#fff;padding:30px;background:linear-gradient(90deg,rgba(10,10,10,.72),rgba(10,10,10,.05) 72%);width:100%}
+.band-photo .cap b{font-size:1.25rem;display:block;margin-bottom:4px}
+.band-photo .cap p{color:#e8e8e8;max-width:52ch}
+
+/* ── Processus ───────────────────────────── */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media(max-width:820px){.steps{grid-template-columns:1fr}}
+.step{background:#fff;border:1px solid var(--ligne);border-radius:var(--rayon);padding:30px 26px}
+.step .num{font-size:2.6rem;font-weight:900;color:#f0c3cd;line-height:1}
+.step h3{margin:10px 0 8px;font-size:1.15rem}
+.step p{color:var(--gris);font-size:.97rem}
+
+/* ── Section déneigement ─────────────────── */
+.snow{background:linear-gradient(160deg,var(--glace) 0%,var(--glace-2) 100%);color:#fff;position:relative;overflow:hidden}
+.snow::before{content:"";position:absolute;inset:0;background:radial-gradient(700px 300px at 85% -5%,rgba(127,212,255,.16),transparent 60%);pointer-events:none}
+.snow .kicker{color:#8fd8ff}
+.snow .kicker::before{background:#8fd8ff}
+.snow .sec-head p{color:var(--glace-txt)}
+.badge-new{display:inline-flex;align-items:center;gap:8px;background:var(--rouge);color:#fff;font-weight:800;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;padding:7px 14px;border-radius:999px;margin-bottom:16px;box-shadow:0 8px 20px rgba(228,2,45,.4)}
+.snow-hero{margin-bottom:26px;border-radius:var(--rayon);overflow:hidden;position:relative;min-height:260px;display:flex;align-items:flex-end;z-index:1}
+.snow-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.snow-hero .cap{position:relative;z-index:2;padding:26px 30px;background:linear-gradient(90deg,rgba(6,18,28,.84),rgba(6,18,28,.05) 76%);width:100%}
+.snow-hero .cap b{font-size:1.3rem;display:block}
+.snow-hero .cap p{color:var(--glace-txt);max-width:56ch}
+.snow-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;position:relative;z-index:1}
+@media(max-width:980px){.snow-cards{grid-template-columns:1fr}}
+.snow-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:var(--rayon);overflow:hidden;transition:.3s}
+.snow-card:hover{transform:translateY(-6px);background:rgba(255,255,255,.09)}
+.snow-card .ph{height:190px;overflow:hidden}
+.snow-card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.snow-card:hover .ph img{transform:scale(1.07)}
+.snow-card .tx{padding:22px 24px 26px}
+.snow-card h3{font-size:1.13rem;margin-bottom:7px}
+.snow-card p{color:var(--glace-txt);font-size:.96rem}
+.prix-note{margin-top:34px;background:#fff8e6;border:1px solid #e8c96a;color:#6b5410;border-radius:12px;padding:14px 18px;font-weight:600;font-size:.95rem;position:relative;z-index:1}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:22px;position:relative;z-index:1}
+@media(max-width:980px){.plans{grid-template-columns:1fr}}
+.plan{background:#fff;color:var(--noir);border-radius:var(--rayon);padding:30px 26px;display:flex;flex-direction:column;gap:6px}
+.plan.pop{outline:3px solid var(--rouge);position:relative}
+.plan .pop-tag{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--rouge);color:#fff;font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:5px 13px;border-radius:999px;white-space:nowrap}
+.plan h3{font-size:1.1rem;font-weight:800}
+.plan .montant{font-size:2.15rem;font-weight:900;line-height:1.05}
+.plan .montant small{font-size:.95rem;font-weight:700;color:var(--gris)}
+.plan .ex{font-size:.8rem;font-weight:700;color:#a97b00;text-transform:uppercase;letter-spacing:.08em}
+.plan ul{list-style:none;margin:12px 0 20px;display:flex;flex-direction:column;gap:9px;color:var(--gris);font-size:.96rem}
+.plan ul li::before{content:"✓";color:var(--rouge);font-weight:900;margin-right:9px}
+.plan .btn{margin-top:auto;justify-content:center}
+.plan .btn.alt{background:#fff;color:var(--noir);border-color:#cfcfd4}
+.plan .btn.alt:hover{background:var(--noir);color:#fff}
+.snow-fine{margin-top:16px;color:var(--glace-txt);font-size:.9rem;position:relative;z-index:1}
+
+/* ── Témoignages ─────────────────────────── */
+#carousel{max-width:820px;margin:0 auto;text-align:center;position:relative}
+.t-slide{display:none;background:#fff;border:1px solid var(--ligne);border-radius:var(--rayon);padding:38px 40px;box-shadow:0 6px 22px rgba(20,20,20,.05)}
+.t-slide.active{display:block;animation:fadein .5s ease}
+@keyframes fadein{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.t-slide .stars{color:var(--rouge);font-size:1.15rem;letter-spacing:3px;margin-bottom:14px}
+.t-slide blockquote{font-size:1.13rem;font-weight:600;line-height:1.55}
+.t-slide .who{margin-top:16px;color:var(--gris);font-size:.94rem}
+.t-slide .who b{color:var(--noir)}
+.t-tag{display:inline-block;margin-top:12px;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#a97b00;background:#fff8e6;border:1px solid #e8c96a;padding:4px 11px;border-radius:999px}
+#tDots{display:flex;gap:8px;justify-content:center;margin-top:20px}
+#tDots button{width:11px;height:11px;border-radius:50%;border:0;background:#d6d6da;cursor:pointer;padding:0}
+#tDots button.active{background:var(--rouge)}
+
+/* ── FAQ ─────────────────────────────────── */
+.faq{max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+.faq-item{background:#fff;border:1px solid var(--ligne);border-radius:12px;overflow:hidden}
+.faq-q{width:100%;background:none;border:0;cursor:pointer;text-align:left;padding:19px 22px;font-size:1.02rem;font-weight:700;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:14px;color:var(--noir)}
+.faq-q .chev{color:var(--rouge);font-size:1.3rem;transition:transform .3s;flex:none}
+.faq-item.open .faq-q .chev{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-a p{padding:0 22px 20px;color:var(--gris);font-size:.98rem}
+
+/* ── Formulaire ──────────────────────────── */
+.form-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:start}
+@media(max-width:900px){.form-grid{grid-template-columns:1fr}}
+.form-side .tel-big{display:inline-block;font-size:1.7rem;font-weight:900;color:var(--rouge);text-decoration:none;margin:10px 0 6px}
+.form-side .tel-big:hover{text-decoration:underline}
+.form-side ul{list-style:none;margin-top:18px;display:flex;flex-direction:column;gap:10px;color:var(--gris)}
+.form-side ul li::before{content:"✓";color:var(--rouge);font-weight:900;margin-right:9px}
+form.soum{background:#fff;border:1px solid var(--ligne);border-radius:var(--rayon);padding:30px;box-shadow:var(--ombre)}
+form.soum .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:560px){form.soum .row{grid-template-columns:1fr}}
+.f-field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.f-field label{font-weight:700;font-size:.9rem}
+.f-field input,.f-field select,.f-field textarea{font:inherit;padding:12px 14px;border:1.5px solid #d8d8dd;border-radius:10px;background:#fbfbfc;transition:.2s;width:100%}
+.f-field input:focus,.f-field select:focus,.f-field textarea:focus{outline:none;border-color:var(--rouge);background:#fff;box-shadow:0 0 0 3px rgba(228,2,45,.12)}
+form.soum .btn{width:100%;justify-content:center;font-size:1.02rem}
+.confirm{display:none;margin-top:16px;border-radius:12px;padding:16px 18px;font-size:.97rem;line-height:1.5;background:#eef9f0;border:1px solid #7cc48d;color:#1e5c2c}
+.confirm.show{display:block}
+.confirm.err{background:#fdf0ec;border-color:#c96a4a;color:#7c3a22}
+.confirm b{display:block;margin-bottom:3px}
+
+/* ── Pied de page ────────────────────────── */
+footer{background:var(--noir);color:#d8d8db;padding:64px 0 0}
+.foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:36px;padding-bottom:44px}
+@media(max-width:820px){.foot-grid{grid-template-columns:1fr}}
+.foot-logo{background:#fff;border-radius:14px;display:inline-block;padding:12px 16px;margin-bottom:16px}
+.foot-logo img{height:86px;width:auto}
+footer h4{color:#fff;font-size:1rem;margin-bottom:14px}
+footer ul{list-style:none;display:flex;flex-direction:column;gap:9px;font-size:.96rem}
+footer a{color:#d8d8db;text-decoration:none}
+footer a:hover{color:#fff;text-decoration:underline}
+footer p{font-size:.96rem;max-width:38ch}
+.foot-tel{font-size:1.25rem;font-weight:900;color:#fff!important}
+.foot-bottom{border-top:1px solid #2a2a2e;padding:20px 0;font-size:.88rem;color:#9a9aa0;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+#toTop{position:fixed;right:20px;bottom:20px;z-index:55;width:48px;height:48px;border-radius:50%;border:0;background:var(--rouge);color:#fff;font-size:1.25rem;cursor:pointer;opacity:0;pointer-events:none;transition:.3s;box-shadow:0 10px 22px rgba(228,2,45,.35)}
+#toTop.show{opacity:1;pointer-events:auto}
+#toTop:hover{background:var(--rouge-fonce)}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="tb-left">Aménagement extérieur — pavé uni, asphalte, clôtures, tourbe et plus</span>
+    <span class="tb-new">✦ Nouveau : déneigement résidentiel à Longueuil</span>
+    <a href="tel:+15147062076">☎ (514) 706-2076</a>
+  </div>
+</div>
+
+<header id="header">
+  <div class="wrap header-in">
+    <a class="brand" href="#top" aria-label="Groupe Design Inc. — accueil">
+      <img src="assets/logo.png" alt="Logo Groupe Design Inc.">
+      <span class="brand-name">Groupe Design Inc.<span>Aménagement extérieur</span></span>
+    </a>
+    <button id="burger" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+    <nav id="menu">
+      <a href="#services">Services</a>
+      <a href="#deneigement">Déneigement</a>
+      <a href="#avis">Avis</a>
+      <a href="#faq">Questions</a>
+      <a class="btn" href="#soumission">Demander une soumission</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ══════════ HERO ══════════ -->
+<section class="hero" id="top">
+  <div class="hero-bg"><img src="assets/hero-amenagement.jpg" alt="Terrasse en pavé uni réalisée par Groupe Design Inc."></div>
+  <div class="hero-shade"></div>
+  <div class="wrap hero-in">
+    <span class="badge"><i></i> Groupe Design Inc. — aménagement extérieur</span>
+    <h1>Aménagements extérieurs <em>créatifs</em> et <em>durables</em></h1>
+    <p>Pavé uni, asphalte, clôtures, tourbe, gazon synthétique et plantations, selon votre projet. Un seul entrepreneur pour transformer votre cour — et, dès cet hiver, pour la déneiger.</p>
+    <div class="hero-cta">
+      <a class="btn" href="#soumission">Demander une soumission</a>
+      <a class="hero-tel" href="tel:+15147062076">☎ (514) 706-2076</a>
+    </div>
+    <div class="hero-tags">
+      <span>Pavé uni</span><span>Asphalte</span><span>Clôtures</span><span>Tourbe</span><span>Gazon synthétique</span><span>Plantations</span><span>❄ Déneigement — nouveau</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CHIFFRES SOBRES ══════════ -->
+<div class="stats">
+  <div class="wrap">
+    <div class="stat"><b><span class="count" data-target="9">0</span></b><span>services d'aménagement</span></div>
+    <div class="stat"><b><span class="count" data-target="2">0</span></b><span>saisons couvertes : été &amp; hiver</span></div>
+    <div class="stat"><b><span class="count" data-target="1">0</span></b><span>seul interlocuteur, du devis à la finition</span></div>
+    <div class="stat"><b><span class="count" data-target="12">0</span></b><span>mois par année à votre service</span></div>
+  </div>
+</div>
+
+<!-- ══════════ SERVICES D'AMÉNAGEMENT ══════════ -->
+<section class="sec" id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">Nos services</span>
+      <h2>Aménagement extérieur, selon votre projet</h2>
+      <p>De l'excavation à la plantation, Groupe Design Inc. réalise l'ensemble de vos travaux extérieurs. Choisissez un service, demandez une soumission, on s'occupe du reste.</p>
+    </div>
+    <div class="cards">
+      <article class="card reveal">
+        <div class="ph"><img src="assets/entree.jpg" alt="Entrée en pavé uni avec clôture" loading="lazy"></div>
+        <div class="tx">
+          <h3>Pavé uni</h3>
+          <p>Installation de surfaces en pavé uni : entrées, terrasses, contours de piscine et allées, avec une finition nette et durable.</p>
+          <a class="plus" href="#soumission">Demander une soumission →</a>
+        </div>
+      </article>
+      <article class="card reveal">
+        <div class="ph"><img src="assets/entretien.jpg" alt="Détail de pavés posés avec précision" loading="lazy"></div>
+        <div class="tx">
+          <h3>Asphalte</h3>
+          <p>Travaux d'asphalte complets : l'arrachage de l'asphalte existant peut être inclus, et l'excavation fait partie des travaux proposés.</p>
+          <a class="plus" href="#soumission">Demander une soumission →</a>
+        </div>
+      </article>
+      <article class="card reveal">
+        <div class="tx">
+          <div class="ic">▦</div>
+          <h3>Patios</h3>
+          <p>Réalisation de patios sur mesure. La démolition d'un patio existant est possible, et la reconstruction se fait en bois ou en composite.</p>
+          <a class="plus" href="#soumission">Demander une soumission →</a>
+        </div>
+      </article>
+      <article class="card reveal">
+        <div class="tx">
+          <div class="ic">▤</div>
+          <h3>Garde-corps</h3>
+          <p>Installation de garde-corps pour vos projets extérieurs, en verre, en aluminium, en bois ou en composite — le complément parfait d'un patio.</p>
+          <a class="plus" href="#soumission">Demander une soumission →</a>
+        </div>
+      </article>
+      <article class="card reveal">
+        <div class="tx">
+          <div class="ic">▥</div>
+          <h3>Clôtures</h3>
+          <p>Installation de clôtures en composite, en verre ou de style ornemental, ainsi que des clôtures Frost, pour délimiter et sécuriser votre terrain.</p>
+          <a class="plus" href="#soumission">Demander une soumission →</a>
+        </div>
+      </article>
+      <article class="card reveal">
+        <div class="tx">
+          <div class="ic">⛏</div>
+          <h3>Excavation</h3>
+          <p>Travaux d'excavation et de préparation du terrain, notamment lors de l'arrachage et avant la pose de vos nouvelles surfaces.</p>
+          <a class="plus" href="#soumission">Demander une soumission →</a>
+        </div>
+      </article>
+      <article class="card reveal">
+        <div class="tx">
+          <div class="ic">🌱</div>
+          <h3>Pose de tourbe</h3>
+          <p>Installation de tourbe pour un gazon dense dès la pose. La tourbe est garantie un mois : si elle ne prend pas, elle est remplacée.</p>
+          <a class="plus" href="#soumission">Demander une soumission →</a>
+        </div>
+      </article>
+      <article class="card reveal">
+        <div class="tx">
+          <div class="ic">▩</div>
+          <h3>Gazon synthétique</h3>
+          <p>Installation de gazon synthétique : un terrain vert à l'année, sans tonte ni arrosage, pour les cours, aires de jeu et contours de piscine.</p>
+          <a class="plus" href="#soumission">Demander une soumission →</a>
+        </div>
+      </article>
+      <article class="card reveal">
+        <div class="tx">
+          <div class="ic">🌿</div>
+          <h3>Plantation</h3>
+          <p>Services de plantation pour compléter votre aménagement : plates-bandes, haies et touches de verdure qui donnent le ton à votre cour.</p>
+          <a class="plus" href="#soumission">Demander une soumission →</a>
+        </div>
+      </article>
+    </div>
+    <div class="band-photo reveal">
+      <img src="assets/jardins.jpg" alt="Jardin luxuriant avec plates-bandes fleuries" loading="lazy">
+      <div class="cap">
+        <b>La touche finale : la verdure</b>
+        <p>Tourbe, gazon synthétique et plantations — la finition qui transforme un chantier en cour où l'on veut vivre.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ PROCESSUS ══════════ -->
+<section class="sec sec-alt" id="processus">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">Comment ça marche</span>
+      <h2>Simple, de la soumission à la finition</h2>
+      <p>Le même fonctionnement, été comme hiver : vous décrivez votre projet, on l'évalue, on le réalise.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="num">01</div>
+        <h3>Demandez une soumission</h3>
+        <p>Remplissez le formulaire ci-dessous ou appelez-nous au (514) 706-2076 en décrivant votre projet ou votre besoin de déneigement.</p>
+      </div>
+      <div class="step reveal">
+        <div class="num">02</div>
+        <h3>Évaluation et prix exact</h3>
+        <p>On évalue les travaux sur place et on vous remet un prix exact, sans surprise. Pour le déneigement : un contrat clair pour toute la saison.</p>
+      </div>
+      <div class="step reveal">
+        <div class="num">03</div>
+        <h3>Réalisation</h3>
+        <p>L'équipe réalise vos travaux d'aménagement — ou passe à chaque tempête si vous avez un contrat de déneigement. Vous, vous profitez du résultat.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ DÉNEIGEMENT — NOUVEAU ══════════ -->
+<section class="sec snow" id="deneigement">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="badge-new">❄ Nouveau — service d'hiver</span>
+      <span class="kicker" style="display:flex">Déneigement</span>
+      <h2>Le déneigement résidentiel arrive chez Groupe Design</h2>
+      <p>Vous nous confiez déjà votre cour l'été — confiez-nous aussi votre entrée l'hiver. Déneigement résidentiel saisonnier à Longueuil : un contrat pour la saison, des passages à chaque tempête, une entrée propre quand vous partez travailler.</p>
+    </div>
+
+    <div class="snow-hero reveal">
+      <img src="../photos/hero-tracteur.jpg" alt="Tracteur de déneigement en pleine tempête" loading="lazy">
+      <div class="cap">
+        <b>Un contrat, tout l'hiver</b>
+        <p>Vous signez à l'automne et votre entrée est prise en charge à chaque tempête, jusqu'au printemps — sans avoir à appeler chaque fois qu'il neige.</p>
+      </div>
+    </div>
+
+    <div class="snow-cards">
+      <article class="snow-card reveal">
+        <div class="ph"><img src="../photos/entree-deblayee.jpg" alt="Entrée résidentielle déblayée" loading="lazy"></div>
+        <div class="tx">
+          <h3>Entrées déblayées à chaque tempête</h3>
+          <p>Passages prévus à chaque chute de neige importante, pour garder votre entrée et votre stationnement praticables tout l'hiver.</p>
+        </div>
+      </article>
+      <article class="snow-card reveal">
+        <div class="ph"><img src="../photos/trottoir.jpg" alt="Trottoir et marches déneigés à la main" loading="lazy"></div>
+        <div class="tx">
+          <h3>Trottoirs et marches à la main</h3>
+          <p>Le travail de finition près de la maison — trottoirs, marches et accès piétonniers — est dégagé à la main, là où la machine ne va pas.</p>
+        </div>
+      </article>
+      <article class="snow-card reveal">
+        <div class="ph"><img src="../photos/commercial.jpg" alt="Stationnement déneigé au petit matin" loading="lazy"></div>
+        <div class="tx">
+          <h3>Le même soin qu'en été</h3>
+          <p>C'est l'équipe de Groupe Design qui s'occupe de votre propriété à l'année : un seul numéro, un seul interlocuteur, douze mois par année.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="prix-note reveal">⚠ <b>Prix d'exemple</b> — les forfaits ci-dessous sont présentés à titre d'exemple pour ce démo. Votre prix exact dépend de la grandeur de votre entrée et est confirmé gratuitement avec votre soumission.</div>
+
+    <div class="plans">
+      <div class="plan reveal">
+        <h3>Essentiel</h3>
+        <div class="montant">349&nbsp;$ <small>/ saison</small></div>
+        <span class="ex">Prix d'exemple</span>
+        <ul>
+          <li>Déneigement de l'entrée à chaque tempête</li>
+          <li>Contrat pour toute la saison</li>
+          <li>Balises installées à l'automne</li>
+        </ul>
+        <a class="btn alt" href="#soumission">Demander une soumission</a>
+      </div>
+      <div class="plan pop reveal">
+        <span class="pop-tag">Le plus populaire</span>
+        <h3>Plus</h3>
+        <div class="montant">449&nbsp;$ <small>/ saison</small></div>
+        <span class="ex">Prix d'exemple</span>
+        <ul>
+          <li>Tout le forfait Essentiel</li>
+          <li>Trottoirs et marches dégagés à la main</li>
+          <li>Repassage après la charrue municipale</li>
+        </ul>
+        <a class="btn" href="#soumission">Demander une soumission</a>
+      </div>
+      <div class="plan reveal">
+        <h3>Premium</h3>
+        <div class="montant">549&nbsp;$ <small>/ saison</small></div>
+        <span class="ex">Prix d'exemple</span>
+        <ul>
+          <li>Tout le forfait Plus</li>
+          <li>Priorité lors des grosses tempêtes</li>
+          <li>Accès piétonnier complet dégagé à la main</li>
+        </ul>
+        <a class="btn alt" href="#soumission">Demander une soumission</a>
+      </div>
+    </div>
+    <p class="snow-fine reveal">Service offert à Longueuil. Les places par secteur sont limitées afin de garantir les passages à chaque tempête — réservez votre contrat avant le début de la saison. Prix d'exemple seulement : le prix réel est établi selon votre entrée lors de la soumission.</p>
+  </div>
+</section>
+
+<!-- ══════════ TÉMOIGNAGES ══════════ -->
+<section class="sec" id="avis">
+  <div class="wrap">
+    <div class="sec-head reveal" style="text-align:center;margin-left:auto;margin-right:auto">
+      <span class="kicker" style="justify-content:center">Avis de clients</span>
+      <h2>Ce que nos clients racontent</h2>
+    </div>
+    <div id="carousel" class="reveal">
+      <div class="t-slide active">
+        <div class="stars">★★★★★</div>
+        <blockquote>« Notre terrasse en pavé uni a complètement changé la cour. Travail propre, finition soignée, et le résultat dépasse ce qu'on avait imaginé. »</blockquote>
+        <div class="who"><b>Une cliente de la Rive-Sud</b> — projet de pavé uni</div>
+        <span class="t-tag">Témoignage de démonstration</span>
+      </div>
+      <div class="t-slide">
+        <div class="stars">★★★★★</div>
+        <blockquote>« Clôture et tourbe posées la même semaine. Un seul entrepreneur pour tout, ça simplifie vraiment la vie — et la garantie sur la tourbe, c'est rassurant. »</blockquote>
+        <div class="who"><b>Un client résidentiel</b> — clôture et pose de tourbe</div>
+        <span class="t-tag">Témoignage de démonstration</span>
+      </div>
+      <div class="t-slide">
+        <div class="stars">★★★★★</div>
+        <blockquote>« Premier hiver avec le contrat de déneigement : l'entrée est toujours dégagée quand je pars travailler, même après les grosses tempêtes. »</blockquote>
+        <div class="who"><b>Un client de Longueuil</b> — déneigement saisonnier</div>
+        <span class="t-tag">Témoignage de démonstration</span>
+      </div>
+      <div id="tDots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FAQ ══════════ -->
+<section class="sec sec-alt" id="faq">
+  <div class="wrap">
+    <div class="sec-head reveal" style="text-align:center;margin-left:auto;margin-right:auto">
+      <span class="kicker" style="justify-content:center">Questions fréquentes</span>
+      <h2>On répond à vos questions</h2>
+    </div>
+    <div class="faq">
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">Groupe Design fait maintenant du déneigement ?<span class="chev">+</span></button>
+        <div class="faq-a"><p>Oui — c'est notre nouveauté. En plus de l'aménagement extérieur, nous offrons maintenant le déneigement résidentiel saisonnier à Longueuil : un contrat pour la saison, avec des passages à chaque tempête pour votre entrée, vos trottoirs et vos marches.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">Comment fonctionne le contrat de déneigement ?<span class="chev">+</span></button>
+        <div class="faq-a"><p>Vous signez un contrat pour la saison et nous installons des balises à l'automne. Ensuite, notre équipe passe à chaque tempête, sans que vous ayez à appeler. Le prix exact dépend de la grandeur de votre entrée et est confirmé avec votre soumission.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">Quels matériaux offrez-vous pour les patios, garde-corps et clôtures ?<span class="chev">+</span></button>
+        <div class="faq-a"><p>Les patios sont reconstruits en bois ou en composite. Les garde-corps sont offerts en verre, en aluminium, en bois ou en composite. Pour les clôtures : composite, verre, style ornemental et clôtures Frost. On vous conseille selon votre projet et votre budget.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">La tourbe est-elle vraiment garantie ?<span class="chev">+</span></button>
+        <div class="faq-a"><p>Oui : la tourbe installée par notre équipe est garantie pendant un mois. Si elle ne prend pas, elle est remplacée. C'est écrit noir sur blanc dans notre offre de pose de tourbe.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">Pouvez-vous arracher mon vieil asphalte ou démolir mon patio actuel ?<span class="chev">+</span></button>
+        <div class="faq-a"><p>Oui. Pour l'asphalte, l'arrachage de l'existant peut faire partie des travaux, avec l'excavation nécessaire. Pour les patios, la démolition de l'ancien est aussi possible avant la reconstruction en bois ou en composite.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">Comment obtenir une soumission ?<span class="chev">+</span></button>
+        <div class="faq-a"><p>Remplissez le formulaire ci-dessous en décrivant votre projet — aménagement ou déneigement — ou appelez-nous au (514) 706-2076. On évalue les travaux et on vous remet un prix exact, sans surprise.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ SOUMISSION ══════════ -->
+<section class="sec" id="soumission">
+  <div class="wrap">
+    <div class="form-grid">
+      <div class="form-side reveal">
+        <span class="kicker">Demander une soumission</span>
+        <h2>Parlez-nous de votre projet</h2>
+        <p style="color:var(--gris);margin-top:12px">Un patio en pavé uni, une clôture, une entrée à déneiger tout l'hiver ? Décrivez votre projet et on vous revient avec les prochaines étapes. Vous préférez parler à quelqu'un ?</p>
+        <a class="tel-big" href="tel:+15147062076">(514) 706-2076</a>
+        <ul>
+          <li>Aménagement extérieur complet : pavé uni, asphalte, patios, clôtures, excavation</li>
+          <li>Tourbe garantie un mois — remplacée si elle ne prend pas</li>
+          <li>Nouveau : déneigement résidentiel saisonnier à Longueuil</li>
+          <li>Un seul interlocuteur, douze mois par année</li>
+        </ul>
+      </div>
+      <form class="soum reveal" id="soumForm" novalidate>
+        <div class="row">
+          <div class="f-field">
+            <label for="nom">Nom complet *</label>
+            <input type="text" id="nom" name="nom" placeholder="Votre nom" autocomplete="name">
+          </div>
+          <div class="f-field">
+            <label for="tel">Téléphone *</label>
+            <input type="tel" id="tel" name="tel" placeholder="(514) 000-0000" autocomplete="tel">
+          </div>
+        </div>
+        <div class="f-field">
+          <label for="courriel">Courriel</label>
+          <input type="email" id="courriel" name="courriel" placeholder="vous@exemple.com" autocomplete="email">
+        </div>
+        <div class="f-field">
+          <label for="projet">Type de projet *</label>
+          <select id="projet" name="projet">
+            <option value="">— Choisissez un service —</option>
+            <option>Déneigement résidentiel (nouveau)</option>
+            <option>Pavé uni</option>
+            <option>Asphalte</option>
+            <option>Patio</option>
+            <option>Garde-corps</option>
+            <option>Clôture</option>
+            <option>Excavation</option>
+            <option>Pose de tourbe</option>
+            <option>Gazon synthétique</option>
+            <option>Plantation</option>
+            <option>Autre projet extérieur</option>
+          </select>
+        </div>
+        <div class="f-field">
+          <label for="message">Décrivez votre projet</label>
+          <textarea id="message" name="message" rows="4" placeholder="Ex. : entrée en pavé uni d'environ 20 × 20 pi, ou contrat de déneigement pour une entrée double à Longueuil…"></textarea>
+        </div>
+        <button class="btn" type="submit">Envoyer ma demande</button>
+        <div class="confirm" id="confirm" role="status"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ PIED DE PAGE ══════════ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <span class="foot-logo"><img src="assets/logo.png" alt="Logo Groupe Design Inc."></span>
+        <p>Aménagements extérieurs créatifs et durables — et maintenant, le déneigement résidentiel à Longueuil pour vous servir à l'année.</p>
+      </div>
+      <div>
+        <h4>Nos services</h4>
+        <ul>
+          <li><a href="#services">Pavé uni</a></li>
+          <li><a href="#services">Asphalte</a></li>
+          <li><a href="#services">Patios &amp; garde-corps</a></li>
+          <li><a href="#services">Clôtures</a></li>
+          <li><a href="#services">Tourbe, gazon synthétique &amp; plantations</a></li>
+          <li><a href="#deneigement">Déneigement — nouveau</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Nous joindre</h4>
+        <ul>
+          <li><a class="foot-tel" href="tel:+15147062076">(514) 706-2076</a></li>
+          <li>Déneigement : Longueuil</li>
+          <li>Aménagement extérieur : selon votre projet</li>
+          <li><a href="#soumission">Demander une soumission →</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© Groupe Design Inc. — Tous droits réservés.</span>
+      <span>Démo personnalisée préparée pour Groupe Design Inc.</span>
+    </div>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="Retour en haut">↑</button>
+
+<script>
+var CONFIG = {
+  nomEntreprise: "Groupe Design Inc.",
+  telephone: "514-706-2076",
+  zones: ["Longueuil"],
+  saison: "2026-2027"
+};
+(function(){
+"use strict";
+var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* En-tête : ombre au défilement + retour en haut */
+var header=document.getElementById("header"), toTop=document.getElementById("toTop");
+function onScroll(){
+  var y=window.scrollY||window.pageYOffset;
+  header.classList.toggle("solid", y>10);
+  toTop.classList.toggle("show", y>500);
+}
+window.addEventListener("scroll", onScroll, {passive:true}); onScroll();
+toTop.addEventListener("click", function(){ window.scrollTo({top:0, behavior: reduce?"auto":"smooth"}); });
+
+/* Menu mobile */
+var burger=document.getElementById("burger"), menu=document.getElementById("menu");
+burger.addEventListener("click", function(){ menu.classList.toggle("open"); });
+menu.addEventListener("click", function(e){ if(e.target.tagName==="A") menu.classList.remove("open"); });
+
+/* Reveal au scroll */
+var revealEls=document.querySelectorAll(".reveal");
+if("IntersectionObserver" in window && !reduce){
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add("visible"); io.unobserve(en.target); } });
+  }, {threshold:.12});
+  revealEls.forEach(function(el){ io.observe(el); });
+}else{
+  revealEls.forEach(function(el){ el.classList.add("visible"); });
+}
+
+/* Compteurs animés (sobres et factuels) */
+function animateCount(el){
+  var target=parseFloat(el.getAttribute("data-target"));
+  if(reduce){ el.textContent=target; return; }
+  var start=null, dur=1300;
+  function step(ts){
+    if(!start) start=ts;
+    var p=Math.min((ts-start)/dur,1);
+    var eased=1-Math.pow(1-p,3);
+    el.textContent=Math.round(target*eased);
+    if(p<1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+var counters=document.querySelectorAll(".count");
+if("IntersectionObserver" in window){
+  var cio=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ if(en.isIntersecting){ animateCount(en.target); cio.unobserve(en.target); } });
+  }, {threshold:.5});
+  counters.forEach(function(c){ cio.observe(c); });
+}else{ counters.forEach(animateCount); }
+
+/* Carrousel témoignages */
+var tSlides=[].slice.call(document.querySelectorAll("#carousel .t-slide"));
+var tDotsBox=document.getElementById("tDots"), tCur=0, tTimer=null;
+tSlides.forEach(function(_,i){
+  var b=document.createElement("button");
+  b.setAttribute("aria-label","Témoignage "+(i+1));
+  if(i===0) b.className="active";
+  b.addEventListener("click", function(){ tGo(i); tRestart(); });
+  tDotsBox.appendChild(b);
+});
+var tDots=[].slice.call(tDotsBox.children);
+function tGo(i){
+  tSlides[tCur].classList.remove("active"); tDots[tCur].classList.remove("active");
+  tCur=i;
+  tSlides[tCur].classList.add("active"); tDots[tCur].classList.add("active");
+}
+function tRestart(){ if(tTimer) clearInterval(tTimer); if(!reduce) tTimer=setInterval(function(){ tGo((tCur+1)%tSlides.length); }, 5200); }
+tRestart();
+var car=document.getElementById("carousel");
+car.addEventListener("mouseenter", function(){ if(tTimer) clearInterval(tTimer); });
+car.addEventListener("mouseleave", tRestart);
+
+/* FAQ accordéon */
+document.querySelectorAll(".faq-item").forEach(function(item){
+  var q=item.querySelector(".faq-q"), a=item.querySelector(".faq-a");
+  q.addEventListener("click", function(){
+    var open=item.classList.contains("open");
+    document.querySelectorAll(".faq-item.open").forEach(function(o){
+      o.classList.remove("open"); o.querySelector(".faq-a").style.maxHeight=null;
+      o.querySelector(".faq-q").setAttribute("aria-expanded","false");
+    });
+    if(!open){ item.classList.add("open"); a.style.maxHeight=a.scrollHeight+"px"; q.setAttribute("aria-expanded","true"); }
+  });
+});
+
+/* Formulaire de soumission : confirmation animée, aucun envoi réel (démo) */
+document.getElementById("soumForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  var nom=document.getElementById("nom").value.trim();
+  var tel=document.getElementById("tel").value.trim();
+  var projet=document.getElementById("projet").value;
+  var conf=document.getElementById("confirm");
+  if(!nom || !tel || !projet){
+    conf.className="confirm show err";
+    conf.innerHTML="<b>Il manque un détail</b>Merci de remplir votre nom, votre téléphone et le type de projet.";
+    conf.scrollIntoView({behavior: reduce?"auto":"smooth", block:"center"});
+    return;
+  }
+  conf.className="confirm show";
+  conf.innerHTML="<b>Demande reçue, "+nom.split(" ")[0]+" !</b>"+
+    "Projet : "+projet+". L'équipe de Groupe Design Inc. vous recontacte pour évaluer les travaux et vous remettre votre prix exact. (Démo : aucun envoi réel.)";
+  conf.scrollIntoView({behavior: reduce?"auto":"smooth", block:"center"});
+});
+})();
+</script>
+</body>
+</html>
