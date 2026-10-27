@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EBI Excavation et Construction — Excavation, construction et déneigement, Rive-Sud</title>
+<meta name="description" content="EBI Excavation et Construction, entreprise familiale à Chambly. Excavation, fondations, drains français, construction, rénovations et déneigement exclusif sur la Rive-Sud et en Montérégie. Urgence 24/7. RBQ : 5820-5188-01.">
+<style>
+:root{--noir:#131313;--charbon:#1d1d1f;--rouge:#d21f26;--orange:#f26b21;--gris:#f4f2ee;--texte:#232323;--blanc:#fff}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif;color:var(--texte);background:var(--blanc);line-height:1.6}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+.topbar{background:var(--noir);color:#eee;font-size:.85rem;padding:.45rem 1rem;display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap}
+.topbar b{color:var(--orange)}
+header{position:sticky;top:0;z-index:50;background:rgba(19,19,19,.96);backdrop-filter:blur(6px)}
+.nav{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:.55rem 1rem;gap:1rem}
+.brand{display:flex;align-items:center;gap:.7rem;color:#fff;font-weight:800;letter-spacing:.5px}
+.brand img{width:52px;height:52px;border-radius:10px;object-fit:cover}
+.brand span{font-size:1.02rem;line-height:1.15}
+.brand small{display:block;color:var(--orange);font-weight:700;font-size:.72rem;letter-spacing:2px}
+.nav nav{display:flex;gap:1.3rem}
+.nav nav a{color:#ddd;font-size:.95rem;font-weight:600}
+.nav nav a:hover{color:var(--orange)}
+.btn{display:inline-block;background:var(--rouge);color:#fff;padding:.8rem 1.5rem;border-radius:8px;font-weight:700;transition:.25s;border:0;cursor:pointer;font-size:1rem}
+.btn:hover{background:#a8161c;transform:translateY(-2px)}
+.btn.orange{background:var(--orange)} .btn.orange:hover{background:#cf5412}
+.btn.ghost{background:transparent;border:2px solid #fff;color:#fff}
+.btn.small{padding:.55rem 1.1rem;font-size:.92rem}
+.hero{position:relative;min-height:92vh;display:flex;align-items:center;color:#fff;overflow:hidden;background:var(--noir)}
+.hero .slide{position:absolute;inset:0;opacity:0;transition:opacity 1.4s ease}
+.hero .slide.active{opacity:1}
+.hero .slide img{width:100%;height:100%;object-fit:cover;animation:kenburns 7s ease-in-out infinite alternate}
+@keyframes kenburns{from{transform:scale(1)}to{transform:scale(1.09)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,10,10,.86) 30%,rgba(10,10,10,.35) 70%)}
+.hero-content{position:relative;z-index:2;max-width:1200px;margin:auto;padding:4rem 1rem;width:100%}
+.hero .kicker{color:var(--orange);font-weight:800;letter-spacing:3px;text-transform:uppercase;font-size:.85rem}
+.hero h1{font-size:clamp(2.2rem,5.4vw,4rem);line-height:1.06;margin:.7rem 0 1rem;max-width:760px;font-weight:900;text-transform:uppercase}
+.hero h1 em{font-style:normal;color:var(--rouge)}
+.hero p{max-width:600px;font-size:1.12rem;color:#eee}
+.hero .cta{margin-top:1.8rem;display:flex;gap:1rem;flex-wrap:wrap}
+.hero .badges{margin-top:2.2rem;display:flex;gap:2rem;flex-wrap:wrap}
+.hero .badges div b{display:block;font-size:1.7rem;color:#fff}
+.hero .badges div span{font-size:.85rem;color:#ccc;text-transform:uppercase;letter-spacing:1px}
+.secteurs{background:var(--rouge);color:#fff}
+.secteurs .in{max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr);text-align:center}
+.secteurs div{padding:1.1rem .5rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;font-size:.95rem;border-left:1px solid rgba(255,255,255,.25)}
+section{padding:4.5rem 1rem}
+.wrap{max-width:1200px;margin:auto}
+.kicker2{color:var(--rouge);font-weight:800;letter-spacing:3px;text-transform:uppercase;font-size:.82rem}
+h2{font-size:clamp(1.7rem,3.4vw,2.5rem);line-height:1.15;margin:.5rem 0 1rem;font-weight:900;text-transform:uppercase}
+.lead{max-width:760px;color:#555}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.2rem;margin-top:2rem}
+.card{background:var(--gris);border-radius:14px;padding:1.6rem;border-top:5px solid var(--orange);transition:.25s}
+.card:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(0,0,0,.12)}
+.card h3{font-size:1.12rem;margin-bottom:.45rem}
+.card p{color:#555;font-size:.95rem}
+.fond{background:var(--charbon);color:#eee}
+.fond h2{color:#fff}.fond .lead{color:#bbb}.fond .card{background:#29292c;border-top-color:var(--rouge)}.fond .card p{color:#bbb}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center}
+.split img{border-radius:16px;box-shadow:0 18px 40px rgba(0,0,0,.25);width:100%;height:100%;object-fit:cover;min-height:320px}
+.urgence{background:linear-gradient(120deg,#7d0d11,#d21f26);color:#fff;text-align:center}
+.urgence h2{color:#fff}
+.urgence p{max-width:680px;margin:0 auto 1.6rem;color:#ffe3e3}
+.urgence .tel{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;letter-spacing:1px;display:block;margin-bottom:1.2rem}
+.neige{background:#eaf2f8}
+.galerie{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-top:2rem}
+.galerie figure{border-radius:14px;overflow:hidden;position:relative}
+.galerie img{height:260px;width:100%;object-fit:cover;transition:.4s}
+.galerie figure:hover img{transform:scale(1.06)}
+.galerie figcaption{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(0,0,0,.8));color:#fff;padding:2rem .9rem .7rem;font-weight:700;font-size:.92rem}
+.zones{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.4rem}
+.zones span{background:var(--noir);color:#fff;padding:.5rem 1rem;border-radius:99px;font-size:.9rem;font-weight:600}
+.zones span.hot{background:var(--rouge)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;margin-top:2rem}
+.step{padding:1.4rem;border:2px solid #eee;border-radius:14px}
+.step b{font-size:2rem;color:var(--orange);display:block}
+.faq{max-width:850px;margin:2rem auto 0}
+.faq details{background:var(--gris);border-radius:12px;margin-bottom:.8rem;padding:1rem 1.2rem}
+.faq summary{font-weight:800;cursor:pointer}
+.faq p{margin-top:.6rem;color:#555}
+.contact{background:var(--charbon);color:#eee}
+.contact h2{color:#fff}
+.contact .grid2{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
+.coord p{margin-bottom:.9rem;color:#ccc}
+.coord b{color:#fff}
+form{display:grid;gap:.8rem}
+form input,form select,form textarea{padding:.85rem 1rem;border-radius:8px;border:1px solid #444;background:#2a2a2d;color:#fff;font-size:1rem;width:100%}
+form textarea{min-height:110px}
+.note{font-size:.82rem;color:#999}
+footer{background:var(--noir);color:#aaa;padding:2.2rem 1rem;text-align:center;font-size:.9rem}
+footer img{width:74px;height:74px;border-radius:12px;margin:0 auto .8rem;object-fit:cover}
+.reveal{opacity:0;transform:translateY(28px);transition:all .8s ease}
+.reveal.visible{opacity:1;transform:none}
+@media(max-width:860px){.nav nav{display:none}.secteurs .in{grid-template-columns:repeat(2,1fr)}.split,.contact .grid2{grid-template-columns:1fr}.hero{min-height:80vh}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="topbar"><span>📍 2295, boul. Industriel, Chambly</span><span>📞 <b>514 444-5155</b></span><span>🚨 Urgence excavation <b>24/7</b></span><span>RBQ : 5820-5188-01</span></div>
+<header><div class="nav">
+<a class="brand" href="#"><img src="photos/logo.png" alt="Logo EBI Excavation et Construction"><span>EBI<small>EXCAVATION • CONSTRUCTION • TRANSPORT</small></span></a>
+<nav><a href="#excavation">Excavation</a><a href="#construction">Construction</a><a href="#deneigement">Déneigement</a><a href="#realisations">Réalisations</a><a href="#contact">Contact</a></nav>
+<a class="btn small" href="#contact">Soumission gratuite</a>
+</div></header>
+
+<div class="hero">
+<div class="slide active"><img src="photos/kubota.jpg" alt="Mini-excavatrice Kubota d'EBI en travaux d'excavation résidentielle"></div>
+<div class="slide"><img src="photos/cabanon.jpg" alt="Charpente de bois construite par EBI"></div>
+<div class="slide"><img src="photos/sdb.jpg" alt="Salle de bain rénovée par EBI"></div>
+<div class="slide"><img src="photos/deneigement.jpg" alt="Tracteur Kubota en déneigement résidentiel"></div>
+<div class="hero-content">
+<p class="kicker">Rive-Sud • Montérégie • Entreprise familiale</p>
+<h1>La référence en <em>excavation</em> et en construction</h1>
+<p>De la fondation à la toiture : excavation, drains français, construction et rénovations — un seul partenaire de confiance pour vos projets résidentiels, commerciaux, industriels et institutionnels.</p>
+<div class="cta"><a class="btn" href="#contact">Obtenez une soumission</a><a class="btn ghost" href="tel:5144445155">📞 514 444-5155</a></div>
+<div class="badges">
+<div><b data-count="12">0</b><span>Services spécialisés</span></div>
+<div><b data-count="8">0</b><span>Villes desservies</span></div>
+<div><b data-count="4">0</b><span>Secteurs : rés. à ind.</span></div>
+<div><b>24/7</b><span>Urgence excavation</span></div>
+</div>
+</div>
+</div>
+
+<div class="secteurs"><div class="in"><div>Résidentiel</div><div>Commercial</div><div>Industriel</div><div>Institutionnel</div></div></div>
+
+<section id="excavation"><div class="wrap reveal">
+<p class="kicker2">Nos services</p>
+<h2>Excavation</h2>
+<p class="lead">Des travaux d'excavation fiables et de haute qualité, réalisés par une équipe expérimentée qui respecte les normes de sécurité les plus strictes — et vos délais.</p>
+<div class="grid">
+<div class="card"><h3>🏗️ Fondations</h3><p>Excavation et préparation de fondations pour résidences et immeubles, de la première pelletée au coffrage.</p></div>
+<div class="card"><h3>💧 Drains français</h3><p>Installation et remplacement de drains français pour protéger vos fondations contre les infiltrations d'eau.</p></div>
+<div class="card"><h3>📐 Nivellement de terrain</h3><p>Nivellement et terrassement précis pour un terrain prêt à construire, à paver ou à aménager.</p></div>
+<div class="card"><h3>🅿️ Stationnements</h3><p>Excavation et préparation de stationnements résidentiels et commerciaux, durables et bien drainés.</p></div>
+<div class="card"><h3>🪟 Margelles</h3><p>Installation de margelles conformes pour vos fenêtres de sous-sol, sécuritaires et étanches.</p></div>
+<div class="card"><h3>🌊 Ponceaux</h3><p>Installation de ponceaux pour vos entrées et le drainage de vos fossés, selon les normes municipales.</p></div>
+<div class="card"><h3>🔧 Services publics</h3><p>Travaux de conduites d'eau, d'égout, de gaz et d'électricité, en coordination avec vos autres professionnels.</p></div>
+<div class="card"><h3>🚜 Terrassement</h3><p>Terrassement complet de terrains résidentiels et commerciaux, peu importe l'ampleur du projet.</p></div>
+</div>
+</div></section>
+
+<section id="construction" class="fond"><div class="wrap reveal">
+<p class="kicker2" style="color:var(--orange)">Nos services</p>
+<h2>Construction et rénovations</h2>
+<p class="lead">Un large éventail de solutions, de l'agrandissement de maison à la rénovation intérieure et extérieure complète — avec le souci du détail à chaque étape.</p>
+<div class="grid">
+<div class="card"><h3>🪵 Charpente</h3><p>Charpente de bois pour maisons, agrandissements, garages et cabanons, montée solide et d'équerre.</p></div>
+<div class="card"><h3>🏠 Agrandissement de maison</h3><p>Ajout de pièces, d'étages ou de garages : on fait grandir votre maison selon vos besoins.</p></div>
+<div class="card"><h3>🛋️ Rénovations intérieures</h3><p>Sous-sol, salle de bain, cuisine, joints et finition de plâtre : un intérieur refait à votre image.</p></div>
+<div class="card"><h3>🛁 Salles de bain et cuisines</h3><p>Rénovation complète de salles de bain et de cuisines, de la démolition à la finition haut de gamme.</p></div>
+<div class="card"><h3>🌤️ Patios et terrasses</h3><p>Construction de patios et terrasses solides pour profiter pleinement de votre cour.</p></div>
+<div class="card"><h3>🏡 Balcons en fibre de verre</h3><p>Balcons en fibre de verre durables, étanches et sans entretien, installés dans les règles de l'art.</p></div>
+</div>
+</div></section>
+
+<section class="urgence reveal"><div class="wrap">
+<p class="kicker2" style="color:#ffb3b3">Ne perdez pas une minute</p>
+<h2>Urgence excavation 24/7</h2>
+<span class="tel">514 444-5155</span>
+<p>Bris d'aqueduc, coupures d'eau sur demande des plombiers ou toute autre situation qui exige une excavation immédiate : notre équipe répond 24 heures sur 24, 7 jours sur 7, pour les secteurs commercial, industriel et institutionnel.</p>
+<a class="btn" style="background:#fff;color:var(--rouge)" href="tel:5144445155">Appeler maintenant</a>
+</div></section>
+
+<section id="deneigement" class="neige"><div class="wrap split reveal">
+<div>
+<p class="kicker2">Nouveau — places limitées</p>
+<h2>Déneigement exclusif</h2>
+<p>Moins de clients, meilleur service. EBI prend un nombre limité de clients en déneigement pour garantir un service fiable, disponible et attentionné, tout l'hiver.</p>
+<p style="margin-top:.8rem">📍 <b>Carignan — secteur centre</b>, et Chambly. Réservez votre place avant que la saison commence.</p>
+<div class="cta" style="margin-top:1.4rem;display:flex;gap:1rem;flex-wrap:wrap"><a class="btn orange" href="#contact">Réserver ma place</a><a class="btn" style="background:var(--noir)" href="tel:5144445155">514 444-5155</a></div>
+</div>
+<div><img src="photos/deneigement.jpg" alt="Tracteur Kubota orange en déneigement d'une entrée résidentielle"></div>
+</div></section>
+
+<section id="realisations"><div class="wrap reveal">
+<p class="kicker2">Sur le terrain</p>
+<h2>Nos réalisations</h2>
+<p class="lead">De vrais chantiers, de vrais résultats — sur la Rive-Sud et en Montérégie.</p>
+<div class="galerie">
+<figure><img src="photos/kubota.jpg" alt="Excavation résidentielle à la mini-excavatrice Kubota"><figcaption>Excavation résidentielle — mini-excavatrice Kubota</figcaption></figure>
+<figure><img src="photos/cabanon.jpg" alt="Charpente intérieure d'un cabanon construit par EBI"><figcaption>Charpente — construction de cabanon</figcaption></figure>
+<figure><img src="photos/platres.jpg" alt="Joints de plâtre en rénovation intérieure"><figcaption>Rénovation intérieure — joints de plâtre</figcaption></figure>
+<figure><img src="photos/sdb.jpg" alt="Salle de bain rénovée avec bain autoportant"><figcaption>Salle de bain rénovée — finition complète</figcaption></figure>
+</div>
+</div></section>
+
+<section style="background:var(--gris)"><div class="wrap split reveal">
+<div><img src="photos/logo.png" alt="Logo EBI Construction Excavation Transport" style="object-fit:contain;background:#131313;padding:1.5rem;min-height:auto"></div>
+<div>
+<p class="kicker2">À propos</p>
+<h2>Une entreprise familiale d'ici</h2>
+<p>Située à Chambly, sur la Rive-Sud de Montréal, E.B.I. Excavation et Construction est une entreprise familiale spécialisée en excavation et en construction. Notre priorité : des relations de confiance avec nos clients, et un travail de qualité supérieure, exécuté avec soin à chaque étape de votre projet.</p>
+<p style="margin-top:.8rem">Licence RBQ : <b>5820-5188-01</b></p>
+<div class="zones">
+<span class="hot">Chambly (siège)</span><span>Longueuil</span><span>Brossard</span><span>Boucherville</span><span>Saint-Bruno</span><span>La Prairie</span><span>Saint-Jean-sur-Richelieu</span><span>Carignan</span>
+</div>
+</div>
+</div></section>
+
+<section><div class="wrap reveal">
+<p class="kicker2">Simple et clair</p>
+<h2>Comment ça marche</h2>
+<div class="steps">
+<div class="step"><b>1</b><h3>Parlez-nous de votre projet</h3><p>Un appel ou le formulaire ci-dessous — on prend le temps de comprendre vos besoins.</p></div>
+<div class="step"><b>2</b><h3>Soumission détaillée</h3><p>Vous recevez une soumission claire, adaptée à votre projet et à votre budget.</p></div>
+<div class="step"><b>3</b><h3>Les travaux</h3><p>Notre équipe réalise les travaux avec soin, en respectant les délais prévus.</p></div>
+<div class="step"><b>4</b><h3>Résultat livré</h3><p>Un chantier propre et un résultat de qualité supérieure, garanti par notre souci du détail.</p></div>
+</div>
+<div class="faq">
+<details><summary>La soumission est-elle gratuite ?</summary><p>Communiquez avec nous pour discuter de votre projet : nous vous préparons une soumission adaptée, sans engagement de votre part.</p></details>
+<details><summary>Quelles régions desservez-vous ?</summary><p>Nous sommes basés à Chambly et nous desservons entre autres Longueuil, Brossard, Boucherville, Saint-Bruno, La Prairie, Saint-Jean-sur-Richelieu et Carignan, sur la Rive-Sud et en Montérégie.</p></details>
+<details><summary>Offrez-vous un service d'urgence ?</summary><p>Oui : notre équipe est disponible 24/7 pour les urgences d'excavation — bris d'aqueduc, coupures d'eau et interventions immédiates pour les secteurs commercial, industriel et institutionnel.</p></details>
+<details><summary>Êtes-vous licenciés ?</summary><p>Oui, E.B.I. Excavation et Construction détient la licence RBQ : 5820-5188-01.</p></details>
+<details><summary>Reste-t-il des places en déneigement ?</summary><p>Les places sont limitées pour garder un service de qualité. Écrivez-nous ou appelez-nous pour réserver la vôtre pour la saison.</p></details>
+</div>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap reveal">
+<p class="kicker2" style="color:var(--orange)">Parlez-nous de votre projet</p>
+<h2>Demande de soumission</h2>
+<div class="grid2" style="margin-top:1.5rem">
+<div class="coord">
+<p>📞 Téléphone<br><b><a href="tel:5144445155">514 444-5155</a></b></p>
+<p>✉️ Courriel<br><b><a href="mailto:ebiexcavation@gmail.com">ebiexcavation@gmail.com</a></b></p>
+<p>📍 Adresse<br><b>2295, boul. Industriel<br>Chambly (Québec) J3L 4W3</b></p>
+<p>🚨 Urgence excavation<br><b>24 heures sur 24, 7 jours sur 7</b></p>
+<p>Licence RBQ : <b>5820-5188-01</b></p>
+</div>
+<div>
+<form onsubmit="event.preventDefault();document.getElementById('merci').style.display='block';this.reset();">
+<input type="text" name="nom" placeholder="Votre nom" required>
+<input type="tel" name="tel" placeholder="Votre téléphone" required>
+<select name="service" required><option value="">Type de travaux…</option><option>Excavation — fondations</option><option>Excavation — drain français</option><option>Excavation — nivellement / terrassement</option><option>Excavation — stationnement</option><option>Construction / charpente</option><option>Rénovation intérieure</option><option>Patio / balcon</option><option>Déneigement</option><option>Urgence 24/7</option><option>Autre projet</option></select>
+<textarea name="message" placeholder="Décrivez votre projet (ville, délais, détails)…"></textarea>
+<button class="btn" type="submit">Envoyer ma demande</button>
+<p id="merci" style="display:none;color:#8be08b;font-weight:700">Merci ! Votre demande est bien notée — on vous rappelle rapidement.</p>
+<p class="note">Formulaire de démonstration — la version finale peut être branchée à votre courriel.</p>
+</form>
+</div>
+</div>
+</div></section>
+
+<footer>
+<img src="photos/logo.png" alt="Logo EBI">
+<p><b style="color:#fff">EBI Excavation et Construction</b> — 2295, boul. Industriel, Chambly (Québec) J3L 4W3<br>
+514 444-5155 • ebiexcavation@gmail.com • RBQ : 5820-5188-01</p>
+<p style="margin-top:.6rem">© 2026 E.B.I. Excavation et Construction. Tous droits réservés.</p>
+<p class="note" style="margin-top:.4rem">Site démo préparé pour EBI Excavation et Construction.</p>
+</footer>
+
+<script>
+const slides=document.querySelectorAll('.hero .slide');let cur=0;
+setInterval(()=>{slides[cur].classList.remove('active');cur=(cur+1)%slides.length;slides[cur].classList.add('active');},5200);
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const cio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,end=+el.dataset.count;let n=0;const t=setInterval(()=>{n++;el.textContent=n;if(n>=end)clearInterval(t);},60);cio.unobserve(el);}),{threshold:.6});
+document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
+</script>
+</body>
+</html>
