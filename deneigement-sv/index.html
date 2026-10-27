@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<!--
+════════════════════════════════════════════════════════════════════
+  DÉMO PERSONNALISÉE — préparée pour « Déneigement SV »
+  Basée sur le modèle réutilisable de site de déneigement (Québec).
+  Photos partagées : ../photos/ (dossier commun des démos).
+  Formulaire : DÉMO — aucun envoi réel tant qu'il n'est pas branché.
+  Mode : déneigement résidentiel à Saint-Georges ; tonte de pelouse l'été mentionnée à l'à-propos (pied de page) seulement.
+════════════════════════════════════════════════════════════════════
+-->
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Déneigement SV — Déneigement résidentiel à Saint-Georges</title>
+<meta name="description" content="Déneigement SV — contrats de déneigement résidentiel à Saint-Georges. Passages dès 5 cm, repassage après la charrue, service attentionné.">
+<style>
+:root{
+  --marine:#0b2a4a; --marine2:#071d35; --glace:#7ec8e3; --glace-clair:#e8f3f9;
+  --accent:#ff7a1a; --accent2:#e05e00;
+  --encre:#16303f; --gris:#56707f; --fond:#f5f8fa; --blanc:#ffffff;
+  --sans:"Helvetica Neue",Arial,system-ui,sans-serif;
+  --ombre:0 18px 38px rgba(11,42,74,.13);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--fond);color:var(--encre);font-family:var(--sans);line-height:1.65;font-size:16px;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-weight:800;line-height:1.14;color:var(--marine);letter-spacing:-.01em}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.eyebrow{letter-spacing:.3em;text-transform:uppercase;font-size:.72rem;color:var(--accent2);font-weight:800}
+.btn{display:inline-block;background:var(--accent);color:#fff;padding:14px 32px;border-radius:999px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:.8rem;border:1px solid var(--accent);transition:.3s;cursor:pointer}
+.btn:hover{background:var(--accent2);transform:translateY(-2px);box-shadow:var(--ombre)}
+.btn.ghost{background:transparent;color:var(--marine);border-color:rgba(11,42,74,.35)}
+.btn.ghost:hover{color:#fff;background:var(--marine)}
+/* ---------- NAV ---------- */
+header{position:fixed;inset:0 0 auto 0;z-index:100;transition:.35s;padding:20px 0}
+header.solid{background:rgba(255,255,255,.97);padding:11px 0;box-shadow:0 10px 28px rgba(11,42,74,.14)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-size:1.45rem;font-weight:900;letter-spacing:.02em;color:#fff;transition:.3s}
+.logo span{color:var(--glace)}
+header.solid .logo{color:var(--marine)}
+header.solid .logo span{color:var(--accent2)}
+.nav ul{display:flex;gap:30px;list-style:none;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:#fff;transition:.3s;font-weight:600}
+header.solid .nav ul{color:var(--marine)}
+.nav ul a{opacity:.9;transition:.25s}
+.nav ul a:hover{opacity:1;color:var(--accent)}
+.burger{display:none;background:none;border:0;cursor:pointer;padding:8px}
+.burger i{display:block;width:26px;height:2px;background:currentColor;margin:6px 0}
+header:not(.solid) .burger{color:#fff}
+@media(max-width:900px){
+  .nav ul{position:absolute;top:100%;left:0;right:0;background:#fff;color:var(--marine);flex-direction:column;padding:22px 24px;gap:16px;display:none;box-shadow:var(--ombre)}
+  .nav ul.open{display:flex}
+  .burger{display:block}
+  .nav .btn{display:none}
+}
+/* ---------- HERO ---------- */
+.hero{position:relative;min-height:96vh;display:flex;align-items:center;overflow:hidden;background:var(--marine2)}
+.slides{position:absolute;inset:0}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity 1.6s ease}
+.slide.active{opacity:1}
+.slide img{width:100%;height:100%;object-fit:cover;animation:kenburns 9s ease-out forwards}
+.slide:nth-child(2) img{animation-name:kenburns2}
+@keyframes kenburns{from{transform:scale(1)}to{transform:scale(1.13) translate(-1.5%,1%)}}
+@keyframes kenburns2{from{transform:scale(1.13) translate(1.5%,0)}to{transform:scale(1.02)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,29,53,.9) 0%,rgba(7,29,53,.58) 52%,rgba(7,29,53,.15) 100%),linear-gradient(0deg,rgba(7,29,53,.65),transparent 40%)}
+.hero-content{position:relative;z-index:2;padding:150px 0 110px;max-width:680px;color:#fff}
+.hero-content>*{opacity:0;transform:translateY(34px);animation:rise 1s ease forwards}
+.hero-content>*:nth-child(2){animation-delay:.15s}.hero-content>*:nth-child(3){animation-delay:.3s}
+.hero-content>*:nth-child(4){animation-delay:.45s}.hero-content>*:nth-child(5){animation-delay:.6s}
+@keyframes rise{to{opacity:1;transform:none}}
+.hero .eyebrow{color:var(--glace)}
+.hero .badge{display:inline-block;background:var(--accent);color:#fff;font-size:.78rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:8px 16px;border-radius:999px;margin-bottom:20px}
+.hero h1{color:#fff;font-size:clamp(2.6rem,6vw,4.2rem);margin:0 0 20px}
+.hero h1 em{font-style:normal;color:var(--glace)}
+.hero p{color:#dcecf5;max-width:540px;margin-bottom:32px;font-size:1.06rem}
+.hero-cta{display:flex;gap:16px;flex-wrap:wrap}
+.hero .btn.ghost{color:#fff;border-color:rgba(255,255,255,.5)}
+.hero .btn.ghost:hover{background:#fff;color:var(--marine)}
+.hero-dots{position:absolute;z-index:3;bottom:32px;left:50%;transform:translateX(-50%);display:flex;gap:10px}
+.hero-dots button{width:38px;height:4px;border:0;background:rgba(255,255,255,.35);cursor:pointer;transition:.3s;padding:0}
+.hero-dots button.active{background:var(--glace);width:56px}
+/* ---------- MARQUEE ---------- */
+.marquee{background:var(--marine);color:#fff;overflow:hidden;padding:13px 0}
+.marquee-track{display:flex;width:max-content;animation:marquee 30s linear infinite;font-size:.92rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;white-space:nowrap}
+.marquee-track span{padding:0 26px}
+@keyframes marquee{to{transform:translateX(-50%)}}
+/* ---------- SECTIONS ---------- */
+section{padding:96px 0}
+.sec-head{max-width:680px;margin-bottom:52px}
+.sec-head h2{font-size:clamp(2rem,4vw,2.9rem);margin:14px 0 14px}
+.sec-head p{color:var(--gris)}
+.reveal{opacity:0;transform:translateY(36px);transition:opacity .8s ease,transform .8s ease}
+.reveal.visible{opacity:1;transform:none}
+.reveal.d1{transition-delay:.1s}.reveal.d2{transition-delay:.2s}.reveal.d3{transition-delay:.3s}
+/* services */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+@media(max-width:900px){.grid3{grid-template-columns:1fr}}
+.card{background:var(--blanc);border:1px solid #dce8ef;border-radius:18px;overflow:hidden;transition:transform .35s ease,box-shadow .35s ease}
+.card:hover{transform:translateY(-10px);box-shadow:var(--ombre)}
+.card .ph{height:225px;overflow:hidden}
+.card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.card:hover .ph img{transform:scale(1.09)}
+.card .body{padding:26px}
+.card h3{font-size:1.26rem;margin-bottom:8px}
+.card p{color:var(--gris);font-size:.94rem}
+.card .icone{font-size:2rem;padding:26px 26px 0}
+.card.sans-photo .body{padding-top:6px}
+/* étapes */
+.etapes{background:var(--blanc)}
+.etapes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+@media(max-width:900px){.etapes-grid{grid-template-columns:1fr}}
+.etape{border:1px solid #dce8ef;border-radius:18px;padding:34px 28px;background:var(--fond)}
+.etape .num{font-size:2.6rem;font-weight:900;color:var(--glace);line-height:1}
+.etape h3{margin:14px 0 8px;font-size:1.22rem}
+.etape p{color:var(--gris);font-size:.95rem}
+/* chiffres */
+.stats{background:var(--marine);color:#fff;padding:64px 0}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;text-align:center}
+@media(max-width:800px){.stats .wrap{grid-template-columns:repeat(2,1fr)}}
+.stat b{display:block;font-size:3rem;font-weight:900;color:#fff}
+.stat span{letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;color:#bcd9ea}
+/* forfaits */
+.tarifs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;align-items:stretch}
+@media(max-width:900px){.tarifs-grid{grid-template-columns:1fr}}
+.forfait{background:var(--blanc);border:1px solid #dce8ef;border-radius:18px;padding:38px 30px;text-align:center;transition:.35s}
+.forfait:hover{transform:translateY(-8px);box-shadow:var(--ombre)}
+.forfait.pop{border:2px solid var(--accent);position:relative}
+.forfait.pop::before{content:"Le plus demandé";position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:.68rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:6px 14px;border-radius:999px;white-space:nowrap}
+.forfait h3{letter-spacing:.08em;text-transform:uppercase;font-size:1rem}
+.forfait .montant{font-size:2.8rem;font-weight:900;color:var(--marine);margin:16px 0 4px}
+.forfait p{color:var(--gris)}
+.forfait ul{list-style:none;color:var(--gris);font-size:.93rem;margin:20px 0 28px;display:grid;gap:10px}
+.forfait ul li::before{content:"✓  ";color:var(--accent2);font-weight:800}
+.note-prix{text-align:center;color:var(--gris);font-size:.88rem;margin-top:24px}
+/* zones */
+.zones{background:var(--glace-clair)}
+.zones-list{display:flex;flex-wrap:wrap;gap:14px}
+.zone-chip{background:#fff;border:1px solid #c6dde9;border-radius:999px;padding:12px 22px;font-weight:700;color:var(--marine);box-shadow:0 6px 16px rgba(11,42,74,.06)}
+/* galerie */
+.galerie{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:900px){.galerie{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.galerie{grid-template-columns:1fr}}
+.galerie figure{overflow:hidden;position:relative;height:290px;border-radius:16px;cursor:pointer}
+.galerie img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
+.galerie figure:hover img{transform:scale(1.13)}
+.galerie figcaption{position:absolute;inset:auto 0 0 0;padding:38px 16px 14px;background:linear-gradient(transparent,rgba(7,29,53,.9));color:#fff;font-size:.85rem;opacity:0;transform:translateY(10px);transition:.4s}
+.galerie figure:hover figcaption{opacity:1;transform:none}
+/* temoignages */
+.temoignages{background:var(--glace-clair);text-align:center}
+.carousel{max-width:760px;margin:0 auto;position:relative}
+.t-slide{position:absolute;inset:0;opacity:0;transform:translateY(16px);transition:.7s;pointer-events:none}
+.t-slide.active{opacity:1;transform:none;pointer-events:auto;position:relative}
+.t-slide .stars{color:var(--accent2);letter-spacing:.3em;font-size:1.1rem;margin-bottom:18px}
+.t-slide blockquote{font-size:clamp(1.2rem,2.6vw,1.5rem);font-weight:600;font-style:italic;line-height:1.45;margin-bottom:20px;color:var(--marine)}
+.t-slide cite{font-style:normal;color:var(--gris);font-size:.9rem}
+.t-dots{display:flex;justify-content:center;gap:10px;margin-top:30px}
+.t-dots button{width:11px;height:11px;border-radius:50%;border:1px solid var(--marine);background:transparent;cursor:pointer;padding:0;transition:.3s}
+.t-dots button.active{background:var(--marine);transform:scale(1.25)}
+/* faq */
+.faq{max-width:820px}
+.faq-item{border-bottom:1px solid #d3e2ea}
+.faq-q{width:100%;background:none;border:0;color:var(--marine);text-align:left;padding:22px 4px;font-size:1.05rem;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;gap:16px;align-items:center}
+.faq-q .ic{color:var(--accent2);font-size:1.5rem;transition:.35s;line-height:1}
+.faq-item.open .faq-q .ic{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .45s ease}
+.faq-a p{color:var(--gris);padding:0 4px 22px}
+/* formulaire */
+.resa{background:var(--blanc)}
+.resa-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:56px}
+@media(max-width:900px){.resa-grid{grid-template-columns:1fr}}
+.infos{display:grid;margin-top:22px}
+.infos div{display:flex;justify-content:space-between;gap:18px;padding:13px 0;border-bottom:1px solid #e2ecf1}
+.infos b{color:var(--marine);font-weight:700;text-align:right}
+form{display:grid;gap:16px}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:600px){.f-row{grid-template-columns:1fr}}
+label{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gris);display:block;margin-bottom:7px;font-weight:700}
+input,select,textarea{width:100%;background:var(--fond);border:1px solid #c8d9e2;border-radius:10px;color:var(--encre);padding:13px 14px;font:inherit;font-size:.95rem}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--glace);border-color:transparent}
+.confirm{display:none;background:#eafaf1;border:1px solid #3f9d68;color:#1e5c3a;padding:22px;border-radius:14px;text-align:center;animation:rise .6s ease}
+.confirm.show{display:block}
+.confirm b{font-size:1.25rem;display:block;margin-bottom:6px}
+/* footer */
+footer{padding:56px 0 30px;background:var(--marine2);color:#b9d2e2;font-size:.9rem}
+footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:36px;margin-bottom:36px}
+@media(max-width:800px){footer .cols{grid-template-columns:1fr}}
+footer h4{color:#fff;margin-bottom:12px;font-size:1.05rem}
+.demo{text-align:center;border-top:1px solid rgba(255,255,255,.14);padding-top:22px;font-size:.8rem}
+#toTop{position:fixed;right:22px;bottom:22px;z-index:90;width:48px;height:48px;border-radius:50%;border:0;background:var(--accent);color:#fff;font-size:1.2rem;cursor:pointer;opacity:0;pointer-events:none;transition:.35s;transform:translateY(12px);box-shadow:var(--ombre)}
+#toTop.show{opacity:1;pointer-events:auto;transform:none}
+#toTop:hover{background:var(--accent2)}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.12s!important;scroll-behavior:auto!important}
+  .slide img{animation:none}
+  .marquee-track{animation:none}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<header id="header">
+  <div class="wrap nav">
+    <a class="logo" href="#accueil">Déneigement <span>SV</span></a>
+    <button class="burger" id="burger" aria-label="Ouvrir le menu"><i></i><i></i><i></i></button>
+    <ul id="menu">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#fonctionnement">Fonctionnement</a></li>
+      <li><a href="#forfaits">Forfaits</a></li>
+      <li><a href="#zones">Zones</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a class="btn" href="#soumission">Soumission gratuite</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero" id="accueil">
+  <div class="slides" id="slides">
+    <div class="slide active"><img src="../photos/hero-tracteur.jpg" alt="Tracteur avec souffleuse déneigeant une entrée résidentielle en pleine tempête"></div>
+    <div class="slide"><img src="../photos/entree-deblayee.jpg" alt="Entrée de maison entièrement déblayée après le passage du déneigeur"></div>
+    <div class="slide"><img src="../photos/rue-hiver.jpg" alt="Rue résidentielle de Saint-Georges en plein hiver, maisons enneigées"></div>
+  </div>
+  <div class="wrap hero-content">
+    <span class="badge">Saison 2026-2027 — inscriptions ouvertes</span>
+    <h1>La neige tombe, <em>SV passe.</em></h1>
+    <p>Contrat de déneigement saisonnier à Saint-Georges : entrées résidentielles déneigées avec soin, tempête après tempête. On passe dès 5&nbsp;cm d'accumulation, et on repasse quand la charrue municipale a passé.</p>
+    <div class="hero-cta">
+      <a class="btn" href="#soumission">Demander ma soumission</a>
+      <a class="btn ghost" href="tel:+14183134504">Appeler : 418-313-4504</a>
+    </div>
+  </div>
+  <div class="hero-dots" id="heroDots"></div>
+</div>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true"><div class="marquee-track" id="marqueeTrack">
+  <span>Entrées résidentielles</span><span>•</span><span>Saint-Georges</span><span>•</span><span>Contrat saisonnier</span><span>•</span><span>Passage dès 5 cm</span><span>•</span><span>Repassage après la charrue</span><span>•</span><span>Service attentionné</span><span>•</span>
+</div></div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Nos services</p>
+      <h2>Tout l'hiver, on s'occupe de la neige</h2>
+      <p>Résidentiel à Saint-Georges. Un service attentionné, tempête après tempête : un seul numéro à appeler, tout l'hiver.</p>
+    </div>
+    <div class="grid3">
+      <article class="card reveal">
+        <div class="ph"><img src="../photos/hero-tracteur.jpg" alt="Tracteur avec souffleuse en action dans une entrée résidentielle" loading="lazy"></div>
+        <div class="body">
+          <h3>Entrées résidentielles</h3>
+          <p>Déneigement mécanisé de votre entrée avec tracteur et souffleuse, dès 5&nbsp;cm d'accumulation. Le banc de neige laissé par la charrue municipale est dégagé au repassage.</p>
+        </div>
+      </article>
+      <article class="card reveal d1">
+        <div class="ph"><img src="../photos/entree-deblayee.jpg" alt="Entrée de maison entièrement déblayée après le repassage" loading="lazy"></div>
+        <div class="body">
+          <h3>Repassage après la charrue</h3>
+          <p>Quand la charrue municipale a rempli le bout de votre entrée, on repasse la dégager — sans frais supplémentaires et sans que vous ayez à appeler.</p>
+        </div>
+      </article>
+      <article class="card reveal d2">
+        <div class="ph"><img src="../photos/trottoir.jpg" alt="Trottoir et marches déneigés à la pelle devant une maison" loading="lazy"></div>
+        <div class="body">
+          <h3>Marches et trottoirs</h3>
+          <p>Marches, trottoirs et accès devant la maison finis à la pelle, pour des déplacements sécuritaires dès le pas de la porte.</p>
+        </div>
+      </article>
+      <article class="card sans-photo reveal">
+        <p class="icone" aria-hidden="true">🧂</p>
+        <div class="body">
+          <h3>Déglaçage et sel</h3>
+          <p>Déglaçage des entrées, marches et trottoirs et épandage de sel et d'abrasif après les épisodes de verglas. Moins de risques de chute, pour vous comme pour vos visiteurs.</p>
+        </div>
+      </article>
+      <article class="card sans-photo reveal d1">
+        <p class="icone" aria-hidden="true">📋</p>
+        <div class="body">
+          <h3>Contrat saisonnier</h3>
+          <p>Un seul contrat pour toute la saison, du 1<sup>er</sup> novembre au 15 avril. Nombre de passages illimités selon les accumulations — pas de surprise, pas de frais par visite.</p>
+        </div>
+      </article>
+      <article class="card sans-photo reveal d2">
+        <p class="icone" aria-hidden="true">🤝</p>
+        <div class="body">
+          <h3>Un service d'ici</h3>
+          <p>Une équipe d'ici, des trajets bien rodés à Saint-Georges et le souci du travail bien fait, tempête après tempête.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- FONCTIONNEMENT -->
+<section class="etapes" id="fonctionnement">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Comment ça marche</p>
+      <h2>Réglé en 3 étapes, avant la première tempête</h2>
+    </div>
+    <div class="etapes-grid">
+      <div class="etape reveal">
+        <p class="num">1</p>
+        <h3>Demandez votre soumission</h3>
+        <p>Remplissez le formulaire au bas de la page avec votre adresse. On vérifie que vous êtes dans notre trajet et on vous confirme le prix exact pour votre entrée — sans frais, sans engagement.</p>
+      </div>
+      <div class="etape reveal d1">
+        <p class="num">2</p>
+        <h3>Signez votre contrat de saison</h3>
+        <p>Contrat simple d'une page, payable en deux versements. On installe les balises aux limites de votre entrée avant le début de la saison, pour protéger votre terrain et vos bordures.</p>
+      </div>
+      <div class="etape reveal d2">
+        <p class="num">3</p>
+        <h3>On passe à chaque tempête</h3>
+        <p>Dès 5&nbsp;cm d'accumulation, nos équipes partent, de nuit comme de jour. Premier passage tôt le matin, repassage après la charrue municipale. Vous sortez, c'est déblayé.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHIFFRES -->
+<div class="stats"><div class="wrap">
+  <div class="stat reveal"><b>Saint-Georges</b><span>secteur desservi</span></div>
+  <div class="stat reveal d1"><b>Dès 5 cm</b><span>passage déclenché</span></div>
+  <div class="stat reveal d2"><b>Nov. – avril</b><span>saison complète couverte</span></div>
+  <div class="stat reveal d3"><b><span class="count" data-target="2">0</span></b><span>versements, sans frais par passage</span></div>
+</div></div>
+
+<!-- FORFAITS -->
+<section id="forfaits">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Forfaits saison 2026-2027</p>
+      <h2>Un prix pour tout l'hiver</h2>
+      <p>Contrat du 1<sup>er</sup> novembre au 15 avril, passages illimités selon les accumulations. Prix pour une entrée simple standard — le prix exact est confirmé à la soumission, selon la grandeur de votre entrée.</p>
+    </div>
+    <div class="tarifs-grid">
+      <div class="forfait reveal">
+        <h3>Essentiel</h3>
+        <p class="montant">349&nbsp;$</p>
+        <p>pour la saison complète</p>
+        <ul><li>Déneigement mécanisé de l'entrée</li><li>Passage dès 5 cm d'accumulation</li><li>Repassage après la charrue municipale</li><li>Balises installées et retirées</li></ul>
+        <a class="btn ghost" href="#soumission">Choisir Essentiel</a>
+      </div>
+      <div class="forfait pop reveal d1">
+        <h3>Plus</h3>
+        <p class="montant">449&nbsp;$</p>
+        <p>pour la saison complète</p>
+        <ul><li>Tout le forfait Essentiel</li><li>Marches et trottoir devant la maison à la pelle</li><li>Déglaçage et sel inclus (4 applications)</li><li>Priorité lors des grosses tempêtes</li></ul>
+        <a class="btn" href="#soumission">Choisir Plus</a>
+      </div>
+      <div class="forfait reveal d2">
+        <h3>Premium</h3>
+        <p class="montant">549&nbsp;$</p>
+        <p>pour la saison complète</p>
+        <ul><li>Tout le forfait Plus</li><li>Déglaçage et sel illimités</li><li>Priorité lors des grosses tempêtes</li><li>Un seul interlocuteur, toute la saison</li></ul>
+        <a class="btn ghost" href="#soumission">Choisir Premium</a>
+      </div>
+    </div>
+    <p class="note-prix">Prix d'exemple pour une entrée simple standard, taxes en sus. Payable en deux versements : à la signature et le 15 janvier.</p>
+  </div>
+</section>
+
+<!-- ZONES -->
+<section class="zones" id="zones">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Zones desservies</p>
+      <h2>On passe dans votre secteur</h2>
+      <p>Basés à Saint-Georges : nos trajets couvrent Saint-Georges et les environs. Votre secteur n'est pas dans la liste ? Appelez-nous quand même — les trajets s'ajustent chaque automne.</p>
+    </div>
+    <div class="zones-list reveal" id="zonesList">
+      <span class="zone-chip">Saint-Georges</span>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIE -->
+<section id="galerie">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Galerie</p>
+      <h2>L'hiver, c'est notre terrain de jeu</h2>
+      <p>Survolez une photo pour le détail : entrées déblayées au petit matin, marches finies à la pelle et rues de Saint-Georges en plein hiver.</p>
+    </div>
+    <div class="galerie">
+      <figure class="reveal"><img src="../photos/hero-tracteur.jpg" alt="Tracteur avec souffleuse déneigeant une entrée résidentielle" loading="lazy"><figcaption>Tracteur et souffleuse — déneigement résidentiel</figcaption></figure>
+      <figure class="reveal d1"><img src="../photos/entree-deblayee.jpg" alt="Entrée de maison déblayée après le passage" loading="lazy"><figcaption>Entrée terminée — prête pour le départ du matin</figcaption></figure>
+      
+      <figure class="reveal"><img src="../photos/toit.jpg" alt="Neige accumulée sur un toit de maison en hiver" loading="lazy"><figcaption>Toits — on retire l'accumulation avant les problèmes</figcaption></figure>
+      <figure class="reveal d1"><img src="../photos/trottoir.jpg" alt="Trottoir et marches déneigés à la pelle devant une maison" loading="lazy"><figcaption>Marches et trottoirs — finition à la pelle</figcaption></figure>
+      <figure class="reveal d2"><img src="../photos/rue-hiver.jpg" alt="Rue résidentielle de Saint-Georges sous la neige" loading="lazy"><figcaption>Nos secteurs — Saint-Georges en plein hiver</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- TÉMOIGNAGES -->
+<section class="temoignages" id="temoignages">
+  <div class="wrap">
+    <div class="sec-head reveal" style="margin-inline:auto;text-align:center">
+      <p class="eyebrow">Témoignages</p>
+      <h2>Ce que nos clients racontent</h2>
+    </div>
+    <div class="carousel reveal" id="carousel">
+      <div class="t-slide active">
+        <p class="stars">★★★★★</p>
+        <blockquote>« Première année sans sortir la pelle une seule fois. Ils passent avant que je parte travailler, et quand la charrue a barbouillé mon entrée, ils repassent. Ça vaut chaque dollar. »</blockquote>
+        <cite>Martin L. — client résidentiel, Saint-Georges (témoignage de démonstration)</cite>
+      </div>
+      <div class="t-slide">
+        <p class="stars">★★★★★</p>
+        <blockquote>« Entrée toujours propre quand je pars le matin, et le banc de neige de la charrue est dégagé à mon retour. Service fiable, hiver après hiver. »</blockquote>
+        <cite>Sophie D. — cliente résidentielle, Saint-Georges (témoignage de démonstration)</cite>
+      </div>
+      <div class="t-slide">
+        <p class="stars">★★★★★</p>
+        <blockquote>« Le sel dans les marches, c'est ce qui a convaincu ma mère de rester dans sa maison. Service attentionné, et on obtient toujours une réponse rapide, même en pleine tempête. »</blockquote>
+        <cite>Karine B. — cliente résidentielle, Saint-Georges (témoignage de démonstration)</cite>
+      </div>
+    </div>
+    <div class="t-dots" id="tDots"></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Questions fréquentes</p>
+      <h2>Avant de signer votre contrat</h2>
+    </div>
+    <div class="faq reveal">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Installez-vous des balises dans mon entrée ?<span class="ic">+</span></button>
+        <div class="faq-a"><p>Oui. Avant le début de la saison, on installe des balises aux limites de votre entrée et autour des obstacles (bordures, aménagement, boîte postale). Ça guide nos opérateurs tout l'hiver et ça protège votre terrain. On les retire au printemps, à la fin du contrat.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">À quelle heure passez-vous le matin ?<span class="ic">+</span></button>
+        <div class="faq-a"><p>Nos trajets partent dès que l'accumulation atteint 5 cm, de nuit comme de jour. Lors d'une tempête de nuit, le premier passage vise à dégager les entrées tôt le matin, avant les départs pour le travail. Si la neige continue ou si la charrue municipale passe après nous, on repasse dans la journée pour dégager le banc de neige.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Faites-vous le commercial ?<span class="ic">+</span></button>
+        <div class="faq-a"><p>Non — SV se concentre sur les entrées résidentielles à Saint-Georges. Cette spécialisation nous permet de garder des trajets bien rodés et des passages fiables, tempête après tempête.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Comment fonctionne le paiement ?<span class="ic">+</span></button>
+        <div class="faq-a"><p>Le contrat de saison se paie en deux versements : le premier à la signature, le second le 15 janvier. On accepte les virements Interac et les cartes de crédit. Aucun frais par passage : le prix signé couvre toute la saison, du 1<sup>er</sup> novembre au 15 avril.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Que se passe-t-il si la charrue remplit mon entrée après votre passage ?<span class="ic">+</span></button>
+        <div class="faq-a"><p>C'est prévu au contrat. Quand la charrue municipale a terminé son passage dans votre rue, on repasse dégager le banc de neige compacté au bout de votre entrée — sans frais supplémentaires et sans que vous ayez à appeler.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Puis-je annuler ou transférer mon contrat ?<span class="ic">+</span></button>
+        <div class="faq-a"><p>Vous pouvez annuler avant le 1<sup>er</sup> novembre avec remboursement complet du premier versement. En cours de saison, si vous déménagez dans une zone desservie, le contrat suit votre nouvelle adresse ; sinon, il est transférable au nouvel occupant de la maison.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMULAIRE DE SOUMISSION -->
+<section class="resa" id="soumission">
+  <div class="wrap resa-grid">
+    <div class="reveal">
+      <p class="eyebrow">Soumission gratuite</p>
+      <h2 style="font-size:2.3rem;margin:14px 0 10px">Réservez votre place pour la saison</h2>
+      <p style="color:var(--gris)">Les trajets se remplissent chaque automne — une fois un secteur complet, on ferme les inscriptions pour garder notre qualité de passage. Demandez votre soumission maintenant, on vous confirme le prix exact pour votre entrée.</p>
+      <div class="infos">
+        <div><span>Téléphone</span><b><a href="tel:+14183134504" data-config="telephone">418-313-4504</a></b></div>
+        <div><span>Saison couverte</span><b>1<sup>er</sup> nov. au 15 avril</b></div>
+        <div><span>Déclenchement</span><b>dès 5 cm d'accumulation</b></div>
+        <div><span>Clientèle</span><b>résidentielle</b></div>
+      </div>
+    </div>
+    <div class="reveal d1">
+      <form id="soumForm" novalidate>
+        <div class="f-row">
+          <div><label for="nom">Nom complet</label><input id="nom" name="nom" type="text" required placeholder="Votre nom"></div>
+          <div><label for="tel">Téléphone</label><input id="tel" name="tel" type="tel" required placeholder="Votre numéro"></div>
+        </div>
+        <div class="f-row">
+          <div><label for="adresse">Adresse de la résidence</label><input id="adresse" name="adresse" type="text" required placeholder="123, rue des Érables"></div>
+          <div><label for="ville">Ville</label>
+            <select id="ville" name="ville" required>
+              <option value="">Choisir votre ville…</option>
+              <option>Saint-Georges</option>
+              <option>Autre (à vérifier)</option>
+            </select></div>
+        </div>
+        <div><label for="service">Type de service</label>
+          <select id="service" name="service">
+            <option>Contrat saisonnier — entrée résidentielle</option>
+            <option>Autre demande</option>
+          </select></div>
+        <div><label for="msg">Détails (grandeur de l'entrée, particularités…)</label><textarea id="msg" name="msg" rows="3" placeholder="Entrée double, en pente légère, bordures de pavé…"></textarea></div>
+        <button class="btn" type="submit">Envoyer ma demande de soumission</button>
+        <div class="confirm" id="confirm" role="status"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h4>Déneigement SV</h4>
+        <p>Déneigement résidentiel à Saint-Georges, contrats de saison et passages dès 5 cm. L'été venu, SV offre aussi la tonte de pelouse.</p>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <p><a href="#services">Services</a><br><a href="#forfaits">Forfaits</a><br><a href="#zones">Zones desservies</a><br><a href="#soumission">Soumission gratuite</a></p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Téléphone : <a href="tel:+14183134504" data-config="telephone">418-313-4504</a><br>Saint-Georges</p>
+      </div>
+    </div>
+    <p class="demo">Démo personnalisée préparée pour Déneigement SV — site de présentation : aucun contrat réel n'est traité via cette page et les témoignages affichés sont des exemples de démonstration. © 2026.</p>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="Retour en haut">↑</button>
+
+<script>
+/* ════════════════════════════════════════════════════════════════
+   CONFIG DU CLIENT — pour cloner le site, modifiez ces valeurs :
+   elles sont appliquées automatiquement aux endroits marqués
+   data-config dans la page (téléphone, courriel).
+   Le nom et les zones apparaissent aussi dans le texte de la page :
+   faites un chercher/remplacer pour ceux-là (voir CLONAGE.md).
+   ════════════════════════════════════════════════════════════════ */
+var CONFIG = {
+  nomEntreprise: "Déneigement SV",
+  telephone: "418-313-4504",
+  zones: ["Saint-Georges"],
+  saison: "2026-2027"
+};
+(function(){
+"use strict";
+var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* Application de la CONFIG aux champs data-config */
+document.querySelectorAll("[data-config]").forEach(function(el){
+  var key = el.getAttribute("data-config");
+  if(CONFIG[key]) el.textContent = CONFIG[key];
+});
+
+/* Nav solid + retour en haut */
+var header=document.getElementById("header"), toTop=document.getElementById("toTop");
+function onScroll(){
+  var y=window.scrollY||window.pageYOffset;
+  header.classList.toggle("solid", y>40);
+  toTop.classList.toggle("show", y>500);
+}
+window.addEventListener("scroll", onScroll, {passive:true}); onScroll();
+toTop.addEventListener("click", function(){ window.scrollTo({top:0, behavior: reduce?"auto":"smooth"}); });
+
+/* Menu mobile */
+var burger=document.getElementById("burger"), menu=document.getElementById("menu");
+burger.addEventListener("click", function(){ menu.classList.toggle("open"); });
+menu.addEventListener("click", function(e){ if(e.target.tagName==="A") menu.classList.remove("open"); });
+
+/* Hero slideshow */
+var slides=[].slice.call(document.querySelectorAll("#slides .slide"));
+var dotsBox=document.getElementById("heroDots"), cur=0, timer=null;
+slides.forEach(function(_,i){
+  var b=document.createElement("button");
+  b.setAttribute("aria-label","Photo "+(i+1));
+  if(i===0) b.className="active";
+  b.addEventListener("click", function(){ go(i); restart(); });
+  dotsBox.appendChild(b);
+});
+var dots=[].slice.call(dotsBox.children);
+function go(i){
+  slides[cur].classList.remove("active"); dots[cur].classList.remove("active");
+  cur=i;
+  var img=slides[cur].querySelector("img");
+  img.style.animation="none"; void img.offsetWidth; img.style.animation="";
+  slides[cur].classList.add("active"); dots[cur].classList.add("active");
+}
+function next(){ go((cur+1)%slides.length); }
+function restart(){ if(timer) clearInterval(timer); if(!reduce) timer=setInterval(next, 5200); }
+restart();
+
+/* Marquee : duplication pour boucle infinie */
+var track=document.getElementById("marqueeTrack");
+track.innerHTML += track.innerHTML;
+
+/* Reveal au scroll */
+var revealEls=document.querySelectorAll(".reveal");
+if("IntersectionObserver" in window && !reduce){
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add("visible"); io.unobserve(en.target); } });
+  }, {threshold:.15});
+  revealEls.forEach(function(el){ io.observe(el); });
+}else{
+  revealEls.forEach(function(el){ el.classList.add("visible"); });
+}
+
+/* Compteurs animés (format fr : 3 500) */
+function formatFr(n){
+  return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g," ");
+}
+function animateCount(el){
+  var target=parseFloat(el.getAttribute("data-target"));
+  if(reduce){ el.textContent=formatFr(target); return; }
+  var start=null, dur=1700;
+  function step(ts){
+    if(!start) start=ts;
+    var p=Math.min((ts-start)/dur,1);
+    var eased=1-Math.pow(1-p,3);
+    el.textContent=formatFr(target*eased);
+    if(p<1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+var counters=document.querySelectorAll(".count");
+if("IntersectionObserver" in window){
+  var cio=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ if(en.isIntersecting){ animateCount(en.target); cio.unobserve(en.target); } });
+  }, {threshold:.5});
+  counters.forEach(function(c){ cio.observe(c); });
+}else{ counters.forEach(animateCount); }
+
+/* Carrousel témoignages */
+var tSlides=[].slice.call(document.querySelectorAll("#carousel .t-slide"));
+var tDotsBox=document.getElementById("tDots"), tCur=0, tTimer=null;
+tSlides.forEach(function(_,i){
+  var b=document.createElement("button");
+  b.setAttribute("aria-label","Témoignage "+(i+1));
+  if(i===0) b.className="active";
+  b.addEventListener("click", function(){ tGo(i); tRestart(); });
+  tDotsBox.appendChild(b);
+});
+var tDots=[].slice.call(tDotsBox.children);
+function tGo(i){
+  tSlides[tCur].classList.remove("active"); tDots[tCur].classList.remove("active");
+  tCur=i;
+  tSlides[tCur].classList.add("active"); tDots[tCur].classList.add("active");
+}
+function tRestart(){ if(tTimer) clearInterval(tTimer); if(!reduce) tTimer=setInterval(function(){ tGo((tCur+1)%tSlides.length); }, 5000); }
+tRestart();
+var car=document.getElementById("carousel");
+car.addEventListener("mouseenter", function(){ if(tTimer) clearInterval(tTimer); });
+car.addEventListener("mouseleave", tRestart);
+
+/* FAQ accordéon */
+document.querySelectorAll(".faq-item").forEach(function(item){
+  var q=item.querySelector(".faq-q"), a=item.querySelector(".faq-a");
+  q.addEventListener("click", function(){
+    var open=item.classList.contains("open");
+    document.querySelectorAll(".faq-item.open").forEach(function(o){
+      o.classList.remove("open"); o.querySelector(".faq-a").style.maxHeight=null;
+      o.querySelector(".faq-q").setAttribute("aria-expanded","false");
+    });
+    if(!open){ item.classList.add("open"); a.style.maxHeight=a.scrollHeight+"px"; q.setAttribute("aria-expanded","true"); }
+  });
+});
+
+/* Formulaire de soumission : confirmation animée, aucun envoi réel (démo) */
+document.getElementById("soumForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  var nom=document.getElementById("nom").value.trim();
+  var tel=document.getElementById("tel").value.trim();
+  var adresse=document.getElementById("adresse").value.trim();
+  var ville=document.getElementById("ville").value;
+  var service=document.getElementById("service").value;
+  var conf=document.getElementById("confirm");
+  if(!nom || !tel || !adresse || !ville){
+    conf.className="confirm show";
+    conf.style.background="#fdf0ec"; conf.style.borderColor="#c96a4a"; conf.style.color="#7c3a22";
+    conf.innerHTML="<b>Il manque un détail</b>Merci de remplir votre nom, votre téléphone, votre adresse et votre ville.";
+    conf.scrollIntoView({behavior: reduce?"auto":"smooth", block:"center"});
+    return;
+  }
+  conf.style.background=""; conf.style.borderColor=""; conf.style.color="";
+  conf.className="confirm show";
+  conf.innerHTML="<b>Demande reçue, "+nom.split(" ")[0]+" !</b>"+
+    service+" — "+adresse+", "+ville+".<br>On vérifie votre adresse dans nos trajets et on vous confirme votre prix exact sous 24 h ouvrables. (Démo : aucun envoi réel.)";
+  conf.scrollIntoView({behavior: reduce?"auto":"smooth", block:"center"});
+});
+})();
+</script>
+</body>
+</html>
