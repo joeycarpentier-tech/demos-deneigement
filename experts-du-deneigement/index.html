@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Experts du déneigement 24H — Déneigement résidentiel et commercial, Montréal, Laval, Longueuil, Repentigny et Charlemagne</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--nuit:#060d1d;--glace:#0b1a33;--carte:#0e2142;--bleu:#2f7fe0;--cyan:#7fd4ff;--txt:#e9f2fc;--mut:#9db8d6;--ligne:rgba(127,212,255,.16)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--nuit);color:var(--txt);font-family:'Barlow',Arial,sans-serif;line-height:1.55;overflow-x:hidden}
+h1,h2,h3,.cond{font-family:'Barlow Condensed','Arial Narrow',sans-serif;text-transform:uppercase;letter-spacing:.01em}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+a{color:inherit}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.rv.on{opacity:1;transform:none}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}
+/* barre supérieure */
+header{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(6,13,29,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--ligne)}
+.hd{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 22px;max-width:1180px;margin:0 auto}
+.logo{font-family:'Barlow Condensed';font-weight:800;font-size:1.45rem;line-height:.95;text-transform:uppercase}
+.logo span{color:var(--cyan)}
+.logo-wrap{display:flex;align-items:center;gap:14px}
+.logo-panel{background:#fff;border-radius:10px;padding:6px 12px;display:flex;align-items:center;box-shadow:0 2px 14px rgba(0,0,0,.35)}
+.logo-panel img{height:54px;width:auto;display:block}
+.logo-panel.ft img{height:46px}
+nav{display:flex;gap:26px;font-weight:600;font-size:.95rem}
+nav a{text-decoration:none;color:var(--mut)}nav a:hover{color:#fff}
+.btn{display:inline-block;background:var(--bleu);color:#fff;text-decoration:none;font-weight:700;padding:13px 26px;border-radius:4px;text-transform:uppercase;letter-spacing:.06em;font-size:.92rem;transition:.25s}
+.btn:hover{background:#4a93ec;transform:translateY(-2px)}
+.btn.ghost{background:transparent;border:2px solid var(--cyan);color:var(--cyan)}
+.btn.ghost:hover{background:rgba(127,212,255,.12)}
+.hd .btn{padding:10px 20px}
+/* héros plein écran */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;position:relative;background:url('photos/hero-tracteur.jpg') center/cover no-repeat}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,13,29,.45) 0%,rgba(6,13,29,.25) 40%,rgba(6,13,29,.94) 88%)}
+.hero-in{position:relative;padding:150px 0 0}
+.kicker{display:inline-block;background:var(--bleu);color:#fff;font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.8rem;padding:7px 14px;border-radius:3px;margin-bottom:20px}
+.hero h1{font-size:clamp(3rem,8.5vw,6.4rem);font-weight:800;line-height:.94;max-width:900px}
+.hero h1 em{font-style:normal;color:var(--cyan)}
+.hero p{max-width:640px;color:#d7e6f7;font-size:1.13rem;margin:22px 0 30px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:44px}
+.ticker{position:relative;border-top:1px solid var(--ligne);background:rgba(6,13,29,.75);overflow:hidden;white-space:nowrap}
+.ticker-in{display:inline-block;padding:12px 0;font-family:'Barlow Condensed';font-size:1.15rem;text-transform:uppercase;letter-spacing:.08em;color:var(--cyan);animation:defile 30s linear infinite}
+@keyframes defile{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+/* sections */
+section{padding:88px 0}
+.sec-tag{color:var(--cyan);font-weight:700;text-transform:uppercase;letter-spacing:.18em;font-size:.82rem;margin-bottom:10px}
+h2{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:700;line-height:1.02;margin-bottom:14px}
+.lead{color:var(--mut);max-width:680px;font-size:1.06rem}
+/* cartes de services horizontales */
+.svc{display:grid;grid-template-columns:78px 1fr;gap:8px 22px;background:var(--carte);border:1px solid var(--ligne);border-left:5px solid var(--bleu);padding:26px 28px;margin-top:16px;border-radius:6px;transition:.3s}
+.svc:hover{transform:translateX(8px);border-left-color:var(--cyan);background:#11294f}
+.svc .num{font-family:'Barlow Condensed';font-size:2.6rem;font-weight:800;color:rgba(127,212,255,.4);line-height:1}
+.svc h3{font-size:1.55rem;font-weight:700;margin-bottom:6px}
+.svc p{color:var(--mut)}
+/* étapes */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+.step{background:var(--glace);border:1px solid var(--ligne);padding:30px 26px;border-radius:6px}
+.step b{font-family:'Barlow Condensed';font-size:3.4rem;font-weight:800;color:var(--cyan);display:block;line-height:1}
+.step h3{font-size:1.4rem;margin:10px 0 8px}
+.step p{color:var(--mut);font-size:.98rem}
+/* compteurs */
+.stats{background:linear-gradient(90deg,#0a2a5e,#0e2142);border-block:1px solid var(--ligne)}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:52px 22px;text-align:center}
+.stat b{font-family:'Barlow Condensed';font-size:clamp(2.4rem,5vw,3.8rem);font-weight:800;color:#fff;display:block;line-height:1}
+.stat span{color:var(--cyan);text-transform:uppercase;letter-spacing:.1em;font-size:.85rem;font-weight:600}
+/* forfaits */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+.plan{background:var(--carte);border:1px solid var(--ligne);border-radius:8px;padding:32px 28px;display:flex;flex-direction:column;transition:.3s}
+.plan:hover{transform:translateY(-6px)}
+.plan.pop{border:2px solid var(--cyan);background:#12305e}
+.plan h3{font-size:1.7rem;font-weight:700}
+.prix{font-family:'Barlow Condensed';font-size:3.2rem;font-weight:800;color:#fff;line-height:1.05}
+.prix small{font-size:1rem;color:var(--mut);font-family:'Barlow';text-transform:none;letter-spacing:0}
+.apartir{display:block;color:var(--cyan);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.8rem;margin-bottom:4px}
+.plan ul{list-style:none;margin:18px 0 24px;flex:1}
+.plan li{padding:7px 0 7px 24px;position:relative;color:#cfdff2;font-size:.97rem}
+.plan li::before{content:"▸";position:absolute;left:2px;color:var(--cyan);font-weight:700}
+.note{color:var(--mut);font-size:.9rem;margin-top:18px}
+/* CTA géante */
+.cta-band{background:var(--bleu);padding:64px 0;text-align:center}
+.cta-band .big{font-family:'Barlow Condensed';font-size:clamp(2.2rem,6vw,4.2rem);font-weight:800;text-transform:uppercase;line-height:1;color:#fff}
+.cta-band a.tel{display:inline-block;margin-top:16px;font-family:'Barlow Condensed';font-size:clamp(2.4rem,7vw,5rem);font-weight:800;color:#fff;text-decoration:none;border-bottom:5px solid rgba(255,255,255,.5);line-height:1.05;transition:.25s}
+.cta-band a.tel:hover{border-color:#fff;transform:scale(1.02)}
+/* zones */
+.zones{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.zone{border:1px solid var(--ligne);background:var(--glace);padding:14px 22px;border-radius:99px;font-weight:600}
+.zone b{color:var(--cyan)}
+/* galerie */
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+.gal figure{position:relative;border-radius:6px;overflow:hidden;aspect-ratio:4/3}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.gal figure:hover img{transform:scale(1.08)}
+.gal figcaption{position:absolute;inset:auto 0 0 0;padding:26px 14px 10px;background:linear-gradient(transparent,rgba(6,13,29,.9));font-size:.88rem;font-weight:600}
+/* FAQ */
+.faq{max-width:820px;margin-top:26px}
+.faq details{border:1px solid var(--ligne);border-radius:6px;margin-bottom:10px;background:var(--glace)}
+.faq summary{cursor:pointer;padding:18px 22px;font-weight:700;list-style:none;font-size:1.02rem}
+.faq summary::-webkit-details-marker{display:none}
+.faq details p{padding:0 22px 18px;color:var(--mut)}
+/* formulaire */
+.form-sec{background:var(--glace);border-top:1px solid var(--ligne)}
+.form-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:44px}
+.coord div{margin-bottom:20px}
+.coord b{font-family:'Barlow Condensed';text-transform:uppercase;letter-spacing:.08em;color:var(--cyan);display:block;font-size:1rem}
+.coord span{font-size:1.3rem;font-weight:700}
+form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+form label{font-size:.88rem;font-weight:600;color:var(--mut);display:block}
+form input,form select,form textarea{width:100%;margin-top:6px;background:var(--nuit);border:1px solid var(--ligne);border-radius:4px;color:#fff;padding:12px;font:inherit}
+form .plein{grid-column:1/-1}
+form button{grid-column:1/-1;cursor:pointer;border:none}
+footer{border-top:1px solid var(--ligne);padding:44px 0 30px;color:var(--mut);font-size:.92rem}
+footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px;margin-bottom:26px}
+footer h4{color:#fff;font-family:'Barlow Condensed';text-transform:uppercase;font-size:1.15rem;margin-bottom:10px}
+footer a{text-decoration:none}footer a:hover{color:var(--cyan)}
+.legal{border-top:1px solid var(--ligne);padding-top:18px;font-size:.82rem}
+@media(max-width:860px){nav{display:none}.steps,.plans,.gal{grid-template-columns:1fr}.stats .wrap{grid-template-columns:1fr 1fr}.form-grid,footer .cols{grid-template-columns:1fr}form{grid-template-columns:1fr}.hero h1{font-size:3rem}}
+</style>
+</head>
+<body>
+<header><div class="hd">
+  <div class="logo-wrap"><span class="logo-panel"><img src="logo-experts.webp" alt="Logo Experts du déneigement"></span><div class="logo">Experts du<br><span>déneigement 24H</span></div></div>
+  <nav><a href="#services">Services</a><a href="#fonctionnement">Fonctionnement</a><a href="#forfaits">Forfaits</a><a href="#zones">Zones</a><a href="#faq">FAQ</a></nav>
+  <a class="btn" href="#soumission">Soumission gratuite</a>
+</div></header>
+
+<div class="hero"><div class="hero-in wrap">
+  <span class="kicker">Saison 2026-2027 — inscriptions ouvertes · Service 24 h</span>
+  <h1>Votre entrée déblayée, <em>avant même votre réveil.</em></h1>
+  <p>Les inscriptions pour la saison sont ouvertes. Contrat de déneigement saisonnier résidentiel et commercial sur toute l'île de Montréal, à Laval, Longueuil, Repentigny et Charlemagne, avec service 24 h, 7 jours sur 7 : on passe à chaque tempête, dès 2 cm ou 5 cm d'accumulation, et on repasse quand la charrue municipale a passé. Vous, vous partez travailler sans pelleter.</p>
+  <div class="hero-cta"><a class="btn" href="#soumission">Demander ma soumission</a><a class="btn ghost" href="tel:5144633197">Appeler : 514-463-3197</a></div>
+</div>
+<div class="ticker"><div class="ticker-in">Entrées résidentielles ✦ Déneigement de toits ✦ Service 24 h ✦ Sel et déglaçage ✦ Contrat saisonnier ✦ Passage dès 2 cm ou 5 cm ✦ Entrées résidentielles ✦ Déneigement de toits ✦ Service 24 h ✦ Sel et déglaçage ✦ Contrat saisonnier ✦ Passage dès 2 cm ou 5 cm ✦&nbsp;</div></div>
+</div>
+
+<section id="services"><div class="wrap">
+  <p class="sec-tag rv">Nos services</p>
+  <h2 class="rv">Tout l'hiver, on s'occupe de la neige</h2>
+  <p class="lead rv">Déneigement résidentiel et commercial sur toute l'île de Montréal, à Laval, Longueuil, Repentigny et Charlemagne, et un service 24 h, 7 jours sur 7 : un seul numéro à appeler quand ça tombe, jour et nuit. Forts de 15 ans d'expérience, on dessert plus de 280 clients.</p>
+  <div class="svc rv"><div class="num">01</div><div><h3>Entrées résidentielles</h3><p>Déneigement mécanisé de votre entrée avec tracteur et souffleuse, dès 2 cm ou 5 cm d'accumulation. Le banc de neige laissé par la charrue municipale est dégagé au repassage.</p></div></div>
+  <div class="svc rv"><div class="num">02</div><div><h3>Marches, trottoirs et balcons à la main</h3><p>Le tracteur ne passe pas partout : nos équipes finissent le travail à la pelle — marches, escaliers, trottoirs et balcons, jusqu'à votre porte.</p></div></div>
+  <div class="svc rv"><div class="num">03</div><div><h3>Service 24 h</h3><p>Tempête en pleine nuit ou verglas un dimanche : on répond présent, 24 h sur 24, 7 jours sur 7. Un seul numéro à appeler, en tout temps — on s'occupe de votre entrée.</p></div></div>
+  <div class="svc rv"><div class="num">04</div><div><h3>Sel et déglaçage — inclus</h3><p>Épandage de sel et déglaçage des entrées, marches et trottoirs : c'est inclus dans tous nos forfaits saisonniers, sans frais supplémentaires. Moins de risques de chute, pour vous comme pour vos visiteurs.</p></div></div>
+  <div class="svc rv"><div class="num">05</div><div><h3>Déneigement commercial</h3><p>Stationnements, commerces et immeubles : déneigement mécanisé et déglaçage, avec le même service 24 h, 7 jours sur 7, pour que vos clients et vos employés circulent en sécurité.</p></div></div>
+  <div class="svc rv"><div class="num">06</div><div><h3>Nettoyage du dessus de tempo</h3><p>On enlève la neige accumulée sur votre abri tempo avant qu'elle l'endommage. Avec un forfait avec tempo, 3 nettoyages sont inclus pendant la saison.</p></div></div>
+  <div class="svc rv"><div class="num">07</div><div><h3>Déneigement de toit de maison</h3><p>Service à part, offert à la demande : enlèvement sécuritaire de la neige accumulée sur les toits plats et en pente, avant qu'elle devienne un risque pour la structure et les infiltrations. À partir de 575 $ — voir la section forfaits.</p></div></div>
+  <div class="svc rv"><div class="num">08</div><div><h3>Contrat saisonnier</h3><p>Un seul contrat pour toute la saison, du 1<sup>er</sup> novembre au 15 avril. Nombre de passages illimité selon les accumulations — pas de surprise, pas de frais par visite.</p></div></div>
+</div></section>
+
+<section id="fonctionnement" style="padding-top:0"><div class="wrap">
+  <p class="sec-tag rv">Comment ça marche</p>
+  <h2 class="rv">Réglé en 3 étapes, avant la première tempête</h2>
+  <div class="steps">
+    <div class="step rv"><b>1</b><h3>Demandez votre soumission</h3><p>Remplissez le formulaire au bas de la page avec votre adresse. On vérifie que vous êtes dans notre trajet et on vous confirme le prix exact pour votre entrée — sans frais, sans engagement.</p></div>
+    <div class="step rv d1"><b>2</b><h3>Signez votre contrat de saison</h3><p>Contrat simple d'une page, payable en deux versements. On installe les balises aux limites de votre entrée avant le début de la saison, pour protéger votre terrain et vos bordures.</p></div>
+    <div class="step rv d2"><b>3</b><h3>On passe à chaque tempête</h3><p>Dès 2 cm ou 5 cm d'accumulation, nos tracteurs partent, de nuit comme de jour. Premier passage tôt le matin, repassage après la charrue municipale. Vous sortez, c'est déblayé.</p></div>
+  </div>
+</div></section>
+
+<div class="stats"><div class="wrap">
+  <div class="stat rv"><b><span class="count" data-target="280">0</span>+</b><span>clients desservis</span></div>
+  <div class="stat rv d1"><b><span class="count" data-target="15">0</span> ans</b><span>d'expérience</span></div>
+  <div class="stat rv d2"><b>24 h / 7 j</b><span>service et urgence</span></div>
+  <div class="stat rv d3"><b><span class="count" data-target="5">0</span></b><span>villes et secteurs desservis</span></div>
+</div></div>
+
+<section id="forfaits"><div class="wrap">
+  <p class="sec-tag rv">Forfaits saison 2026-2027</p>
+  <h2 class="rv">Un prix pour tout l'hiver</h2>
+  <p class="lead rv">Contrat du 1<sup>er</sup> novembre au 15 avril, passages illimités selon les accumulations. Prix pour une entrée simple standard — le prix exact est confirmé à la soumission, selon la grandeur de votre entrée.</p>
+  <div class="plans">
+    <div class="plan rv"><h3>Stationnement principal</h3><span class="apartir">À partir de</span><div class="prix">480 $</div><small style="color:var(--mut)">pour la saison complète</small><ul><li>Entrée résidentielle déneigée au tracteur ou à la souffleuse</li><li>Escalier et balcon déneigés à la main</li><li>Stationnement principal inclus</li><li>Déglaçage inclus</li><li>Passage dès 2 cm ou 5 cm d'accumulation</li><li>Repassage après la charrue municipale</li></ul><a class="btn ghost" href="#soumission">Choisir ce forfait</a></div>
+    <div class="plan pop rv d1"><h3>Deux stationnements</h3><span class="apartir">À partir de</span><div class="prix">600 $</div><small style="color:var(--mut)">pour la saison complète</small><ul><li>Entrée résidentielle déneigée au tracteur ou à la souffleuse</li><li>Escalier et balcon déneigés à la main</li><li>2 stationnements inclus</li><li>Déglaçage inclus</li><li>Passage dès 2 cm ou 5 cm d'accumulation</li><li>Repassage après la charrue municipale</li></ul><a class="btn" href="#soumission">Choisir ce forfait</a></div>
+    <div class="plan rv d2"><h3>Avec tempo</h3><span class="apartir">À partir de</span><div class="prix">450 $</div><small style="color:var(--mut)">pour la saison complète</small><ul><li>Entrée résidentielle déneigée au tracteur ou à la souffleuse</li><li>Escalier et balcon déneigés à la main</li><li>Ouverture devant le tempo — véhicule stationné dans la rue</li><li>3 nettoyages du dessus du tempo inclus</li><li>Déglaçage inclus</li><li>Version double : à partir de 575 $</li></ul><a class="btn ghost" href="#soumission">Choisir ce forfait</a></div>
+  </div>
+  <div class="svc rv" style="margin-top:18px"><div class="num">+</div><div><h3>Déneigement de toit de maison — à partir de 575 $</h3><p>Service distinct, offert à la demande pendant la saison — ce n'est pas un forfait saisonnier. On retire la neige accumulée sur votre toit avant qu'elle cause des dommages ou des infiltrations.</p></div></div>
+  <p class="note rv">Tous les prix sont affichés « à partir de » : le prix exact est confirmé à la soumission, selon la grandeur de votre entrée. Le déglaçage est inclus dans tous les forfaits. Paiement accepté : comptant ou virement Interac.</p>
+</div></section>
+
+<div class="cta-band rv"><div class="wrap">
+  <div class="big">Une tempête s'en vient ? On est déjà prêts.</div>
+  <a class="tel" href="tel:5144633197">514-463-3197</a>
+</div></div>
+
+<section id="zones"><div class="wrap">
+  <p class="sec-tag rv">Zones desservies</p>
+  <h2 class="rv">On passe dans votre secteur</h2>
+  <p class="lead rv">Compagnie de Montréal : nos trajets couvrent toute l'île de Montréal, et on se déplace aussi à Charlemagne, Repentigny, Laval et Longueuil. Votre secteur n'est pas dans la liste ? Appelez-nous quand même — les trajets s'ajustent chaque automne.</p>
+  <div class="zones rv"><span class="zone"><b>●</b> Île de Montréal — tous les secteurs</span><span class="zone"><b>●</b> Charlemagne</span><span class="zone"><b>●</b> Repentigny</span><span class="zone"><b>●</b> Laval</span><span class="zone"><b>●</b> Longueuil</span></div>
+  <div class="gal">
+    <figure class="rv"><img src="photos/hero-tracteur.jpg" alt="Tracteur et souffleuse"><figcaption>Tracteur et souffleuse — déneigement résidentiel</figcaption></figure>
+    <figure class="rv d1"><img src="photos/entree-deblayee.jpg" alt="Entrée déblayée"><figcaption>Entrée terminée — prête pour le départ du matin</figcaption></figure>
+    <figure class="rv d2"><img src="photos/commercial.jpg" alt="Service de nuit"><figcaption>Service 24 h — on passe aussi la nuit</figcaption></figure>
+    <figure class="rv"><img src="photos/toit.jpg" alt="Déneigement de toit"><figcaption>Toits — on retire l'accumulation avant les problèmes</figcaption></figure>
+    <figure class="rv d1"><img src="photos/trottoir.jpg" alt="Marches et trottoirs"><figcaption>Marches et trottoirs — finition à la pelle</figcaption></figure>
+    <figure class="rv d2"><img src="photos/rue-hiver.jpg" alt="Montréal en hiver"><figcaption>Nos secteurs — Montréal en plein hiver</figcaption></figure>
+  </div>
+</div></section>
+
+<section id="faq" style="padding-top:0"><div class="wrap">
+  <p class="sec-tag rv">Questions fréquentes</p>
+  <h2 class="rv">Avant de signer votre contrat</h2>
+  <div class="faq">
+    <details class="rv"><summary>Installez-vous des balises dans mon entrée ?</summary><p>Oui. Avant le début de la saison, on installe des balises aux limites de votre entrée et autour des obstacles (bordures, aménagement, boîte postale). Ça guide nos opérateurs tout l'hiver et ça protège votre terrain. On les retire au printemps, à la fin du contrat.</p></details>
+    <details class="rv"><summary>À quelle heure passez-vous le matin ?</summary><p>Nos trajets partent dès que l'accumulation atteint 2 cm ou 5 cm, de nuit comme de jour. Lors d'une tempête de nuit, le premier passage vise à dégager les entrées tôt le matin, avant les départs pour le travail. Si la neige continue ou si la charrue municipale passe après nous, on repasse dans la journée pour dégager le banc de neige.</p></details>
+    <details class="rv"><summary>Comment fonctionne le paiement ?</summary><p>On accepte le comptant et les virements Interac. Aucun frais par passage : le prix signé couvre toute la saison, du 1<sup>er</sup> novembre au 15 avril.</p></details>
+    <details class="rv"><summary>Que se passe-t-il si la charrue remplit mon entrée après votre passage ?</summary><p>C'est prévu au contrat. Quand la charrue municipale a terminé son passage dans votre rue, on repasse dégager le banc de neige compacté au bout de votre entrée — sans frais supplémentaires et sans que vous ayez à appeler.</p></details>
+    <details class="rv"><summary>Puis-je annuler ou transférer mon contrat ?</summary><p>Vous pouvez annuler avant le 1<sup>er</sup> novembre avec remboursement complet du premier versement. En cours de saison, si vous déménagez dans une zone desservie, le contrat suit votre nouvelle adresse ; sinon, il est transférable au nouvel occupant de la maison.</p></details>
+  </div>
+</div></section>
+
+<section class="form-sec" id="soumission"><div class="wrap">
+  <p class="sec-tag rv">Soumission gratuite</p>
+  <h2 class="rv">Réservez votre place pour la saison</h2>
+  <p class="lead rv" style="margin-bottom:34px">Les trajets se remplissent chaque automne — une fois un secteur complet, on ferme les inscriptions pour garder notre qualité de passage. Demandez votre soumission maintenant, on vous confirme le prix exact pour votre entrée.</p>
+  <div class="form-grid">
+    <div class="coord rv">
+      <div><b>Téléphone</b><span>514-463-3197</span></div>
+      <div><b>Courriel</b><span style="font-size:1.05rem"><a href="mailto:Sebastienlacombe7@gmail.com">Sebastienlacombe7@gmail.com</a></span></div>
+      <div><b>Disponibilité</b><span>24 h, 7 jours sur 7</span></div>
+      <div><b>Saison couverte</b><span>1<sup>er</sup> nov. au 15 avril</span></div>
+      <div><b>Déclenchement</b><span>dès 2 cm ou 5 cm d'accumulation</span></div>
+    </div>
+    <form class="rv d1" onsubmit="return false">
+      <label>Nom complet<input type="text" name="nom"></label>
+      <label>Téléphone<input type="tel" name="tel"></label>
+      <label class="plein">Adresse de la résidence<input type="text" name="adresse"></label>
+      <label>Ville<select name="ville"><option>Choisir votre ville…</option><option>Montréal (île de Montréal)</option><option>Charlemagne</option><option>Repentigny</option><option>Laval</option><option>Longueuil</option><option>Autre (à vérifier)</option></select></label>
+      <label>Type de service<select name="service"><option>Contrat saisonnier — entrée résidentielle</option><option>Contrat saisonnier — résidentiel + marches/trottoir</option><option>Déneigement commercial</option><option>Déneigement de toit de maison (service à part)</option><option>Nettoyage du dessus de tempo</option><option>Sel et déglaçage seulement</option></select></label>
+      <label class="plein">Détails (grandeur de l'entrée, particularités…)<textarea name="details" rows="3"></textarea></label>
+      <button class="btn" type="submit">Envoyer ma demande de soumission</button>
+    </form>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="cols">
+    <div><span class="logo-panel ft" style="margin-bottom:14px"><img src="logo-experts.webp" alt="Logo Experts du déneigement"></span><h4>Experts du déneigement 24H</h4><p>Déneigement résidentiel et commercial sur toute l'île de Montréal, à Charlemagne, Repentigny, Laval et Longueuil. 15 ans d'expérience, plus de 280 clients desservis. Service 24 h, 7 jours sur 7, contrats de saison, passage dès 2 cm ou 5 cm, repassage après la charrue municipale.</p></div>
+    <div><h4>Navigation</h4><p><a href="#services">Services</a><br><a href="#forfaits">Forfaits</a><br><a href="#zones">Zones desservies</a><br><a href="#soumission">Soumission gratuite</a></p></div>
+    <div><h4>Contact</h4><p>Téléphone : 514-463-3197<br>Courriel : <a href="mailto:Sebastienlacombe7@gmail.com">Sebastienlacombe7@gmail.com</a><br>Service à domicile — aucun local<br>Île de Montréal, Charlemagne, Repentigny, Laval et Longueuil</p></div>
+  </div>
+  <p class="legal">© 2026 Experts du déneigement 24H — Tous droits réservés.</p>
+</div></footer>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+const cio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,t=+el.dataset.target,s=performance.now();(function tick(n){const p=Math.min((n-s)/1600,1);el.textContent=Math.round(t*(1-Math.pow(1-p,3))).toLocaleString('fr-CA');if(p<1)requestAnimationFrame(tick)})(s);cio.unobserve(el)}),{threshold:.4});
+document.querySelectorAll('.count').forEach(el=>cio.observe(el));
+</script>
+</body>
+</html>
