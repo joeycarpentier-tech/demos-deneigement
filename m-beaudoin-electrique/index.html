@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>M Beaudoin Électrique inc. — MBE Pro | Électricien à Saint-Basile-le-Grand</title>
+<meta name="description" content="Entreprise familiale depuis 2002. Résidentiel, commercial, multilogement et bornes de recharge sur la Rive-Sud, à Montréal et en Montérégie. Licence RBQ 8280-1499.">
+<style>
+:root{
+  --navy:#12304f; --navy2:#1b456e; --copper:#c07a2c; --copper2:#e09a3e; --amber:#f2b544;
+  --bg:#fdf9f3; --bg2:#f7efe2; --card:#ffffff; --ink:#22303c; --muted:#5d6b76; --line:#eadfce;
+  --radius:18px; --shadow:0 10px 30px rgba(18,48,79,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+img{max-width:100%;display:block}
+a{color:var(--navy2);text-decoration:none}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;color:var(--navy);line-height:1.2}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+section{padding:76px 0}
+.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;font-weight:700;color:var(--copper);margin-bottom:10px}
+.lead{color:var(--muted);font-size:1.08rem;max-width:720px}
+.btn{display:inline-block;background:var(--copper);color:#fff;font-weight:700;padding:14px 28px;border-radius:999px;border:none;cursor:pointer;font-size:1rem;transition:.2s;box-shadow:0 6px 18px rgba(192,122,44,.35)}
+.btn:hover{background:#a5661f;transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--navy);border:2px solid var(--navy);box-shadow:none}
+.btn.ghost:hover{background:var(--navy);color:#fff}
+/* Nav */
+header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(253,249,243,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 20px;max-width:1280px;margin:0 auto}
+.logo{font-family:Georgia,serif;font-weight:700;font-size:1.35rem;color:var(--navy)}
+.logo span{color:var(--copper)}
+.logo small{display:block;font-family:inherit;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+nav.links{display:flex;gap:20px;flex-wrap:wrap}
+nav.links a{color:var(--ink);font-weight:600;font-size:.94rem}
+nav.links a:hover{color:var(--copper)}
+.nav .btn{padding:10px 20px;font-size:.92rem}
+.burger{display:none;background:none;border:none;font-size:1.6rem;cursor:pointer;color:var(--navy)}
+/* Hero */
+.hero{padding:150px 0 70px;background:linear-gradient(180deg,var(--bg2),var(--bg))}
+.hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:44px;align-items:center}
+.hero h1{font-size:2.7rem;margin-bottom:18px}
+.hero h1 em{color:var(--copper);font-style:normal}
+.hero p{color:var(--muted);font-size:1.12rem;margin-bottom:26px;max-width:540px}
+.hero-img{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.hero-img img{height:420px;width:100%;object-fit:cover}
+.badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-weight:700;color:var(--navy);box-shadow:var(--shadow);margin-bottom:20px;font-size:.95rem}
+.stars{color:var(--amber);letter-spacing:2px}
+.hero-meta{display:flex;gap:18px;flex-wrap:wrap;margin-top:22px;color:var(--muted);font-size:.92rem;font-weight:600}
+/* Reviews */
+.reviews{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:52px 0}
+.reviews-grid{display:grid;grid-template-columns:auto 1fr auto;gap:36px;align-items:center}
+.big-note{font-size:4.2rem;font-weight:800;color:var(--navy);line-height:1;font-family:Georgia,serif}
+.reviews .stars{font-size:1.5rem}
+/* Counters */
+.counters{background:var(--navy);color:#fff;padding:56px 0}
+.counters-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
+.counter-num{font-size:2.6rem;font-weight:800;color:var(--amber);font-family:Georgia,serif}
+.counter-lbl{opacity:.85;font-size:.95rem}
+/* Cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:.25s}
+.card:hover{transform:translateY(-5px)}
+.card img{height:190px;width:100%;object-fit:cover}
+.card-body{padding:24px}
+.card-body h3{margin-bottom:8px;font-size:1.3rem}
+.card-body p{color:var(--muted);margin-bottom:16px}
+.card-body a{font-weight:700;color:var(--copper)}
+/* Steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:36px}
+.step{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+.step-num{width:44px;height:44px;border-radius:50%;background:var(--copper);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:1.15rem;margin-bottom:14px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+.split img{border-radius:var(--radius);box-shadow:var(--shadow);height:380px;width:100%;object-fit:cover}
+ul.check{list-style:none;margin-top:18px}
+ul.check li{padding:7px 0 7px 30px;position:relative;color:var(--muted)}
+ul.check li::before{content:"✓";position:absolute;left:0;color:var(--copper);font-weight:800}
+.note-box{background:var(--bg2);border-left:4px solid var(--copper);border-radius:10px;padding:18px 22px;margin-top:26px;color:var(--muted)}
+/* Partners */
+.partners{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:40px 0}
+.partner-row{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:18px}
+.partner{border:1px solid var(--line);border-radius:999px;padding:10px 22px;font-weight:700;color:var(--navy);background:var(--bg);font-size:.98rem}
+/* Gallery */
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin:30px 0 26px}
+.filter-btn{border:2px solid var(--navy);background:transparent;color:var(--navy);border-radius:999px;padding:8px 18px;font-weight:700;cursor:pointer;font-size:.92rem;transition:.2s}
+.filter-btn:hover,.filter-btn.active{background:var(--navy);color:#fff}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.g-item{border-radius:var(--radius);overflow:hidden;position:relative;box-shadow:var(--shadow);cursor:pointer}
+.g-item img{height:230px;width:100%;object-fit:cover;transition:.3s}
+.g-item:hover img{transform:scale(1.05)}
+.g-cap{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(18,48,79,.88));color:#fff;padding:34px 18px 14px;font-weight:700;font-size:.95rem}
+.g-item.hidden{display:none}
+/* Form */
+.soumission-sec{background:linear-gradient(180deg,var(--bg2),#f3e7d0)}
+.form-card{background:#fff;border-radius:24px;box-shadow:0 18px 44px rgba(18,48,79,.16);padding:40px;border:2px solid var(--copper2)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field.full{grid-column:1/-1}
+.field label{font-weight:700;color:var(--navy);font-size:.94rem}
+.field input,.field select,.field textarea{border:1px solid var(--line);border-radius:12px;padding:12px 14px;font:inherit;background:var(--bg);color:var(--ink)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--copper2);border-color:transparent}
+.confirm{display:none;text-align:center;padding:44px 20px}
+.confirm .check-big{width:76px;height:76px;border-radius:50%;background:#e7f4e4;color:#2e7d32;font-size:2.2rem;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;font-weight:800}
+.offices{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:36px}
+.office{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+.office h3{margin-bottom:10px}
+.office p{color:var(--muted)}
+/* Footer */
+footer{background:var(--navy);color:#dbe6f0;padding:52px 0 30px}
+footer h3{color:#fff}
+footer a{color:var(--amber)}
+.foot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-bottom:30px}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.18);padding-top:20px;font-size:.88rem;opacity:.8;text-align:center}
+/* Reveal */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+@media(max-width:960px){
+  .hero-grid,.split{grid-template-columns:1fr}
+  .cards,.gallery{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .counters-grid{grid-template-columns:1fr 1fr}
+  .reviews-grid{grid-template-columns:1fr;text-align:center;justify-items:center}
+  .foot-grid,.offices{grid-template-columns:1fr}
+  nav.links{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:16px 20px;border-bottom:1px solid var(--line)}
+  nav.links.open{display:flex}
+  .burger{display:block}
+  .nav .btn{display:none}
+  .hero h1{font-size:2.1rem}
+}
+@media(max-width:560px){.cards,.gallery,.form-grid{grid-template-columns:1fr}.steps{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="logo" href="#accueil">MBE <span>Pro</span><small>M Beaudoin Électrique inc.</small></a>
+    <button class="burger" id="burger" aria-label="Menu">☰</button>
+    <nav class="links" id="navLinks">
+      <a href="#accueil">Accueil</a>
+      <a href="#multilogement">Multilogement &amp; bornes</a>
+      <a href="#commercial">Commercial &amp; industriel</a>
+      <a href="#residentiel">Résidentiel</a>
+      <a href="#realisations">Réalisations</a>
+      <a href="#soumission">Soumission en ligne</a>
+    </nav>
+    <a class="btn" href="#soumission">Soumission gratuite en ligne</a>
+  </div>
+</header>
+
+<!-- 1. ACCUEIL -->
+<section class="hero" id="accueil">
+  <div class="wrap hero-grid">
+    <div class="reveal">
+      <div class="badge"><span class="stars">★★★★★</span> 4,6 — 94 avis Google</div>
+      <h1>Votre électricien de confiance, <em>en famille depuis 2002</em></h1>
+      <p>M Beaudoin Électrique inc. — aujourd'hui MBE Pro — accompagne les familles, les syndicats de copropriété et les entreprises de la Rive-Sud, de Montréal et de la Montérégie pour tous leurs travaux électriques, petits et grands.</p>
+      <a class="btn" href="#soumission">Soumission gratuite en ligne</a>
+      <div class="hero-meta">
+        <span>Licence RBQ 8280-1499</span>
+        <span>·</span>
+        <span>Saint-Basile-le-Grand &amp; Lévis</span>
+        <span>·</span>
+        <span>450 467-1646</span>
+      </div>
+    </div>
+    <div class="hero-img reveal">
+      <img src="https://www.borne-electrique.fr/wp-content/uploads/2026/02/1770077861-couts-et-installation-dune-borne-de-recharge-en-garage-collectif.jpg" alt="Installation de bornes de recharge dans le stationnement d'une copropriété">
+    </div>
+  </div>
+</section>
+
+<!-- Bloc avis vivant -->
+<div class="reviews">
+  <div class="wrap reviews-grid reveal">
+    <div>
+      <div class="big-note">4,6</div>
+      <div class="stars">★★★★★</div>
+    </div>
+    <div>
+      <h2>Une réputation bâtie client par client</h2>
+      <p class="lead">94 avis Google, une note moyenne de 4,6 sur 5 : c'est la confiance de nos clients de la Rive-Sud, de Montréal et de la Montérégie qui parle. Consultez nos avis récents directement sur notre fiche Google.</p>
+    </div>
+    <div>
+      <a class="btn ghost" href="https://www.google.com/maps/search/M+Beaudoin+Électrique+Saint-Basile-le-Grand" target="_blank" rel="noopener">Lire nos avis sur Google</a>
+    </div>
+  </div>
+</div>
+
+<!-- Compteurs -->
+<div class="counters">
+  <div class="wrap counters-grid">
+    <div><div class="counter-num"><span class="count" data-target="2002" data-plain="1">0</span></div><div class="counter-lbl">Depuis 2002 — entreprise familiale</div></div>
+    <div><div class="counter-num"><span class="count" data-target="94">0</span></div><div class="counter-lbl">94 avis Google</div></div>
+    <div><div class="counter-num"><span class="count" data-target="4.6" data-decimal="1">0</span></div><div class="counter-lbl">4,6/5 — note moyenne</div></div>
+    <div><div class="counter-num"><span class="count" data-target="2">0</span></div><div class="counter-lbl">2 bureaux — Saint-Basile-le-Grand et Lévis</div></div>
+  </div>
+</div>
+
+<!-- Trois marchés -->
+<section>
+  <div class="wrap">
+    <div class="reveal">
+      <p class="eyebrow">Nos marchés</p>
+      <h2>Trois expertises, une même exigence</h2>
+      <p class="lead">Du panneau électrique d'une maison familiale aux bornes de recharge d'un complexe de copropriétés, notre équipe s'occupe de tout, de l'évaluation à la mise en service.</p>
+    </div>
+    <div class="cards">
+      <article class="card reveal">
+        <img src="https://le-de.cdn-website.com/484f56413d5546d0be42fa65faff201f/dms3rep/multi/opt/E-Mobility-+Wallbox-Tiefgarage+mit+sauber+installierter+Ladeinfrastruktur-1920w.jpg" alt="Bornes de recharge installées dans un garage de copropriété">
+        <div class="card-body">
+          <h3>Multilogement &amp; bornes</h3>
+          <p>Bornes de recharge en copropriété, complexes multilogements technologiques et accompagnement des syndicats, de l'évaluation au suivi.</p>
+          <a href="#multilogement">Découvrir →</a>
+        </div>
+      </article>
+      <article class="card reveal">
+        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1600&q=80" alt="Installation électrique en milieu industriel">
+        <div class="card-body">
+          <h3>Commercial &amp; industriel</h3>
+          <p>Installation et conversion de systèmes électriques pour les entreprises et les bâtiments commerciaux et industriels.</p>
+          <a href="#commercial">Découvrir →</a>
+        </div>
+      </article>
+      <article class="card reveal">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80" alt="Maison moderne — travaux électriques résidentiels">
+        <div class="card-body">
+          <h3>Résidentiel</h3>
+          <p>Installations électriques, piscines et spas, génératrices et éclairage pour votre maison, en toute sécurité.</p>
+          <a href="#residentiel">Découvrir →</a>
+        </div>
+      </article>
+    </div>
+    <div style="text-align:center;margin-top:40px" class="reveal">
+      <a class="btn" href="#soumission">Soumission gratuite en ligne</a>
+    </div>
+  </div>
+</section>
+
+<!-- 2. MULTILOGEMENT & BORNES -->
+<section id="multilogement" style="background:#fff;border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="split">
+      <div class="reveal">
+        <p class="eyebrow">Multilogement &amp; bornes de recharge</p>
+        <h2>La recharge en copropriété, sans casse-tête pour votre syndicat</h2>
+        <p class="lead" style="margin-top:12px">Syndicats de copropriété et gestionnaires d'immeubles : nous prenons en charge votre projet de bornes de recharge de A à Z, avec une proposition claire à présenter à votre conseil d'administration et à vos copropriétaires.</p>
+        <ul class="check">
+          <li>Bornes de recharge résidentielles et en copropriété</li>
+          <li>Complexes multilogements technologiques</li>
+          <li>Évaluation de la capacité électrique de votre bâtiment</li>
+          <li>Installation propre, conforme et pensée pour durer</li>
+        </ul>
+        <div class="note-box">
+          <strong>Programmes d'aide financière :</strong> des programmes d'aide peuvent s'appliquer aux projets de bornes en copropriété. Nous vous aidons à vérifier l'admissibilité de votre projet — les montants et conditions varient selon les programmes en vigueur, sans garantie.
+        </div>
+        <p style="margin-top:24px"><a class="btn" href="#soumission">Soumission gratuite en ligne</a></p>
+      </div>
+      <div class="reveal">
+        <img src="https://www.hometradestandards.com/assets/condo-towers-blue-hour-960.webp" alt="Tours de copropriétés au crépuscule">
+      </div>
+    </div>
+
+    <h3 style="margin-top:56px;font-size:1.5rem" class="reveal">Notre processus, en 4 étapes</h3>
+    <div class="steps">
+      <div class="step reveal"><div class="step-num">1</div><h3>Évaluation</h3><p style="color:var(--muted)">Visite de votre immeuble, analyse de la capacité électrique et de vos besoins réels en recharge.</p></div>
+      <div class="step reveal"><div class="step-num">2</div><h3>Proposition au syndicat</h3><p style="color:var(--muted)">Une proposition détaillée et facile à présenter à votre conseil d'administration et en assemblée.</p></div>
+      <div class="step reveal"><div class="step-num">3</div><h3>Installation</h3><p style="color:var(--muted)">Travaux réalisés proprement par notre équipe, avec un minimum de dérangement pour les résidents.</p></div>
+      <div class="step reveal"><div class="step-num">4</div><h3>Suivi</h3><p style="color:var(--muted)">Mise en service, explications et accompagnement après l'installation. Vous n'êtes jamais laissé seul.</p></div>
+    </div>
+
+    <div class="note-box reveal" style="margin-top:36px">
+      <strong>Un projet en tête ?</strong> Décrivez-le dans notre formulaire de soumission en choisissant le marché « Multilogement / Bornes » — nous vous revenons avec une première évaluation.
+      &nbsp;<a href="#soumission" style="font-weight:700;color:var(--copper)">Demander mon évaluation →</a>
+    </div>
+  </div>
+</section>
+
+<!-- 3. COMMERCIAL & INDUSTRIEL -->
+<section id="commercial">
+  <div class="wrap">
+    <div class="split">
+      <div class="reveal">
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1600&q=80" alt="Électricien au travail sur un panneau électrique">
+      </div>
+      <div class="reveal">
+        <p class="eyebrow">Commercial &amp; industriel</p>
+        <h2>Des systèmes électriques à la hauteur de vos opérations</h2>
+        <p class="lead" style="margin-top:12px">Installation et conversion de systèmes électriques pour les entreprises, les bâtiments commerciaux et industriels, ainsi que les complexes multilogements technologiques.</p>
+        <ul class="check">
+          <li>Installation de systèmes électriques commerciaux et industriels</li>
+          <li>Conversion et mise à niveau de systèmes existants</li>
+          <li>Complexes multilogements technologiques</li>
+          <li>Éclairage commercial</li>
+          <li>Énergie solaire</li>
+        </ul>
+        <p style="margin-top:24px"><a class="btn" href="#soumission">Soumission gratuite en ligne</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Partenaires -->
+<div class="partners">
+  <div class="wrap" style="text-align:center">
+    <p class="eyebrow">Nos partenaires fournisseurs</p>
+    <h2 style="font-size:1.5rem">Des équipements de marques reconnues</h2>
+    <div class="partner-row">
+      <span class="partner">Schneider / Square D</span>
+      <span class="partner">Siemens</span>
+      <span class="partner">GE</span>
+      <span class="partner">Cutler-Hammer</span>
+      <span class="partner">Stelpro</span>
+      <span class="partner">Ouellet</span>
+      <span class="partner">Convectair</span>
+      <span class="partner">Lutron</span>
+      <span class="partner">Leviton</span>
+    </div>
+  </div>
+</div>
+
+<!-- 4. RÉSIDENTIEL -->
+<section id="residentiel">
+  <div class="wrap">
+    <div class="split">
+      <div class="reveal">
+        <p class="eyebrow">Résidentiel</p>
+        <h2>Pour votre maison, en toute confiance</h2>
+        <p class="lead" style="margin-top:12px">Entreprise familiale depuis 2002, nous traitons votre maison comme la nôtre : travail soigné, explications claires et prix présentés avant de commencer.</p>
+        <ul class="check">
+          <li>Installations électriques résidentielles</li>
+          <li>Branchements pour piscines et spas</li>
+          <li>Connexion de génératrices</li>
+          <li>Éclairage intérieur et extérieur</li>
+          <li>Bornes de recharge à domicile</li>
+          <li>Énergie solaire</li>
+        </ul>
+        <p style="margin-top:24px"><a class="btn" href="#soumission">Soumission gratuite en ligne</a></p>
+      </div>
+      <div class="reveal">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80" alt="Maison moderne — services électriques résidentiels">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. RÉALISATIONS -->
+<section id="realisations" style="background:#fff;border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="eyebrow">Réalisations</p>
+      <h2>Nos projets, par catégorie</h2>
+      <p class="lead">Nouvelle construction, éclairage, rénovation, solaire, commercial, multilogement ou bornes de recharge : filtrez la galerie pour voir le type de projet qui ressemble au vôtre.</p>
+    </div>
+    <div class="filters" id="filters">
+      <button class="filter-btn active" data-filter="all">Tous</button>
+      <button class="filter-btn" data-filter="construction">Nouvelle construction</button>
+      <button class="filter-btn" data-filter="eclairage">Éclairage</button>
+      <button class="filter-btn" data-filter="renovation">Rénovation</button>
+      <button class="filter-btn" data-filter="solaire">Solaire</button>
+      <button class="filter-btn" data-filter="commercial">Commercial / Industriel</button>
+      <button class="filter-btn" data-filter="multilogement">Multilogement</button>
+      <button class="filter-btn" data-filter="bornes">Projet bornes</button>
+    </div>
+    <div class="gallery" id="gallery">
+      <div class="g-item" data-cat="bornes"><img src="https://www.borne-electrique.fr/wp-content/uploads/2026/02/1770077861-couts-et-installation-dune-borne-de-recharge-en-garage-collectif.jpg" alt="Bornes de recharge en garage collectif"><div class="g-cap">Projet bornes — copropriété</div></div>
+      <div class="g-item" data-cat="bornes multilogement"><img src="https://le-de.cdn-website.com/484f56413d5546d0be42fa65faff201f/dms3rep/multi/opt/E-Mobility-+Wallbox-Tiefgarage+mit+sauber+installierter+Ladeinfrastruktur-1920w.jpg" alt="Infrastructure de recharge en stationnement intérieur"><div class="g-cap">Projet bornes — stationnement intérieur</div></div>
+      <div class="g-item" data-cat="multilogement"><img src="https://www.hometradestandards.com/assets/condo-towers-blue-hour-960.webp" alt="Complexe de copropriétés au crépuscule"><div class="g-cap">Multilogement — complexe de copropriétés</div></div>
+      <div class="g-item" data-cat="solaire"><img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1600&q=80" alt="Panneaux solaires au coucher du soleil"><div class="g-cap">Solaire — installation de panneaux</div></div>
+      <div class="g-item" data-cat="commercial"><img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1600&q=80" alt="Installation électrique industrielle"><div class="g-cap">Commercial / Industriel — système électrique</div></div>
+      <div class="g-item" data-cat="commercial eclairage"><img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1600&q=80" alt="Électricien travaillant sur un panneau électrique"><div class="g-cap">Commercial — travaux au panneau électrique</div></div>
+      <div class="g-item" data-cat="construction renovation"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80" alt="Maison moderne — nouvelle construction et rénovation"><div class="g-cap">Nouvelle construction / Rénovation — résidentiel</div></div>
+      <div class="g-item" data-cat="eclairage renovation"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80" alt="Résidence avec éclairage soigné"><div class="g-cap">Éclairage — résidentiel</div></div>
+      <div class="g-item" data-cat="solaire construction"><img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1600&q=80" alt="Champ de panneaux solaires"><div class="g-cap">Solaire — nouvelle installation</div></div>
+    </div>
+    <div style="text-align:center;margin-top:40px" class="reveal">
+      <p class="lead" style="margin:0 auto 18px">Un projet semblable en tête ? Parlons-en.</p>
+      <a class="btn" href="#soumission">Soumission gratuite en ligne</a>
+    </div>
+  </div>
+</section>
+
+<!-- 6. SOUMISSION EN LIGNE -->
+<section id="soumission" class="soumission-sec">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center;max-width:760px;margin:0 auto">
+      <p class="eyebrow">Soumission en ligne</p>
+      <h2 style="font-size:2.2rem">Soumission gratuite en ligne</h2>
+      <p class="lead" style="margin:12px auto 0">Remplissez le formulaire : décrivez votre projet en quelques lignes et nous vous revenons avec une soumission gratuite, sans obligation. Territoire desservi : Rive-Sud, île de Montréal et Montérégie.</p>
+      <div class="badge" style="margin-top:18px"><span class="stars">★★★★★</span> 4,6 — 94 avis Google</div>
+    </div>
+
+    <div class="form-card reveal">
+      <form id="quoteForm" novalidate>
+        <div class="form-grid">
+          <div class="field">
+            <label for="f-marche">Marché *</label>
+            <select id="f-marche" name="marche" required>
+              <option value="">— Choisir —</option>
+              <option>Résidentiel</option>
+              <option>Commercial</option>
+              <option>Multilogement / Bornes</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-type">Type de travaux *</label>
+            <select id="f-type" name="type" required>
+              <option value="">— Choisir —</option>
+              <option>Installation électrique</option>
+              <option>Borne de recharge</option>
+              <option>Bornes en copropriété</option>
+              <option>Piscine / spa</option>
+              <option>Génératrice (connexion)</option>
+              <option>Éclairage</option>
+              <option>Solaire</option>
+              <option>Conversion de système</option>
+              <option>Autre</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-ville">Ville *</label>
+            <input id="f-ville" name="ville" type="text" placeholder="Ex. : Saint-Basile-le-Grand" required>
+          </div>
+          <div class="field">
+            <label for="f-echeance">Échéance souhaitée</label>
+            <select id="f-echeance" name="echeance">
+              <option value="">— Choisir —</option>
+              <option>Le plus tôt possible</option>
+              <option>D'ici 1 mois</option>
+              <option>D'ici 3 mois</option>
+              <option>Projet en planification</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="f-desc">Description du projet *</label>
+            <textarea id="f-desc" name="description" rows="4" placeholder="Décrivez vos travaux : type de bâtiment, nombre de bornes, pièce concernée, etc." required></textarea>
+          </div>
+          <div class="field">
+            <label for="f-nom">Nom complet *</label>
+            <input id="f-nom" name="nom" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="f-tel">Téléphone *</label>
+            <input id="f-tel" name="telephone" type="tel" autocomplete="tel" required>
+          </div>
+          <div class="field full">
+            <label for="f-courriel">Courriel *</label>
+            <input id="f-courriel" name="courriel" type="email" autocomplete="email" required>
+          </div>
+        </div>
+        <p id="formError" style="display:none;color:#b3261e;font-weight:600;margin-top:16px">Veuillez remplir tous les champs marqués d'un astérisque.</p>
+        <div style="text-align:center;margin-top:28px">
+          <button type="submit" class="btn" style="font-size:1.08rem;padding:16px 38px">Envoyer ma demande — soumission gratuite en ligne</button>
+          <p style="color:var(--muted);font-size:.88rem;margin-top:12px">Sans obligation. Vos informations servent uniquement à préparer votre soumission.</p>
+        </div>
+      </form>
+      <div class="confirm" id="confirmBox">
+        <div class="check-big">✓</div>
+        <h2>Demande reçue</h2>
+        <p class="lead" style="margin:12px auto 0">Merci ! Votre demande de soumission a bien été reçue. Un membre de l'équipe MBE Pro vous recontactera sous peu pour la suite. Pour une urgence, appelez-nous au <strong>450 467-1646</strong>.</p>
+        <p style="margin-top:22px"><a class="btn ghost" href="#accueil">Retour à l'accueil</a></p>
+      </div>
+    </div>
+
+    <div class="offices">
+      <div class="office reveal">
+        <h3>Bureau de Saint-Basile-le-Grand</h3>
+        <p>285, boul. Sir-Wilfrid-Laurier<br>Saint-Basile-le-Grand QC J3N 1M2<br>
+        Tél. : <a href="tel:+14504671646"><strong>450 467-1646</strong></a><br>
+        Courriel : <a href="mailto:ventes@mbepro.ca">ventes@mbepro.ca</a></p>
+        <p style="margin-top:10px"><strong>Heures de bureau :</strong><br>Lundi au jeudi : 8 h – 16 h<br>Vendredi : 8 h – 12 h</p>
+      </div>
+      <div class="office reveal">
+        <h3>Bureau de Lévis</h3>
+        <p>337, chemin des Îles<br>Lévis QC<br>
+        Tél. : <a href="tel:+14186922656"><strong>418 692-2656</strong></a><br>
+        Courriel : <a href="mailto:ventes@mbepro.ca">ventes@mbepro.ca</a></p>
+        <p style="margin-top:10px">Bureau administratif — <strong>sur rendez-vous seulement</strong>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h3>MBE Pro</h3>
+        <p style="margin-top:10px;opacity:.85">M Beaudoin Électrique inc.<br>Entreprise familiale depuis 2002.<br>Licence RBQ 8280-1499.</p>
+        <p style="margin-top:10px"><span class="stars">★★★★★</span> 4,6 — 94 avis Google</p>
+      </div>
+      <div>
+        <h3>Nos services</h3>
+        <p style="margin-top:10px;opacity:.85">
+          <a href="#multilogement">Multilogement &amp; bornes</a><br>
+          <a href="#commercial">Commercial &amp; industriel</a><br>
+          <a href="#residentiel">Résidentiel</a><br>
+          <a href="#realisations">Réalisations</a>
+        </p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <p style="margin-top:10px;opacity:.85">
+          285, boul. Sir-Wilfrid-Laurier, Saint-Basile-le-Grand QC J3N 1M2<br>
+          450 467-1646 · 418 692-2656 (Lévis)<br>
+          <a href="mailto:ventes@mbepro.ca">ventes@mbepro.ca</a><br>
+          Lun.–jeu. 8 h–16 h · Ven. 8 h–12 h
+        </p>
+      </div>
+    </div>
+    <p style="text-align:center;margin-bottom:18px"><a class="btn" href="#soumission">Soumission gratuite en ligne</a></p>
+    <div class="foot-bottom">© M Beaudoin Électrique inc. (MBE Pro) — Tous droits réservés. Territoire desservi : Rive-Sud, île de Montréal, Montérégie.</div>
+  </div>
+</footer>
+
+<script>
+// Menu mobile
+document.getElementById('burger').addEventListener('click', function(){
+  document.getElementById('navLinks').classList.toggle('open');
+});
+document.querySelectorAll('#navLinks a').forEach(function(a){
+  a.addEventListener('click', function(){ document.getElementById('navLinks').classList.remove('open'); });
+});
+
+// Animations au scroll
+var io = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+// Compteurs animés
+function animateCount(el){
+  var target = parseFloat(el.getAttribute('data-target'));
+  var decimal = el.hasAttribute('data-decimal');
+  var plain = el.hasAttribute('data-plain');
+  var from = plain ? target - 22 : 0;
+  var dur = 1400, start = null;
+  function fmt(v){
+    if(decimal) return v.toFixed(1).replace('.', ',');
+    return String(Math.round(v));
+  }
+  function step(ts){
+    if(!start) start = ts;
+    var p = Math.min((ts-start)/dur, 1);
+    var eased = 0.5 - Math.cos(Math.PI*p)/2;
+    el.textContent = fmt(from + (target-from)*eased);
+    if(p<1) requestAnimationFrame(step);
+    else el.textContent = fmt(target);
+  }
+  requestAnimationFrame(step);
+}
+var cio = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){ if(e.isIntersecting){ animateCount(e.target); cio.unobserve(e.target); } });
+},{threshold:.4});
+document.querySelectorAll('.count').forEach(function(el){ cio.observe(el); });
+
+// Galerie filtrable
+var filterBtns = document.querySelectorAll('.filter-btn');
+var items = document.querySelectorAll('.g-item');
+filterBtns.forEach(function(btn){
+  btn.addEventListener('click', function(){
+    filterBtns.forEach(function(b){ b.classList.remove('active'); });
+    btn.classList.add('active');
+    var f = btn.getAttribute('data-filter');
+    items.forEach(function(it){
+      var cats = (it.getAttribute('data-cat')||'').split(' ');
+      if(f==='all' || cats.indexOf(f)!==-1){ it.classList.remove('hidden'); }
+      else { it.classList.add('hidden'); }
+    });
+  });
+});
+
+// Formulaire — confirmation JS (aucun envoi réel)
+document.getElementById('quoteForm').addEventListener('submit', function(ev){
+  ev.preventDefault();
+  var form = ev.target;
+  var err = document.getElementById('formError');
+  if(!form.checkValidity()){ err.style.display='block'; form.reportValidity(); return; }
+  err.style.display='none';
+  form.style.display='none';
+  var box = document.getElementById('confirmBox');
+  box.style.display='block';
+  box.scrollIntoView({behavior:'smooth', block:'center'});
+});
+</script>
+</body>
+</html>
