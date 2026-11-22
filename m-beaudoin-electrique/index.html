@@ -101,6 +101,11 @@ ul.check li::before{content:"✓";position:absolute;left:0;color:var(--copper);f
 .field input,.field select,.field textarea{border:1px solid var(--line);border-radius:12px;padding:12px 14px;font:inherit;background:var(--bg);color:var(--ink)}
 .field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--copper2);border-color:transparent}
 .confirm{display:none;text-align:center;padding:44px 20px}
+.demo-note{margin-top:20px;background:#fff8e6;border:1px dashed var(--copper);border-radius:12px;padding:14px 18px;color:var(--navy);font-size:.94rem;text-align:center}
+.testis{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
+.testi{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+.testi blockquote{color:var(--muted);font-style:italic;margin:10px 0 16px}
+.testi .who{font-weight:800;color:var(--navy)}
 .confirm .check-big{width:76px;height:76px;border-radius:50%;background:#e7f4e4;color:#2e7d32;font-size:2.2rem;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;font-weight:800}
 .offices{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:36px}
 .office{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
@@ -128,7 +133,8 @@ footer a{color:var(--amber)}
   .nav .btn{display:none}
   .hero h1{font-size:2.1rem}
 }
-@media(max-width:560px){.cards,.gallery,.form-grid{grid-template-columns:1fr}.steps{grid-template-columns:1fr}}
+@media(max-width:960px){.testis{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.cards,.gallery,.form-grid,.testis{grid-template-columns:1fr}.steps{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -145,7 +151,7 @@ footer a{color:var(--amber)}
       <a href="#realisations">Réalisations</a>
       <a href="#soumission">Soumission en ligne</a>
     </nav>
-    <a class="btn" href="#soumission">Soumission gratuite en ligne</a>
+    <a class="btn" href="#soumission">Demander ma soumission gratuite</a>
   </div>
 </header>
 
@@ -156,7 +162,7 @@ footer a{color:var(--amber)}
       <div class="badge"><span class="stars">★★★★★</span> 4,6 — 94 avis Google</div>
       <h1>Votre électricien de confiance, <em>en famille depuis 2002</em></h1>
       <p>M Beaudoin Électrique inc. — aujourd'hui MBE Pro — accompagne les familles, les syndicats de copropriété et les entreprises de la Rive-Sud, de Montréal et de la Montérégie pour tous leurs travaux électriques, petits et grands.</p>
-      <a class="btn" href="#soumission">Soumission gratuite en ligne</a>
+      <a class="btn" href="#soumission">Demander ma soumission gratuite</a>
       <div class="hero-meta">
         <span>Licence RBQ 8280-1499</span>
         <span>·</span>
@@ -187,6 +193,35 @@ footer a{color:var(--amber)}
     </div>
   </div>
 </div>
+
+
+<!-- Témoignages réels (source : mbepro.ca — « Ce que nos clients disent de nous sur Google! ») -->
+<section style="padding-top:56px;padding-bottom:56px">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center">
+      <p class="eyebrow">Témoignages</p>
+      <h2>Ce que nos clients disent de nous sur Google</h2>
+      <p class="lead" style="margin:10px auto 0">Témoignages publiés sur le site officiel de M Beaudoin Électrique (mbepro.ca).</p>
+    </div>
+    <div class="testis">
+      <article class="testi reveal">
+        <div class="stars">★★★★★</div>
+        <blockquote>« Superbe installation, ultra rapide! Ils sont experts en bornes ET en installation de bornes et ont su me guider vers le bon choix et le bon type d’installation. Dès que je les ai contacté, j’ai été immédiatement pris en charge et j’ai pu avoir une soumission rapide et professionnelle de la part de Josée et Charles, après leur avoir envoyé quelques photos de la maison. Merci à Martin pour une installation minutieuse et consciencieuse. Allez-y les yeux fermés! »</blockquote>
+        <p class="who">Francois G. Levesque</p>
+      </article>
+      <article class="testi reveal">
+        <div class="stars">★★★★★</div>
+        <blockquote>« Cet entrepreneur a assuré les travaux de ma Clinique à Longueuil en 2014 ainsi que son agrandissement en 2017. De plus ils sont venus à ma résidence faire des branchements mineurs également. Les travaux ont toujours été faits avec professionnalisme et grands soins. Hautement recommandé et je suis assez exigeante …. »</blockquote>
+        <p class="who">Catherine Gobeil</p>
+      </article>
+      <article class="testi reveal">
+        <div class="stars">★★★★★</div>
+        <blockquote>« Service très professionnel, rapide et vraiment dans les prix, voir meilleurs qu’ailleurs. J’ai été très satisfait pendant tout le processus d’achat et d’installation de ma borne de recharge pour ma voiture. […] Ils m’ont donné d’excellents conseils pour l’achat de ma borne, afin d’avoir la solution qui répond vraiment le mieux à mes besoins, sans avoir à payer pour rien. Merci des millions de fois! »</blockquote>
+        <p class="who">Éric Labelle</p>
+      </article>
+    </div>
+  </div>
+</section>
 
 <!-- Compteurs -->
 <div class="counters">
@@ -233,7 +268,7 @@ footer a{color:var(--amber)}
       </article>
     </div>
     <div style="text-align:center;margin-top:40px" class="reveal">
-      <a class="btn" href="#soumission">Soumission gratuite en ligne</a>
+      <a class="btn" href="#soumission">Demander ma soumission gratuite</a>
     </div>
   </div>
 </section>
@@ -255,7 +290,7 @@ footer a{color:var(--amber)}
         <div class="note-box">
           <strong>Programmes d'aide financière :</strong> des programmes d'aide peuvent s'appliquer aux projets de bornes en copropriété. Nous vous aidons à vérifier l'admissibilité de votre projet — les montants et conditions varient selon les programmes en vigueur, sans garantie.
         </div>
-        <p style="margin-top:24px"><a class="btn" href="#soumission">Soumission gratuite en ligne</a></p>
+        <p style="margin-top:24px"><a class="btn" href="#soumission">Demander ma soumission gratuite</a></p>
       </div>
       <div class="reveal">
         <img src="https://www.hometradestandards.com/assets/condo-towers-blue-hour-960.webp" alt="Tours de copropriétés au crépuscule">
@@ -295,7 +330,7 @@ footer a{color:var(--amber)}
           <li>Éclairage commercial</li>
           <li>Énergie solaire</li>
         </ul>
-        <p style="margin-top:24px"><a class="btn" href="#soumission">Soumission gratuite en ligne</a></p>
+        <p style="margin-top:24px"><a class="btn" href="#soumission">Demander ma soumission gratuite</a></p>
       </div>
     </div>
   </div>
@@ -336,7 +371,7 @@ footer a{color:var(--amber)}
           <li>Bornes de recharge à domicile</li>
           <li>Énergie solaire</li>
         </ul>
-        <p style="margin-top:24px"><a class="btn" href="#soumission">Soumission gratuite en ligne</a></p>
+        <p style="margin-top:24px"><a class="btn" href="#soumission">Demander ma soumission gratuite</a></p>
       </div>
       <div class="reveal">
         <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80" alt="Maison moderne — services électriques résidentiels">
@@ -351,7 +386,7 @@ footer a{color:var(--amber)}
     <div class="reveal">
       <p class="eyebrow">Réalisations</p>
       <h2>Nos projets, par catégorie</h2>
-      <p class="lead">Nouvelle construction, éclairage, rénovation, solaire, commercial, multilogement ou bornes de recharge : filtrez la galerie pour voir le type de projet qui ressemble au vôtre.</p>
+      <p class="lead">Nouvelle construction, éclairage, rénovation, solaire, commercial, multilogement ou bornes de recharge : filtrez la galerie pour voir le type de projet qui ressemble au vôtre. Photos : réalisations réelles publiées sur mbepro.ca.</p>
     </div>
     <div class="filters" id="filters">
       <button class="filter-btn active" data-filter="all">Tous</button>
@@ -364,19 +399,20 @@ footer a{color:var(--amber)}
       <button class="filter-btn" data-filter="bornes">Projet bornes</button>
     </div>
     <div class="gallery" id="gallery">
-      <div class="g-item" data-cat="bornes"><img src="https://www.borne-electrique.fr/wp-content/uploads/2026/02/1770077861-couts-et-installation-dune-borne-de-recharge-en-garage-collectif.jpg" alt="Bornes de recharge en garage collectif"><div class="g-cap">Projet bornes — copropriété</div></div>
-      <div class="g-item" data-cat="bornes multilogement"><img src="https://le-de.cdn-website.com/484f56413d5546d0be42fa65faff201f/dms3rep/multi/opt/E-Mobility-+Wallbox-Tiefgarage+mit+sauber+installierter+Ladeinfrastruktur-1920w.jpg" alt="Infrastructure de recharge en stationnement intérieur"><div class="g-cap">Projet bornes — stationnement intérieur</div></div>
-      <div class="g-item" data-cat="multilogement"><img src="https://www.hometradestandards.com/assets/condo-towers-blue-hour-960.webp" alt="Complexe de copropriétés au crépuscule"><div class="g-cap">Multilogement — complexe de copropriétés</div></div>
-      <div class="g-item" data-cat="solaire"><img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1600&q=80" alt="Panneaux solaires au coucher du soleil"><div class="g-cap">Solaire — installation de panneaux</div></div>
-      <div class="g-item" data-cat="commercial"><img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1600&q=80" alt="Installation électrique industrielle"><div class="g-cap">Commercial / Industriel — système électrique</div></div>
-      <div class="g-item" data-cat="commercial eclairage"><img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1600&q=80" alt="Électricien travaillant sur un panneau électrique"><div class="g-cap">Commercial — travaux au panneau électrique</div></div>
-      <div class="g-item" data-cat="construction renovation"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80" alt="Maison moderne — nouvelle construction et rénovation"><div class="g-cap">Nouvelle construction / Rénovation — résidentiel</div></div>
-      <div class="g-item" data-cat="eclairage renovation"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80" alt="Résidence avec éclairage soigné"><div class="g-cap">Éclairage — résidentiel</div></div>
-      <div class="g-item" data-cat="solaire construction"><img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1600&q=80" alt="Champ de panneaux solaires"><div class="g-cap">Solaire — nouvelle installation</div></div>
+      <div class="g-item" data-cat="construction"><img src="https://mbepro.ca/wp-content/uploads/MBE-realisation-residentiel-5.jpg" alt="Réalisation MBE — nouvelle construction résidentielle (photo : mbepro.ca)"><div class="g-cap">Nouvelle construction — Résidentiel</div></div>
+      <div class="g-item" data-cat="eclairage construction"><img src="https://mbepro.ca/wp-content/uploads/MBE-realisation-residentiel-3.jpg" alt="Réalisation MBE — éclairage, nouvelle construction résidentielle (photo : mbepro.ca)"><div class="g-cap">Éclairage — Nouvelle construction, Résidentiel</div></div>
+      <div class="g-item" data-cat="renovation"><img src="https://mbepro.ca/wp-content/uploads/MBE-realisation-residentiel-1.jpg" alt="Réalisation MBE — rénovation résidentielle (photo : mbepro.ca)"><div class="g-cap">Rénovation — Résidentiel</div></div>
+      <div class="g-item" data-cat="solaire"><img src="https://mbepro.ca/wp-content/uploads/MBE-realisation-residentiel-4.jpg" alt="Réalisation MBE — projet solaire résidentiel (photo : mbepro.ca)"><div class="g-cap">Solaire — Résidentiel</div></div>
+      <div class="g-item" data-cat="commercial construction"><img src="https://mbepro.ca/wp-content/uploads/MBE-realisation-commercial-4.jpg" alt="Réalisation MBE — commercial / industriel, nouvelle construction (photo : mbepro.ca)"><div class="g-cap">Commercial / Industriel — Nouvelle construction</div></div>
+      <div class="g-item" data-cat="multilogement bornes"><img src="https://mbepro.ca/wp-content/uploads/IMG_9909.jpeg" alt="Réalisation MBE — bornes de recharge en multilogement (photo : mbepro.ca)"><div class="g-cap">Multilogement — Projet bornes</div></div>
+      <div class="g-item" data-cat="multilogement"><img src="https://mbepro.ca/wp-content/uploads/IMG_9896.jpeg" alt="Réalisation MBE — multilogement (photo : mbepro.ca)"><div class="g-cap">Multilogement</div></div>
+      <div class="g-item" data-cat="multilogement"><img src="https://mbepro.ca/wp-content/uploads/IMG_9897.jpeg" alt="Réalisation MBE — multilogement (photo : mbepro.ca)"><div class="g-cap">Multilogement</div></div>
+      <div class="g-item" data-cat="multilogement bornes"><img src="https://mbepro.ca/wp-content/uploads/condos-bornes-poteaux-1.jpg" alt="Réalisation MBE — bornes de recharge sur poteaux en copropriété (photo : mbepro.ca)"><div class="g-cap">Multilogement — Projet bornes (condos)</div></div>
+      <div class="g-item" data-cat="multilogement bornes"><img src="https://mbepro.ca/wp-content/uploads/multilogement-beloeil-borne.jpg" alt="Réalisation MBE — borne de recharge en multilogement à Beloeil (photo : mbepro.ca)"><div class="g-cap">Multilogement — Projet bornes (Beloeil)</div></div>
     </div>
     <div style="text-align:center;margin-top:40px" class="reveal">
       <p class="lead" style="margin:0 auto 18px">Un projet semblable en tête ? Parlons-en.</p>
-      <a class="btn" href="#soumission">Soumission gratuite en ligne</a>
+      <a class="btn" href="#soumission">Demander ma soumission gratuite</a>
     </div>
   </div>
 </section>
@@ -386,7 +422,7 @@ footer a{color:var(--amber)}
   <div class="wrap">
     <div class="reveal" style="text-align:center;max-width:760px;margin:0 auto">
       <p class="eyebrow">Soumission en ligne</p>
-      <h2 style="font-size:2.2rem">Soumission gratuite en ligne</h2>
+      <h2 style="font-size:2.2rem">Demandez votre soumission gratuite en ligne</h2>
       <p class="lead" style="margin:12px auto 0">Remplissez le formulaire : décrivez votre projet en quelques lignes et nous vous revenons avec une soumission gratuite, sans obligation. Territoire desservi : Rive-Sud, île de Montréal et Montérégie.</p>
       <div class="badge" style="margin-top:18px"><span class="stars">★★★★★</span> 4,6 — 94 avis Google</div>
     </div>
@@ -450,15 +486,16 @@ footer a{color:var(--amber)}
           </div>
         </div>
         <p id="formError" style="display:none;color:#b3261e;font-weight:600;margin-top:16px">Veuillez remplir tous les champs marqués d'un astérisque.</p>
+        <p class="demo-note"><strong>Formulaire de démonstration</strong> — dans la version finale, chaque demande est transmise directement par courriel à M Beaudoin Électrique.</p>
         <div style="text-align:center;margin-top:28px">
-          <button type="submit" class="btn" style="font-size:1.08rem;padding:16px 38px">Envoyer ma demande — soumission gratuite en ligne</button>
+          <button type="submit" class="btn" style="font-size:1.08rem;padding:16px 38px">Envoyer ma demande — Demander ma soumission gratuite</button>
           <p style="color:var(--muted);font-size:.88rem;margin-top:12px">Sans obligation. Vos informations servent uniquement à préparer votre soumission.</p>
         </div>
       </form>
       <div class="confirm" id="confirmBox">
         <div class="check-big">✓</div>
-        <h2>Demande reçue</h2>
-        <p class="lead" style="margin:12px auto 0">Merci ! Votre demande de soumission a bien été reçue. Un membre de l'équipe MBE Pro vous recontactera sous peu pour la suite. Pour une urgence, appelez-nous au <strong>450 467-1646</strong>.</p>
+        <h2>Aperçu de confirmation</h2>
+        <p class="lead" style="margin:12px auto 0">Aperçu : dans la version finale, cette demande arriverait directement dans la boîte courriel de M Beaudoin Électrique. Aucune demande n'a été transmise par cette démonstration. Pour une urgence, appelez-nous au <strong>450 467-1646</strong>.</p>
         <p style="margin-top:22px"><a class="btn ghost" href="#accueil">Retour à l'accueil</a></p>
       </div>
     </div>
@@ -509,7 +546,7 @@ footer a{color:var(--amber)}
         </p>
       </div>
     </div>
-    <p style="text-align:center;margin-bottom:18px"><a class="btn" href="#soumission">Soumission gratuite en ligne</a></p>
+    <p style="text-align:center;margin-bottom:18px"><a class="btn" href="#soumission">Demander ma soumission gratuite</a></p>
     <div class="foot-bottom">© M Beaudoin Électrique inc. (MBE Pro) — Tous droits réservés. Territoire desservi : Rive-Sud, île de Montréal, Montérégie.</div>
   </div>
 </footer>
@@ -546,14 +583,29 @@ function animateCount(el){
     var eased = 0.5 - Math.cos(Math.PI*p)/2;
     el.textContent = fmt(from + (target-from)*eased);
     if(p<1) requestAnimationFrame(step);
-    else el.textContent = fmt(target);
+    else { el.textContent = fmt(target); el.dataset.done = '1'; }
   }
   requestAnimationFrame(step);
 }
-var cio = new IntersectionObserver(function(entries){
-  entries.forEach(function(e){ if(e.isIntersecting){ animateCount(e.target); cio.unobserve(e.target); } });
-},{threshold:.4});
-document.querySelectorAll('.count').forEach(function(el){ cio.observe(el); });
+function setFinalCount(el){
+  var target = parseFloat(el.getAttribute('data-target'));
+  if(el.hasAttribute('data-decimal')) el.textContent = target.toFixed(1).replace('.', ',');
+  else el.textContent = String(Math.round(target));
+}
+if('IntersectionObserver' in window){
+  var cio = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ animateCount(e.target); cio.unobserve(e.target); } });
+  },{threshold:.4});
+  document.querySelectorAll('.count').forEach(function(el){ cio.observe(el); });
+  // Filet de sécurité : si un compteur n'a jamais été déclenché après 3,5 s, afficher sa valeur finale
+  setTimeout(function(){
+    document.querySelectorAll('.count').forEach(function(el){
+      if(!el.dataset.done){ setFinalCount(el); }
+    });
+  }, 3500);
+} else {
+  document.querySelectorAll('.count').forEach(setFinalCount);
+}
 
 // Galerie filtrable
 var filterBtns = document.querySelectorAll('.filter-btn');
