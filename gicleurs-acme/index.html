@@ -42,6 +42,8 @@ header{position:fixed;top:0;left:0;right:0;z-index:100;background:#fff;box-shado
 .hero h1 em{color:#FF6B7A;font-style:normal}
 .hero p{font-size:19px;max-width:620px;color:#E6EEF2;margin-bottom:32px}
 .hero-ctas{display:flex;gap:16px;flex-wrap:wrap}
+.hero-inspect{display:flex;align-items:center;gap:18px;flex-wrap:wrap;background:rgba(255,255,255,.1);border-left:4px solid var(--red);padding:16px 20px;border-radius:4px;max-width:720px;margin-bottom:26px;font-size:17px}
+.hero-inspect .btn{flex-shrink:0}
 .hero-meta{margin-top:36px;display:flex;gap:28px;flex-wrap:wrap;font-size:14px;color:#CBDCE6}
 @media(max-width:700px){.hero h1{font-size:36px}.hero{margin-top:96px}}
 /* COUNTERS */
@@ -88,10 +90,14 @@ h2{font-size:36px;line-height:1.15;color:var(--steel);margin-bottom:16px}
 .tl-item p{color:var(--muted)}
 /* GALLERY / CAROUSEL */
 .gallery{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:700px){.gallery{grid-template-columns:1fr}.gallery img{height:220px}}
 .gallery img{height:260px;width:100%;object-fit:cover;border-radius:6px}
 .carousel{position:relative;overflow:hidden;border-radius:8px;background:var(--steel)}
 .carousel-track{display:flex;transition:transform .6s ease}
-.carousel-track img{width:100%;height:420px;object-fit:cover;flex-shrink:0}
+.carousel-track .slide{width:100%;flex-shrink:0;position:relative}
+.carousel-track .slide img{width:100%;height:420px;object-fit:cover}
+.slide figcaption{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(10,22,32,.88));color:#fff;font-weight:700;font-size:16px;padding:38px 20px 16px}
+@media(max-width:700px){.carousel-track .slide img{height:260px}.slide figcaption{font-size:14px}}
 .car-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.92);border:none;width:44px;height:44px;border-radius:50%;font-size:20px;cursor:pointer;z-index:2}
 .car-prev{left:14px}.car-next{right:14px}
 .car-dots{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:8px}
@@ -115,6 +121,7 @@ form{background:#fff;padding:30px;border-radius:8px;box-shadow:0 8px 30px rgba(0
 label{font-size:13.5px;font-weight:700;color:var(--steel)}
 input,select,textarea{padding:12px 14px;border:1.5px solid #CBD5DA;border-radius:4px;font-size:15px;font-family:inherit;width:100%}
 textarea{min-height:110px;resize:vertical}
+.demo-note{margin-top:16px;background:#FFF8E1;border:1.5px dashed #B7791F;color:#6D4C00;padding:12px 16px;border-radius:6px;font-size:14px;font-weight:600}
 .confirm{display:none;background:#EAF7EE;border:1.5px solid #2E7D32;color:#1B4D1F;padding:18px;border-radius:6px;margin-top:18px;font-weight:600}
 .confirm.show{display:block}
 /* TABLE */
@@ -157,12 +164,13 @@ footer a:hover{color:#fff}
 <div class="container hero-content">
 <span class="hero-badge">Entreprise familiale • 3e génération • Depuis 1967</span>
 <h1>Protection incendie commerciale et institutionnelle, <em>conçue et installée au Québec depuis 1967</em></h1>
+<div class="hero-inspect"><strong>Nous inspectons également les systèmes installés par vos fournisseurs actuels.</strong><a href="#inspection" class="btn btn-white">Demander une inspection</a></div>
 <p>Les Gicleurs Acme Ltée conçoit, installe, inspecte et entretient des systèmes de gicleurs automatiques et de pompes incendie conformes au Code du bâtiment, aux normes ULC, CSA et NFPA — pour les entrepôts, commerces, institutions et immeubles d'envergure partout au Québec.</p>
 <div class="hero-ctas">
 <a href="#soumission" class="btn btn-red">Demande de soumission →</a>
 <a href="#inspection" class="btn btn-outline">Inspection et entretien</a>
 </div>
-<div class="hero-meta"><span>✓ Plans certifiés par ingénieur</span><span>✓ Inspection CAN/ULC-S536</span><span>✓ ~100 projets réalisés chaque année</span></div>
+<div class="hero-meta"><span>✓ Plans certifiés par ingénieur</span><span>✓ Inspection des gicleurs selon NFPA 25</span><span>✓ ~100 projets réalisés chaque année</span></div>
 </div>
 </section>
 
@@ -236,7 +244,7 @@ footer a:hover{color:#fff}
 <h3 style="color:var(--steel);margin-top:48px;font-size:24px">Notre équipe d'ingénierie</h3>
 <div class="team">
 <div class="team-card"><div class="avatar">YP</div><strong>Yanik Péloquin, Ing.</strong><span>Président et ingénieur en chef</span></div>
-<div class="team-card"><div class="avatar">OR</div><strong>Orlando Rodriguez, Ing.</strong><span>Chargé de projet</span></div>
+<div class="team-card"><div class="avatar">OR</div><strong>Orlando Rodriguez, Ing.</strong><span>Dessinateur / Chargé de projet</span></div>
 <div class="team-card"><div class="avatar">KL</div><strong>Karen Lamilla</strong><span>Dessinatrice</span></div>
 <div class="team-card"><div class="avatar">DS</div><strong>Daniel Sanchez</strong><span>Dessinateur</span></div>
 </div>
@@ -258,9 +266,9 @@ footer a:hover{color:#fff}
 <div class="card"><h3>🏢 Types de bâtiments</h3><p>Entrepôts et centres de distribution, commerces de détail, bâtiments institutionnels et résidentiel lourd, partout au Québec.</p></div>
 </div>
 <div class="gallery reveal">
-<img src="https://cdn.grandranker.com/articles/commercial-fire-sprinkler-system-cost-per-square-foot-content-1-1787540226.jpg" alt="Installation d'un système de gicleurs commerciaux au plafond">
-<img src="https://bizimages.withfloats.com/actual/6aa3d090f63b4fccc1685d82.jpg" alt="Technicien au travail sur un réseau de gicleurs">
-<img src="https://mepdetails.com/wp-content/themes/mep-details/assets/images/fire_hydrant_sprinkler_system.jpg" alt="Salle de pompes et système de protection incendie" style="grid-column:1/-1;height:320px">
+<img src="https://gicleursacme.com/wp-content/uploads/sprinkler-systems-maintenance-boucherville-acme-sprinklers-ltd-opt.jpg" alt="Système de protection incendie installé par Les Gicleurs Acme">
+<img src="https://gicleursacme.com/wp-content/uploads/systeme-protection-incendie-opt-1.jpg" alt="Installation d'un système de gicleurs par Les Gicleurs Acme">
+<img src="https://gicleursacme.com/wp-content/uploads/inspection-gicleurs-automatiques.jpg" alt="Inspection d'un système de gicleurs automatiques" style="grid-column:1/-1;height:320px">
 </div>
 <p style="text-align:center;margin-top:28px;color:var(--muted)">Territoire desservi : <strong style="color:var(--steel)">Montréal • Laval • Rive-Nord • Rive-Sud • Province de Québec</strong></p>
 </div>
@@ -271,10 +279,12 @@ footer a:hover{color:#fff}
 <div class="grid2">
 <div class="reveal">
 <div class="section-tag" style="color:#FF8A96">Inspection &amp; entretien — Service vedette</div>
-<h2>Inspection CAN/ULC-S536, avec rapport détaillé</h2>
-<p class="lead">Votre système doit être inspecté selon la norme CAN/ULC-S536. Nous effectuons l'inspection complète, l'entretien préventif et les correctifs requis — avec un rapport détaillé que vous pouvez présenter à votre assureur et aux autorités.</p>
+<h2>Inspection des gicleurs selon NFPA 25, avec rapport détaillé</h2>
+<p class="lead">Deux systèmes, deux normes distinctes — et nous les traitons chacune selon la sienne. L'inspection, les essais et l'entretien de votre <strong style="color:#fff">réseau de gicleurs</strong> (système de protection incendie à base d'eau) relèvent de la norme <strong style="color:#fff">NFPA 25</strong>. L'inspection et les essais de votre <strong style="color:#fff">système d'alarme incendie</strong> relèvent, eux, de la norme <strong style="color:#fff">CAN/ULC-S536</strong> — c'est cette norme que suit notre service d'inspection pour la vérification des éléments du système de protection incendie. Dans les deux cas : inspection complète, entretien préventif, correctifs requis et rapport détaillé que vous pouvez présenter à votre assureur et aux autorités.</p>
 <ul class="checklist">
-<li>Inspection annuelle selon CAN/ULC-S536</li>
+<li>Réseau de gicleurs : inspection, essais et entretien selon la norme NFPA 25</li>
+<li>Système d'alarme incendie : inspection et essais selon la norme CAN/ULC-S536</li>
+<li>Vérification de tous les éléments du système de protection incendie</li>
 <li>Rapport d'inspection détaillé et documenté</li>
 <li>Entretien préventif et correctifs sur place</li>
 <li>Suivi des échéances pour vos bâtiments</li>
@@ -304,7 +314,8 @@ footer a:hover{color:#fff}
 <div class="field full"><label for="insp-notes">Précisions (adresse du bâtiment, nombre de systèmes, etc.)</label><textarea id="insp-notes" placeholder="Décrivez brièvement votre besoin..."></textarea></div>
 </div>
 <button type="submit" class="btn btn-red" style="width:100%;margin-top:18px">Demander mon inspection →</button>
-<div class="confirm" id="confirm-inspection">✅ Demande reçue ! Merci — notre équipe d'inspection vous contactera sous peu pour planifier la visite et préparer votre rapport CAN/ULC-S536.</div>
+<p class="demo-note">Formulaire de démonstration — dans la version finale, chaque demande est transmise directement par courriel aux Gicleurs Acme.</p>
+<div class="confirm" id="confirm-inspection">👁️ Aperçu : dans la version finale, cette demande arriverait directement dans la boîte courriel des Gicleurs Acme.</div>
 </form>
 </div>
 </div>
@@ -326,10 +337,11 @@ footer a:hover{color:#fff}
 </div>
 <div class="carousel reveal" id="carousel">
 <div class="carousel-track" id="carousel-track">
-<img src="https://images.squarespace-cdn.com/content/v1/65170f201ff2ba6d6a971750/1784830562596-0XNB2OPE73365M86I3K1/fire+protection+5.jpg" alt="Réseau de gicleurs en entrepôt">
-<img src="https://mepdetails.com/wp-content/themes/mep-details/assets/images/fire_hydrant_sprinkler_system.jpg" alt="Salle de pompes incendie">
-<img src="https://cdn.grandranker.com/articles/commercial-fire-sprinkler-system-cost-per-square-foot-content-1-1787540226.jpg" alt="Installation de gicleurs commerciaux">
-<img src="https://bizimages.withfloats.com/actual/6aa3d090f63b4fccc1685d82.jpg" alt="Travaux d'installation de protection incendie">
+<figure class="slide"><img src="https://gicleursacme.com/wp-content/uploads/aeroport_trudeau_ps-opt.jpg" alt="Aéroport international Pierre-Elliott-Trudeau de Montréal"><figcaption>Aéroport international Pierre-Elliott-Trudeau de Montréal</figcaption></figure>
+<figure class="slide"><img src="https://gicleursacme.com/wp-content/uploads/canadian_tire_s-opt.jpg" alt="Gicleurs au Canadian Tire de Brossard"><figcaption>Canadian Tire — Brossard</figcaption></figure>
+<figure class="slide"><img src="https://gicleursacme.com/wp-content/uploads/cineplex_10_30_ps-opt.jpg" alt="Gicleurs au cinéma Cineplex Odéon"><figcaption>Cineplex Odéon</figcaption></figure>
+<figure class="slide"><img src="https://gicleursacme.com/wp-content/uploads/rona_10_30_ps-opt.jpg" alt="Gicleurs chez Rona"><figcaption>Rona</figcaption></figure>
+<figure class="slide"><img src="https://gicleursacme.com/wp-content/uploads/saq_10_30_ps-opt.jpg" alt="Gicleurs à la SAQ"><figcaption>SAQ</figcaption></figure>
 </div>
 <button class="car-btn car-prev" onclick="moveSlide(-1)" aria-label="Précédent">‹</button>
 <button class="car-btn car-next" onclick="moveSlide(1)" aria-label="Suivant">›</button>
@@ -365,7 +377,8 @@ footer a:hover{color:#fff}
 <div class="field full"><label for="soum-desc">Description du projet *</label><textarea id="soum-desc" required placeholder="Superficie, vocation du bâtiment, travaux envisagés, échéancier..."></textarea></div>
 </div>
 <button type="submit" class="btn btn-red" style="width:100%;margin-top:18px">Envoyer ma demande de soumission →</button>
-<div class="confirm" id="confirm-soumission">✅ Demande envoyée ! Merci — le département des soumissions (poste 103) vous contactera sous peu. Pour un suivi immédiat : soumission@gicleursacme.com ou (450) 655-9820, poste 103.</div>
+<p class="demo-note">Formulaire de démonstration — dans la version finale, chaque demande est transmise directement par courriel aux Gicleurs Acme.</p>
+<div class="confirm" id="confirm-soumission">👁️ Aperçu : dans la version finale, cette demande arriverait directement dans la boîte courriel des Gicleurs Acme.</div>
 </form>
 </div>
 </div>
@@ -387,9 +400,17 @@ footer a:hover{color:#fff}
 // Reveal on scroll
 const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.12});
 document.querySelectorAll('.reveal,.tl-item').forEach(el=>io.observe(el));
-// Animated counters
-const cio=new IntersectionObserver(es=>{es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,target=+el.dataset.target;cio.unobserve(el);if(target===1967){el.textContent='1967';return}let cur=0;const step=Math.max(1,Math.ceil(target/50));const t=setInterval(()=>{cur+=step;if(cur>=target){cur=target;clearInterval(t)}el.textContent=cur},28)})},{threshold:.4});
+// Animated counters — guaranteed to reach their final value
+function finishCount(el){if(el.dataset.done)return;el.dataset.done='1';el.textContent=el.dataset.target}
+function animateCount(el){if(el.dataset.done)return;el.dataset.done='1';const target=+el.dataset.target;if(target===1967){el.textContent='1967';return}let cur=0;const step=Math.max(1,Math.ceil(target/50));const t=setInterval(()=>{cur+=step;if(cur>=target){cur=target;clearInterval(t)}el.textContent=cur},28)}
+if('IntersectionObserver' in window){
+const cio=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){animateCount(e.target);cio.unobserve(e.target)}})},{threshold:.2});
 document.querySelectorAll('.count').forEach(el=>cio.observe(el));
+// Safety net: if the observer never fires (element already past, browser quirk), force final values
+setTimeout(()=>document.querySelectorAll('.count').forEach(finishCount),3500);
+}else{
+document.querySelectorAll('.count').forEach(finishCount);
+}
 // Carousel
 let slide=0;const track=document.getElementById('carousel-track');const total=track.children.length;const dots=document.getElementById('car-dots');
 for(let i=0;i<total;i++){const b=document.createElement('button');b.setAttribute('aria-label','Photo '+(i+1));b.onclick=()=>{slide=i;update()};dots.appendChild(b)}
