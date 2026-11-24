@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Piscines et Spas POSEIDON — Service piscines et spas à Longueuil depuis 2002</title>
+<meta name="description" content="La plus grosse entreprise de service pour piscines et spas au Québec : 40+ employés, 20+ camions, 2 000 clients par année. Boutique à Longueuil, ouverts à l'année. 450-468-7378.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --marine:#0b3a5c; --marine-f:#072a44; --orange:#0e9fd8; --orange-f:#0b7bab;
+  --texte:#22262c; --doux:#5a6069; --fond:#f6f9fb; --blanc:#fff; --ligne:#e2eaef;
+  --rayon:14px; --ombre:0 10px 30px rgba(7,42,68,.10);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--texte);background:var(--fond);line-height:1.6}
+h1,h2,h3,.num{font-family:"Archivo","Inter",system-ui,sans-serif}
+img{max-width:100%;display:block}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.demo-band{background:#000;color:#ffc38a;text-align:center;font-size:.82rem;font-weight:600;padding:8px 14px}
+header{position:sticky;top:0;z-index:50;background:rgba(7,42,68,.97);box-shadow:0 2px 14px rgba(0,0,0,.25)}
+.header-in{display:flex;align-items:center;gap:16px;padding:12px 0}
+.logo-txt{color:#fff;font-family:"Archivo",sans-serif;font-weight:800;font-size:1.25rem;text-decoration:none;line-height:1.15}
+.logo-txt span{color:var(--orange)}
+.logo-txt small{display:block;font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#bcd6e6}
+nav.main{margin-left:auto;display:flex;gap:22px}
+nav.main a{color:#e8f2f8;text-decoration:none;font-weight:600;font-size:.94rem;padding:6px 2px;border-bottom:2px solid transparent}
+nav.main a:hover{color:var(--orange);border-color:var(--orange)}
+.btn{display:inline-flex;align-items:center;gap:9px;background:var(--orange);color:#fff;font-weight:700;text-decoration:none;padding:13px 24px;border-radius:10px;border:none;cursor:pointer;font-size:1rem;transition:transform .15s,background .15s;box-shadow:0 4px 14px rgba(14,159,216,.30)}
+.btn:hover{background:var(--orange-f);transform:translateY(-1px)}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-tel{margin-left:6px;white-space:nowrap}
+.btn-ghost{background:transparent;color:#fff;border:2px solid #fff;box-shadow:none}
+.btn-ghost:hover{background:rgba(255,255,255,.12)}
+.hero{position:relative;min-height:560px;display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:var(--marine-f)}
+.hero .fond{position:absolute;inset:0;background:
+  radial-gradient(ellipse 60% 45% at 82% 18%,rgba(14,159,216,.5),transparent 65%),
+  radial-gradient(ellipse 50% 40% at 12% 82%,rgba(20,120,170,.45),transparent 60%),
+  linear-gradient(160deg,#0d4d75 0%,#083656 55%,#062a44 100%)}
+.hero .vagues{position:absolute;left:0;right:0;bottom:0;opacity:.35}
+.hero-in{position:relative;z-index:2;padding:58px 0 84px;width:100%}
+.hero .badges{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+.hero .badge{display:inline-block;font-weight:700;font-size:.8rem;padding:7px 14px;border-radius:999px;letter-spacing:.05em;text-transform:uppercase}
+.badge-o{background:var(--orange);color:#fff}
+.badge-w{background:#fff;color:var(--marine-f)}
+.hero h1{font-size:clamp(2rem,4.4vw,3.15rem);line-height:1.13;font-weight:800;max-width:760px;text-shadow:0 2px 12px rgba(0,0,0,.35)}
+.hero h1 em{color:#5ec8f2;font-style:normal}
+.hero p{max-width:620px;margin:16px 0 26px;font-size:1.08rem;color:#dceef7}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+.stats{background:var(--marine-f);color:#fff}
+.stats-in{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:30px 0}
+.stat{text-align:center;padding:6px}
+.stat .num{font-size:2.1rem;font-weight:800;color:var(--orange);line-height:1}
+.stat .lbl{font-size:.88rem;color:#bcd6e6;margin-top:6px}
+section.bloc{padding:68px 0}
+.kicker{color:var(--orange-f);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;margin-bottom:10px}
+h2{font-size:clamp(1.6rem,3vw,2.25rem);line-height:1.2;font-weight:800;margin-bottom:10px}
+.sous{color:var(--doux);max-width:740px;margin-bottom:32px}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.svc{background:var(--blanc);border:1px solid var(--ligne);border-radius:var(--rayon);padding:26px;box-shadow:var(--ombre);display:flex;flex-direction:column;gap:10px}
+.svc .ico{width:46px;height:46px;border-radius:12px;background:#e3f3fb;display:flex;align-items:center;justify-content:center}
+.svc .ico svg{width:24px;height:24px;stroke:var(--orange-f);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.svc h3{font-size:1.13rem}
+.svc p{color:var(--doux);font-size:.94rem;flex:1}
+.svc a{color:var(--orange-f);font-weight:700;text-decoration:none}
+.svc a:hover{text-decoration:underline}
+.vedette{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:stretch;margin-bottom:26px}
+.vedette .photo{border-radius:18px;overflow:hidden;box-shadow:var(--ombre);min-height:340px;background:linear-gradient(150deg,#0d4d75,#062a44);display:flex;align-items:center;justify-content:center;padding:34px}
+.vedette .photo .carte-boutique{color:#fff;text-align:left}
+.vedette .photo .carte-boutique .gros{font-family:"Archivo",sans-serif;font-size:2rem;font-weight:800;line-height:1.15}
+.vedette .photo .carte-boutique p{color:#bcd6e6;margin-top:10px}
+.vedette .texte{background:var(--blanc);border:1px solid var(--ligne);border-radius:18px;box-shadow:var(--ombre);padding:34px;display:flex;flex-direction:column;justify-content:center}
+.vedette .texte h3{font-size:1.45rem;margin-bottom:10px}
+.vedette .texte p{color:var(--doux);margin-bottom:12px}
+.vedette ul{list-style:none;margin-bottom:22px}
+.vedette ul li{padding:8px 0;border-bottom:1px solid var(--ligne);font-size:.96rem;display:flex;gap:11px;align-items:flex-start}
+.vedette ul li:last-child{border-bottom:none}
+.vedette ul li svg{width:20px;height:20px;flex:none;margin-top:2px}
+.atouts{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.atout{border-radius:var(--rayon);padding:24px;color:#fff;box-shadow:var(--ombre);background:linear-gradient(160deg,#0d4d75,#083656)}
+.atout h3{font-size:1.05rem;margin-bottom:6px}
+.atout p{font-size:.9rem;color:#cfe6f2}
+.preuve{background:var(--marine);color:#fff}
+.preuve h2{color:#fff}
+.preuve-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:center}
+.preuve .gros{font-size:3.4rem;font-weight:800;color:var(--orange);line-height:1;font-family:"Archivo",sans-serif}
+.carte-w{background:#fff;border-radius:var(--rayon);padding:22px;color:var(--texte)}
+.carte-w p{color:var(--doux);font-size:.94rem}
+.form-carte{background:var(--blanc);border:1px solid var(--ligne);border-radius:var(--rayon);box-shadow:var(--ombre);padding:32px}
+.form-carte.express{border-top:6px solid var(--orange)}
+.champs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.champs .plein{grid-column:1/-1}
+label{font-size:.85rem;font-weight:700;display:block;margin-bottom:5px}
+input,select,textarea{width:100%;padding:11px 12px;border:1.5px solid #d5dee3;border-radius:9px;font:inherit;font-size:.95rem;background:#fcfdfe}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--orange);border-color:var(--orange)}
+textarea{resize:vertical;min-height:84px}
+.ok-msg{display:none;background:#e9f9ec;border:1.5px solid #35a854;color:#176b31;border-radius:9px;padding:12px 14px;margin-top:14px;font-weight:600;font-size:.93rem}
+.demo-note{background:#fff6ec;border:1.5px dashed #d16508;color:#7a4205;border-radius:9px;padding:10px 14px;margin-top:16px;font-size:.88rem;font-weight:600}
+footer{background:var(--marine-f);color:#bcd6e6;padding:48px 0 30px}
+footer .cols{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:28px;margin-bottom:26px}
+footer h4{color:#fff;margin-bottom:10px;font-family:"Archivo",sans-serif}
+footer a{color:#bcd6e6;text-decoration:none}
+footer a:hover{color:var(--orange)}
+footer .bas{border-top:1px solid #1d4a68;padding-top:18px;font-size:.85rem;color:#7d9db2;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.tel-ligne{display:inline-flex;align-items:center;gap:8px}
+.tel-ligne svg{width:17px;height:17px;stroke:var(--orange);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.call-fixe{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:60;justify-content:center;text-align:center}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.vu{opacity:1;transform:none}
+@media (max-width:900px){
+  nav.main{display:none}
+  .stats-in{grid-template-columns:repeat(2,1fr)}
+  .services{grid-template-columns:1fr}
+  .vedette,.preuve-grid{grid-template-columns:1fr}
+  .atouts{grid-template-columns:1fr 1fr}
+  footer .cols{grid-template-columns:1fr}
+  .call-fixe{display:inline-flex}
+  body{padding-bottom:86px}
+  .btn-tel{display:none}
+  .hero{min-height:500px}
+}
+</style>
+</head>
+<body>
+
+<div class="demo-band">Proposition conceptuelle — démo non officielle réalisée à titre de proposition. Ce site n'est pas le site officiel de l'entreprise.</div>
+
+<header>
+  <div class="wrap header-in">
+    <a class="logo-txt" href="#accueil">Piscines et Spas <span>POSEIDON</span><small>Longueuil — depuis 2002</small></a>
+    <nav class="main">
+      <a href="#services">Services</a>
+      <a href="#boutique">Boutique</a>
+      <a href="#entreprise">L'entreprise</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-tel" href="tel:+14504687378"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>450-468-7378</a>
+  </div>
+</header>
+
+<div class="hero" id="accueil">
+  <div class="fond"></div>
+  <svg class="vagues" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0,64 C240,110 480,20 720,54 C960,88 1200,30 1440,64 L1440,120 L0,120 Z" fill="#5ec8f2" opacity=".25"/><path d="M0,84 C260,118 520,52 780,80 C1040,108 1240,60 1440,88 L1440,120 L0,120 Z" fill="#0e9fd8" opacity=".3"/></svg>
+  <div class="wrap hero-in">
+    <div class="badges">
+      <span class="badge badge-o">Depuis 2002</span>
+      <span class="badge badge-w">Ouverts à l'année</span>
+      <span class="badge badge-w">RBQ : 5660-3913-01</span>
+    </div>
+    <h1>Tout pour la cour de vos rêves, <em>entretenue par des pros</em>.</h1>
+    <p>La plus grosse entreprise de service pour piscines et spas au Québec : techniciens formés et certifiés, boutique complète à Longueuil et un service à la clientèle hors pair — sur la Rive-Sud et l'île de Montréal.</p>
+    <div class="hero-cta">
+      <a class="btn" href="#soumission">Planifier mon service</a>
+      <a class="btn btn-ghost" href="tel:+14504687378"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>450-468-7378</a>
+    </div>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="wrap stats-in">
+    <div class="stat"><div class="num"><span class="compteur" data-cible="40">40</span>+</div><div class="lbl">employés formés et certifiés</div></div>
+    <div class="stat"><div class="num"><span class="compteur" data-cible="20">20</span>+</div><div class="lbl">camions de service sur la route</div></div>
+    <div class="stat"><div class="num"><span class="compteur" data-cible="2000">2000</span></div><div class="lbl">clients qui reviennent chaque année</div></div>
+    <div class="stat"><div class="num">Top 50</div><div class="lbl">classée 39e des entreprises qui rendent piscines et spas plus sécuritaires et performants</div></div>
+  </div>
+</div>
+
+<section class="bloc" id="soumission" style="padding-bottom:20px">
+  <div class="wrap">
+    <form class="form-carte express reveal" id="form-express">
+      <h2 style="font-size:1.5rem">Un service pour votre piscine ou votre spa ?</h2>
+      <p style="color:var(--doux);margin-bottom:18px">Trois champs, une minute : on vous rappelle pour planifier. Ou appelez au <a href="tel:+14504687378"><strong>450-468-7378</strong></a>.</p>
+      <div class="champs">
+        <div><label for="e-nom">Nom *</label><input id="e-nom" required autocomplete="name"></div>
+        <div><label for="e-tel">Téléphone *</label><input id="e-tel" required type="tel" autocomplete="tel"></div>
+        <div class="plein"><label for="e-service">Votre besoin *</label>
+          <select id="e-service" required>
+            <option value="">Choisir…</option>
+            <option>Ouverture / fermeture de piscine</option>
+            <option>Entretien régulier</option>
+            <option>Réparation</option>
+            <option>Rénovation / restauration</option>
+            <option>Spa (service ou réusiné)</option>
+            <option>Autre</option>
+          </select></div>
+      </div>
+      <p class="demo-note">Démonstration — ce formulaire est une maquette : aucune demande réelle n'est transmise à l'entreprise.</p>
+      <p style="margin-top:16px"><button class="btn" type="submit">Être rappelé</button></p>
+      <div class="ok-msg">Simulation terminée. Aucune demande n'a été transmise à l'entreprise.</div>
+    </form>
+  </div>
+</section>
+
+<section class="bloc" id="services" style="padding-top:26px">
+  <div class="wrap">
+    <p class="kicker reveal">Nos services</p>
+    <h2 class="reveal">Le service piscine et spa, du printemps à l'hiver</h2>
+    <p class="sous reveal">Nous nous spécialisons uniquement dans le service pour piscines et spas : des techniciens spécialement formés, une expertise certifiée, résidentiel comme commercial.</p>
+    <div class="services">
+      <article class="svc reveal">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/><circle cx="12" cy="12" r="3.2"/></svg></div>
+        <h3>Ouverture et fermeture</h3>
+        <p>Le début et la fin de saison sans souci : ouverture, fermeture et hivernisation par des techniciens certifiés.</p>
+        <a href="#soumission">Planifier</a>
+      </article>
+      <article class="svc reveal">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M2 13c2.5-2.5 5-2.5 7.5 0S14.5 15.5 17 13s3.5-2 5 0"/><path d="M2 19c2.5-2.5 5-2.5 7.5 0S14.5 21.5 17 19s3.5-2 5 0"/><path d="M12 3a4 4 0 0 1 4 4c0 3-4 5-4 5S8 10 8 7a4 4 0 0 1 4-4z"/></svg></div>
+        <h3>Entretien</h3>
+        <p>Une eau propre, sécuritaire et performante toute la saison, sans que vous ayez à y penser.</p>
+        <a href="#soumission">Planifier</a>
+      </article>
+      <article class="svc reveal">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a4.5 4.5 0 0 0-6 6L3 18l3 3 5.7-5.7a4.5 4.5 0 0 0 6-6L14 13l-3-3 3.7-3.7z"/></svg></div>
+        <h3>Réparation</h3>
+        <p>Pompes, filtres, thermopompes, pièces spécifiques : nous commandons et installons ce qu'il faut, vite et bien.</p>
+        <a href="#soumission">Planifier</a>
+      </article>
+      <article class="svc reveal">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div>
+        <h3>Rénovation et restauration</h3>
+        <p>Redonnez vie à votre piscine : rénovation et restauration complètes, incluant la peinture de piscine.</p>
+        <a href="#soumission">Planifier</a>
+      </article>
+      <article class="svc reveal">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 12h16a8 4.5 0 0 1-16 0z"/><path d="M8 12V7M12 12V5M16 12V7"/></svg></div>
+        <h3>Spas et spas réusinés</h3>
+        <p>Service complet pour spas, et une sélection de spas réusinés Poseidon pour profiter plus, pour moins.</p>
+        <a href="#soumission">Planifier</a>
+      </article>
+      <article class="svc reveal">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 9l1.7-5h14.6L21 9M3 9h18M3 9v11h18V9"/><path d="M9.5 20v-6h5v6"/></svg></div>
+        <h3>Boutique et accessoires</h3>
+        <p>Thermopompes, balayeuses, produits et accessoires : tout ce qu'il faut pour profiter de la saison au maximum.</p>
+        <a href="#boutique">Découvrir la boutique</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="bloc" id="boutique" style="padding-top:6px">
+  <div class="wrap">
+    <div class="vedette reveal">
+      <div class="photo"><div class="carte-boutique">
+        <p class="kicker" style="color:#5ec8f2">Boutique — Longueuil</p>
+        <div class="gros">2220, boul. Marie-Victorin<br>Longueuil</div>
+        <p>Venez découvrir notre boutique et trouvez tout ce qu'il vous faut pour transformer votre espace extérieur — des produits soigneusement sélectionnés et des conseils avisés.</p>
+      </div></div>
+      <div class="texte">
+        <p class="kicker">Produits et accessoires</p>
+        <h3>La boutique pour aménager la cour de vos rêves.</h3>
+        <p>Notre boutique regorge de produits et accessoires pour profiter de la saison estivale au maximum. Nos spécialistes vous recommandent les meilleurs produits selon vos besoins et votre budget.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#e3f3fb"/><path d="M8 12.5 10.8 15 16 9.5" stroke="#0b7bab" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Thermopompes et équipements de piscine</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#e3f3fb"/><path d="M8 12.5 10.8 15 16 9.5" stroke="#0b7bab" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Spas et spas réusinés</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#e3f3fb"/><path d="M8 12.5 10.8 15 16 9.5" stroke="#0b7bab" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Cuisines extérieures, BBQ et mobilier de jardin</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#e3f3fb"/><path d="M8 12.5 10.8 15 16 9.5" stroke="#0b7bab" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Conseils d'une équipe de pros, en magasin</span></li>
+        </ul>
+        <p><a class="btn" href="#contact">Passer à la boutique</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bloc" id="entreprise" style="padding-top:6px">
+  <div class="wrap">
+    <p class="kicker reveal">L'entreprise</p>
+    <h2 class="reveal">Une équipe de pros, une expertise reconnue.</h2>
+    <p class="sous reveal">En opération depuis 2002, Poseidon a développé son expertise dans le secteur résidentiel et commercial, sur la Rive-Sud et l'île de Montréal.</p>
+    <div class="atouts">
+      <div class="atout reveal"><h3>Techniciens certifiés</h3><p>Une formation certifiée qui se transpose dans la satisfaction de la clientèle, saison après saison.</p></div>
+      <div class="atout reveal"><h3>Service à la clientèle hors pair</h3><p>Des chefs techniciens d'expérience qui forment déjà la relève, à l'interne comme à l'externe.</p></div>
+      <div class="atout reveal"><h3>Ouverts à l'année</h3><p>Piscine l'été, spa l'hiver : notre équipe est là douze mois par année.</p></div>
+      <div class="atout reveal"><h3>Implication dans l'industrie</h3><p>Notre président, Nicolas Guillotte, a dirigé l'ACPQ pendant 3 ans et siège au Pool and Hot Tub Council of Canada.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="bloc preuve" id="confiance">
+  <div class="wrap">
+    <p class="kicker reveal">Confiance</p>
+    <h2 class="reveal">La confiance de 2 000 clients, chaque année.</h2>
+    <div class="preuve-grid">
+      <div class="reveal">
+        <div class="gros">2002</div>
+        <p style="margin-top:10px">Fondée par Nicolas Guillotte, entrepreneur dès le Cégep, Poseidon est devenue la plus grosse entreprise de service pour piscines et spas au Québec — classée 39e du Top 50 de l'industrie.</p>
+        <p style="margin-top:22px"><a class="btn" href="#soumission">Planifier mon service</a></p>
+      </div>
+      <div class="carte-w reveal">
+        <h3 style="margin-bottom:8px">Licence et affiliations</h3>
+        <p><strong>RBQ : 5660-3913-01</strong></p>
+        <p style="margin-top:8px">Membre de l'Association des Commerçants de Piscine du Québec (ACPQ) et du Pool and Hot Tub Council of Canada. Formation d'Opérateur Certifié en Piscine et Spa (CPO) offerte sur place.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h4>Piscines et Spas POSEIDON</h4>
+        <p>2220, boul. Marie-Victorin<br>Longueuil, QC J4G 1B1</p>
+        <p style="margin-top:6px">RBQ : 5660-3913-01 — Ouverts à l'année</p>
+        <p style="margin-top:10px"><a class="tel-ligne" href="tel:+14504687378"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><strong>450-468-7378</strong></a></p>
+        <p style="margin-top:8px">Courriel : info@psposeidon.com</p>
+      </div>
+      <div>
+        <h4>Zone desservie</h4>
+        <p>Rive-Sud de Montréal et île de Montréal — résidentiel et commercial.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <p><a href="#services">Entretien</a><br>
+        <a href="#services">Réparation</a><br>
+        <a href="#services">Rénovation / restauration</a><br>
+        <a href="#services">Ouverture et fermeture</a><br>
+        <a href="#soumission">Planifier un service</a></p>
+      </div>
+    </div>
+    <div class="bas">
+      <span>© 2026 Piscines et Spas POSEIDON — service piscines et spas depuis 2002.</span>
+      <span>Proposition conceptuelle de site web — démo non officielle.</span>
+    </div>
+  </div>
+</footer>
+
+<a class="btn call-fixe" href="tel:+14504687378"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Appeler — 450-468-7378</a>
+
+<script>
+(function(){
+  var fait=false;
+  function animer(){
+    if(fait) return; fait=true;
+    document.querySelectorAll('.compteur').forEach(function(el){
+      var cible=parseInt(el.dataset.cible,10), debut=null;
+      function pas(ts){ if(!debut) debut=ts; var p=Math.min((ts-debut)/1400,1); el.textContent=Math.round(cible*p); if(p<1) requestAnimationFrame(pas); else el.textContent=cible; }
+      requestAnimationFrame(pas);
+    });
+  }
+  var obs=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ animer(); obs.disconnect(); } }); },{threshold:.35});
+  var s=document.querySelector('.stats'); if(s) obs.observe(s);
+})();
+(function(){
+  var obs=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('vu'); obs.unobserve(e.target); } }); },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+})();
+document.getElementById('form-express').addEventListener('submit',function(ev){
+  ev.preventDefault(); var m=this.querySelector('.ok-msg'); if(m) m.style.display='block';
+});
+</script>
+</body>
+</html>
