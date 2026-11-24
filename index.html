@@ -3,218 +3,678 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Démos — Sites personnalisés (192 démos)</title>
+<meta name="robots" content="noindex, nofollow">
+<title>SMB SURFACE — Finition, protection et restauration du béton | Grand Montréal</title>
+<meta name="description" content="SMB Surface : spécialiste en finition, protection et restauration du béton. Résidentiel, commercial, industriel. Grand Montréal. 438-258-5799.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  body { font-family: system-ui, sans-serif; background:#0d1b2a; color:#e8eef4; margin:0; padding:2rem 1rem; }
-  main { max-width:640px; margin:0 auto; }
-  h1 { font-size:1.4rem; margin-bottom:.25rem; }
-  p.sub { color:#9fb3c8; margin-top:0; }
-  a.item { display:block; background:#16283c; border:1px solid #26405c; border-radius:10px; padding:1rem 1.1rem; margin:.6rem 0; color:#fff; text-decoration:none; }
-  a.item:hover { background:#1c3249; }
-  a.item b { display:block; font-size:1.05rem; }
-  a.item span { color:#9fb3c8; font-size:.9rem; }
+:root{
+  --noir:#0b0e11; --encre:#10161b; --panneau:#151d24;
+  --petrole:#0f8a9d; --petrole-clair:#2fb3c7; --acier:#c8ccd2; --acier-sombre:#8b939c;
+  --creme:#eef1f3; --gris:#9aa6ae; --ligne:rgba(238,241,243,.14);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{background:var(--noir);color:var(--creme);font-family:"Inter",system-ui,sans-serif;line-height:1.6;overflow-x:hidden}
+::selection{background:var(--petrole);color:#04141a}
+img{display:block;max-width:100%}
+a{color:inherit}
+.display{font-family:"Archivo",sans-serif;text-transform:uppercase;line-height:.98;font-weight:900;letter-spacing:-.015em}
+.wrap{max-width:1360px;margin:0 auto;padding:0 28px}
+.demo-band{background:#000;color:#9fd8e2;text-align:center;font-size:.78rem;font-weight:600;padding:7px 14px;border-bottom:1px solid var(--ligne);position:relative;z-index:80}
+.grain{position:fixed;inset:-50%;width:200%;height:200%;pointer-events:none;z-index:200;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");animation:grain 8s steps(10) infinite}
+@keyframes grain{0%,100%{transform:translate(0,0)}10%{transform:translate(-5%,-8%)}30%{transform:translate(3%,-12%)}50%{transform:translate(8%,4%)}70%{transform:translate(-9%,6%)}90%{transform:translate(4%,10%)}}
+
+/* ---------- Préchargeur : balayage de polissage ---------- */
+#loader{position:fixed;inset:0;z-index:300;background:#07090b;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px}
+#loader .mot{font-family:"Archivo",sans-serif;font-weight:900;font-size:clamp(2.6rem,9vw,6.4rem);letter-spacing:.04em;overflow:hidden;position:relative}
+#loader .mot span{display:inline-block;transform:translateY(110%)}
+#loader .mot .p{color:var(--petrole-clair)}
+#loader .mot .shine{position:absolute;top:0;left:0;height:100%;width:45%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.85) 50%,transparent);transform:translateX(-220%) skewX(-12deg);mix-blend-mode:screen;pointer-events:none}
+#loader .sous{font-size:.78rem;font-weight:700;letter-spacing:.34em;text-transform:uppercase;color:var(--acier-sombre)}
+#loader .barre{width:min(420px,70vw);height:2px;background:rgba(238,241,243,.15);overflow:hidden}
+#loader .barre i{display:block;height:100%;width:0%;background:linear-gradient(90deg,var(--petrole),var(--acier))}
+#loader .pct{font-family:"Archivo",sans-serif;font-weight:900;font-size:1.1rem;color:var(--petrole-clair);letter-spacing:.3em}
+
+.cursor-dot,.cursor-ring{position:fixed;top:0;left:0;pointer-events:none;z-index:250;border-radius:50%;transform:translate(-50%,-50%)}
+.cursor-dot{width:8px;height:8px;background:var(--petrole-clair)}
+.cursor-ring{width:38px;height:38px;border:1.5px solid rgba(47,179,199,.75);transition:width .25s,height .25s,background .25s;display:flex;align-items:center;justify-content:center}
+.cursor-ring.gros{width:84px;height:84px;background:rgba(15,138,157,.92)}
+.cursor-ring .vue{font-size:.62rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#04141a;opacity:0;transition:opacity .2s}
+.cursor-ring.gros .vue{opacity:1}
+@media (hover:none),(pointer:coarse){.cursor-dot,.cursor-ring{display:none}}
+.topbar{position:fixed;top:28px;left:0;right:0;z-index:60;mix-blend-mode:difference;color:#fff}
+.topbar-in{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;max-width:1360px;margin:0 auto}
+.topbar .mot{font-family:"Archivo",sans-serif;font-weight:900;font-size:1.25rem;letter-spacing:.1em;text-transform:uppercase}
+.topbar nav{display:flex;gap:26px}
+.topbar nav a{text-decoration:none;font-size:.82rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+.topbar .tel{font-weight:700;font-size:.92rem;text-decoration:none}
+
+/* ---------- Héros : image miroir + balayage de lumière ---------- */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
+.hero .fond{position:absolute;inset:0;will-change:transform}
+.hero .fond img{width:100%;height:100%;object-fit:cover;object-position:center 40%;filter:saturate(.85) contrast(1.03)}
+.hero .voile{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,14,17,.5) 0%,rgba(11,14,17,.08) 30%,rgba(11,14,17,.55) 62%,rgba(11,14,17,.97) 100%);pointer-events:none}
+.hero .reflet{position:absolute;left:0;right:0;bottom:0;height:150px;overflow:hidden;z-index:1;pointer-events:none;
+  -webkit-mask-image:linear-gradient(to bottom,rgba(0,0,0,.5),transparent 92%);
+  mask-image:linear-gradient(to bottom,rgba(0,0,0,.5),transparent 92%)}
+.hero .reflet img{width:100%;height:100svh;object-fit:cover;object-position:center 40%;transform:scaleY(-1);transform-origin:top;opacity:.55;filter:saturate(.85)}
+.hero-side{position:absolute;top:50%;right:22px;transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl;font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;color:rgba(238,241,243,.75);z-index:3}
+.badge-rond{position:absolute;right:34px;bottom:200px;width:128px;height:128px;z-index:4;animation:tourne 16s linear infinite;pointer-events:none}
+.badge-rond svg{width:100%;height:100%}
+.badge-rond text{font-size:10.5px;font-weight:700;letter-spacing:2.6px;fill:var(--creme);text-transform:uppercase}
+.badge-rond .fleche{fill:var(--petrole-clair)}
+@keyframes tourne{to{transform:rotate(360deg)}}
+.hero-in{position:relative;z-index:2;padding:0 28px 30px;max-width:1360px;margin:0 auto;width:100%}
+.hero-meta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.hero-meta .tag{font-size:.74rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;border:1px solid rgba(238,241,243,.4);border-radius:999px;padding:7px 14px}
+.hero-meta .tag.plein{background:var(--petrole);border-color:var(--petrole);color:#04141a}
+.hero h1{font-size:clamp(3.2rem,12.5vw,13rem);white-space:nowrap;position:relative}
+.hero h1 .lt{display:inline-block;will-change:transform}
+.hero h1 .p{color:var(--petrole-clair)}
+.hero h1 .sweep{position:absolute;top:-6%;bottom:-6%;left:0;width:34%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55) 50%,transparent);transform:translateX(-320%) skewX(-14deg);mix-blend-mode:screen;pointer-events:none}
+.hero-sub{display:flex;justify-content:space-between;align-items:flex-end;gap:26px;flex-wrap:wrap;margin-top:8px}
+.hero-sub p{max-width:560px;font-size:1.06rem;color:#d5dade}
+.hero-sub p strong{color:#fff}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--petrole);color:#04141a;font-weight:700;text-decoration:none;padding:15px 28px;border-radius:999px;font-size:.98rem;border:none;cursor:pointer;white-space:nowrap;will-change:transform}
+.btn-ligne{background:transparent;color:var(--creme);border:1.5px solid rgba(238,241,243,.55)}
+.scroll-cue{display:flex;align-items:center;gap:12px;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gris);margin-top:24px}
+.scroll-cue .trait{width:64px;height:1px;background:var(--petrole-clair);position:relative;overflow:hidden}
+.scroll-cue .trait::after{content:"";position:absolute;inset:0;background:var(--creme);transform:translateX(-100%);animation:glisse 2.2s infinite}
+@keyframes glisse{55%{transform:translateX(0)}100%{transform:translateX(100%)}}
+.marquee{background:var(--petrole);color:#04141a;overflow:hidden;padding:13px 0;transform:rotate(-1.1deg) scale(1.03);margin-top:30px;position:relative;z-index:4}
+.marquee .piste{display:flex;width:max-content;will-change:transform}
+.marquee span{font-family:"Archivo",sans-serif;font-weight:900;text-transform:uppercase;font-size:1.35rem;letter-spacing:.06em;padding:0 18px;white-space:nowrap}
+.marquee span i{font-style:normal;opacity:.45;padding-left:36px}
+.manifeste{padding:130px 0 100px}
+.manifeste .sur{font-size:.78rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--petrole-clair);margin-bottom:24px}
+.manifeste p{font-family:"Archivo",sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(1.9rem,4.6vw,3.9rem);line-height:1.16;max-width:1180px}
+.manifeste p .mot{opacity:.13}
+.manifeste p .mot.acc{color:var(--petrole-clair)}
+
+/* ---------- Segments ---------- */
+.segments{padding:20px 0 90px}
+.seg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:34px}
+.seg{position:relative;background:var(--panneau);border:1px solid var(--ligne);border-radius:16px;padding:30px 26px 26px;overflow:hidden;isolation:isolate}
+.seg::after{content:"";position:absolute;top:0;left:-80%;width:60%;height:100%;background:linear-gradient(100deg,transparent,rgba(200,204,210,.22) 50%,transparent);transform:skewX(-14deg);transition:left .7s ease;pointer-events:none}
+.seg:hover::after{left:130%}
+.seg .k{font-family:"Archivo",sans-serif;font-weight:900;font-size:.8rem;letter-spacing:.28em;text-transform:uppercase;color:var(--petrole-clair)}
+.seg h3{font-family:"Archivo",sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(1.5rem,2.6vw,2.1rem);margin:10px 0 8px}
+.seg p{color:var(--gris);font-size:.95rem}
+.seg .barre-acier{height:3px;margin-top:18px;background:linear-gradient(90deg,var(--petrole),var(--acier),transparent)}
+
+/* ---------- Services ---------- */
+.services{padding:20px 0 110px;position:relative}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:20px;border-top:1px solid var(--ligne);padding-top:22px;margin-bottom:8px}
+.sec-head h2{font-size:clamp(2.6rem,6.5vw,5rem)}
+.sec-head .note{color:var(--gris);font-size:.9rem;max-width:300px;text-align:right}
+.svc-row{position:relative;display:grid;grid-template-columns:90px 1fr;gap:22px;align-items:center;padding:30px 10px;border-bottom:1px solid var(--ligne);text-decoration:none;overflow:hidden;isolation:isolate}
+.svc-row::before{content:"";position:absolute;inset:0;background:var(--panneau);transform:scaleY(0);transform-origin:bottom;transition:transform .35s ease;z-index:-1}
+.svc-row:hover::before{transform:scaleY(1)}
+.svc-row::after{content:"";position:absolute;top:0;left:-70%;width:45%;height:100%;background:linear-gradient(100deg,transparent,rgba(200,204,210,.16) 50%,transparent);transform:skewX(-14deg);transition:left .6s ease;pointer-events:none}
+.svc-row:hover::after{left:125%}
+.svc-row .num{font-family:"Archivo",sans-serif;font-weight:900;font-size:1.15rem;color:var(--petrole-clair)}
+.svc-row .titre{font-family:"Archivo",sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(1.6rem,3.8vw,3rem);line-height:1.02;transition:transform .35s ease,color .35s;will-change:transform}
+.svc-row:hover .titre{transform:translateX(14px);color:var(--petrole-clair)}
+.svc-row .desc{grid-column:2;max-width:600px;color:var(--gris);font-size:.95rem;margin-top:-8px}
+#svc-float{position:fixed;top:0;left:0;width:300px;height:210px;border-radius:14px;overflow:hidden;pointer-events:none;z-index:90;opacity:0;transform:translate(-50%,-58%) rotate(-3deg);box-shadow:0 30px 60px rgba(0,0,0,.5)}
+#svc-float img{width:100%;height:100%;object-fit:cover}
+.bande{overflow:hidden;padding:26px 0 6px;white-space:nowrap}
+.bande .mot-geant{font-family:"Archivo",sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(4.5rem,12vw,11rem);line-height:1;color:transparent;-webkit-text-stroke:1.5px rgba(238,241,243,.28);display:inline-block;will-change:transform}
+.bande .mot-geant b{font-weight:900;color:var(--petrole);-webkit-text-stroke:0}
+
+/* ---------- Repères ---------- */
+.reperes{background:var(--encre);border-top:1px solid var(--ligne);border-bottom:1px solid var(--ligne);padding:88px 0;will-change:background-color}
+.reperes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.repere .gros{font-family:"Archivo",sans-serif;font-weight:900;font-size:clamp(3.4rem,7.5vw,6.4rem);line-height:1}
+.repere .gros em{font-style:normal;color:var(--petrole-clair)}
+.reperes.petrole .repere .gros em{color:#eef1f3}
+.repere .lbl{color:var(--gris);font-size:.92rem;margin-top:8px;max-width:260px}
+
+/* ---------- Réalisations : défilement horizontal avec reflets ---------- */
+.rea-sec{padding:100px 0 40px}
+.galerie{display:flex;gap:26px;padding:34px 28px 10px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.galerie::-webkit-scrollbar{display:none}
+.gal-card{position:relative;width:min(62vw,680px);flex:none;scroll-snap-align:center;cursor:grab}
+.gal-card:active{cursor:grabbing}
+.gal-photo{position:relative;border-radius:16px;overflow:hidden;height:min(60vh,520px)}
+.gal-photo img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);transition:transform .8s ease}
+.gal-card:hover .gal-photo img{transform:scale(1.12)}
+.gal-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,rgba(255,255,255,.28) 50%,transparent 70%);background-size:250% 100%;background-position:120% 0;transition:background-position .9s ease;pointer-events:none}
+.gal-card:hover .gal-photo::after{background-position:-120% 0}
+.gal-photo figcaption{position:absolute;left:0;right:0;bottom:0;padding:52px 22px 18px;background:linear-gradient(transparent,rgba(4,8,10,.92));display:flex;justify-content:space-between;align-items:flex-end;gap:14px}
+.gal-photo figcaption .t{font-family:"Archivo",sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(1.3rem,2.4vw,2rem);line-height:1.05}
+.gal-photo figcaption .d{color:#cfd4d8;font-size:.86rem;text-align:right;max-width:240px}
+.gal-card .idx{position:absolute;top:16px;left:18px;font-family:"Archivo",sans-serif;font-weight:900;font-size:1rem;color:var(--petrole-clair);letter-spacing:.1em;z-index:2;text-shadow:0 1px 8px rgba(0,0,0,.7)}
+.gal-reflet{height:64px;overflow:hidden;border-radius:0 0 16px 16px;
+  -webkit-mask-image:linear-gradient(to bottom,rgba(0,0,0,.4),transparent 95%);
+  mask-image:linear-gradient(to bottom,rgba(0,0,0,.4),transparent 95%)}
+.gal-reflet img{width:100%;height:520px;object-fit:cover;transform:scaleY(-1);transform-origin:top;opacity:.5;filter:saturate(.85)}
+.gal-nav{display:flex;gap:12px;justify-content:flex-end;padding:18px 28px 60px}
+.gal-nav button{background:transparent;border:1.5px solid rgba(238,241,243,.4);color:var(--creme);border-radius:999px;padding:11px 22px;font:inherit;font-weight:700;cursor:pointer;transition:border-color .2s,color .2s}
+.gal-nav button:hover{border-color:var(--petrole-clair);color:var(--petrole-clair)}
+
+/* ---------- Contact ---------- */
+.cta{padding:30px 0 110px}
+.cta .sur{font-size:.78rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--petrole-clair);margin-bottom:16px}
+.cta h2{font-size:clamp(3rem,9vw,8rem)}
+.cta h2 .p{color:var(--petrole-clair)}
+.cta .tel-gros{font-family:"Archivo",sans-serif;font-weight:900;font-size:clamp(2.1rem,6.8vw,5.4rem);color:var(--creme);text-decoration:none;display:inline-block;margin:16px 0 8px;border-bottom:4px solid var(--petrole);line-height:1.1;transition:color .2s}
+.cta .tel-gros:hover{color:var(--petrole-clair)}
+.cta .mail{font-size:1.15rem;font-weight:600;color:var(--acier);text-decoration:none;display:inline-block;margin-bottom:30px;border-bottom:1px solid rgba(200,204,210,.4)}
+.cta .mail:hover{color:var(--petrole-clair)}
+.form-carte{background:var(--panneau);border:1px solid var(--ligne);border-radius:16px;padding:30px;max-width:760px}
+.form-carte h3{font-family:"Archivo",sans-serif;font-weight:900;text-transform:uppercase;font-size:1.4rem;margin-bottom:6px}
+.form-carte p{color:var(--gris);font-size:.93rem;margin-bottom:18px}
+.champs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.champs .plein{grid-column:1/-1}
+label{font-size:.82rem;font-weight:700;display:block;margin-bottom:5px;letter-spacing:.04em}
+input,select,textarea{width:100%;padding:12px;border:1.5px solid #2a333d;border-radius:9px;font:inherit;font-size:.95rem;background:#0d1116;color:var(--creme)}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--petrole);border-color:var(--petrole)}
+textarea{resize:vertical;min-height:96px}
+.ok-msg{display:none;background:#0d2f33;border:1.5px solid #2fb3c7;color:#c8eef4;border-radius:9px;padding:12px 14px;margin-top:14px;font-weight:600;font-size:.93rem}
+.demo-note{border:1.5px dashed #3d5a63;color:#9fd8e2;border-radius:9px;padding:10px 14px;margin-top:16px;font-size:.87rem;font-weight:600}
+footer{border-top:1px solid var(--ligne);padding:44px 0 0;color:var(--gris);font-size:.9rem;overflow:hidden}
+footer .cols{display:flex;justify-content:space-between;gap:26px;flex-wrap:wrap;padding-bottom:34px}
+footer a{color:var(--gris);text-decoration:none}
+footer a:hover{color:var(--petrole-clair)}
+footer .geant{font-family:"Archivo",sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(3.4rem,13.5vw,13.5rem);line-height:.82;text-align:center;color:rgba(238,241,243,.13);white-space:nowrap;transform:translateY(18%);user-select:none}
+.reveal{opacity:0;transform:translateY(38px)}
+.mirror-l{opacity:0;transform:translateX(-64px)}
+.mirror-r{opacity:0;transform:translateX(64px)}
+.no-anim .reveal,.no-anim .mirror-l,.no-anim .mirror-r{opacity:1;transform:none}
+.no-anim .manifeste p .mot{opacity:1}
+.no-anim #svc-float{display:none}
+@media (max-width:900px){
+  .topbar{top:24px}.topbar nav{display:none}
+  .hero-side,.badge-rond{display:none}
+  .svc-row{grid-template-columns:52px 1fr}
+  #svc-float{display:none}
+  .seg-grid{grid-template-columns:1fr}
+  .reperes-grid{grid-template-columns:1fr}
+  .gal-card{width:86vw}
+  .gal-photo{height:340px}
+  .gal-reflet img{height:340px}
+  .sec-head .note{display:none}
+  .champs{grid-template-columns:1fr}
+  .manifeste{padding:84px 0 64px}
+  .hero h1{font-size:clamp(2.6rem,11.5vw,11.5rem)}
+}
 </style>
 </head>
 <body>
-<main>
-  <h1>Démos personnalisés — entreprises de déneigement</h1>
-  <p class="sub">192 démos — lots des 25, 26, 27 et 30 octobre et des 5, 6 et 10 novembre 2026 (vagues 11, 12, 13 et 14). Chaque lien est le démo d'une entreprise.</p>
-  <a class="item" href="ebi-excavation/"><b>EBI Excavation et Construction</b><span>Chambly — excavation, construction, déneigement — 514-444-5155</span></a>
-  <a class="item" href="experts-du-deneigement/"><b>Experts du déneigement</b><span>Longueuil · Saint-Bruno — 514-463-3197</span></a>
-  <a class="item" href="gaudet/"><b>Déneigement Excavation Gaudet Inc</b><span>Longueuil — 514-977-1166</span></a>
-  <a class="item" href="deneigement-samuel/"><b>Déneigement Samuel</b><span>Longueuil — 514-992-7323</span></a>
-  <a class="item" href="d-goineau/"><b>Déneigement D Goineau</b><span>Saint-Hubert — 514-248-2220</span></a>
-  <a class="item" href="ppg-plus/"><b>PPG Plus</b><span>Saint-Hubert — 450-678-1004</span></a>
-  <a class="item" href="entretien-leveille/"><b>Entretien Léveillé</b><span>Varennes et environs — 514-444-9182</span></a>
-  <a class="item" href="st-jean-et-freres/"><b>Déneigement St-Jean et Frères</b><span>Carignan — 450-441-4642</span></a>
-  <a class="item" href="patenaude/"><b>Déneigement Patenaude</b><span>Marieville — 450-460-0481</span></a>
-  <a class="item" href="sylvain-beauregard/"><b>Déneigement Sylvain Beauregard</b><span>Beloeil — 450-464-8060</span></a>
-  <a class="item" href="ferme-provost/"><b>Déneigement Ferme Provost Agribec</b><span>Saint-Constant — 514-923-2487</span></a>
-  <a class="item" href="jonatan-zumeta/"><b>Jonatan Zumeta</b><span>Brossard — annonceur Marketplace</span></a>
-  <a class="item" href="lievre-servicespro/"><b>Lievre Servicespro</b><span>Longueuil — annonceur Marketplace</span></a>
-  <a class="item" href="jean-gui-daraiche/"><b>Jean Gui Daraiche</b><span>Longueuil — annonceur Marketplace</span></a>
-  <a class="item" href="jake-desnoyers/"><b>Jake Desnoyers</b><span>Sainte-Julie et environs — annonceur Marketplace</span></a>
-  <a class="item" href="nan-cy-sevigny/"><b>Nan Cy Sévigny</b><span>Longueuil — annonceur Marketplace</span></a>
-  <a class="item" href="robert-lariviere/"><b>Robert Lariviere</b><span>Saint-Philippe — annonceur Marketplace</span></a>
-  <a class="item" href="habibi-alex/"><b>Habibi Alex</b><span>Longueuil — annonceur Marketplace</span></a>
-  <a class="item" href="martin-lefrancois/"><b>DÉNEIGEMENT Excavation Martin Lefrancois</b><span>Saint-Constant — 514-863-6172</span></a>
-  <a class="item" href="sdg-deneigement/"><b>SDG Déneigement</b><span>Sorel-Tracy — 450-494-2253</span></a>
-  <a class="item" href="hiverner/"><b>Déneigement Résidentiel Hiverner</b><span>Candiac — 514-235-9620</span></a>
-  <a class="item" href="deneigement-boreal/"><b>Déneigement Boréal</b><span>Sainte-Victoire-de-Sorel — 450-881-5555</span></a>
-  <a class="item" href="patrick-st-jacques/"><b>Deneigement Patrick St-Jacques</b><span>Sainte-Clotilde-de-Châteauguay — 514-977-7463</span></a>
-  <a class="item" href="deneigements-450/"><b>Déneigements 450</b><span>Léry — 514-515-2676</span></a>
-  <a class="item" href="au-revoir-neige/"><b>Au Revoir Neige</b><span>Saint-Jean-sur-Richelieu — 450-376-4621</span></a>
-  <a class="item" href="jms-deneigement/"><b>JMS Déneigement</b><span>Verchères — 438-376-7646</span></a>
-  <a class="item" href="mr-latreille/"><b>Transport et Déneigement Mr Latreille</b><span>Marieville — 514-953-8507</span></a>
-  <a class="item" href="age-action-gazon/"><b>AGE Action Gazon Entretien</b><span>Saint-Basile-le-Grand — 438-497-0997</span></a>
-  <a class="item" href="entretiens-fb/"><b>Les Entretiens FB</b><span>Saint-Jean-sur-Richelieu — 450-330-3610</span></a>
-  <a class="item" href="paysagement-blb/"><b>Paysagement BLB</b><span>Saint-Constant — 438-821-2953</span></a>
-  <a class="item" href="monte-carlo/"><b>Déneigement Monte-Carlo</b><span>Laval — 514-927-1388</span></a>
-  <a class="item" href="no-flo/"><b>Déneigement No-Flo</b><span>Verdun — 438-799-6415</span></a>
-  <a class="item" href="chomedey/"><b>Déneigement Chomedey</b><span>Laval — 514-349-1961</span></a>
-  <a class="item" href="cloutier/"><b>Déneigement Cloutier</b><span>Laval — 450-627-0931</span></a>
-  <a class="item" href="jfp/"><b>Déneigement JFP</b><span>Lachine — 581-991-1824</span></a>
-  <a class="item" href="ethier-lortie/"><b>Déneigement Éthier Lortie</b><span>Laval — 438-820-3447</span></a>
-  <a class="item" href="deneigement-fg/"><b>Déneigement FG</b><span>Joliette — 450-271-3140</span></a>
-  <a class="item" href="lavallee-vrac/"><b>Lavallée Vrac Balayage Déneigement</b><span>Saint-Eustache — 438-998-4656</span></a>
-  <a class="item" href="yannick-david/"><b>Gazon et Déneigement Yannick David</b><span>L'Assomption — 514-726-5231</span></a>
-  <a class="item" href="entreprises-eln/"><b>Les Entreprises ELN</b><span>Mirabel — 514-606-6247</span></a>
-  <a class="item" href="guerard/"><b>Guérard Déneigement</b><span>Repentigny — 450-585-4692</span></a>
-  <a class="item" href="groupe-lb/"><b>Groupe LB Déneigement inc.</b><span>Repentigny — 514-770-2196</span></a>
-  <a class="item" href="gestion-brisson/"><b>Gestion Brisson Déneigement Manuel</b><span>Saint-Jérôme — 450-543-0477</span></a>
-  <a class="item" href="mont-blanc/"><b>Déneigement Mont-blanc</b><span>Blainville · Rosemère — 450-965-7176</span></a>
-  <a class="item" href="groupe-design/"><b>Groupe Design Inc.</b><span>Longueuil — 514-706-2076</span></a>
-  <a class="item" href="saria-pro/"><b>Saria Pro Exterior Maintenance Services</b><span>Montréal et environs — via Marketplace</span></a>
-  <a class="item" href="alex-durocher/"><b>Alex Durocher — Déneigement</b><span>Blainville — via Marketplace</span></a>
-  <a class="item" href="deneigement-ahuntsic/"><b>Deneigement Ahuntsic</b><span>Ahuntsic, Montréal — via Kijiji</span></a>
-  <a class="item" href="entretien-ma/"><b>Entretien M.A</b><span>Montréal · Rive-Nord · Rive-Sud — via Kijiji</span></a>
-  <a class="item" href="manuel-terrebonne/"><b>Déneigement manuel — Terrebonne</b><span>Terrebonne et environs — 438-455-4374</span></a>
-  <a class="item" href="saison-montreal/"><b>Déneigement saison 2026-2027 — Montréal</b><span>Montréal et environs — 514-297-1731</span></a>
-  <a class="item" href="manuel-longueuil/"><b>Déneigement manuel — Longueuil</b><span>Longueuil et environs — 450-777-8200</span></a>
-  <a class="item" href="jean-claude/"><b>Jean-Claude — Déneigement à la pelle</b><span>Longueuil — 514-236-5101</span></a>
-  <a class="item" href="remi-duchesneau/"><b>Déneigement Rémi Duchesneau</b><span>Saint-Basile-le-Grand — 514-434-5091</span></a>
-  <a class="item" href="g-bourque/"><b>Déneigement G. Bourque</b><span>Sorel-Tracy — 450-730-5750</span></a>
-  <a class="item" href="deneigement-kl/"><b>Deneigement KL</b><span>Saint-Jean-sur-Richelieu — 438-228-5663</span></a>
-  <a class="item" href="a-beaudry/"><b>Déneigement A Beaudry Inc</b><span>Granby — 450-278-6584</span></a>
-  <a class="item" href="jl-entretien/"><b>J L Entretien Extérieur Enr</b><span>Longueuil — 514-575-8343</span></a>
-  <a class="item" href="tpn-leduc/"><b>TPN Leduc</b><span>Beauharnois — 514-979-4862</span></a>
-  <a class="item" href="picsou/"><b>Déneigement Picsou</b><span>Montréal — 514-893-8263</span></a>
-  <a class="item" href="s3-deneigement/"><b>S3 Déneigement et Excavation</b><span>Montréal — 514-996-9330</span></a>
-  <a class="item" href="dk-deneigement/"><b>Dk Déneigement</b><span>Montréal (Rosemont) — 514-625-4919</span></a>
-  <a class="item" href="abc-du-toit/"><b>ABC du Toit</b><span>Charlemagne — 514-887-2993</span></a>
-  <a class="item" href="neigepro/"><b>Service NeigePro</b><span>Saint-Eustache · Laval — 438-821-9727</span></a>
-  <a class="item" href="bouchard/"><b>Déneigement Bouchard</b><span>Saint-Eustache — 438-871-1530</span></a>
-  <a class="item" href="jean-guy-lavallee/"><b>Jean-Guy Lavallée</b><span>Saint-Eustache — 514-699-9774</span></a>
-  <a class="item" href="maison-laval/"><b>Déneigement maison — Laval</b><span>Duvernay · Pont-Viau — via Kijiji</span></a>
-  <a class="item" href="gazon-du-richelieu/"><b>Gazon du Richelieu Inc.</b><span>Saint-Jean-sur-Richelieu — 450-515-3608</span></a>
-  <a class="item" href="excavation-marquis/"><b>Excavation Marquis Inc</b><span>Saint-Blaise-sur-Richelieu — 438-822-2864</span></a>
-  <a class="item" href="jp-leblanc/"><b>Multi-Services J.P. Leblanc enr.</b><span>Lacolle — 450-246-2032</span></a>
-  <a class="item" href="multi-service-mg/"><b>Multi Service MG enr</b><span>Saint-Basile-le-Grand — 514-771-4431</span></a>
-  <a class="item" href="entretien-optimum/"><b>Service d'Entretien Optimum</b><span>Mont-Saint-Hilaire — 450-281-8151</span></a>
-  <a class="item" href="entretien-carvena/"><b>Entretien Carvena</b><span>Sorel-Tracy — 450-743-3208</span></a>
-  <a class="item" href="pelouse-jc/"><b>Entretien de Pelouse J.C.</b><span>Granby — 450-522-5800</span></a>
-  <a class="item" href="gazon-granby/"><b>Entretien Gazon Granby</b><span>Granby — 450-991-3222</span></a>
-  <a class="item" href="mini-excavation-jl/"><b>Mini Excavation et Déneigement J-L</b><span>Saint-Hubert — 450-656-9669</span></a>
-  <a class="item" href="hebert-excavation/"><b>Hébert Excavation Inc</b><span>Saint-Jean-sur-Richelieu — 514-710-8711</span></a>
-  <a class="item" href="amenagement-gf/"><b>Aménagement GF</b><span>Laval — 450-622-0968</span></a>
-  <a class="item" href="bonneau-rene/"><b>Bonneau René L & Fils</b><span>Saint-Jean-sur-Richelieu — 450-347-1310</span></a>
-  <a class="item" href="la-pelleteuse/"><b>La Pelleteuse</b><span>Beloeil — annonceur Marketplace</span></a>
-  <a class="item" href="deneigement-trudeau/"><b>Déneigement Trudeau</b><span>Saint-Rémi — 514-821-5202</span></a>
-  <a class="item" href="deneigement-grp/"><b>Déneigement GRP</b><span>Sorel-Tracy — 450-881-8733</span></a>
-  <a class="item" href="mathieu-levesque/"><b>Déneigement Mathieu Lévesque</b><span>Sorel-Tracy — 450-855-1949</span></a>
-  <a class="item" href="lavage-ab/"><b>Lavage Haute Pression AB</b><span>Sorel-Tracy · Contrecœur — 450-881-8059</span></a>
-  <a class="item" href="services-lcf/"><b>Déneigement Les Services LCF</b><span>Montréal (Saint-Léonard, Anjou, Rosemont) — 514-727-4316</span></a>
-  <a class="item" href="cozy-clean/"><b>Cozy Clean Déneigement</b><span>West Island de Montréal — 438-220-3458</span></a>
-  <a class="item" href="deneigement-sp/"><b>Déneigement SP</b><span>Montréal (Rosemont, Saint-Léonard, Anjou) — 438-880-8183</span></a>
-  <a class="item" href="groupe-cp/"><b>Déneigement Groupe C.P</b><span>Laval — page Facebook</span></a>
-  <a class="item" href="lucky-luc/"><b>Déneigement personnalisé Lucky Luc</b><span>Laval — 450-516-8324</span></a>
-  <a class="item" href="entretien-fedan/"><b>Entretien Fedan</b><span>Laval — 514-451-7902</span></a>
-  <a class="item" href="ab-exterieur/"><b>AB Extérieur</b><span>Blainville — annonceur Marketplace</span></a>
-  <a class="item" href="groupe-laniro/"><b>Groupe Laniro</b><span>Terrebonne · Mascouche — annonceur Marketplace</span></a>
-  <a class="item" href="kokou-sewa/"><b>Kokou Sewa</b><span>Terrebonne et environs — annonceur Marketplace</span></a>
-  <a class="item" href="des-2-cotes/"><b>Déneigement des 2 côtés</b><span>Saint-Eustache — annonceur Marketplace</span></a>
-  <a class="item" href="alex-pominville/"><b>Alex Pominville</b><span>Joliette — annonceur Marketplace</span></a>
-  <a class="item" href="sam-boulay-anctil/"><b>Sam Boulay Anctil</b><span>Saint-Eustache — annonceur Marketplace</span></a>
-  <a class="item" href="amenagements-sady/"><b>Les Aménagements Sady</b><span>Drummondville — 438-989-4768</span></a>
-  <a class="item" href="gazon-junior/"><b>Gazon Junior</b><span>Drummondville — 819-388-6422</span></a>
-  <a class="item" href="collin-entretien/"><b>Collin Entretien Paysager</b><span>Drummondville — 819-461-9719</span></a>
-  <a class="item" href="entretien-jp/"><b>Entretien Pelouse et Déneigement JP</b><span>Notre-Dame-du-Mont-Carmel — 819-698-0260</span></a>
-  <a class="item" href="gestion-riopel/"><b>Gestion Riopel Multi-Services</b><span>Shawinigan — 819-852-8022</span></a>
-  <a class="item" href="entreprise-kjr/"><b>Entreprise KJR et Fils</b><span>Magog — 819-446-4599</span></a>
-  <a class="item" href="entreprise-jgb/"><b>Entreprise JGB</b><span>Magog — 819-571-5906</span></a>
-  <a class="item" href="rh-entretien/"><b>RH Entretien Paysager et Déneigement</b><span>Victoriaville · Plessisville · Princeville — 819-982-1083</span></a>
-  <a class="item" href="morelli-deneigement/"><b>Morelli Déneigement</b><span>Châteauguay — 450-691-4118</span></a>
-  <a class="item" href="bleau-excavation/"><b>Bleau Excavation Inc.</b><span>Saint-Philippe-de-Laprairie — 514-838-0102</span></a>
-  <a class="item" href="deneigement-sainte-therese/"><b>Déneigement Sainte-Thérèse</b><span>Sainte-Thérèse — 514-791-2246</span></a>
-  <a class="item" href="sos-deneigement-quebec/"><b>SOS Déneigement Québec</b><span>Québec — 581-372-6026</span></a>
-  <a class="item" href="cp-dicaire/"><b>CP Dicaire Déneigement</b><span>Sainte-Marie — 514-679-1822</span></a>
-  <a class="item" href="deneigement-toiture-quebec/"><b>Déneigement Toiture Québec</b><span>Québec — page Facebook seulement</span></a>
-  <a class="item" href="deneigement-asselin/"><b>Déneigement Asselin</b><span>L'Assomption — 514-951-6024</span></a>
-  <a class="item" href="deneigement-vermeersch/"><b>Déneigement Vermeersch</b><span>Saint-Lin-Laurentides · Laval — 514-797-2415</span></a>
-  <a class="item" href="alarie-laurentides/"><b>Déneigement Alarie Laurentides</b><span>Saint-Jérôme · Sainte-Sophie · Saint-Sauveur · Saint-Hippolyte — 450-822-8259</span></a>
-  <a class="item" href="deneigement-ag/"><b>Déneigement AG</b><span>Joliette · Saint-Paul · Saint-Thomas — 450-944-0103</span></a>
-  <a class="item" href="deneigement-ste-marie/"><b>Déneigement Ste-Marie</b><span>Sainte-Marie — 418-209-1259</span></a>
-  <a class="item" href="deneigement-ss-levis/"><b>Déneigement SS</b><span>Lévis (Saint-Étienne-de-Lauzon) — 581-349-6789</span></a>
-  <a class="item" href="toiture-pro-outaouais/"><b>Déneigement de Toiture Pro Outaouais</b><span>Gatineau — 819-462-0118</span></a>
-  <a class="item" href="deneigexpress-gatineau/"><b>DéneigExpress</b><span>Gatineau · Hull · Aylmer — 819-665-2437</span></a>
-  <a class="item" href="deneigement-dd/"><b>Déneigement DD</b><span>Saint-Jérôme · Bellefeuille · Saint-Lin-Laurentides · Prévost — 450-822-8541</span></a>
-  <a class="item" href="deneigement-lebeau/"><b>Déneigement Lebeau</b><span>Blainville — 450-979-3361</span></a>
-  <a class="item" href="deneigement-sv/"><b>Déneigement SV</b><span>Saint-Georges — 418-313-4504</span></a>
-  <a class="item" href="entretiens-richard/"><b>Les Entretiens Richard</b><span>La Prairie · Candiac — 438-545-3600</span></a>
-  <a class="item" href="deneigement-dubreuil/"><b>Déneigement Dubreuil</b><span>Granby — 450-278-7143</span></a>
-  <a class="item" href="gazoneige-plus/"><b>Gazoneige Plus</b><span>Sherbrooke — page Facebook seulement</span></a>
-  <a class="item" href="prestiplex/"><b>Entretien Extérieur Prestiplex</b><span>Sherbrooke — 819-200-9434</span></a>
-  <a class="item" href="services-nh/"><b>Services Extérieur NH</b><span>Ascot Corner · Haut-St-François · Estrie — 873-682-5588</span></a>
-  <a class="item" href="deneigement-fatima/"><b>Déneigement Fatima</b><span>Jonquière (secteur Fatima) — sans site web</span></a>
-  <a class="item" href="deneigement-dali/"><b>Déneigement Dali 2.0</b><span>La Baie — 418-815-6770</span></a>
-  <a class="item" href="jpgb-service-4-saison/"><b>JPGB Service 4 saison</b><span>Saguenay — 418-718-7277</span></a>
-  <a class="item" href="deneigement-roy/"><b>Déneigement Roy</b><span>Mont-Joli — 418-750-7926</span></a>
-  <a class="item" href="excavation-rimouski/"><b>Excavation Rimouski (Déneigement N.C.)</b><span>Rimouski — 418-724-6270</span></a>
-  <a class="item" href="deneigement-js/"><b>Déneigement JS</b><span>Trois-Rivières — sans site web</span></a>
-  <a class="item" href="sos-deneigement-express/"><b>SOS Déneigement Express</b><span>Rawdon — 514-754-8511</span></a>
-  <a class="item" href="entreprises-ma-boisvert/"><b>Les Entreprises M-A Boisvert inc</b><span>Trois-Rivières — 819-801-9044</span></a>
-  <a class="item" href="deneigement-synida/"><b>Déneigement Synida Inc</b><span>Saint-Valérien-de-Milton — 450-209-2024</span></a>
-  <a class="item" href="deneigement-cg/"><b>Déneigement C.G.</b><span>Saint-Damien-de-Buckland — 418-897-9799</span></a>
-  <a class="item" href="entreprises-d-lebrun/"><b>Entreprises D. Lebrun inc.</b><span>Amqui — 418-629-5855</span></a>
-  <a class="item" href="deneigement-m-g/"><b>Déneigement M &amp; G</b><span>Saguenay (Lac Kénogami) — 418-720-5470</span></a>
-  <a class="item" href="force-c/"><b>Force C Inc</b><span>Bécancour — 819-801-5493</span></a>
-  <a class="item" href="michel-lemieux-excavation/"><b>Michel Lemieux Excavation inc.</b><span>Victoriaville — 819-357-2129</span></a>
-  <a class="item" href="deneigement-junior/"><b>Déneigement junior</b><span>Sherbrooke — 819-580-5982</span></a>
-  <a class="item" href="entreprises-gelinas-ramonage/"><b>Les Entreprises Gélinas Ramonage de Cheminée</b><span>Shawinigan — 819-539-5881</span></a>
-  <a class="item" href="entretien-cheminee-real-audet/"><b>Entretien de Cheminée Réal Audet</b><span>Saint-Adolphe-d'Howard — 819-327-3161</span></a>
-  <a class="item" href="urgence-deneigement-de-toiture/"><b>Urgence Déneigement de Toiture</b><span>Montréal — 438-502-5479</span></a>
-  <a class="item" href="toitures-teck/"><b>Toitures Teck</b><span>Drummondville — 819-461-7941</span></a>
-  <a class="item" href="climatisation-mjc/"><b>Climatisation MJC inc.</b><span>Bécancour — 819-692-2627</span></a>
-  <!-- VAGUE 11 (5 novembre 2026) -->
-  <a class="item" href="clovex/"><b>Clôvex</b><span>Baie-Comeau · Pointe-Lebel — déneigement résidentiel, excavation — 418-445-0598</span></a>
-  <a class="item" href="deneigement-toiture-rouyn-noranda/"><b>Service de déneigement de toiture Rouyn-Noranda</b><span>Rouyn-Noranda — déneigement de toitures — 819-880-4564</span></a>
-  <a class="item" href="deneigement-marcoux/"><b>Déneigement Marcoux</b><span>Sainte-Hedwidge (secteur Roberval) — 418-618-3414</span></a>
-  <a class="item" href="multi-services-jayco/"><b>Entreprise Multi-Services Jayco</b><span>Sept-Îles — déneigement stationnements, résidentiel et commercial — 418-409-4064</span></a>
-  <a class="item" href="deneigement-nord-cotier/"><b>Déneigement Nord-Côtier</b><span>Sept-Îles — déneigement au tracteur, écoles et institutions — 418-350-7990</span></a>
-  <a class="item" href="entreprises-gm/"><b>Les entreprises GM</b><span>Sept-Îles — mécanique automobile et déneigement — 581-826-0606</span></a>
-  <a class="item" href="pelouse-fg/"><b>Pelouse FG</b><span>Victoriaville — déneigement manuel, pelouse — 819-960-4610</span></a>
-  <a class="item" href="jf-marcoux/"><b>JF Marcoux inc.</b><span>Victoriaville — déneigement résidentiel et commercial — 819-352-9004</span></a>
-  <a class="item" href="renovation-cloutier-fils/"><b>Rénovation Cloutier & Fils inc.</b><span>Mont-Laurier — déneigement manuel et de toitures — via Facebook</span></a>
-  <a class="item" href="divisions-nac/"><b>Les Divisions NAC Inc</b><span>Laurentides — routes de déneigement 2026-2027 — 581-578-6911</span></a>
-  <a class="item" href="clotures-laplume/"><b>Clôtures Laplume 2014</b><span>Waterloo · Shefford · Bromont — clôtures et déneigement — 450-405-9207</span></a>
-  <a class="item" href="services-david-gagnon/"><b>Services David Gagnon</b><span>Portneuf — déneigement — via Facebook</span></a>
-  <a class="item" href="pneu-sp/"><b>Pneu SP</b><span>Sept-Îles — pneus, mécanique, remorquage et déneigement — 418-965-0051</span></a>
-  <!-- VAGUE 12 (6 novembre 2026) -->
-  <a class="item" href="entreprise-kdm/"><b>Entreprise KDM déneigement</b><span>Gatineau — déneigement résidentiel et commercial, terrassement — 819-921-7555</span></a>
-  <a class="item" href="entretien-mv/"><b>Entretien M&amp;V</b><span>Thetford Mines — déneigement, toitures, tonte — 418-335-2353</span></a>
-  <a class="item" href="gp-deneigement/"><b>GP Déneigement</b><span>Baie-Comeau, secteur Saint-Georges — 418-296-4248</span></a>
-  <a class="item" href="filbaie/"><b>Filbaie Inc</b><span>Baie-Saint-Paul — déneigement, sablage, toitures, transport de neige — 418-240-5476</span></a>
-  <a class="item" href="acro-neiges/"><b>Acro Neiges</b><span>Baie-Comeau — déneigement de stationnements — via Facebook</span></a>
-  <a class="item" href="deneigement-maurice-richard/"><b>Déneigement Maurice Richard</b><span>Sainte-Thérèse-de-Gaspé — déneigement, excavation — via Facebook</span></a>
-  <a class="item" href="deneigements-sergemarc/"><b>Les Déneigements Sergémarc</b><span>Alma — déneigement depuis 1991 — 418-662-3316</span></a>
-  <a class="item" href="karam-multi-services/"><b>Karam Multi Services</b><span>Joliette et environs — déneigement manuel, bac à sel — 450-421-4914</span></a>
-  <a class="item" href="sos-deneigement-rouyn/"><b>SOS Déneigement Rouyn</b><span>Rouyn-Noranda — déneigement manuel sur appel, urgence — 819-860-9628</span></a>
-  <a class="item" href="sirard-deneigement/"><b>Sirard Déneigement</b><span>Rouyn-Noranda, quartier Évain — 819-290-4259</span></a>
-  <a class="item" href="clean-ton-char-terrain/"><b>Clean ton char/terrain</b><span>Alma — déneigement manuel, lavage d'auto — via Facebook</span></a>
-  <a class="item" href="services-entretien-jrc/"><b>Les services d'entretien JRC</b><span>Gatineau — déneigement, tonte, haies, feuilles — 819-820-4747</span></a>
-  <!-- VAGUE 14 (10 novembre 2026) -->
-  <a class="item" href="jgx-multiservices/"><b>JGX Multiservices</b><span>Shawinigan — Grand-Mère · Saint-Georges-de-Champlain — déneigement manuel, toitures — 819-531-8406</span></a>
-  <a class="item" href="cbl-deneigement/"><b>CBL Déneigement</b><span>Shawinigan-Sud — déneigement au tracteur — 819-696-7082</span></a>
-  <a class="item" href="deneigement-desilets/"><b>Déneigement Désilets</b><span>Shawinigan — déneigement au tracteur et au chargeur — 819-247-2020</span></a>
-  <a class="item" href="service-rapide-abitibi-deneigement/"><b>Service Rapide Abitibi Déneigement</b><span>Rouyn-Noranda — déneigement sur appel ou en contrat — 819-279-0168</span></a>
-  <a class="item" href="deneigement-entretien-paysage-jb/"><b>Déneigement &amp; Entretien Paysage J.B</b><span>Rouyn-Noranda, Sacré-Cœur–Noranda — Bobcat, camion avec gratte — 819-290-7391</span></a>
-  <a class="item" href="va-projets/"><b>V/A Projets</b><span>Saguenay — Jonquière et Chicoutimi — déneigement manuel — 581-447-2732</span></a>
-  <a class="item" href="tamisage-riviere-du-loup/"><b>Tamisage Rivière-du-Loup</b><span>Saint-Antonin — déneigement commercial, tamisage — 418-862-2325</span></a>
-  <a class="item" href="transport-lpa/"><b>Transport LPA inc.</b><span>Chandler · Pabos · Saint-François — déneigement résidentiel et commercial, abrasif — 418-689-9308</span></a>
-  <a class="item" href="deneigement-jr/"><b>Déneigement J.R inc</b><span>Terrebonne, La Plaine — déneigement depuis 2006 — 450-961-2669</span></a>
-  <a class="item" href="deneigement-rdf/"><b>Déneigement RDF</b><span>Terrebonne — contrats saisonniers — via Facebook</span></a>
-  <!-- VAGUE 13 (10 novembre 2026) -->
-  <a class="item" href="deneigement-etudiant/"><b>Déneigement Étudiant</b><span>Gatineau — déneigement résidentiel, sel — 819-329-1487</span></a>
-  <a class="item" href="transport-s-lauriault/"><b>Transport S. Lauriault</b><span>Gracefield, Vallée-de-la-Gatineau — nouveau service de déneigement 2026, sablage — 819-215-9119</span></a>
-  <a class="item" href="multi-services-sjl-mauricie/"><b>Multi-services SJL Mauricie</b><span>Shawinigan — déneigement manuel depuis plus de 10 ans, toitures — 418-365-0509</span></a>
-  <a class="item" href="eh-le-renovateur/"><b>E.H Le Rénovateur inc.</b><span>Shawinigan — déneigement 24/7 pelle en main, toitures — 873-664-7061</span></a>
-  <a class="item" href="msg-multiservices/"><b>MSG Multiservices</b><span>Shawinigan et Trois-Rivières — déneigement manuel, saison hivernale — 819-534-9413</span></a>
-  <a class="item" href="esthetique-vr-mauricie-deneigement/"><b>Esthétique VR Mauricie enr. — division déneigement</b><span>Shawinigan — déneigement manuel et au tracteur, toits — 819-247-3321</span></a>
-  <a class="item" href="excel-deneigement/"><b>Excel Déneigement</b><span>Plessisville et Princeville — déneigement résidentiel et commercial — 819-362-6464 poste 214</span></a>
-  <a class="item" href="andre-blanchette-fils/"><b>André Blanchette &amp; fils inc.</b><span>Donnacona et Cap-Santé — déneigement depuis 1948, transport, excavation — 418-285-2030</span></a>
-  <a class="item" href="lapointe-fils-multi-service/"><b>Lapointe &amp; Fils Multi-Service</b><span>Rivière-du-Loup et environs — déneigement manuel — via Facebook</span></a>
-  <a class="item" href="entretien-paysager-godin-fils/"><b>Entretien Paysager Godin et Fils</b><span>Chandler et Pabos — déneigement, sablage 24 h/24, tonte l'été — 450-807-6430</span></a>
-  <a class="item" href="deneigement-bruno-pigeon/"><b>Déneigement Bruno Pigeon</b><span>La Sarre — déneigement au tracteur, résidentiel et commercial — 819-323-1019</span></a>
-</main>
+
+<div class="demo-band">Proposition conceptuelle — démo non officielle réalisée à titre de proposition. Ce site n'est pas le site officiel de l'entreprise.</div>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"><span class="vue">Voir</span></div>
+<div id="svc-float" aria-hidden="true"><img id="svc-float-img" src="" alt=""></div>
+
+<div id="loader" aria-hidden="true">
+  <div class="mot"><span>S</span><span>M</span><span>B</span><span>&nbsp;</span><span class="p">S</span><span class="p">U</span><span class="p">R</span><span class="p">F</span><span class="p">A</span><span class="p">C</span><span class="p">E</span><div class="shine" id="loader-shine"></div></div>
+  <div class="sous">Finition · Protection · Restauration du béton</div>
+  <div class="barre"><i id="loader-barre"></i></div>
+  <div class="pct"><span id="loader-pct">0</span> %</div>
+</div>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <div class="mot">SMB Surface</div>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#realisations">Réalisations</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="tel" href="tel:+14382585799">438 258-5799</a>
+  </div>
+</div>
+
+<!-- HÉROS -->
+<header class="hero" id="accueil">
+  <div class="fond">
+    <img id="hero-img" src="https://static.wixstatic.com/media/909a91_001363fdb7044d5791dae1d552575f41~mv2.jpg/v1/fill/w_1600,h_1000,al_c,q_85,enc_auto/909a91_001363fdb7044d5791dae1d552575f41~mv2.jpg" alt="Surface de béton finie par SMB Surface">
+  </div>
+  <div class="voile"></div>
+  <div class="reflet" aria-hidden="true"><img src="https://static.wixstatic.com/media/909a91_001363fdb7044d5791dae1d552575f41~mv2.jpg/v1/fill/w_1600,h_1000,al_c,q_85,enc_auto/909a91_001363fdb7044d5791dae1d552575f41~mv2.jpg" alt=""></div>
+  <div class="hero-side">Finition du béton — Grand Montréal</div>
+  <div class="badge-rond" aria-hidden="true">
+    <svg viewBox="0 0 120 120">
+      <defs><path id="cercle" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs>
+      <text><textPath href="#cercle">Finition · Protection · Restauration · Béton ·</textPath></text>
+      <path class="fleche" d="M60 48v24m0 0l-8-8m8 8l8-8" stroke="#2fb3c7" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(0,-2)"/>
+    </svg>
+  </div>
+  <div class="hero-in">
+    <div class="hero-meta">
+      <span class="tag plein">Résidentiel · Commercial · Industriel</span>
+      <span class="tag">Grand Montréal</span>
+    </div>
+    <h1 class="display" id="hero-titre" aria-label="SMB Surface">SMB <span class="p">SURFACE</span><span class="sweep" id="hero-sweep"></span></h1>
+    <div class="hero-sub">
+      <p><strong>Spécialiste en finition, protection et restauration du béton.</strong> Nous transformons le béton en une surface durable, esthétique et adaptée à votre environnement.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a class="btn magnet" href="#contact">Demander un devis</a>
+        <a class="btn btn-ligne magnet" href="#services">Voir les services</a>
+      </div>
+    </div>
+    <div class="scroll-cue"><span class="trait"></span> Défiler</div>
+  </div>
+</header>
+
+<!-- MARQUISE -->
+<div class="marquee" aria-hidden="true">
+  <div class="piste" id="marquee-piste">
+    <span>Micro béton <i>///</i></span><span>Époxy <i>///</i></span><span>Polissage de béton <i>///</i></span><span>Béton estampé <i>///</i></span><span>Restauration du béton <i>///</i></span>
+    <span>Micro béton <i>///</i></span><span>Époxy <i>///</i></span><span>Polissage de béton <i>///</i></span><span>Béton estampé <i>///</i></span><span>Restauration du béton <i>///</i></span>
+  </div>
+</div>
+
+<!-- MANIFESTE -->
+<section class="manifeste">
+  <div class="wrap">
+    <p class="sur reveal">Le manifeste</p>
+    <p id="manifeste-texte">Nous transformons le béton en une surface durable, esthétique et adaptée à votre environnement.</p>
+  </div>
+</section>
+
+<!-- SEGMENTS -->
+<section class="segments" id="segments">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2 class="display">Trois terrains</h2>
+      <p class="note">La même exigence de finition, du balcon à l'usine.</p>
+    </div>
+    <div class="seg-grid">
+      <article class="seg mirror-l">
+        <span class="k">/ 01 — Segment</span>
+        <h3>Résidentiel</h3>
+        <p>Balcon, plancher, garage et sous-sol : des surfaces de béton finies pour durer, à la maison.</p>
+        <div class="barre-acier"></div>
+      </article>
+      <article class="seg mirror-r">
+        <span class="k">/ 02 — Segment</span>
+        <h3>Commercial</h3>
+        <p>Des revêtements époxy résistants pour les espaces commerciaux, pensés pour un usage intensif.</p>
+        <div class="barre-acier"></div>
+      </article>
+      <article class="seg mirror-l">
+        <span class="k">/ 03 — Segment</span>
+        <h3>Industriel</h3>
+        <p>Des surfaces de béton protégées et restaurées, adaptées aux contraintes des environnements industriels.</p>
+        <div class="barre-acier"></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2 class="display">Services</h2>
+      <p class="note">Sept expertises, un seul standard : la surface parfaite. Survolez la liste — la photo suit votre curseur.</p>
+    </div>
+    <a class="svc-row mirror-l" href="#contact" data-curseur="Go" data-img="https://static.wixstatic.com/media/909a91_0420cfa8a18142b49a1671153edf389e~mv2.jpg/v1/fill/w_1200,h_800,al_c,q_85,enc_auto/909a91_0420cfa8a18142b49a1671153edf389e~mv2.jpg">
+      <span class="num">/ 01</span>
+      <span class="titre">Micro béton</span>
+      <span class="desc">Une fine couche de béton décoratif qui renouvelle une surface existante, à l'intérieur comme à l'extérieur.</span>
+    </a>
+    <a class="svc-row mirror-r" href="#contact" data-curseur="Go" data-img="https://static.wixstatic.com/media/909a91_262548e024e64d558ae649df9038a945~mv2.jpeg/v1/fill/w_1200,h_800,al_c,q_85,enc_auto/909a91_262548e024e64d558ae649df9038a945~mv2.jpeg">
+      <span class="num">/ 02</span>
+      <span class="titre">Flocons de vinyle époxy</span>
+      <span class="desc">Balcon, plancher, garage, sous-sol — un fini époxy à flocons de vinyle, résistant, aussi en version commerciale.</span>
+    </a>
+    <a class="svc-row mirror-l" href="#contact" data-curseur="Go" data-img="https://static.wixstatic.com/media/909a91_2e4ed75a69114589b0b2d3bf51a422c6~mv2.jpg/v1/fill/w_1200,h_800,al_c,q_85,enc_auto/909a91_2e4ed75a69114589b0b2d3bf51a422c6~mv2.jpg">
+      <span class="num">/ 03</span>
+      <span class="titre">Époxy commercial</span>
+      <span class="desc">Des revêtements époxy pensés pour les espaces commerciaux et leurs contraintes d'usage.</span>
+    </a>
+    <a class="svc-row mirror-r" href="#contact" data-curseur="Go" data-img="https://static.wixstatic.com/media/909a91_33551a9a58204c28875d9ad7be8d3a93~mv2.jpg/v1/fill/w_1200,h_800,al_c,q_85,enc_auto/909a91_33551a9a58204c28875d9ad7be8d3a93~mv2.jpg">
+      <span class="num">/ 04</span>
+      <span class="titre">Époxy métallisé / marbré</span>
+      <span class="desc">Un fini époxy au rendu métallisé ou marbré, pour une surface qui se remarque.</span>
+    </a>
+    <a class="svc-row mirror-l" href="#contact" data-curseur="Go" data-img="https://static.wixstatic.com/media/909a91_44237b1877ee4c33806d0baad7855e67~mv2.jpg/v1/fill/w_1200,h_800,al_c,q_85,enc_auto/909a91_44237b1877ee4c33806d0baad7855e67~mv2.jpg">
+      <span class="num">/ 05</span>
+      <span class="titre">Polissage de béton</span>
+      <span class="desc">Le polissage du béton, en résidentiel comme en commercial — une surface lisse, nette, qui reflète la lumière.</span>
+    </a>
+    <a class="svc-row mirror-r" href="#contact" data-curseur="Go" data-img="https://static.wixstatic.com/media/909a91_4e0043c6d2b84e71839414003801593d~mv2.jpg/v1/fill/w_1200,h_800,al_c,q_85,enc_auto/909a91_4e0043c6d2b84e71839414003801593d~mv2.jpg">
+      <span class="num">/ 06</span>
+      <span class="titre">Béton estampé décoratif</span>
+      <span class="desc">Béton estampé décoratif, restauration et entretien — couleur et scellant, pour redonner vie à une surface existante.</span>
+    </a>
+    <a class="svc-row mirror-l" href="#contact" data-curseur="Go" data-img="https://static.wixstatic.com/media/909a91_001363fdb7044d5791dae1d552575f41~mv2.jpg/v1/fill/w_1200,h_800,al_c,q_85,enc_auto/909a91_001363fdb7044d5791dae1d552575f41~mv2.jpg">
+      <span class="num">/ 07</span>
+      <span class="titre">Revêtement &amp; réparation</span>
+      <span class="desc">Revêtement de béton décoratif et réparation — béton pulvérisé, crépi, acrylique, solage et fondation.</span>
+    </a>
+  </div>
+</section>
+
+<!-- BANDE GÉANTE -->
+<div class="bande" aria-hidden="true"><span class="mot-geant" id="mot-geant">Béton <b>·</b> Époxy <b>·</b> Polissage <b>·</b> Béton <b>·</b> Époxy <b>·</b>&nbsp;</span></div>
+
+<!-- REPÈRES -->
+<section class="reperes" id="reperes">
+  <div class="wrap reperes-grid">
+    <div class="repere reveal"><div class="gros"><span class="compteur" data-cible="3">0</span></div><div class="lbl">segments desservis : résidentiel, commercial et industriel</div></div>
+    <div class="repere reveal"><div class="gros"><span class="compteur" data-cible="38">0</span></div><div class="lbl">réalisations présentées dans la galerie du site</div></div>
+    <div class="repere reveal"><div class="gros">Grand<em> Montréal</em></div><div class="lbl">territoire desservi par SMB Surface</div></div>
+  </div>
+</section>
+
+<!-- RÉALISATIONS — DÉFILEMENT HORIZONTAL AVEC REFLETS -->
+<section class="rea-sec" id="realisations">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2 class="display">Réalisations</h2>
+      <p class="note">Faites défiler la galerie de côté — chaque surface se reflète comme un béton poli. Photos réelles, aucune banque d'images.</p>
+    </div>
+  </div>
+  <div class="galerie" id="galerie">
+    <figure class="gal-card" data-curseur="Voir">
+      <span class="idx">/ 01</span>
+      <div class="gal-photo">
+        <img src="https://static.wixstatic.com/media/909a91_001363fdb7044d5791dae1d552575f41~mv2.jpg/v1/fill/w_1200,h_800,al_c,q_85,enc_auto/909a91_001363fdb7044d5791dae1d552575f41~mv2.jpg" alt="Surface de béton finie par SMB Surface" loading="lazy">
+        <figcaption><span class="t">Finition béton</span><span class="d">Surface durable et esthétique</span></figcaption>
+      </div>
+      <div class="gal-reflet" aria-hidden="true"><img src="https://static.wixstatic.com/media/909a91_001363fdb7044d5791dae1d552575f41~mv2.jpg/v1/fill/w_1200,h_800,al_c,q_85,enc_auto/909a91_001363fdb7044d5791dae1d552575f41~mv2.jpg" alt=""></div>
+    </figure>
+    <figure class="gal-card" data-curseur="Voir">
+      <span class="idx">/ 02</span>
+      <div class="gal-photo">
+        <img src="https://static.wixstatic.com/media/909a91_0420cfa8a18142b49a1671153edf389e~mv2.jpg/v1/fill/w_1200,h_800,al_c,q_85,enc_auto/909a91_0420cfa8a18142b49a1671153edf389e~mv2.jpg" alt="Revêtement de béton réalisé par SMB Surface" loading="lazy">
+        <figcaption><span class="t">Revêtement décoratif</span><span class="d">Béton transformé, fini soigné</span></figcaption>
+      </div>
+      <div class="gal-reflet" aria-hidden="true"><img src="https://static.wixstatic.com/media/909a91_0420cfa8a18142b49a1671153edf389e~mv2.jpg/v1/fill/w_1200,h_800,al_c,q_85,enc_auto/909a91_0420cfa8a18142b49a1671153edf389e~mv2.jpg" alt=""></div>
+    </figure>
+    <figure class="gal-card" data-curseur="Voir">
+      <span class="idx">/ 03</span>
+      <div class="gal-photo">
+        <img src="https://static.wixstatic.com/media/909a91_262548e024e64d558ae649df9038a945~mv2.jpeg/v1/fill/w_1200,h_800,al_c,q_85,enc_auto/909a91_262548e024e64d558ae649df9038a945~mv2.jpeg" alt="Plancher de béton poli par SMB Surface" loading="lazy">
+        <figcaption><span class="t">Béton poli</span><span class="d">Une surface lisse qui reflète la lumière</span></figcaption>
+      </div>
+      <div class="gal-reflet" aria-hidden="true"><img src="https://static.wixstatic.com/media/909a91_262548e024e64d558ae649df9038a945~mv2.jpeg/v1/fill/w_1200,h_800,al_c,q_85,enc_auto/909a91_262548e024e64d558ae649df9038a945~mv2.jpeg" alt=""></div>
+    </figure>
+    <figure class="gal-card" data-curseur="Voir">
+      <span class="idx">/ 04</span>
+      <div class="gal-photo">
+        <img src="https://static.wixstatic.com/media/909a91_2e4ed75a69114589b0b2d3bf51a422c6~mv2.jpg/v1/fill/w_1200,h_800,al_c,q_85,enc_auto/909a91_2e4ed75a69114589b0b2d3bf51a422c6~mv2.jpg" alt="Époxy réalisé par SMB Surface" loading="lazy">
+        <figcaption><span class="t">Époxy</span><span class="d">Finition résistante, rendu net</span></figcaption>
+      </div>
+      <div class="gal-reflet" aria-hidden="true"><img src="https://static.wixstatic.com/media/909a91_2e4ed75a69114589b0b2d3bf51a422c6~mv2.jpg/v1/fill/w_1200,h_800,al_c,q_85,enc_auto/909a91_2e4ed75a69114589b0b2d3bf51a422c6~mv2.jpg" alt=""></div>
+    </figure>
+    <figure class="gal-card" data-curseur="Voir">
+      <span class="idx">/ 05</span>
+      <div class="gal-photo">
+        <img src="https://static.wixstatic.com/media/909a91_33551a9a58204c28875d9ad7be8d3a93~mv2.jpg/v1/fill/w_1200,h_800,al_c,q_85,enc_auto/909a91_33551a9a58204c28875d9ad7be8d3a93~mv2.jpg" alt="Surface de béton restaurée par SMB Surface" loading="lazy">
+        <figcaption><span class="t">Restauration</span><span class="d">Un béton existant, remis à neuf</span></figcaption>
+      </div>
+      <div class="gal-reflet" aria-hidden="true"><img src="https://static.wixstatic.com/media/909a91_33551a9a58204c28875d9ad7be8d3a93~mv2.jpg/v1/fill/w_1200,h_800,al_c,q_85,enc_auto/909a91_33551a9a58204c28875d9ad7be8d3a93~mv2.jpg" alt=""></div>
+    </figure>
+    <figure class="gal-card" data-curseur="Voir">
+      <span class="idx">/ 06</span>
+      <div class="gal-photo">
+        <img src="https://static.wixstatic.com/media/909a91_44237b1877ee4c33806d0baad7855e67~mv2.jpg/v1/fill/w_1200,h_800,al_c,q_85,enc_auto/909a91_44237b1877ee4c33806d0baad7855e67~mv2.jpg" alt="Plancher époxy réalisé par SMB Surface" loading="lazy">
+        <figcaption><span class="t">Plancher époxy</span><span class="d">Fini uniforme, facile d'entretien</span></figcaption>
+      </div>
+      <div class="gal-reflet" aria-hidden="true"><img src="https://static.wixstatic.com/media/909a91_44237b1877ee4c33806d0baad7855e67~mv2.jpg/v1/fill/w_1200,h_800,al_c,q_85,enc_auto/909a91_44237b1877ee4c33806d0baad7855e67~mv2.jpg" alt=""></div>
+    </figure>
+    <figure class="gal-card" data-curseur="Voir">
+      <span class="idx">/ 07</span>
+      <div class="gal-photo">
+        <img src="https://static.wixstatic.com/media/909a91_4e0043c6d2b84e71839414003801593d~mv2.jpg/v1/fill/w_1200,h_800,al_c,q_85,enc_auto/909a91_4e0043c6d2b84e71839414003801593d~mv2.jpg" alt="Béton décoratif réalisé par SMB Surface" loading="lazy">
+        <figcaption><span class="t">Béton décoratif</span><span class="d">La finition qui change tout</span></figcaption>
+      </div>
+      <div class="gal-reflet" aria-hidden="true"><img src="https://static.wixstatic.com/media/909a91_4e0043c6d2b84e71839414003801593d~mv2.jpg/v1/fill/w_1200,h_800,al_c,q_85,enc_auto/909a91_4e0043c6d2b84e71839414003801593d~mv2.jpg" alt=""></div>
+    </figure>
+  </div>
+  <div class="gal-nav">
+    <button type="button" id="gal-prev" aria-label="Photo précédente">← Précédent</button>
+    <button type="button" id="gal-next" aria-label="Photo suivante">Suivant →</button>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <p class="sur reveal">Un projet de béton ?</p>
+    <h2 class="display reveal">Parlons de <span class="p">votre surface</span></h2>
+    <a class="tel-gros reveal" href="tel:+14382585799">438 258-5799</a><br>
+    <a class="mail reveal" href="mailto:info@smbsurface.com">info@smbsurface.com</a>
+    <form class="form-carte reveal" id="form-defi">
+      <h3>Demande de devis</h3>
+      <p>Quelques champs, une minute : décrivez votre surface et votre projet, on vous revient avec un devis.</p>
+      <div class="champs">
+        <div><label for="d-nom">Nom *</label><input id="d-nom" required autocomplete="name"></div>
+        <div><label for="d-tel">Téléphone *</label><input id="d-tel" required type="tel" autocomplete="tel"></div>
+        <div class="plein"><label for="d-courriel">Courriel</label><input id="d-courriel" type="email" autocomplete="email"></div>
+        <div class="plein"><label for="d-service">Votre projet *</label>
+          <select id="d-service" required>
+            <option value="">Choisir…</option>
+            <option>Résidentiel — balcon, plancher, garage ou sous-sol</option>
+            <option>Commercial — revêtement époxy</option>
+            <option>Industriel — finition, protection ou restauration</option>
+            <option>Micro béton</option>
+            <option>Flocons de vinyle époxy</option>
+            <option>Époxy métallisé / marbré</option>
+            <option>Polissage de béton</option>
+            <option>Béton estampé — restauration ou entretien</option>
+            <option>Autre — revêtement, réparation, crépi, solage ou fondation</option>
+          </select></div>
+        <div class="plein"><label for="d-msg">Décrivez votre surface</label><textarea id="d-msg" placeholder="Ex. : plancher de garage, environ 400 pi², béton existant à restaurer…"></textarea></div>
+      </div>
+      <p class="demo-note">Démonstration — ce formulaire est une maquette : aucune demande réelle n'est transmise à l'entreprise.</p>
+      <p style="margin-top:16px"><button class="btn magnet" type="submit">Envoyer ma demande</button></p>
+      <div class="ok-msg">Simulation terminée. Aucune demande n'a été transmise à l'entreprise.</div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap cols">
+    <div>
+      <p><strong style="color:var(--creme)">SMB Surface</strong></p>
+      <p style="margin-top:6px">Spécialiste en finition, protection et restauration du béton</p>
+    </div>
+    <div>
+      <p>Grand Montréal</p>
+      <p style="margin-top:6px"><a href="tel:+14382585799">438 258-5799</a> · <a href="mailto:info@smbsurface.com">info@smbsurface.com</a></p>
+    </div>
+    <div>
+      <p>Proposition conceptuelle — démo non officielle.</p>
+      <p style="margin-top:6px">© 2026 SMB Surface</p>
+    </div>
+  </div>
+  <div class="geant" aria-hidden="true">SURFACE</div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+<script>
+window.__defiWatchdog=setTimeout(function(){
+  if(!window.gsap){
+    document.documentElement.classList.add('no-anim');
+    var l=document.getElementById('loader'); if(l) l.style.display='none';
+    document.querySelectorAll('.compteur').forEach(function(el){ el.textContent=el.dataset.cible; });
+  }
+},2600);
+</script>
+<script>
+(function(){
+  if(!window.gsap){ return; }
+  clearTimeout(window.__defiWatchdog);
+  gsap.registerPlugin(ScrollTrigger);
+  document.getElementById('form-defi').addEventListener('submit',function(ev){ ev.preventDefault(); var m=this.querySelector('.ok-msg'); if(m) m.style.display='block'; });
+
+  /* ---------- Défilement fluide (Lenis) ---------- */
+  var lenis=null;
+  if(window.Lenis){
+    lenis=new Lenis({ duration:1.25, smoothWheel:true });
+    lenis.on('scroll',ScrollTrigger.update);
+    gsap.ticker.add(function(t){ lenis.raf(t*1000); });
+    gsap.ticker.lagSmoothing(0);
+    document.querySelectorAll('a[href^="#"]').forEach(function(a){
+      a.addEventListener('click',function(e){
+        var cible=document.querySelector(a.getAttribute('href'));
+        if(cible){ e.preventDefault(); lenis.scrollTo(cible,{offset:-10}); }
+      });
+    });
+  }
+
+  /* ---------- Titre héros en lettres ---------- */
+  (function(){
+    var h1=document.getElementById('hero-titre');
+    var noeuds=Array.prototype.slice.call(h1.childNodes), html='';
+    noeuds.forEach(function(n){
+      if(n.nodeType===3){ n.textContent.split('').forEach(function(c){ html+= c===' ' ? '<span class="lt">&nbsp;</span>' : '<span class="lt">'+c+'</span>'; }); }
+      else if(n.nodeType===1 && !n.classList.contains('sweep')){ n.textContent.split('').forEach(function(c){ html+='<span class="lt '+n.className+'">'+c+'</span>'; }); }
+    });
+    var sweep=document.getElementById('hero-sweep');
+    h1.innerHTML=html;
+    h1.appendChild(sweep);
+    gsap.set('#hero-titre .lt',{yPercent:110});
+  })();
+
+  /* ---------- Préchargeur : balayage de polissage + intro ---------- */
+  var pct={v:0};
+  gsap.timeline()
+    .to('#loader .mot span',{y:0,duration:.7,stagger:.05,ease:'power4.out'},0)
+    .fromTo('#loader-shine',{x:'-220%'},{x:'520%',duration:1.5,ease:'power2.inOut'},0)
+    .to(pct,{v:100,duration:1.35,ease:'power2.inOut',onUpdate:function(){
+        document.getElementById('loader-pct').textContent=Math.round(pct.v);
+        document.getElementById('loader-barre').style.width=pct.v+'%';
+      }},0)
+    .to('#loader .mot span',{y:'-110%',duration:.5,stagger:.04,ease:'power3.in'},'+=0.1')
+    .to('#loader',{yPercent:-100,duration:.85,ease:'power4.inOut'},'-=0.25')
+    .set('#loader',{display:'none'})
+    .to('#hero-titre .lt',{yPercent:0,duration:1,stagger:.055,ease:'power4.out'},'-=0.55')
+    .fromTo('#hero-sweep',{x:'-320%'},{x:'420%',duration:1.1,ease:'power2.inOut'},'-=0.7')
+    .from('.hero-meta .tag',{y:24,opacity:0,duration:.6,stagger:.08,ease:'power3.out'},'-=0.6')
+    .from('.hero-sub > *',{y:30,opacity:0,duration:.7,stagger:.12,ease:'power3.out'},'-=0.45')
+    .from('.badge-rond',{scale:0,opacity:0,duration:.7,ease:'back.out(1.6)'},'-=0.5')
+    .from('.topbar',{y:-30,opacity:0,duration:.6,ease:'power3.out'},'-=0.5');
+
+  /* ---------- Héros : parallaxe + zoom ---------- */
+  gsap.fromTo('.hero .fond',{scale:1.13},{scale:1,yPercent:12,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+  gsap.to('#hero-titre',{yPercent:-30,opacity:.25,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+  gsap.to('.hero .reflet',{yPercent:40,opacity:.15,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+
+  /* ---------- Marquise + vélocité ---------- */
+  var piste=document.getElementById('marquee-piste');
+  var defile=gsap.to(piste,{xPercent:-50,ease:'none',duration:18,repeat:-1});
+  ScrollTrigger.create({ onUpdate:function(self){
+    var v=gsap.utils.clamp(-6,6,self.getVelocity()/-250);
+    gsap.to(defile,{timeScale:Math.abs(v)*1.6+1,duration:.3,overwrite:true});
+    gsap.to(piste,{skewX:v*1.4,duration:.3,overwrite:'auto'});
+  }});
+
+  /* ---------- Manifeste mot à mot ---------- */
+  (function(){
+    var p=document.getElementById('manifeste-texte');
+    p.innerHTML=p.textContent.trim().split(/\s+/).map(function(m){ return '<span class="mot">'+m+'</span>'; }).join(' ');
+    gsap.to('#manifeste-texte .mot',{opacity:1,stagger:.06,ease:'none',
+      scrollTrigger:{trigger:'.manifeste',start:'top 75%',end:'bottom 55%',scrub:true}});
+  })();
+
+  /* ---------- Révélations : verticales + miroir latérales ---------- */
+  gsap.utils.toArray('.reveal').forEach(function(el){
+    gsap.to(el,{opacity:1,y:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%',once:true}});
+  });
+  gsap.utils.toArray('.mirror-l').forEach(function(el){
+    gsap.to(el,{opacity:1,x:0,duration:1.05,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%',once:true}});
+  });
+  gsap.utils.toArray('.mirror-r').forEach(function(el){
+    gsap.to(el,{opacity:1,x:0,duration:1.05,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%',once:true}});
+  });
+
+  /* ---------- Compteurs ---------- */
+  document.querySelectorAll('.compteur').forEach(function(el){
+    var cible=parseInt(el.dataset.cible,10), obj={v:0};
+    ScrollTrigger.create({trigger:el,start:'top 88%',once:true,onEnter:function(){
+      gsap.to(obj,{v:cible,duration:1.6,ease:'power2.out',onUpdate:function(){ el.textContent=Math.round(obj.v); }});
+    }});
+  });
+
+  /* ---------- Bande géante contour ---------- */
+  gsap.fromTo('#mot-geant',{xPercent:2},{xPercent:-32,ease:'none',
+    scrollTrigger:{trigger:'.bande',start:'top bottom',end:'bottom top',scrub:true}});
+
+  /* ---------- Repères : la section vire au bleu pétrole ---------- */
+  gsap.timeline({scrollTrigger:{trigger:'#reperes',start:'top 65%',end:'bottom 95%',scrub:true}})
+    .to('#reperes',{backgroundColor:'#0f8a9d'},0)
+    .to('#reperes .gros',{color:'#04141a'},0)
+    .to('#reperes .gros em',{color:'#eef1f3'},0)
+    .to('#reperes .lbl',{color:'rgba(4,20,26,0.75)'},0);
+
+  /* ---------- Galerie : flèches + glisser ---------- */
+  var gal=document.getElementById('galerie');
+  function pas(){ var c=gal.querySelector('.gal-card'); return c ? c.getBoundingClientRect().width + 26 : 600; }
+  document.getElementById('gal-next').addEventListener('click',function(){ gal.scrollBy({left:pas(),behavior:'smooth'}); });
+  document.getElementById('gal-prev').addEventListener('click',function(){ gal.scrollBy({left:-pas(),behavior:'smooth'}); });
+  (function(){
+    var enCours=false, x0=0, s0=0;
+    gal.addEventListener('pointerdown',function(e){ enCours=true; x0=e.clientX; s0=gal.scrollLeft; gal.setPointerCapture(e.pointerId); });
+    gal.addEventListener('pointermove',function(e){ if(enCours) gal.scrollLeft=s0-(e.clientX-x0); });
+    ['pointerup','pointercancel','pointerleave'].forEach(function(ev){ gal.addEventListener(ev,function(){ enCours=false; }); });
+  })();
+
+  /* ---------- Pied géant ---------- */
+  gsap.fromTo('footer .geant',{yPercent:46},{yPercent:18,ease:'none',
+    scrollTrigger:{trigger:'footer',start:'top bottom',end:'bottom bottom',scrub:true}});
+
+  /* ---------- Services : la photo suit le curseur ---------- */
+  if(window.matchMedia('(hover:hover) and (pointer:fine)').matches){
+    var fl=document.getElementById('svc-float'), fimg=document.getElementById('svc-float-img');
+    gsap.set(fl,{xPercent:-50,yPercent:-58,scale:.85});
+    var fx=gsap.quickTo(fl,'x',{duration:.55,ease:'power3'}), fy=gsap.quickTo(fl,'y',{duration:.55,ease:'power3'});
+    window.addEventListener('mousemove',function(e){ fx(e.clientX); fy(e.clientY); });
+    document.querySelectorAll('.svc-row').forEach(function(row){
+      row.addEventListener('mouseenter',function(){
+        var src=row.getAttribute('data-img');
+        if(src && fimg.getAttribute('src')!==src) fimg.setAttribute('src',src);
+        gsap.to(fl,{autoAlpha:1,scale:1,rotate:gsap.utils.random(-5,4),duration:.45,ease:'power3.out'});
+      });
+    });
+    document.getElementById('services').addEventListener('mouseleave',function(){
+      gsap.to(fl,{autoAlpha:0,scale:.85,duration:.35,ease:'power3.out'});
+    });
+  }
+
+  /* ---------- Curseur personnalisé ---------- */
+  if(window.matchMedia('(hover:hover) and (pointer:fine)').matches){
+    var dot=document.querySelector('.cursor-dot'), ring=document.querySelector('.cursor-ring'), vue=ring.querySelector('.vue');
+    var dx=gsap.quickTo(dot,'x',{duration:.08,ease:'power2'}), dy=gsap.quickTo(dot,'y',{duration:.08,ease:'power2'});
+    var rx=gsap.quickTo(ring,'x',{duration:.38,ease:'power3'}), ry=gsap.quickTo(ring,'y',{duration:.38,ease:'power3'});
+    window.addEventListener('mousemove',function(e){ dx(e.clientX); dy(e.clientY); rx(e.clientX); ry(e.clientY); });
+    document.querySelectorAll('a, button, [data-curseur]').forEach(function(el){
+      el.addEventListener('mouseenter',function(){ vue.textContent=el.getAttribute('data-curseur')||''; ring.classList.add('gros'); });
+      el.addEventListener('mouseleave',function(){ ring.classList.remove('gros'); });
+    });
+  } else {
+    document.querySelector('.cursor-dot').style.display='none';
+    document.querySelector('.cursor-ring').style.display='none';
+  }
+
+  /* ---------- Boutons magnétiques ---------- */
+  if(window.matchMedia('(hover:hover)').matches){
+    document.querySelectorAll('.magnet').forEach(function(el){
+      el.addEventListener('mousemove',function(e){
+        var r=el.getBoundingClientRect();
+        gsap.to(el,{x:(e.clientX-r.left-r.width/2)*.32,y:(e.clientY-r.top-r.height/2)*.32,duration:.4,ease:'power3.out'});
+      });
+      el.addEventListener('mouseleave',function(){ gsap.to(el,{x:0,y:0,duration:.7,ease:'elastic.out(1,0.4)'}); });
+    });
+  }
+
+  window.addEventListener('load',function(){ ScrollTrigger.refresh(); });
+})();
+</script>
 </body>
 </html>
