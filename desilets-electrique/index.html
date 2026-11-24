@@ -8,344 +8,264 @@
 <meta name="description" content="Entrepreneur électricien certifié CAA sur la Rive-Sud depuis 1978 : résidentiel, commercial, industriel, moteurs, bornes de recharge. Ligne d'urgence 450-659-8195. RBQ 1702-5768.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{
-  --marine:#14365c; --marine-f:#0d2743; --orange:#ee7a13; --orange-f:#c25e06;
-  --texte:#22262c; --doux:#5a6069; --fond:#f7f8f9; --blanc:#fff; --ligne:#e4e7ea;
-  --rayon:14px; --ombre:0 10px 30px rgba(13,39,67,.10);
-}
+:root{--charbon:#111214;--charbon-f:#0a0b0c;--panneau:#1a1c1f;--jaune:#ffd21f;--jaune-f:#e0b800;--texte:#22242a;--doux:#5c6068;--fond:#f6f6f4;--blanc:#fff;--ligne:#e2e2dc;--rayon:16px;--ombre:0 14px 40px rgba(10,11,12,.14)}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--texte);background:var(--fond);line-height:1.6}
-h1,h2,h3,.num{font-family:"Archivo","Inter",system-ui,sans-serif}
+body{font-family:"Inter",system-ui,sans-serif;color:var(--texte);background:var(--fond);line-height:1.6;overflow-x:hidden}
+::selection{background:var(--jaune);color:#111}
+h1,h2,h3,.num,.display{font-family:"Archivo",sans-serif}
 img{max-width:100%;display:block}
-.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
-.demo-band{background:#000;color:#ffc38a;text-align:center;font-size:.82rem;font-weight:600;padding:8px 14px}
-header{position:sticky;top:0;z-index:50;background:rgba(13,39,67,.97);box-shadow:0 2px 14px rgba(0,0,0,.25)}
-.header-in{display:flex;align-items:center;gap:16px;padding:10px 0}
-.logo-img{background:#fff;border-radius:8px;padding:5px 10px;line-height:0}
-.logo-img img{height:46px;width:auto}
-nav.main{margin-left:auto;display:flex;gap:22px}
-nav.main a{color:#e8edf2;text-decoration:none;font-weight:600;font-size:.94rem;padding:6px 2px;border-bottom:2px solid transparent}
-nav.main a:hover{color:var(--orange);border-color:var(--orange)}
-.btn{display:inline-flex;align-items:center;gap:9px;background:var(--orange);color:#fff;font-weight:700;text-decoration:none;padding:13px 24px;border-radius:10px;border:none;cursor:pointer;font-size:1rem;transition:transform .15s,background .15s;box-shadow:0 4px 14px rgba(238,122,19,.30)}
-.btn:hover{background:var(--orange-f);transform:translateY(-1px)}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+.demo-band{background:#000;color:#ffe97a;text-align:center;font-size:.8rem;font-weight:600;padding:8px 14px;position:relative;z-index:80}
+.grain{position:fixed;inset:-50%;width:200%;height:200%;pointer-events:none;z-index:200;opacity:.045;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");animation:grain 8s steps(10) infinite}
+@keyframes grain{0%,100%{transform:translate(0,0)}30%{transform:translate(3%,-10%)}60%{transform:translate(-7%,5%)}90%{transform:translate(4%,8%)}}
+#loader{position:fixed;inset:0;z-index:300;background:var(--charbon-f);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;transition:opacity .7s,visibility .7s}
+#loader.fini{opacity:0;visibility:hidden}
+#loader svg.eclair{width:74px;height:110px}
+#loader svg.eclair path{stroke:var(--jaune);stroke-width:2.4;fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:320;stroke-dashoffset:320;animation:trace 1.5s ease forwards}
+@keyframes trace{to{stroke-dashoffset:0}}
+#loader .mot{font-family:"Archivo",sans-serif;font-weight:900;font-size:clamp(1.4rem,4vw,2.2rem);letter-spacing:.1em;color:#fff;text-transform:uppercase;text-align:center;padding:0 16px}
+#loader .mot span{color:var(--jaune)}
+#loader .pct{font-family:"Archivo",sans-serif;color:var(--jaune);letter-spacing:.3em;font-size:1.05rem;animation:clignote 1s steps(2) infinite}
+@keyframes clignote{50%{opacity:.45}}
+#loader .barre{width:min(400px,70vw);height:2px;background:rgba(255,255,255,.15);overflow:hidden}
+#loader .barre i{display:block;height:100%;width:0%;background:var(--jaune)}
+.cursor-dot,.cursor-ring{position:fixed;top:0;left:0;pointer-events:none;z-index:250;border-radius:50%;transform:translate(-50%,-50%)}
+.cursor-dot{width:7px;height:7px;background:var(--jaune-f)}
+.cursor-ring{width:36px;height:36px;border:1.5px solid rgba(224,184,0,.85);transition:width .25s,height .25s}
+.cursor-ring.gros{width:70px;height:70px}
+@media(hover:none),(pointer:coarse){.cursor-dot,.cursor-ring{display:none}}
+header{position:fixed;top:34px;left:0;right:0;z-index:60}
+.header-in{display:flex;align-items:center;gap:16px;padding:12px 24px;max-width:1240px;margin:0 auto}
+.logo-img{background:#fff;border-radius:8px;padding:5px 10px;line-height:0;box-shadow:0 4px 16px rgba(0,0,0,.3)}
+.logo-img img{height:44px;width:auto}
+nav.main{margin-left:auto;display:flex;gap:24px;background:rgba(10,11,12,.72);padding:10px 18px;border-radius:999px;backdrop-filter:blur(8px)}
+nav.main a{color:#fff;text-decoration:none;font-weight:600;font-size:.86rem;letter-spacing:.06em;text-transform:uppercase}
+nav.main a:hover{color:var(--jaune)}
+.btn{display:inline-flex;align-items:center;gap:9px;background:var(--jaune);color:#111214;font-weight:800;text-decoration:none;padding:14px 26px;border-radius:10px;border:none;cursor:pointer;font-size:1rem;transition:transform .2s,box-shadow .2s,background .2s;box-shadow:0 6px 20px rgba(255,210,31,.3)}
+.btn:hover{background:var(--jaune-f);transform:translateY(-2px);box-shadow:0 10px 30px rgba(255,210,31,.5)}
 .btn svg{width:18px;height:18px;flex:none}
-.btn-tel{margin-left:6px;white-space:nowrap}
+.btn-tel{margin-left:8px;white-space:nowrap}
 .btn-ghost{background:transparent;color:#fff;border:2px solid #fff;box-shadow:none}
-.btn-ghost:hover{background:rgba(255,255,255,.12)}
-.hero{position:relative;min-height:560px;display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:var(--marine-f)}
+.btn-ghost:hover{background:rgba(255,255,255,.12);box-shadow:none}
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:var(--charbon-f)}
 .hero .fond{position:absolute;inset:0}
-.hero .fond img{width:100%;height:100%;object-fit:cover;object-position:center 40%}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(9,28,46,.90) 0%,rgba(9,28,46,.58) 55%,rgba(9,28,46,.18) 100%)}
-.hero-in{position:relative;z-index:2;padding:58px 0 48px;width:100%}
-.hero .badges{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
-.hero .badge{display:inline-block;font-weight:700;font-size:.8rem;padding:7px 14px;border-radius:999px;letter-spacing:.05em;text-transform:uppercase}
-.badge-o{background:var(--orange);color:#fff}
-.badge-w{background:#fff;color:var(--marine-f)}
-.hero h1{font-size:clamp(2rem,4.4vw,3.15rem);line-height:1.13;font-weight:800;max-width:740px;text-shadow:0 2px 12px rgba(0,0,0,.35)}
-.hero h1 em{color:var(--orange);font-style:normal}
-.hero p{max-width:600px;margin:16px 0 26px;font-size:1.08rem;color:#e8edf2}
+.hero .fond img{width:100%;height:100%;object-fit:cover;object-position:center 38%;filter:saturate(.9) brightness(.82)}
+#arcs{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
+.hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(10,11,12,.93) 0%,rgba(10,11,12,.6) 55%,rgba(10,11,12,.2) 100%);pointer-events:none}
+.hero-in{position:relative;z-index:3;padding:130px 0 56px;width:100%}
+.hero .badges{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
+.hero .badge{font-weight:700;font-size:.78rem;padding:7px 14px;border-radius:999px;letter-spacing:.06em;text-transform:uppercase}
+.badge-o{background:var(--jaune);color:#111214}
+.badge-w{background:#fff;color:var(--charbon-f)}
+.hero h1{font-size:clamp(2.4rem,5.6vw,4.2rem);line-height:1.05;font-weight:900;max-width:840px;text-transform:uppercase}
+.hero h1 .tranche{display:block;overflow:hidden}
+.hero h1 .tranche span{display:block;transform:translateY(110%);animation:recolle .9s cubic-bezier(.2,.9,.25,1) forwards;animation-delay:calc(1.55s + var(--t)*.22s)}
+@keyframes recolle{to{transform:translateY(0)}}
+.hero h1 em{color:var(--jaune);font-style:normal}
+.hero p{max-width:620px;margin:18px 0 28px;font-size:1.1rem;color:#e6e6e0}
 .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
-.stats{background:var(--marine-f);color:#fff}
-.stats-in{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:30px 0}
+.marquee{background:var(--jaune);color:#111214;overflow:hidden;padding:13px 0}
+.marquee .piste{display:flex;width:max-content;animation:defile 28s linear infinite}
+.marquee span{font-family:"Archivo",sans-serif;font-weight:800;letter-spacing:.16em;text-transform:uppercase;font-size:.85rem;padding:0 26px;white-space:nowrap}
+@keyframes defile{to{transform:translateX(-50%)}}
+.stats{background:var(--charbon-f);color:#fff}
+.stats-in{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:34px 0}
 .stat{text-align:center;padding:6px}
-.stat .num{font-size:2.1rem;font-weight:800;color:var(--orange);line-height:1}
-.stat .lbl{font-size:.88rem;color:#c3cedb;margin-top:6px}
-section.bloc{padding:68px 0}
-.kicker{color:var(--orange-f);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;margin-bottom:10px}
-h2{font-size:clamp(1.6rem,3vw,2.25rem);line-height:1.2;font-weight:800;margin-bottom:10px}
-.sous{color:var(--doux);max-width:740px;margin-bottom:32px}
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.svc{background:var(--blanc);border:1px solid var(--ligne);border-radius:var(--rayon);padding:26px;box-shadow:var(--ombre);display:flex;flex-direction:column;gap:10px}
-.svc .ico{width:46px;height:46px;border-radius:12px;background:#fdf0e1;display:flex;align-items:center;justify-content:center}
-.svc .ico svg{width:24px;height:24px;stroke:var(--orange-f);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.svc h3{font-size:1.13rem}
-.svc p{color:var(--doux);font-size:.94rem;flex:1}
-.svc a{color:var(--orange-f);font-weight:700;text-decoration:none}
-.svc a:hover{text-decoration:underline}
-.vedette{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:stretch;margin-bottom:26px}
+.stat .num{font-size:2.2rem;font-weight:900;color:var(--jaune);line-height:1}
+.stat .lbl{font-size:.88rem;color:#b9bbb2;margin-top:6px}
+section.bloc{padding:76px 0}
+.kicker{color:#8a6d00;font-weight:700;text-transform:uppercase;letter-spacing:.16em;font-size:.78rem;margin-bottom:10px}
+h2{font-size:clamp(1.7rem,3.2vw,2.4rem);line-height:1.15;font-weight:900;margin-bottom:10px;text-transform:uppercase}
+.sous{color:var(--doux);max-width:760px;margin-bottom:34px}
+.slides{display:flex;flex-direction:column;gap:18px}
+.slide{display:flex;gap:22px;align-items:flex-start;background:var(--blanc);border:1px solid var(--ligne);border-radius:var(--rayon);padding:28px;box-shadow:var(--ombre);transition:box-shadow .35s,transform .35s;max-width:860px}
+.slide.droite{align-self:flex-end;flex-direction:row-reverse;text-align:right}
+.slide:hover{box-shadow:0 0 0 2px var(--jaune),0 18px 44px rgba(255,210,31,.28);transform:translateY(-4px)}
+.slide .ico{width:52px;height:52px;flex:none;border-radius:12px;background:#fdf3d7;display:flex;align-items:center;justify-content:center}
+.slide .ico svg{width:27px;height:27px;stroke:#8a6d00;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.slide h3{font-size:1.2rem;margin-bottom:6px}
+.slide p{color:var(--doux);font-size:.96rem;margin-bottom:8px}
+.slide a{color:#8a6d00;font-weight:700;text-decoration:none}
+.slide a:hover{text-decoration:underline}
+.vedette{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:stretch}
 .vedette .photo{border-radius:18px;overflow:hidden;box-shadow:var(--ombre);min-height:340px}
 .vedette .photo img{width:100%;height:100%;object-fit:cover}
-.vedette .texte{background:var(--blanc);border:1px solid var(--ligne);border-radius:18px;box-shadow:var(--ombre);padding:34px;display:flex;flex-direction:column;justify-content:center}
-.vedette .texte h3{font-size:1.45rem;margin-bottom:10px}
-.vedette .texte p{color:var(--doux);margin-bottom:12px}
+.vedette .texte{background:var(--charbon);border-radius:18px;box-shadow:var(--ombre);padding:36px;display:flex;flex-direction:column;justify-content:center;color:#fff}
+.vedette .texte h3{font-size:1.5rem;margin-bottom:10px}
+.vedette .texte p{color:#c9cbc2;margin-bottom:12px}
 .vedette ul{list-style:none;margin-bottom:22px}
-.vedette ul li{padding:8px 0;border-bottom:1px solid var(--ligne);font-size:.96rem;display:flex;gap:11px;align-items:flex-start}
+.vedette ul li{padding:8px 0;border-bottom:1px solid #33363b;font-size:.96rem;display:flex;gap:11px;align-items:flex-start}
 .vedette ul li:last-child{border-bottom:none}
 .vedette ul li svg{width:20px;height:20px;flex:none;margin-top:2px}
 .galerie{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.galerie figure{border-radius:var(--rayon);overflow:hidden;position:relative;box-shadow:var(--ombre);background:#000}
+.galerie figure{border-radius:var(--rayon);overflow:hidden;position:relative;box-shadow:var(--ombre);background:#000;transition:box-shadow .35s}
+.galerie figure:hover{box-shadow:0 0 0 2px var(--jaune),0 16px 40px rgba(255,210,31,.3)}
 .galerie img{width:100%;height:260px;object-fit:cover;transition:transform .5s}
-.galerie figure:hover img{transform:scale(1.05)}
-.galerie figcaption{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(0,0,0,.85));color:#fff;padding:26px 13px 10px;font-size:.87rem;font-weight:600}
-.preuve{background:var(--marine);color:#fff}
+.galerie figure:hover img{transform:scale(1.06)}
+.galerie figcaption{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(10,11,12,.92));color:#fff;padding:26px 13px 10px;font-size:.87rem;font-weight:600}
+.preuve{background:var(--charbon);color:#fff}
 .preuve h2{color:#fff}
 .preuve-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:center}
-.preuve .gros{font-size:3.4rem;font-weight:800;color:var(--orange);line-height:1;font-family:"Archivo",sans-serif}
+.preuve .gros{font-size:3.4rem;font-weight:900;color:var(--jaune);line-height:1;font-family:"Archivo",sans-serif}
 .caa{display:flex;align-items:center;gap:16px}
-.caa img{width:96px;height:auto;flex:none}
-.carte-w{background:#fff;border-radius:var(--rayon);padding:22px;color:var(--texte)}
-.carte-w p{color:var(--doux);font-size:.94rem}
-.form-carte{background:var(--blanc);border:1px solid var(--ligne);border-radius:var(--rayon);box-shadow:var(--ombre);padding:32px}
-.form-carte.express{border-top:6px solid var(--orange)}
+.caa img{width:96px;height:auto;flex:none;background:#fff;border-radius:8px;padding:6px}
+.carte-w{background:#fff;border-radius:var(--rayon);padding:24px;color:var(--texte)}
+.carte-w p{color:var(--doux);font-size:.95rem}
+.form-carte{background:var(--blanc);border:1px solid var(--ligne);border-radius:var(--rayon);box-shadow:var(--ombre);padding:34px}
+.form-carte.express{border-top:6px solid var(--jaune)}
 .champs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .champs .plein{grid-column:1/-1}
 label{font-size:.85rem;font-weight:700;display:block;margin-bottom:5px}
-input,select,textarea{width:100%;padding:11px 12px;border:1.5px solid #d5d9dd;border-radius:9px;font:inherit;font-size:.95rem;background:#fcfcfd}
-input:focus,select:focus,textarea:focus{outline:2px solid var(--orange);border-color:var(--orange)}
-textarea{resize:vertical;min-height:84px}
+input,select,textarea{width:100%;padding:11px 12px;border:1.5px solid #d4d4cc;border-radius:9px;font:inherit;font-size:.95rem;background:#fdfdfa}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--jaune-f);border-color:var(--jaune-f)}
 .ok-msg{display:none;background:#e9f9ec;border:1.5px solid #35a854;color:#176b31;border-radius:9px;padding:12px 14px;margin-top:14px;font-weight:600;font-size:.93rem}
-.demo-note{background:#fff6ec;border:1.5px dashed #d16508;color:#7a4205;border-radius:9px;padding:10px 14px;margin-top:16px;font-size:.88rem;font-weight:600}
-footer{background:var(--marine-f);color:#c3cedb;padding:48px 0 30px}
+.demo-note{background:#fffbe8;border:1.5px dashed #8a6d00;color:#6d5800;border-radius:9px;padding:10px 14px;margin-top:16px;font-size:.88rem;font-weight:600}
+footer{background:var(--charbon-f);color:#b9bbb2;padding:52px 0 30px}
 footer .cols{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:28px;margin-bottom:26px}
-footer h4{color:#fff;margin-bottom:10px;font-family:"Archivo",sans-serif}
-footer a{color:#c3cedb;text-decoration:none}
-footer a:hover{color:var(--orange)}
-footer .bas{border-top:1px solid #274a68;padding-top:18px;font-size:.85rem;color:#8fa2b5;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+footer h4{color:#fff;margin-bottom:10px;font-family:"Archivo",sans-serif;text-transform:uppercase}
+footer a{color:#b9bbb2;text-decoration:none}
+footer a:hover{color:var(--jaune)}
+footer .bas{border-top:1px solid #2c2f33;padding-top:18px;font-size:.85rem;color:#83867e;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
 .tel-ligne{display:inline-flex;align-items:center;gap:8px}
-.tel-ligne svg{width:17px;height:17px;stroke:var(--orange);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.tel-ligne svg{width:17px;height:17px}
 .call-fixe{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:60;justify-content:center;text-align:center}
-.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal{opacity:0;transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.slide.gauche.reveal,.vedette.reveal{transform:translateX(-46px)}
+.slide.droite.reveal{transform:translateX(46px)}
+.reveal{transform:translateY(26px)}
+.slide.gauche.reveal{transform:translateX(-46px)}
+.slide.droite.reveal{transform:translateX(46px)}
 .reveal.vu{opacity:1;transform:none}
-@media (max-width:900px){
-  nav.main{display:none}
-  .stats-in{grid-template-columns:repeat(2,1fr)}
-  .services{grid-template-columns:1fr}
-  .vedette,.preuve-grid{grid-template-columns:1fr}
-  .galerie{grid-template-columns:1fr 1fr}
-  footer .cols{grid-template-columns:1fr}
-  .call-fixe{display:inline-flex}
-  body{padding-bottom:86px}
-  .btn-tel{display:none}
-  .hero{min-height:500px}
-}
+@media(max-width:900px){nav.main{display:none}.stats-in{grid-template-columns:repeat(2,1fr)}.slide,.slide.droite{flex-direction:column;text-align:left;align-self:stretch}.vedette,.preuve-grid{grid-template-columns:1fr}.galerie{grid-template-columns:1fr 1fr}footer .cols{grid-template-columns:1fr}.call-fixe{display:inline-flex}body{padding-bottom:86px}.btn-tel{display:none}}
 </style>
 </head>
 <body>
-
 <div class="demo-band">Proposition conceptuelle — démo non officielle réalisée à titre de proposition. Ce site n'est pas le site officiel de l'entreprise.</div>
-
-<header>
-  <div class="wrap header-in">
-    <a class="logo-img" href="#accueil"><img src="https://www.entreprises-desilets.com/wp-content/uploads/2026/01/Desilets-Entrepreneur-Electricien-Fr.png" alt="Les Entreprises Raymond Désilets ltée — entrepreneur électricien"></a>
-    <nav class="main">
-      <a href="#services">Services</a>
-      <a href="#urgence">Urgence</a>
-      <a href="#travaux">Nos travaux</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <a class="btn btn-tel" href="tel:+14506598195"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Urgence : 450-659-8195</a>
-  </div>
-</header>
+<div class="grain"></div>
+<div id="loader" aria-hidden="true"><svg class="eclair" viewBox="0 0 60 100"><path d="M36 4 10 56h16L22 96 52 40H34L36 4z"/></svg><div class="mot">Raymond <span>Désilets</span></div><div class="barre"><i id="lbar"></i></div><div class="pct" id="lpct">0 %</div></div>
+<div class="cursor-dot"></div><div class="cursor-ring"></div>
+<header><div class="header-in">
+<a class="logo-img" href="#accueil"><img src="https://www.entreprises-desilets.com/wp-content/uploads/2026/01/Desilets-Entrepreneur-Electricien-Fr.png" alt="Les Entreprises Raymond Désilets ltée — entrepreneur électricien"></a>
+<nav class="main"><a href="#services">Services</a><a href="#urgence">Urgence</a><a href="#travaux">Nos travaux</a><a href="#contact">Contact</a></nav>
+<a class="btn btn-tel" href="tel:+14506598195"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Urgence : 450-659-8195</a>
+</div></header>
 
 <div class="hero" id="accueil">
-  <div class="fond"><img src="https://www.entreprises-desilets.com/wp-content/uploads/2018/01/4.jpg" alt="Travaux électriques des Entreprises Raymond Désilets"></div>
-  <div class="wrap hero-in">
-    <div class="badges">
-      <span class="badge badge-o">Depuis 1978</span>
-      <span class="badge badge-w">Certifié CAA</span>
-      <span class="badge badge-w">RBQ : 1702-5768</span>
-    </div>
-    <h1>Votre électricien sur la Rive-Sud, <em>depuis 1978</em>.</h1>
-    <p>Entreprise d'électricité certifiée depuis plus de 45 ans : installations, entretien, réparations et service d'urgence — résidentiel, commercial et industriel, de La Prairie à Saint-Bruno.</p>
-    <div class="hero-cta">
-      <a class="btn" href="#soumission">Demander une soumission</a>
-      <a class="btn btn-ghost" href="tel:+14506598195"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Ligne d'urgence : 450-659-8195</a>
-    </div>
-  </div>
+<div class="fond"><img src="https://www.entreprises-desilets.com/wp-content/uploads/2018/01/4.jpg" alt="Travaux électriques des Entreprises Raymond Désilets"></div>
+<canvas id="arcs" aria-hidden="true"></canvas>
+<div class="wrap hero-in">
+<div class="badges"><span class="badge badge-o">Depuis 1978</span><span class="badge badge-w">Certifié CAA</span><span class="badge badge-w">RBQ : 1702-5768</span></div>
+<h1><span class="tranche" style="--t:0"><span>Votre électricien</span></span><span class="tranche" style="--t:1"><span>sur la Rive-Sud,</span></span><span class="tranche" style="--t:2"><span><em>depuis 1978</em>.</span></span></h1>
+<p>Entreprise d'électricité certifiée depuis plus de 45 ans : installations, entretien, réparations et service d'urgence — résidentiel, commercial et industriel, de La Prairie à Saint-Bruno.</p>
+<div class="hero-cta"><a class="btn" href="#soumission">Demander une soumission</a><a class="btn btn-ghost" href="tel:+14506598195"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Ligne d'urgence : 450-659-8195</a></div>
+</div></div>
+
+<div class="marquee" aria-hidden="true"><div class="piste"><span>Résidentiel · Commercial · Industriel · Moteurs électriques · Bornes de recharge · Alimentation de secours · </span><span>Résidentiel · Commercial · Industriel · Moteurs électriques · Bornes de recharge · Alimentation de secours · </span></div></div>
+
+<div class="stats"><div class="wrap stats-in">
+<div class="stat"><div class="num"><span class="compteur" data-cible="48">48</span></div><div class="lbl">années d'expérience (depuis 1978)</div></div>
+<div class="stat"><div class="num"><span class="compteur" data-cible="3">3</span></div><div class="lbl">secteurs : résidentiel, commercial, industriel</div></div>
+<div class="stat"><div class="num">CAA</div><div class="lbl">entreprise recommandée — certifiée CAA</div></div>
+<div class="stat"><div class="num">CMEQ</div><div class="lbl">membre de la Corporation des maîtres électriciens du Québec</div></div>
+</div></div>
+
+<section class="bloc" id="soumission" style="padding-bottom:20px"><div class="wrap">
+<form class="form-carte express reveal" id="form-express">
+<h2 style="font-size:1.5rem">Un projet ou un problème électrique ? On s'en occupe.</h2>
+<p style="color:var(--doux);margin-bottom:18px">Trois champs, une minute : on vous rappelle pour planifier. Pour une urgence, appelez directement au <a href="tel:+14506598195"><strong>450-659-8195</strong></a>.</p>
+<div class="champs">
+<div><label for="e-nom">Nom *</label><input id="e-nom" required autocomplete="name"></div>
+<div><label for="e-tel">Téléphone *</label><input id="e-tel" required type="tel" autocomplete="tel"></div>
+<div class="plein"><label for="e-service">Votre besoin *</label><select id="e-service" required><option value="">Choisir…</option><option>Installation / rénovation électrique</option><option>Réparation ou dépannage</option><option>Borne de recharge (véhicule électrique)</option><option>Moteur électrique / industriel</option><option>Alimentation de secours</option><option>Autre</option></select></div>
 </div>
+<p class="demo-note">Démonstration — ce formulaire est une maquette : aucune demande réelle n'est transmise à l'entreprise.</p>
+<p style="margin-top:16px"><button class="btn" type="submit">Être rappelé</button></p>
+<div class="ok-msg">Simulation terminée. Aucune demande n'a été transmise à l'entreprise.</div>
+</form></div></section>
 
-<div class="stats">
-  <div class="wrap stats-in">
-    <div class="stat"><div class="num"><span class="compteur" data-cible="48">48</span></div><div class="lbl">années d'expérience (depuis 1978)</div></div>
-    <div class="stat"><div class="num"><span class="compteur" data-cible="3">3</span></div><div class="lbl">secteurs : résidentiel, commercial, industriel</div></div>
-    <div class="stat"><div class="num">CAA</div><div class="lbl">entreprise recommandée — certifiée CAA</div></div>
-    <div class="stat"><div class="num">CMEQ</div><div class="lbl">membre de la Corporation des maîtres électriciens du Québec</div></div>
-  </div>
+<section class="bloc" id="services" style="padding-top:26px"><div class="wrap">
+<p class="kicker reveal">Nos services</p>
+<h2 class="reveal">Des solutions électriques complètes, sous un même toit</h2>
+<p class="sous reveal">Installations, entretien, réparations : que ce soit pour votre résidence, votre commerce ou votre usine, notre équipe qualifiée vous sert avec professionnalisme et efficacité.</p>
+<div class="slides"><article class="slide gauche reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg></div><div><h3>Résidentiel</h3><p>Entrées électriques, panneaux, rénovations, ajout de circuits : des travaux propres et conformes pour votre maison.</p><a href="#soumission">Demander une soumission</a></div></article><article class="slide droite reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V7h9v14M14 11h5v10"/><path d="M8 10h2M8 14h2"/></svg></div><div><h3>Commercial</h3><p>Installations et entretien pour commerces et immeubles : un service rapide qui ne freine pas vos opérations.</p><a href="#soumission">Demander une soumission</a></div></article><article class="slide gauche reveal"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.8v3M12 18.2v3M2.8 12h3M18.2 12h3M5.5 5.5l2.1 2.1M16.4 16.4l2.1 2.1M18.5 5.5l-2.1 2.1M7.6 16.4l-2.1 2.1"/></svg></div><div><h3>Industriel et automatisation</h3><p>Solutions de contrôle et d'automatisation sur mesure, installations télécom et travaux en hauteur avec camion nacelle.</p><a href="#soumission">Demander une soumission</a></div></article><article class="slide droite reveal"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="2.6"/><path d="M12 3.5v3M12 17.5v3M3.5 12h3M17.5 12h3"/></svg></div><div><h3>Moteurs électriques</h3><p>Nous vous aidons dans le choix du moteur le mieux adapté à vos besoins, puis nous en assurons l'installation.</p><a href="#soumission">Demander une soumission</a></div></article><article class="slide gauche reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M6 3v8"/><path d="M6 11c0 4 3 4 6 4s6 0 6-4"/><path d="M18 3v8"/><path d="M9 21h6"/></svg></div><div><h3>Bornes de recharge</h3><p>Installation de bornes de recharge pour véhicules électriques, à la maison comme au travail, en toute conformité.</p><a href="#soumission">Demander une soumission</a></div></article><article class="slide droite reveal"><div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="8" width="15" height="9" rx="2"/><path d="M21 11v3"/><path d="M10.5 10.8 8.8 13h2.4l-1.7 2.2"/></svg></div><div><h3>Alimentation de secours</h3><p>Systèmes d'alimentation de secours à batteries : assurez une autonomie énergétique à vos installations essentielles.</p><a href="#soumission">Demander une soumission</a></div></article></div>
+</div></section>
+
+<section class="bloc" id="urgence" style="padding-top:6px"><div class="wrap">
+<div class="vedette reveal">
+<div class="photo"><img src="https://www.entreprises-desilets.com/wp-content/uploads/2018/01/3.jpg" alt="Équipe Désilets au travail sur une installation électrique" loading="lazy"></div>
+<div class="texte"><p class="kicker" style="color:var(--jaune)">Service d'urgence</p><h3>Un problème électrique ? Un seul numéro, partout sur le site.</h3>
+<p>Service rapide et personnalisé, camion nacelle pour les travaux en hauteur : quand ça presse, vous savez qui appeler — et le numéro fonctionne, à chaque page.</p>
+<ul>
+<li><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#fdf3d7"/><path d="M8 12.5 10.8 15 16 9.5" stroke="#8a6d00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong>Ligne d'urgence : 450-659-8195</strong> — le même numéro, affiché et cliquable partout</span></li>
+<li><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#fdf3d7"/><path d="M8 12.5 10.8 15 16 9.5" stroke="#8a6d00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Entreprise recommandée — <strong>certifiée CAA</strong></span></li>
+<li><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#fdf3d7"/><path d="M8 12.5 10.8 15 16 9.5" stroke="#8a6d00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>RBQ : 1702-5768 — membre de la CMEQ</span></li>
+<li><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#fdf3d7"/><path d="M8 12.5 10.8 15 16 9.5" stroke="#8a6d00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>514, rue St-Georges, La Prairie — lundi au vendredi, 8 h à 17 h</span></li>
+</ul>
+<p><a class="btn" href="tel:+14506598195">Appeler maintenant</a></p></div>
+</div></div></section>
+
+<section class="bloc" id="travaux" style="padding-top:6px"><div class="wrap">
+<p class="kicker reveal">Nos travaux</p>
+<h2 class="reveal">Sur le terrain, depuis 1978.</h2>
+<p class="sous reveal">Photos réelles de nos installations et de notre équipe, sur la Rive-Sud.</p>
+<div class="galerie">
+<figure class="reveal"><img src="https://www.entreprises-desilets.com/wp-content/uploads/2018/01/5.jpg" alt="Installation électrique réalisée par Désilets" loading="lazy"><figcaption>Installation — secteur industriel</figcaption></figure>
+<figure class="reveal"><img src="https://www.entreprises-desilets.com/wp-content/uploads/2018/01/4.jpg" alt="Travaux électriques Désilets" loading="lazy"><figcaption>Travaux d'installation</figcaption></figure>
+<figure class="reveal"><img src="https://www.entreprises-desilets.com/wp-content/uploads/2018/03/pexels-photo-257736.jpg" alt="Panneau électrique installé par Désilets" loading="lazy"><figcaption>Panneaux et distribution</figcaption></figure>
+<figure class="reveal"><img src="https://www.entreprises-desilets.com/wp-content/uploads/2018/01/3.jpg" alt="Électriciens Désilets au travail" loading="lazy"><figcaption>Notre équipe au travail</figcaption></figure>
+</div></div></section>
+
+<section class="bloc preuve" id="confiance"><div class="wrap">
+<p class="kicker reveal" style="color:var(--jaune)">Confiance</p>
+<h2 class="reveal">Recommandée CAA, enracinée à La Prairie depuis 1978.</h2>
+<div class="preuve-grid">
+<div class="reveal"><div class="gros">1978</div>
+<p style="margin-top:10px">Les Entreprises Raymond Désilets ltée : entrepreneur électricien de père en fils sur la Rive-Sud. Villes desservies : La Prairie, Brossard, Candiac, Saint-Constant, Greenfield Park, Saint-Lambert, Longueuil, Saint-Hubert, Saint-Bruno-de-Montarville, Sainte-Catherine et plus.</p>
+<p style="margin-top:22px"><a class="btn" href="#soumission">Demander une soumission</a></p></div>
+<div class="carte-w reveal"><div class="caa"><img src="https://www.entreprises-desilets.com/wp-content/uploads/2026/01/caa.png" alt="Logo CAA — entreprise recommandée"><h3>Entreprise recommandée CAA</h3></div>
+<p style="margin-top:10px">Licence RBQ : <strong>1702-5768</strong>. Membre de la Corporation des maîtres électriciens du Québec (CMEQ). Travaux en hauteur avec camion nacelle.</p></div>
+</div></div></section>
+
+<footer id="contact"><div class="wrap">
+<div class="cols">
+<div><h4>Les Entreprises Raymond Désilets ltée</h4><p>514, rue St-Georges<br>La Prairie, QC J5R 2N3</p>
+<p style="margin-top:6px">RBQ : 1702-5768 — Lundi au vendredi, 8 h à 17 h</p>
+<p style="margin-top:10px"><a class="tel-ligne" href="tel:+14506598195"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><strong>450-659-8195</strong></a></p>
+<p style="margin-top:8px">Courriel : admin@entreprises-desilets.com</p></div>
+<div><h4>Villes desservies</h4><p>La Prairie, Brossard, Candiac, Saint-Constant, Greenfield Park, Saint-Lambert, Longueuil, Saint-Hubert, Saint-Bruno-de-Montarville, Sainte-Catherine.</p></div>
+<div><h4>Services</h4><p><a href="#services">Résidentiel</a><br><a href="#services">Commercial</a><br><a href="#services">Industriel et automatisation</a><br><a href="#services">Bornes de recharge</a><br><a href="#soumission">Demander une soumission</a></p></div>
 </div>
-
-<section class="bloc" id="soumission" style="padding-bottom:20px">
-  <div class="wrap">
-    <form class="form-carte express reveal" id="form-express">
-      <h2 style="font-size:1.5rem">Un projet ou un problème électrique ? On s'en occupe.</h2>
-      <p style="color:var(--doux);margin-bottom:18px">Trois champs, une minute : on vous rappelle pour planifier. Pour une urgence, appelez directement au <a href="tel:+14506598195"><strong>450-659-8195</strong></a>.</p>
-      <div class="champs">
-        <div><label for="e-nom">Nom *</label><input id="e-nom" required autocomplete="name"></div>
-        <div><label for="e-tel">Téléphone *</label><input id="e-tel" required type="tel" autocomplete="tel"></div>
-        <div class="plein"><label for="e-service">Votre besoin *</label>
-          <select id="e-service" required>
-            <option value="">Choisir…</option>
-            <option>Installation / rénovation électrique</option>
-            <option>Réparation ou dépannage</option>
-            <option>Borne de recharge (véhicule électrique)</option>
-            <option>Moteur électrique / industriel</option>
-            <option>Alimentation de secours</option>
-            <option>Autre</option>
-          </select></div>
-      </div>
-      <p class="demo-note">Démonstration — ce formulaire est une maquette : aucune demande réelle n'est transmise à l'entreprise.</p>
-      <p style="margin-top:16px"><button class="btn" type="submit">Être rappelé</button></p>
-      <div class="ok-msg">Simulation terminée. Aucune demande n'a été transmise à l'entreprise.</div>
-    </form>
-  </div>
-</section>
-
-<section class="bloc" id="services" style="padding-top:26px">
-  <div class="wrap">
-    <p class="kicker reveal">Nos services</p>
-    <h2 class="reveal">Des solutions électriques complètes, sous un même toit</h2>
-    <p class="sous reveal">Installations, entretien, réparations : que ce soit pour votre résidence, votre commerce ou votre usine, notre équipe qualifiée vous sert avec professionnalisme et efficacité.</p>
-    <div class="services">
-      <article class="svc reveal">
-        <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg></div>
-        <h3>Résidentiel</h3>
-        <p>Entrées électriques, panneaux, rénovations, ajout de circuits : des travaux propres et conformes pour votre maison.</p>
-        <a href="#soumission">Demander une soumission</a>
-      </article>
-      <article class="svc reveal">
-        <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V7h9v14M14 11h5v10"/><path d="M8 10h2M8 14h2"/></svg></div>
-        <h3>Commercial</h3>
-        <p>Installations et entretien pour commerces et immeubles : un service rapide qui ne freine pas vos opérations.</p>
-        <a href="#soumission">Demander une soumission</a>
-      </article>
-      <article class="svc reveal">
-        <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.8v3M12 18.2v3M2.8 12h3M18.2 12h3M5.5 5.5l2.1 2.1M16.4 16.4l2.1 2.1M18.5 5.5l-2.1 2.1M7.6 16.4l-2.1 2.1"/></svg></div>
-        <h3>Industriel et automatisation</h3>
-        <p>Solutions de contrôle et d'automatisation sur mesure, installations télécom et travaux en hauteur avec camion nacelle.</p>
-        <a href="#soumission">Demander une soumission</a>
-      </article>
-      <article class="svc reveal">
-        <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="2.6"/><path d="M12 3.5v3M12 17.5v3M3.5 12h3M17.5 12h3"/></svg></div>
-        <h3>Moteurs électriques</h3>
-        <p>Nous vous aidons dans le choix du moteur le mieux adapté à vos besoins, puis nous en assurons l'installation.</p>
-        <a href="#soumission">Demander une soumission</a>
-      </article>
-      <article class="svc reveal">
-        <div class="ico"><svg viewBox="0 0 24 24"><path d="M6 3v8"/><path d="M6 11c0 4 3 4 6 4s6 0 6-4"/><path d="M18 3v8"/><path d="M9 21h6"/></svg></div>
-        <h3>Bornes de recharge</h3>
-        <p>Installation de bornes de recharge pour véhicules électriques, à la maison comme au travail, en toute conformité.</p>
-        <a href="#soumission">Demander une soumission</a>
-      </article>
-      <article class="svc reveal">
-        <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="8" width="15" height="9" rx="2"/><path d="M21 11v3"/><path d="M10.5 10.8 8.8 13h2.4l-1.7 2.2"/></svg></div>
-        <h3>Alimentation de secours</h3>
-        <p>Systèmes d'alimentation de secours à batteries : assurez une autonomie énergétique à vos installations essentielles.</p>
-        <a href="#soumission">Demander une soumission</a>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="bloc" id="urgence" style="padding-top:6px">
-  <div class="wrap">
-    <div class="vedette reveal">
-      <div class="photo"><img src="https://www.entreprises-desilets.com/wp-content/uploads/2018/01/3.jpg" alt="Équipe Désilets au travail sur une installation électrique" loading="lazy"></div>
-      <div class="texte">
-        <p class="kicker">Service d'urgence</p>
-        <h3>Un problème électrique ? Un seul numéro, partout sur le site.</h3>
-        <p>Service rapide et personnalisé, camion nacelle pour les travaux en hauteur : quand ça presse, vous savez qui appeler — et le numéro fonctionne, à chaque page.</p>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#fdf0e1"/><path d="M8 12.5 10.8 15 16 9.5" stroke="#c25e06" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong>Ligne d'urgence : 450-659-8195</strong> — le même numéro, affiché et cliquable partout</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#fdf0e1"/><path d="M8 12.5 10.8 15 16 9.5" stroke="#c25e06" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Entreprise recommandée — <strong>certifiée CAA</strong></span></li>
-          <li><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#fdf0e1"/><path d="M8 12.5 10.8 15 16 9.5" stroke="#c25e06" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>RBQ : 1702-5768 — membre de la CMEQ</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#fdf0e1"/><path d="M8 12.5 10.8 15 16 9.5" stroke="#c25e06" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>514, rue St-Georges, La Prairie — lundi au vendredi, 8 h à 17 h</span></li>
-        </ul>
-        <p><a class="btn" href="tel:+14506598195">Appeler maintenant</a></p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="bloc" id="travaux" style="padding-top:6px">
-  <div class="wrap">
-    <p class="kicker reveal">Nos travaux</p>
-    <h2 class="reveal">Sur le terrain, depuis 1978.</h2>
-    <p class="sous reveal">Photos réelles de nos installations et de notre équipe, sur la Rive-Sud.</p>
-    <div class="galerie">
-      <figure class="reveal"><img src="https://www.entreprises-desilets.com/wp-content/uploads/2018/01/5.jpg" alt="Installation électrique réalisée par Désilets" loading="lazy"><figcaption>Installation — secteur industriel</figcaption></figure>
-      <figure class="reveal"><img src="https://www.entreprises-desilets.com/wp-content/uploads/2018/01/4.jpg" alt="Travaux électriques Désilets" loading="lazy"><figcaption>Travaux d'installation</figcaption></figure>
-      <figure class="reveal"><img src="https://www.entreprises-desilets.com/wp-content/uploads/2018/03/pexels-photo-257736.jpg" alt="Panneau électrique installé par Désilets" loading="lazy"><figcaption>Panneaux et distribution</figcaption></figure>
-      <figure class="reveal"><img src="https://www.entreprises-desilets.com/wp-content/uploads/2018/01/3.jpg" alt="Électriciens Désilets au travail" loading="lazy"><figcaption>Notre équipe au travail</figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<section class="bloc preuve" id="confiance">
-  <div class="wrap">
-    <p class="kicker reveal">Confiance</p>
-    <h2 class="reveal">Recommandée CAA, enracinée à La Prairie depuis 1978.</h2>
-    <div class="preuve-grid">
-      <div class="reveal">
-        <div class="gros">1978</div>
-        <p style="margin-top:10px">Les Entreprises Raymond Désilets ltée : entrepreneur électricien de père en fils sur la Rive-Sud. Villes desservies : La Prairie, Brossard, Candiac, Saint-Constant, Greenfield Park, Saint-Lambert, Longueuil, Saint-Hubert, Saint-Bruno-de-Montarville, Sainte-Catherine et plus.</p>
-        <p style="margin-top:22px"><a class="btn" href="#soumission">Demander une soumission</a></p>
-      </div>
-      <div class="carte-w reveal">
-        <div class="caa">
-          <img src="https://www.entreprises-desilets.com/wp-content/uploads/2026/01/caa.png" alt="Logo CAA — entreprise recommandée">
-          <h3>Entreprise recommandée CAA</h3>
-        </div>
-        <p style="margin-top:10px">Licence RBQ : <strong>1702-5768</strong>. Membre de la Corporation des maîtres électriciens du Québec (CMEQ). Travaux en hauteur avec camion nacelle.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer id="contact">
-  <div class="wrap">
-    <div class="cols">
-      <div>
-        <h4>Les Entreprises Raymond Désilets ltée</h4>
-        <p>514, rue St-Georges<br>La Prairie, QC J5R 2N3</p>
-        <p style="margin-top:6px">RBQ : 1702-5768 — Lundi au vendredi, 8 h à 17 h</p>
-        <p style="margin-top:10px"><a class="tel-ligne" href="tel:+14506598195"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><strong>450-659-8195</strong></a></p>
-        <p style="margin-top:8px">Courriel : admin@entreprises-desilets.com</p>
-      </div>
-      <div>
-        <h4>Villes desservies</h4>
-        <p>La Prairie, Brossard, Candiac, Saint-Constant, Greenfield Park, Saint-Lambert, Longueuil, Saint-Hubert, Saint-Bruno-de-Montarville, Sainte-Catherine.</p>
-      </div>
-      <div>
-        <h4>Services</h4>
-        <p><a href="#services">Résidentiel</a><br>
-        <a href="#services">Commercial</a><br>
-        <a href="#services">Industriel et automatisation</a><br>
-        <a href="#services">Bornes de recharge</a><br>
-        <a href="#soumission">Demander une soumission</a></p>
-      </div>
-    </div>
-    <div class="bas">
-      <span>© 2026 Les Entreprises Raymond Désilets ltée — entrepreneur électricien depuis 1978.</span>
-      <span>Proposition conceptuelle de site web — démo non officielle.</span>
-    </div>
-  </div>
-</footer>
-
-<a class="btn call-fixe" href="tel:+14506598195"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Urgence — 450-659-8195</a>
-
+<div class="bas"><span>© 2026 Les Entreprises Raymond Désilets ltée — entrepreneur électricien depuis 1978.</span><span>Proposition conceptuelle de site web — démo non officielle.</span></div>
+</div></footer>
+<a class="btn call-fixe" href="tel:+14506598195"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Urgence — 450-659-8195</a>
 <script>
 (function(){
-  var fait=false;
-  function animer(){
-    if(fait) return; fait=true;
-    document.querySelectorAll('.compteur').forEach(function(el){
-      var cible=parseInt(el.dataset.cible,10), debut=null;
-      function pas(ts){ if(!debut) debut=ts; var p=Math.min((ts-debut)/1400,1); el.textContent=Math.round(cible*p); if(p<1) requestAnimationFrame(pas); else el.textContent=cible; }
-      requestAnimationFrame(pas);
-    });
-  }
-  var obs=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ animer(); obs.disconnect(); } }); },{threshold:.35});
-  var s=document.querySelector('.stats'); if(s) obs.observe(s);
+var debut=null,duree=1600;
+function pas(ts){if(!debut)debut=ts;var p=Math.min((ts-debut)/duree,1);var v=Math.round(p*100);document.getElementById('lpct').textContent=v+' %';document.getElementById('lbar').style.width=v+'%';if(p<1){requestAnimationFrame(pas);}else{document.getElementById('loader').classList.add('fini');}}
+requestAnimationFrame(pas);
+var cv=document.getElementById('arcs'),ctx=cv.getContext('2d'),arcs=[];
+function taille(){cv.width=cv.offsetWidth;cv.height=cv.offsetHeight;}
+taille();window.addEventListener('resize',taille);
+function nouvelArc(){var x=Math.random()*cv.width,y=Math.random()*cv.height*.7;var pts=[[x,y]];var cx=x,cy=y;for(var i=0;i<5;i++){cx+=(Math.random()-.3)*70;cy+=(Math.random()-.2)*46;pts.push([cx,cy]);}return{pts:pts,vie:0,duree:26+Math.random()*22};}
+function boucle(){ctx.clearRect(0,0,cv.width,cv.height);if(Math.random()<.06&&arcs.length<4)arcs.push(nouvelArc());arcs=arcs.filter(function(a){return a.vie<a.duree;});arcs.forEach(function(a){a.vie++;var alpha=1-a.vie/a.duree;ctx.beginPath();ctx.moveTo(a.pts[0][0],a.pts[0][1]);for(var i=1;i<a.pts.length;i++)ctx.lineTo(a.pts[i][0],a.pts[i][1]);ctx.strokeStyle='rgba(255,210,31,'+(alpha*.85)+')';ctx.lineWidth=1.6;ctx.shadowColor='rgba(255,210,31,.9)';ctx.shadowBlur=12;ctx.stroke();ctx.shadowBlur=0;});requestAnimationFrame(boucle);}
+boucle();
+var dot=document.querySelector('.cursor-dot'),ring=document.querySelector('.cursor-ring');
+document.addEventListener('mousemove',function(e){dot.style.left=e.clientX+'px';dot.style.top=e.clientY+'px';ring.style.left=e.clientX+'px';ring.style.top=e.clientY+'px';});
+document.querySelectorAll('a,button,.slide,.galerie figure').forEach(function(el){el.addEventListener('mouseenter',function(){ring.classList.add('gros');});el.addEventListener('mouseleave',function(){ring.classList.remove('gros');});});
+
+var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vu');obs.unobserve(e.target);}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
+var f=document.getElementById('form-express');
+if(f){f.addEventListener('submit',function(ev){ev.preventDefault();var m=this.querySelector('.ok-msg');if(m)m.style.display='block';});}
+var fait=false;
+function animer(){if(fait)return;fait=true;document.querySelectorAll('.compteur').forEach(function(el){var cible=parseInt(el.dataset.cible,10),debut=null;function pas(ts){if(!debut)debut=ts;var p=Math.min((ts-debut)/1500,1);el.textContent=Math.round(cible*p);if(p<1)requestAnimationFrame(pas);else el.textContent=cible;}requestAnimationFrame(pas);});}
+var obs2=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){animer();obs2.disconnect();}})},{threshold:.35});
+var st=document.querySelector('.stats');if(st)obs2.observe(st);
+
 })();
-(function(){
-  var obs=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('vu'); obs.unobserve(e.target); } }); },{threshold:.12});
-  document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
-})();
-document.getElementById('form-express').addEventListener('submit',function(ev){
-  ev.preventDefault(); var m=this.querySelector('.ok-msg'); if(m) m.style.display='block';
-});
 </script>
 </body>
 </html>
