@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Joey Carpentier — Développement web · Rive-Sud de Montréal</title>
+<meta name="description" content="Des sites web qui ont l'air pro et qui convertissent, pour les entreprises de services de la Rive-Sud de Montréal. Démo personnalisée gratuite avant de décider.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --noir:#0a0906; --encre:#100d08; --panneau:#161209; --panneau2:#1c1609;
+  --or:#d9a441; --or-clair:#f0c569; --or-sombre:#9a742a;
+  --creme:#f3ecdd; --gris:#a89e88; --ligne:rgba(243,236,221,.13);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--noir);color:var(--creme);font-family:"Inter",system-ui,sans-serif;line-height:1.6;overflow-x:hidden}
+::selection{background:var(--or);color:#171106}
+a{color:inherit}
+.display{font-family:"Archivo",sans-serif;text-transform:uppercase;line-height:.98;font-weight:900;letter-spacing:-.015em}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+
+/* ---------- Préchargeur : nom doré + barre ---------- */
+#loader{position:fixed;inset:0;z-index:300;background:#060503;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;transition:opacity .6s ease,visibility .6s}
+#loader.fini{opacity:0;visibility:hidden}
+#loader .mot{font-family:"Archivo",sans-serif;font-weight:900;font-size:clamp(2rem,7.5vw,5rem);letter-spacing:.03em;text-transform:uppercase;overflow:hidden;line-height:1.05;text-align:center}
+#loader .mot span{display:inline-block;transform:translateY(115%);animation:monte .8s cubic-bezier(.2,.8,.2,1) forwards}
+#loader .mot .o{color:var(--or)}
+#loader .sous{font-size:.74rem;font-weight:700;letter-spacing:.38em;text-transform:uppercase;color:var(--gris)}
+#loader .barre{width:min(420px,70vw);height:2px;background:rgba(243,236,221,.14);overflow:hidden}
+#loader .barre i{display:block;height:100%;width:0%;background:linear-gradient(90deg,var(--or-sombre),var(--or-clair))}
+#loader .pct{font-family:"Archivo",sans-serif;font-weight:900;font-size:1.05rem;color:var(--or-clair);letter-spacing:.3em}
+@keyframes monte{to{transform:translateY(0)}}
+
+/* ---------- Barre supérieure ---------- */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:90;display:flex;align-items:center;justify-content:space-between;padding:16px 24px;background:linear-gradient(180deg,rgba(6,5,3,.88),rgba(6,5,3,0));backdrop-filter:blur(2px)}
+.topbar .logo{font-family:"Archivo",sans-serif;font-weight:900;font-size:1.1rem;letter-spacing:.08em;text-transform:uppercase;text-decoration:none}
+.topbar .logo b{color:var(--or)}
+.topbar nav{display:flex;gap:26px;align-items:center}
+.topbar nav a{color:var(--creme);text-decoration:none;font-size:.86rem;font-weight:600;letter-spacing:.04em}
+.topbar nav a:hover{color:var(--or-clair)}
+.topbar .cta{background:var(--or);color:#171106;padding:10px 20px;border-radius:999px;font-weight:700}
+.topbar .cta:hover{background:var(--or-clair);color:#171106}
+@media(max-width:760px){.topbar nav a:not(.cta){display:none}}
+
+/* ---------- Héros : constellation dorée ---------- */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding:130px 0 0;overflow:hidden;background:radial-gradient(1100px 550px at 78% -10%,rgba(217,164,65,.16),transparent 60%),var(--noir)}
+#constellation{position:absolute;inset:0;width:100%;height:100%;z-index:1}
+.hero .contenu{position:relative;z-index:3}
+.hero .sur{font-size:.78rem;font-weight:700;letter-spacing:.34em;text-transform:uppercase;color:var(--or-clair);margin-bottom:22px;display:flex;align-items:center;gap:14px}
+.hero .sur::before{content:"";width:52px;height:1px;background:var(--or)}
+.hero h1{font-size:clamp(2.9rem,8.2vw,7rem);max-width:1100px}
+.hero h1 .o{color:var(--or)}
+.hero h1 .contour{color:transparent;-webkit-text-stroke:1.5px rgba(243,236,221,.75)}
+.hero p.lead{max-width:620px;color:var(--gris);font-size:clamp(1rem,1.5vw,1.15rem);margin:26px 0 34px}
+.hero p.lead b{color:var(--creme)}
+.btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--or);color:#171106;font-weight:700;text-decoration:none;padding:15px 28px;border-radius:999px;font-size:.98rem;border:none;cursor:pointer;transition:background .2s,transform .2s}
+.btn:hover{background:var(--or-clair);transform:translateY(-2px)}
+.btn-ligne{background:transparent;color:var(--creme);border:1.5px solid rgba(243,236,221,.5)}
+.btn-ligne:hover{background:rgba(243,236,221,.08);color:var(--creme)}
+.scroll-cue{display:flex;align-items:center;gap:12px;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gris);margin:44px 0 30px}
+.scroll-cue .trait{width:64px;height:1px;background:var(--or);position:relative;overflow:hidden}
+.scroll-cue .trait::after{content:"";position:absolute;inset:0;background:var(--creme);transform:translateX(-100%);animation:glisse 2.2s infinite}
+@keyframes glisse{to{transform:translateX(100%)}}
+.marquee{background:var(--or);color:#171106;overflow:hidden;padding:13px 0;transform:rotate(-1.1deg) scale(1.03);position:relative;z-index:4}
+.marquee .piste{display:flex;width:max-content;animation:defile 30s linear infinite}
+.marquee span{font-family:"Archivo",sans-serif;font-weight:900;text-transform:uppercase;font-size:1.3rem;letter-spacing:.06em;padding:0 18px;white-space:nowrap}
+@keyframes defile{to{transform:translateX(-50%)}}
+
+/* ---------- Révélations ---------- */
+.rv{opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.rv.vu{opacity:1;transform:none}
+
+/* ---------- Sections génériques ---------- */
+section{padding:100px 0}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:20px;border-top:1px solid var(--ligne);padding-top:22px;margin-bottom:44px}
+.sec-head h2{font-family:"Archivo",sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(1.9rem,4.4vw,3.4rem);line-height:1.02}
+.sec-head h2 .o{color:var(--or)}
+.sec-head .note{color:var(--gris);font-size:.92rem;max-width:320px;text-align:right}
+@media(max-width:760px){.sec-head{flex-direction:column}.sec-head .note{text-align:left}}
+
+/* ---------- Manifeste ---------- */
+.manifeste p{font-family:"Archivo",sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(1.8rem,4.4vw,3.6rem);line-height:1.18;max-width:1150px}
+.manifeste p .o{color:var(--or)}
+.manifeste .sur{font-size:.78rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--or-clair);margin-bottom:24px}
+
+/* ---------- Secteurs ---------- */
+.secteurs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:900px){.secteurs{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.secteurs{grid-template-columns:1fr}}
+.sect{position:relative;background:var(--panneau);border:1px solid var(--ligne);border-radius:16px;padding:28px 24px;overflow:hidden;transition:border-color .25s,transform .25s}
+.sect:hover{border-color:rgba(217,164,65,.55);transform:translateY(-4px)}
+.sect .k{font-family:"Archivo",sans-serif;font-weight:900;font-size:.78rem;letter-spacing:.26em;text-transform:uppercase;color:var(--or-clair)}
+.sect h3{font-family:"Archivo",sans-serif;font-weight:900;text-transform:uppercase;font-size:1.45rem;margin:10px 0 8px}
+.sect p{color:var(--gris);font-size:.94rem}
+.sect .trait-or{height:3px;margin-top:18px;background:linear-gradient(90deg,var(--or),transparent)}
+
+/* ---------- Réalisations ---------- */
+.demos{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media(max-width:820px){.demos{grid-template-columns:1fr}}
+.demo{position:relative;display:block;text-decoration:none;background:var(--panneau);border:1px solid var(--ligne);border-radius:18px;padding:34px 30px 28px;overflow:hidden;isolation:isolate;transition:border-color .25s}
+.demo::before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 30%,rgba(217,164,65,.13) 50%,transparent 70%);transform:translateX(-110%);transition:transform .7s ease;z-index:-1}
+.demo:hover{border-color:rgba(217,164,65,.6)}
+.demo:hover::before{transform:translateX(110%)}
+.demo .idx{font-family:"Archivo",sans-serif;font-weight:900;font-size:.85rem;color:var(--or-clair);letter-spacing:.14em}
+.demo h3{font-family:"Archivo",sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(1.7rem,3.4vw,2.5rem);line-height:1.02;margin:12px 0 8px;transition:transform .3s ease,color .3s}
+.demo:hover h3{transform:translateX(10px);color:var(--or-clair)}
+.demo p{color:var(--gris);font-size:.95rem;max-width:480px}
+.demo .voir{display:inline-flex;align-items:center;gap:8px;margin-top:20px;font-weight:700;font-size:.9rem;color:var(--or-clair)}
+.demo .voir svg{transition:transform .25s}
+.demo:hover .voir svg{transform:translateX(5px)}
+.client-note{margin-top:22px;border:1px solid rgba(217,164,65,.4);border-radius:14px;padding:20px 24px;background:var(--panneau2);color:var(--gris);font-size:.95rem}
+.client-note b{color:var(--creme)}
+
+/* ---------- Forfaits ---------- */
+.forfaits{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:stretch}
+@media(max-width:900px){.forfaits{grid-template-columns:1fr}}
+.forfait{background:var(--panneau);border:1px solid var(--ligne);border-radius:18px;padding:34px 28px;display:flex;flex-direction:column;transition:transform .25s,border-color .25s}
+.forfait:hover{transform:translateY(-5px);border-color:rgba(217,164,65,.5)}
+.forfait.vedette{background:linear-gradient(180deg,rgba(217,164,65,.14),var(--panneau) 55%);border-color:rgba(217,164,65,.55)}
+.forfait .k{font-size:.74rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--or-clair)}
+.forfait h3{font-family:"Archivo",sans-serif;font-weight:900;text-transform:uppercase;font-size:2rem;margin:10px 0 6px}
+.forfait .desc{color:var(--gris);font-size:.95rem;margin-bottom:22px}
+.forfait ul{list-style:none;display:flex;flex-direction:column;gap:11px;margin-bottom:28px}
+.forfait li{display:flex;gap:11px;font-size:.94rem;color:var(--creme)}
+.forfait li svg{flex:none;margin-top:3px}
+.forfait .prix-note{margin-top:auto;color:var(--gris);font-size:.86rem;border-top:1px solid var(--ligne);padding-top:16px}
+.forfait .prix-note b{color:var(--or-clair)}
+
+/* ---------- Processus ---------- */
+.processus{background:var(--encre);border-top:1px solid var(--ligne);border-bottom:1px solid var(--ligne)}
+.etapes{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+@media(max-width:900px){.etapes{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.etapes{grid-template-columns:1fr}}
+.etape .num{font-family:"Archivo",sans-serif;font-weight:900;font-size:clamp(3rem,6vw,4.6rem);line-height:1;color:transparent;-webkit-text-stroke:1.5px rgba(217,164,65,.75)}
+.etape h3{font-family:"Archivo",sans-serif;font-weight:900;text-transform:uppercase;font-size:1.25rem;margin:14px 0 8px}
+.etape p{color:var(--gris);font-size:.93rem}
+
+/* ---------- Bande géante ---------- */
+.bande{padding:70px 0 10px;text-align:center;overflow:hidden}
+.bande .mot-geant{font-family:"Archivo",sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(3.4rem,10.5vw,9.5rem);line-height:1;color:transparent;-webkit-text-stroke:1.5px rgba(243,236,221,.3);display:inline-block;white-space:nowrap}
+.bande .mot-geant b{font-weight:900;color:var(--or);-webkit-text-stroke:0}
+
+/* ---------- Contact ---------- */
+.contact{padding-bottom:120px}
+.contact .bloc{background:var(--panneau);border:1px solid rgba(217,164,65,.4);border-radius:22px;padding:clamp(30px,5vw,60px);text-align:center;position:relative;overflow:hidden}
+.contact h2{font-family:"Archivo",sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(2rem,5.4vw,4.2rem);line-height:1.02}
+.contact h2 .o{color:var(--or)}
+.contact p{color:var(--gris);max-width:560px;margin:18px auto 32px}
+.contact .btns{justify-content:center}
+footer{border-top:1px solid var(--ligne);padding:28px 0 40px;color:var(--gris);font-size:.85rem}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer b{color:var(--creme)}
+</style>
+</head>
+<body>
+
+<!-- Préchargeur -->
+<div id="loader" aria-hidden="true">
+  <div class="mot"><span>Joey&nbsp;</span><span class="o">Carpentier</span></div>
+  <div class="sous">Développement web — Rive-Sud</div>
+  <div class="barre"><i id="loader-barre"></i></div>
+  <div class="pct"><span id="loader-pct">0</span> %</div>
+</div>
+
+<!-- Barre supérieure -->
+<header class="topbar">
+  <a class="logo" href="#haut">Joey <b>Carpentier</b></a>
+  <nav>
+    <a href="#realisations">Réalisations</a>
+    <a href="#forfaits">Forfaits</a>
+    <a href="#processus">Processus</a>
+    <a class="cta" href="#contact">Démo gratuite</a>
+  </nav>
+</header>
+
+<!-- Héros -->
+<section class="hero" id="haut" style="padding-bottom:0">
+  <canvas id="constellation" aria-hidden="true"></canvas>
+  <div class="wrap contenu">
+    <div class="sur">Développement web — Rive-Sud de Montréal</div>
+    <h1 class="display">Un site qui a l'air <span class="o">pro</span>,<br>qui donne <span class="contour">confiance</span><br>et qui <span class="o">convertit</span>.</h1>
+    <p class="lead">Je construis des sites web pour les <b>entreprises de services de la Rive-Sud</b> — paysagement, déneigement, excavation, toiture, pavage et métiers spécialisés. Vous voyez une <b>démo personnalisée gratuite</b> de votre futur site avant de décider quoi que ce soit.</p>
+    <div class="btns">
+      <a class="btn" href="#realisations">Voir les démos
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a class="btn btn-ligne" href="tel:+14502783765">450-278-3765</a>
+    </div>
+    <div class="scroll-cue"><span class="trait"></span> Faites défiler</div>
+  </div>
+  <div class="marquee" aria-hidden="true">
+    <div class="piste" id="piste">
+      <span>Paysagement</span><span>·</span><span>Déneigement</span><span>·</span><span>Excavation</span><span>·</span><span>Toiture</span><span>·</span><span>Pavage</span><span>·</span><span>Clôtures</span><span>·</span><span>Piscines</span><span>·</span><span>Électricité</span><span>·</span>
+    </div>
+  </div>
+</section>
+
+<!-- Manifeste -->
+<section class="manifeste">
+  <div class="wrap">
+    <div class="sur rv">Le principe</div>
+    <p class="rv">Votre site, c'est votre <span class="o">premier vendeur</span>. Quand un client magasine un entrepreneur, il juge votre sérieux en <span class="o">quelques secondes</span>. Un site clair, rapide et bien présenté, ça se transforme en <span class="o">appels</span>.</p>
+  </div>
+</section>
+
+<!-- Secteurs -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>Pour les entreprises<br>de <span class="o">services</span></h2>
+      <p class="note">Des sites pensés pour votre réalité : des services clairs, vos réalisations en avant, et un bouton d'appel toujours à portée de main.</p>
+    </div>
+    <div class="secteurs">
+      <article class="sect rv">
+        <div class="k">Extérieur</div>
+        <h3>Paysagement &amp; déneigement</h3>
+        <p>Services saisonniers présentés clairement, zones desservies et demandes de soumission faciles à envoyer.</p>
+        <div class="trait-or"></div>
+      </article>
+      <article class="sect rv">
+        <div class="k">Chantier</div>
+        <h3>Excavation &amp; pavage</h3>
+        <p>Vos équipements, vos chantiers et vos types de projets mis en valeur pour décrocher les gros contrats.</p>
+        <div class="trait-or"></div>
+      </article>
+      <article class="sect rv">
+        <div class="k">Bâtiment</div>
+        <h3>Toiture &amp; revêtement</h3>
+        <p>Matériaux, garanties et secteurs couverts présentés de façon à rassurer dès la première visite.</p>
+        <div class="trait-or"></div>
+      </article>
+      <article class="sect rv">
+        <div class="k">Métiers</div>
+        <h3>Électricité, plomberie, HVAC</h3>
+        <p>Services d'urgence, appels directs et zones d'intervention : le client vous joint en un seul clic.</p>
+        <div class="trait-or"></div>
+      </article>
+      <article class="sect rv">
+        <div class="k">Sur mesure</div>
+        <h3>Clôtures, piscines &amp; spas</h3>
+        <p>Des galeries qui montrent vos réalisations et donnent envie de passer à l'action.</p>
+        <div class="trait-or"></div>
+      </article>
+      <article class="sect rv">
+        <div class="k">Et plus</div>
+        <h3>Autres entreprises locales</h3>
+        <p>Si vos clients vous cherchent en ligne avant de vous appeler, un bon site travaille pour vous 24 h sur 24.</p>
+        <div class="trait-or"></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Réalisations -->
+<section id="realisations" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>Exemples de<br><span class="o">réalisations</span></h2>
+      <p class="note">Des démos construites sur mesure pour des entreprises d'ici — chacune avec ses couleurs, son style et ses mouvements. Cliquez pour les voir en vrai.</p>
+    </div>
+    <div class="demos">
+      <a class="demo rv" href="https://joeycarpentier-tech.github.io/demos-deneigement/dp-marchand/" target="_blank" rel="noopener">
+        <div class="idx">01 — Matériaux &amp; quincaillerie</div>
+        <h3>D&amp;P Marchand</h3>
+        <p>Une présentation haut de gamme pour une entreprise de matériaux établie, avec ses trois magasins et ses services aux entrepreneurs.</p>
+        <span class="voir">Voir la démo <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="demo rv" href="https://joeycarpentier-tech.github.io/demos-deneigement/entreprises-laporte/" target="_blank" rel="noopener">
+        <div class="idx">02 — Aménagement paysager</div>
+        <h3>Entreprises Laporte</h3>
+        <p>Un site immersif pour une entreprise d'aménagement paysager, avec effets visuels riches et présentation soignée des services.</p>
+        <span class="voir">Voir la démo <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="demo rv" href="https://joeycarpentier-tech.github.io/demos-deneigement/smb-surface/" target="_blank" rel="noopener">
+        <div class="idx">03 — Polissage de béton</div>
+        <h3>SMB Surface</h3>
+        <p>Un style sombre et technique pour présenter des projets résidentiels, commerciaux et industriels de polissage de béton.</p>
+        <span class="voir">Voir la démo <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="demo rv" href="https://joeycarpentier-tech.github.io/demos-deneigement/cloture-mag/" target="_blank" rel="noopener">
+        <div class="idx">04 — Clôtures</div>
+        <h3>Clôture Mag</h3>
+        <p>Une démo rythmée comme un portail qui s'ouvre, pensée pour une entreprise de clôtures de Châteauguay.</p>
+        <span class="voir">Voir la démo <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="demo rv" href="https://joeycarpentier-tech.github.io/demos-deneigement/clotures-ko-pin/" target="_blank" rel="noopener">
+        <div class="idx">05 — Clôtures</div>
+        <h3>Clôtures Ko-Pin</h3>
+        <p>Une identité verte et dynamique pour une entreprise de clôtures de Delson établie depuis plus de 40 ans.</p>
+        <span class="voir">Voir la démo <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="demo rv" href="https://joeycarpentier-tech.github.io/demos-deneigement/desilets-electrique/" target="_blank" rel="noopener">
+        <div class="idx">06 — Électricité</div>
+        <h3>Désilets Électrique</h3>
+        <p>Noir et jaune, avec des étincelles animées : une démo à l'image d'un entrepreneur électricien de La Prairie actif depuis 1978.</p>
+        <span class="voir">Voir la démo <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+    </div>
+    <div class="client-note rv"><b>En production :</b> un premier client — Experts du déneigement 24H — roule déjà avec un site livré et en ligne. Les exemples ci-dessus sont des démos de style, présentées telles quelles.</div>
+  </div>
+</section>
+
+<!-- Forfaits -->
+<section id="forfaits" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>Trois façons<br>de <span class="o">démarrer</span></h2>
+      <p class="note">Le bon niveau selon où votre entreprise en est. Le prix exact dépend de votre projet — on en parle après la démo gratuite, jamais avant.</p>
+    </div>
+    <div class="forfaits">
+      <article class="forfait rv">
+        <div class="k">Niveau 1</div>
+        <h3>Express</h3>
+        <p class="desc">Le site vitrine rapide pour être présent en ligne, proprement et sans délai.</p>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#d9a441" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Page unique ou site court, design soigné</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#d9a441" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Services, zone desservie et coordonnées en avant</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#d9a441" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Boutons d'appel et de courriel cliquables</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#d9a441" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Parfait sur téléphone et sur ordinateur</li>
+        </ul>
+        <p class="prix-note">Idéal pour <b>démarrer vite</b> avec une image professionnelle.</p>
+      </article>
+      <article class="forfait vedette rv">
+        <div class="k">Niveau 2 — le plus choisi</div>
+        <h3>Standard</h3>
+        <p class="desc">Le site complet pour les entreprises qui veulent transformer leurs visiteurs en demandes.</p>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#d9a441" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Plusieurs sections : services détaillés, réalisations, à propos</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#d9a441" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Galerie de vos projets et photos</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#d9a441" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Animations et révélations au défilement</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#d9a441" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Demande de soumission simple à envoyer</li>
+        </ul>
+        <p class="prix-note">Le bon équilibre entre <b>impact et budget</b> pour la plupart des entreprises.</p>
+      </article>
+      <article class="forfait rv">
+        <div class="k">Niveau 3</div>
+        <h3>Premium</h3>
+        <p class="desc">Le site haut de gamme qui vous démarque complètement de vos concurrents.</p>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#d9a441" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Design sur mesure, identité visuelle complète</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#d9a441" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Effets immersifs : écran de chargement, mouvements signature</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#d9a441" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Sections avancées selon vos besoins</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#d9a441" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Finition niveau « wow » du début à la fin</li>
+        </ul>
+        <p class="prix-note">Pour les entreprises qui veulent <b>le meilleur site de leur secteur</b>.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Processus -->
+<section class="processus" id="processus">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>Comment<br>ça <span class="o">fonctionne</span></h2>
+      <p class="note">Simple et sans risque : vous voyez le résultat avant de payer quoi que ce soit.</p>
+    </div>
+    <div class="etapes">
+      <div class="etape rv">
+        <div class="num"><span class="compteur" data-cible="1">0</span></div>
+        <h3>Démo gratuite</h3>
+        <p>Je construis une démo personnalisée de votre futur site, avec vos services et vos couleurs. Vous la regardez, sans engagement.</p>
+      </div>
+      <div class="etape rv">
+        <div class="num"><span class="compteur" data-cible="2">0</span></div>
+        <h3>Ajustements</h3>
+        <p>Vous me dites ce que vous voulez changer — textes, photos, sections — et j'ajuste jusqu'à ce que ce soit à votre goût.</p>
+      </div>
+      <div class="etape rv">
+        <div class="num"><span class="compteur" data-cible="3">0</span></div>
+        <h3>Mise en ligne</h3>
+        <p>Le site est publié et prêt à recevoir vos clients. Tout est vérifié : liens, boutons d'appel, affichage mobile.</p>
+      </div>
+      <div class="etape rv">
+        <div class="num"><span class="compteur" data-cible="4">0</span></div>
+        <h3>Suivi simple</h3>
+        <p>Un changement de prix, une nouvelle saison, une photo à ajouter ? Un message et c'est réglé, sans vous casser la tête.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Bande géante -->
+<div class="bande" aria-hidden="true">
+  <span class="mot-geant" id="mot-geant">Votre site <b>ici</b></span>
+</div>
+
+<!-- Contact -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="bloc rv">
+      <h2>Demandez votre<br><span class="o">démo gratuite</span></h2>
+      <p>Envoyez-moi le nom de votre entreprise et ce que vous faites. Je vous reviens avec une démo personnalisée de votre futur site — vous décidez ensuite, en toute connaissance de cause.</p>
+      <div class="btns">
+        <a class="btn" href="tel:+14502783765">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg>
+          450-278-3765
+        </a>
+        <a class="btn btn-ligne" href="mailto:joeycarpentier01@gmail.com?subject=Demande%20de%20d%C3%A9mo%20gratuite%20—%20mon%20entreprise">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+          joeycarpentier01@gmail.com
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><b>Joey Carpentier</b> — Développement web · Rive-Sud de Montréal</div>
+    <div><a href="tel:+14502783765" style="text-decoration:none">450-278-3765</a> · <a href="mailto:joeycarpentier01@gmail.com" style="text-decoration:none">joeycarpentier01@gmail.com</a></div>
+  </div>
+</footer>
+
+<script>
+/* ---------- Préchargeur ---------- */
+(function(){
+  var barre=document.getElementById('loader-barre'), pct=document.getElementById('loader-pct'), loader=document.getElementById('loader');
+  var p=0;
+  var iv=setInterval(function(){
+    p+=Math.random()*16+6;
+    if(p>=100){p=100;clearInterval(iv);setTimeout(function(){loader.classList.add('fini')},220);}
+    barre.style.width=p+'%'; pct.textContent=Math.floor(p);
+  },110);
+})();
+
+/* ---------- Marquee : piste doublée pour boucle parfaite ---------- */
+(function(){
+  var piste=document.getElementById('piste');
+  piste.innerHTML+=piste.innerHTML;
+})();
+
+/* ---------- Constellation dorée (signature de mouvement) ---------- */
+(function(){
+  var cv=document.getElementById('constellation'), ctx=cv.getContext('2d');
+  var W,H,pts=[],souris={x:-9999,y:-9999};
+  var DPR=Math.min(window.devicePixelRatio||1,2);
+  function taille(){
+    var r=cv.parentElement.getBoundingClientRect();
+    W=r.width; H=r.height;
+    cv.width=W*DPR; cv.height=H*DPR; ctx.setTransform(DPR,0,0,DPR,0,0);
+    var n=Math.min(110,Math.floor(W*H/16000));
+    pts=[];
+    for(var i=0;i<n;i++){
+      pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.32,vy:(Math.random()-.5)*.32,r:Math.random()*1.7+.6,ph:Math.random()*Math.PI*2});
+    }
+  }
+  taille(); window.addEventListener('resize',taille);
+  cv.parentElement.addEventListener('mousemove',function(e){
+    var r=cv.getBoundingClientRect(); souris.x=e.clientX-r.left; souris.y=e.clientY-r.top;
+  });
+  cv.parentElement.addEventListener('mouseleave',function(){souris.x=-9999;souris.y=-9999;});
+  var DIST=130, MDIST=190, t=0;
+  function boucle(){
+    t+=.016;
+    ctx.clearRect(0,0,W,H);
+    var i,j,a,b,dx,dy,d;
+    for(i=0;i<pts.length;i++){
+      a=pts[i];
+      a.x+=a.vx; a.y+=a.vy;
+      if(a.x<0||a.x>W)a.vx*=-1;
+      if(a.y<0||a.y>H)a.vy*=-1;
+    }
+    for(i=0;i<pts.length;i++){
+      for(j=i+1;j<pts.length;j++){
+        a=pts[i]; b=pts[j]; dx=a.x-b.x; dy=a.y-b.y; d=dx*dx+dy*dy;
+        if(d<DIST*DIST){
+          ctx.strokeStyle='rgba(217,164,65,'+(0.16*(1-Math.sqrt(d)/DIST)).toFixed(3)+')';
+          ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
+        }
+      }
+      a=pts[i]; dx=a.x-souris.x; dy=a.y-souris.y; d=dx*dx+dy*dy;
+      if(d<MDIST*MDIST){
+        ctx.strokeStyle='rgba(240,197,105,'+(0.35*(1-Math.sqrt(d)/MDIST)).toFixed(3)+')';
+        ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(souris.x,souris.y); ctx.stroke();
+      }
+    }
+    for(i=0;i<pts.length;i++){
+      a=pts[i];
+      var tw=.55+.45*Math.sin(t*2+a.ph);
+      ctx.fillStyle='rgba(240,197,105,'+(0.85*tw).toFixed(3)+')';
+      ctx.beginPath(); ctx.arc(a.x,a.y,a.r,0,Math.PI*2); ctx.fill();
+    }
+    requestAnimationFrame(boucle);
+  }
+  boucle();
+})();
+
+/* ---------- Révélations au scroll + compteurs ---------- */
+(function(){
+  var io=new IntersectionObserver(function(entrees){
+    entrees.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('vu'); io.unobserve(e.target);}
+    });
+  },{threshold:.14});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+
+  var io2=new IntersectionObserver(function(entrees){
+    entrees.forEach(function(e){
+      if(!e.isIntersecting)return;
+      var el=e.target, cible=+el.dataset.cible, debut=null;
+      io2.unobserve(el);
+      function pas(ts){
+        if(!debut)debut=ts;
+        var k=Math.min((ts-debut)/700,1);
+        el.textContent=Math.round(cible*(1-Math.pow(1-k,3)));
+        if(k<1)requestAnimationFrame(pas);
+      }
+      requestAnimationFrame(pas);
+    });
+  },{threshold:.5});
+  document.querySelectorAll('.compteur').forEach(function(el){io2.observe(el);});
+})();
+
+/* ---------- Mot géant : léger parallaxe horizontal ---------- */
+(function(){
+  var mot=document.getElementById('mot-geant');
+  window.addEventListener('scroll',function(){
+    var r=mot.parentElement.getBoundingClientRect();
+    if(r.top<window.innerHeight&&r.bottom>0){
+      var k=(window.innerHeight-r.top)/(window.innerHeight+r.height);
+      mot.style.transform='translateX('+((k-.5)*-46)+'px)';
+    }
+  },{passive:true});
+})();
+</script>
+</body>
+</html>
