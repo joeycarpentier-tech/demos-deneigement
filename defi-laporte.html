@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>LAPORTE — Mini-excavation de précision | Beloeil, Rive-Sud — depuis 2008</title>
+<meta name="description" content="Les Entreprises Laporte inc. : mini-excavation, drains français avec inspection par caméra, réparation de fissures par injection. 76 avis Google 5,0. Recommandée CAA. 450 464-5979.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --noir:#0a0d10; --encre:#10151b; --panneau:#141a21;
+  --orange:#ef7d1a; --creme:#f2efe9; --gris:#9aa3ab; --ligne:rgba(242,239,233,.14);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:auto}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{background:var(--noir);color:var(--creme);font-family:"Inter",system-ui,sans-serif;line-height:1.6;overflow-x:hidden}
+::selection{background:var(--orange);color:#0a0d10}
+img{display:block;max-width:100%}
+a{color:inherit}
+.display{font-family:"Anton",sans-serif;text-transform:uppercase;line-height:.95;font-weight:400}
+.wrap{max-width:1360px;margin:0 auto;padding:0 28px}
+.demo-band{background:#000;color:#ffc38a;text-align:center;font-size:.78rem;font-weight:600;padding:7px 14px;border-bottom:1px solid var(--ligne);position:relative;z-index:80}
+
+/* GRAIN */
+.grain{position:fixed;inset:-50%;width:200%;height:200%;pointer-events:none;z-index:200;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");animation:grain 8s steps(10) infinite}
+@keyframes grain{0%,100%{transform:translate(0,0)}10%{transform:translate(-5%,-8%)}30%{transform:translate(3%,-12%)}50%{transform:translate(8%,4%)}70%{transform:translate(-9%,6%)}90%{transform:translate(4%,10%)}}
+
+/* PRÉCHARGEUR */
+#loader{position:fixed;inset:0;z-index:300;background:#060809;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px}
+#loader .mot{font-family:"Anton",sans-serif;font-size:clamp(3rem,10vw,7rem);letter-spacing:.06em;color:var(--creme);overflow:hidden}
+#loader .mot span{display:inline-block;transform:translateY(110%)}
+#loader .mot .o{color:var(--orange)}
+#loader .pct{font-family:"Anton",sans-serif;font-size:1.1rem;color:var(--orange);letter-spacing:.3em}
+#loader .barre{width:min(420px,70vw);height:2px;background:rgba(242,239,233,.15);overflow:hidden}
+#loader .barre i{display:block;height:100%;width:0%;background:var(--orange)}
+
+/* CURSEUR */
+.cursor-dot,.cursor-ring{position:fixed;top:0;left:0;pointer-events:none;z-index:250;border-radius:50%;transform:translate(-50%,-50%)}
+.cursor-dot{width:8px;height:8px;background:var(--orange)}
+.cursor-ring{width:38px;height:38px;border:1.5px solid rgba(239,125,26,.75);transition:width .25s,height .25s,background .25s;display:flex;align-items:center;justify-content:center}
+.cursor-ring.gros{width:84px;height:84px;background:rgba(239,125,26,.92)}
+.cursor-ring .vue{font-size:.62rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#0a0d10;opacity:0;transition:opacity .2s}
+.cursor-ring.gros .vue{opacity:1}
+@media (hover:none),(pointer:coarse){.cursor-dot,.cursor-ring{display:none}}
+
+/* BARRE DU HAUT */
+.topbar{position:fixed;top:28px;left:0;right:0;z-index:60;mix-blend-mode:difference;color:#fff}
+.topbar-in{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;max-width:1360px;margin:0 auto}
+.topbar .mot{font-family:"Anton",sans-serif;font-size:1.25rem;letter-spacing:.14em;text-transform:uppercase}
+.topbar nav{display:flex;gap:26px}
+.topbar nav a{text-decoration:none;font-size:.82rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+.topbar nav a:hover{opacity:1}
+.topbar .tel{font-weight:700;font-size:.92rem;text-decoration:none}
+
+/* HÉROS */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
+.hero .fond{position:absolute;inset:0;will-change:transform}
+.hero .fond img{width:100%;height:100%;object-fit:cover;object-position:center 28%;filter:saturate(.92);transform:scale(1.15);will-change:transform}
+.hero .voile{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,13,16,.45) 0%,rgba(10,13,16,.05) 32%,rgba(10,13,16,.5) 66%,rgba(10,13,16,.97) 100%)}
+.hero-side{position:absolute;top:50%;right:22px;transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl;font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;color:rgba(242,239,233,.75);z-index:3}
+.hero-in{position:relative;z-index:2;padding:0 28px 30px;max-width:1360px;margin:0 auto;width:100%}
+.hero-meta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.hero-meta .tag{font-size:.74rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;border:1px solid rgba(242,239,233,.4);border-radius:999px;padding:7px 14px}
+.hero-meta .tag.plein{background:var(--orange);border-color:var(--orange);color:#0a0d10}
+.hero h1{font-size:clamp(4.4rem,16.5vw,16.5rem);white-space:nowrap;color:var(--creme)}
+.hero h1 .lt{display:inline-block;will-change:transform}
+.hero h1 .o{color:var(--orange)}
+.hero-sub{display:flex;justify-content:space-between;align-items:flex-end;gap:26px;flex-wrap:wrap;margin-top:8px}
+.hero-sub p{max-width:520px;font-size:1.06rem;color:#d8d4cc}
+.hero-sub p strong{color:#fff}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--orange);color:#0a0d10;font-weight:700;text-decoration:none;padding:15px 28px;border-radius:999px;font-size:.98rem;border:none;cursor:pointer;white-space:nowrap;will-change:transform}
+.btn-ligne{background:transparent;color:var(--creme);border:1.5px solid rgba(242,239,233,.55)}
+.scroll-cue{display:flex;align-items:center;gap:12px;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gris);margin-top:24px}
+.scroll-cue .trait{width:64px;height:1px;background:var(--orange);position:relative;overflow:hidden}
+.scroll-cue .trait::after{content:"";position:absolute;inset:0;background:var(--creme);transform:translateX(-100%);animation:glisse 2.2s infinite}
+@keyframes glisse{55%{transform:translateX(0)}100%{transform:translateX(100%)}}
+
+/* MARQUISE */
+.marquee{background:var(--orange);color:#0a0d10;overflow:hidden;padding:13px 0;transform:rotate(-1.1deg) scale(1.03);margin-top:30px;position:relative;z-index:4}
+.marquee .piste{display:flex;width:max-content;will-change:transform}
+.marquee span{font-family:"Anton",sans-serif;text-transform:uppercase;font-size:1.35rem;letter-spacing:.06em;padding:0 18px;white-space:nowrap}
+.marquee span i{font-style:normal;opacity:.45;padding-left:36px}
+
+/* MANIFESTE */
+.manifeste{padding:130px 0 100px}
+.manifeste .sur{font-size:.78rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--orange);margin-bottom:24px}
+.manifeste p{font-family:"Anton",sans-serif;text-transform:uppercase;font-size:clamp(1.9rem,4.6vw,3.9rem);line-height:1.16;max-width:1180px}
+.manifeste p .mot{opacity:.13}
+.manifeste p .org{color:var(--orange)}
+
+/* SERVICES */
+.services{padding:20px 0 110px}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:20px;border-top:1px solid var(--ligne);padding-top:22px;margin-bottom:8px}
+.sec-head h2{font-size:clamp(2.6rem,6.5vw,5rem)}
+.sec-head .note{color:var(--gris);font-size:.9rem;max-width:300px;text-align:right}
+.svc-row{position:relative;display:grid;grid-template-columns:90px 1fr auto;gap:22px;align-items:center;padding:30px 10px;border-bottom:1px solid var(--ligne);text-decoration:none;overflow:hidden;isolation:isolate}
+.svc-row::before{content:"";position:absolute;inset:0;background:var(--panneau);transform:scaleY(0);transform-origin:bottom;transition:transform .35s ease;z-index:-1}
+.svc-row:hover::before{transform:scaleY(1)}
+.svc-row .num{font-family:"Anton",sans-serif;font-size:1.15rem;color:var(--orange)}
+.svc-row .titre{font-family:"Anton",sans-serif;text-transform:uppercase;font-size:clamp(1.7rem,4.2vw,3.3rem);line-height:1.02;transition:transform .35s ease,color .35s;will-change:transform}
+.svc-row:hover .titre{transform:translateX(14px);color:var(--orange)}
+.svc-row .desc{grid-column:2;max-width:560px;color:var(--gris);font-size:.95rem;margin-top:-8px}
+.svc-row .mini{width:200px;height:124px;object-fit:cover;border-radius:10px;opacity:0;transform:translateX(24px) rotate(2deg);transition:opacity .35s ease,transform .35s ease}
+.svc-row:hover .mini{opacity:1;transform:translateX(0) rotate(-1.5deg)}
+
+/* CHIFFRES */
+.chiffres{background:var(--encre);border-top:1px solid var(--ligne);border-bottom:1px solid var(--ligne);padding:88px 0}
+.chiffres-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+.chiffre .gros{font-family:"Anton",sans-serif;font-size:clamp(3.4rem,7.5vw,6.4rem);line-height:1}
+.chiffre .gros em{font-style:normal;color:var(--orange)}
+.chiffre .lbl{color:var(--gris);font-size:.92rem;margin-top:8px;max-width:230px}
+
+/* RÉALISATIONS — DÉFILEMENT HORIZONTAL */
+.rea-sec{position:relative;overflow:hidden}
+.rea-pin{padding:100px 0 0}
+.rea-track{display:flex;gap:26px;padding:34px 28px 90px;width:max-content;will-change:transform}
+.rea-card{position:relative;width:min(62vw,760px);height:min(62vh,540px);border-radius:16px;overflow:hidden;flex:none}
+.rea-card.etroit{width:min(40vw,480px)}
+.rea-card img{width:100%;height:100%;object-fit:cover;transform:scale(1.12);will-change:transform}
+.rea-card figcaption{position:absolute;left:0;right:0;bottom:0;padding:52px 22px 18px;background:linear-gradient(transparent,rgba(5,7,9,.9));display:flex;justify-content:space-between;align-items:flex-end;gap:14px}
+.rea-card figcaption .t{font-family:"Anton",sans-serif;text-transform:uppercase;font-size:clamp(1.3rem,2.4vw,2rem);line-height:1.05}
+.rea-card figcaption .d{color:#cfd4d8;font-size:.86rem;text-align:right;max-width:240px}
+.rea-card .idx{position:absolute;top:16px;left:18px;font-family:"Anton",sans-serif;font-size:1rem;color:var(--orange);letter-spacing:.1em}
+
+/* AVIS */
+.avis{padding:130px 0}
+.avis-grid{display:grid;grid-template-columns:auto 1fr;gap:50px;align-items:center}
+.avis .mega{font-family:"Anton",sans-serif;font-size:clamp(6.5rem,18vw,16rem);line-height:.9}
+.avis .mega em{font-style:normal;color:var(--orange)}
+.etoiles{display:flex;gap:4px;margin-bottom:14px}
+.etoiles svg{width:26px;height:26px;fill:var(--orange)}
+.avis p{color:#cfd4d8;max-width:560px;font-size:1.05rem}
+.avis .caa{display:flex;align-items:center;gap:18px;margin-top:28px;background:var(--creme);border-radius:14px;padding:16px 20px;max-width:560px}
+.avis .caa img{height:44px;width:auto}
+.avis .caa p{color:#3c4249;font-size:.9rem}
+
+/* CTA */
+.cta{padding:30px 0 110px}
+.cta .sur{font-size:.78rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--orange);margin-bottom:16px}
+.cta h2{font-size:clamp(3.2rem,10vw,9rem)}
+.cta h2 .o{color:var(--orange)}
+.cta .tel-gros{font-family:"Anton",sans-serif;font-size:clamp(2.1rem,6.8vw,5.4rem);color:var(--creme);text-decoration:none;display:inline-block;margin:16px 0 30px;border-bottom:4px solid var(--orange);line-height:1.1;transition:color .2s}
+.cta .tel-gros:hover{color:var(--orange)}
+.form-carte{background:var(--panneau);border:1px solid var(--ligne);border-radius:16px;padding:30px;max-width:760px}
+.form-carte h3{font-family:"Anton",sans-serif;text-transform:uppercase;font-size:1.4rem;margin-bottom:6px}
+.form-carte p{color:var(--gris);font-size:.93rem;margin-bottom:18px}
+.champs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.champs .plein{grid-column:1/-1}
+label{font-size:.82rem;font-weight:700;display:block;margin-bottom:5px;letter-spacing:.04em}
+input,select{width:100%;padding:12px;border:1.5px solid #2a333d;border-radius:9px;font:inherit;font-size:.95rem;background:#0d1116;color:var(--creme)}
+input:focus,select:focus{outline:2px solid var(--orange);border-color:var(--orange)}
+.ok-msg{display:none;background:#12351c;border:1.5px solid #35a854;color:#b9f2c6;border-radius:9px;padding:12px 14px;margin-top:14px;font-weight:600;font-size:.93rem}
+.demo-note{border:1.5px dashed #6b4a1f;color:#e8b06a;border-radius:9px;padding:10px 14px;margin-top:16px;font-size:.87rem;font-weight:600}
+
+/* PIED GÉANT */
+footer{border-top:1px solid var(--ligne);padding:44px 0 0;color:var(--gris);font-size:.9rem;overflow:hidden}
+footer .cols{display:flex;justify-content:space-between;gap:26px;flex-wrap:wrap;padding-bottom:34px}
+footer a{color:var(--gris);text-decoration:none}
+footer a:hover{color:var(--orange)}
+footer .geant{font-family:"Anton",sans-serif;text-transform:uppercase;font-size:clamp(4rem,15.5vw,15.5rem);line-height:.82;text-align:center;color:rgba(242,239,233,.13);white-space:nowrap;transform:translateY(18%);user-select:none}
+.reveal{opacity:0;transform:translateY(38px)}
+.no-anim .reveal{opacity:1;transform:none}
+.no-anim .manifeste p .mot{opacity:1}
+@media (max-width:900px){
+  .topbar{top:24px}.topbar nav{display:none}
+  .hero-side{display:none}
+  .svc-row{grid-template-columns:52px 1fr}
+  .svc-row .mini{display:none}
+  .chiffres-grid{grid-template-columns:1fr 1fr}
+  .rea-track{flex-direction:column;width:auto;padding-bottom:60px}
+  .rea-card,.rea-card.etroit{width:100%;height:320px}
+  .avis-grid{grid-template-columns:1fr;gap:20px}
+  .sec-head .note{display:none}
+  .champs{grid-template-columns:1fr}
+  .manifeste{padding:84px 0 64px}
+}
+</style>
+</head>
+<body>
+
+<div class="demo-band">Proposition conceptuelle — démo non officielle réalisée à titre de proposition. Ce site n'est pas le site officiel de l'entreprise.</div>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"><span class="vue">Voir</span></div>
+
+<div id="loader" aria-hidden="true">
+  <div class="mot"><span>L</span><span>A</span><span>P</span><span class="o">O</span><span>R</span><span>T</span><span>E</span></div>
+  <div class="barre"><i id="loader-barre"></i></div>
+  <div class="pct"><span id="loader-pct">0</span> %</div>
+</div>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <div class="mot">LAPORTE</div>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#realisations">Réalisations</a>
+      <a href="#avis">Avis</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="tel" href="tel:+14504645979">450 464-5979</a>
+  </div>
+</div>
+
+<!-- HÉROS -->
+<header class="hero" id="accueil">
+  <div class="fond"><img id="hero-img" src="https://www.lesentrepriseslaporte.ca/wp-content/uploads/2025/03/Equipe-de-confiance-a-Beloeil.jpg" alt="Mini-excavatrice Kubota des Entreprises Laporte sur un chantier résidentiel"></div>
+  <div class="voile"></div>
+  <div class="hero-side">Mini-excavation — Beloeil — Rive-Sud</div>
+  <div class="hero-in">
+    <div class="hero-meta">
+      <span class="tag plein">Depuis 2008</span>
+      <span class="tag">5,0 · 76 avis Google</span>
+      <span class="tag">Recommandée CAA-Québec</span>
+    </div>
+    <h1 class="display" id="hero-titre" aria-label="Laporte">LAP<span class="o">O</span>RTE</h1>
+    <div class="hero-sub">
+      <p><strong>La mini-excavation de précision.</strong> Drains français, fissures, égouts — des équipements de petite taille qui accèdent aux endroits limités, sans abîmer votre terrain.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a class="btn magnet" href="#contact">Soumission gratuite</a>
+        <a class="btn btn-ligne magnet" href="#services">Voir les services</a>
+      </div>
+    </div>
+    <div class="scroll-cue"><span class="trait"></span> Défiler</div>
+  </div>
+</header>
+
+<!-- MARQUISE -->
+<div class="marquee" aria-hidden="true">
+  <div class="piste" id="marquee-piste">
+    <span>Mini-excavation <i>///</i></span><span>Drains français <i>///</i></span><span>Inspection par caméra <i>///</i></span><span>Fissures par injection <i>///</i></span><span>Depuis 2008 <i>///</i></span>
+    <span>Mini-excavation <i>///</i></span><span>Drains français <i>///</i></span><span>Inspection par caméra <i>///</i></span><span>Fissures par injection <i>///</i></span><span>Depuis 2008 <i>///</i></span>
+  </div>
+</div>
+
+<!-- MANIFESTE -->
+<section class="manifeste">
+  <div class="wrap">
+    <p class="sur reveal">Le manifeste</p>
+    <p id="manifeste-texte">Voir avant de creuser. Protéger avant de partir. Des soumissions claires, des travaux propres, un terrain intact. C'est comme ça depuis 2008.</p>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2 class="display">Services</h2>
+      <p class="note">Six spécialités, un seul standard : la précision.</p>
+    </div>
+    <a class="svc-row reveal" href="#contact" data-curseur="Go">
+      <span class="num">/ 01</span>
+      <span class="titre">Drains français</span>
+      <img class="mini" src="https://www.lesentrepriseslaporte.ca/wp-content/uploads/2025/03/Excavation-et-pose-de-drain-francais-a-Beloeil.jpg" alt="" loading="lazy">
+      <span class="desc">Installation et réparation complètes, membrane de protection incluse — avec inspection par caméra pour voir l'état réel de vos drains avant de dépenser.</span>
+    </a>
+    <a class="svc-row reveal" href="#contact" data-curseur="Go">
+      <span class="num">/ 02</span>
+      <span class="titre">Inspection par caméra</span>
+      <img class="mini" src="https://www.lesentrepriseslaporte.ca/wp-content/uploads/2023/03/equipement-de-petite-taille-endroits-limites.jpg" alt="" loading="lazy">
+      <span class="desc">Un drain bouché ou affaissé ne se devine pas — il se voit. L'état précis de vos drains, avant tout travaux, pour éviter les dépenses inutiles.</span>
+    </a>
+    <a class="svc-row reveal" href="#contact" data-curseur="Go">
+      <span class="num">/ 03</span>
+      <span class="titre">Fissures par injection</span>
+      <img class="mini" src="https://www.lesentrepriseslaporte.ca/wp-content/uploads/2023/03/les-entreprises-laporte-mini-excavation-beloeil.jpg" alt="" loading="lazy">
+      <span class="desc">Colmatage rapide et efficace des fissures de fondation, avant que les infiltrations d'eau ne causent des dommages plus importants.</span>
+    </a>
+    <a class="svc-row reveal" href="#contact" data-curseur="Go">
+      <span class="num">/ 04</span>
+      <span class="titre">Égout &amp; entrée d'eau</span>
+      <img class="mini" src="https://www.lesentrepriseslaporte.ca/wp-content/uploads/2023/03/nos-realisations-expertise-en-action.jpg" alt="" loading="lazy">
+      <span class="desc">Réparation de tuyaux d'égout et d'entrées d'eau endommagés — avant les odeurs, les dégâts d'eau et les problèmes plus graves.</span>
+    </a>
+    <a class="svc-row reveal" href="#contact" data-curseur="Go">
+      <span class="num">/ 05</span>
+      <span class="titre">Margelles &amp; nivellement</span>
+      <img class="mini" src="https://www.lesentrepriseslaporte.ca/wp-content/uploads/2025/03/Equipe-de-confiance-a-Beloeil.jpg" alt="" loading="lazy">
+      <span class="desc">Margelles autour des fenêtres au niveau du sol et correction des pentes pour éloigner l'eau de la maison, une fois pour toutes.</span>
+    </a>
+    <a class="svc-row reveal" href="#contact" data-curseur="Go">
+      <span class="num">/ 06</span>
+      <span class="titre">Petits travaux de béton</span>
+      <img class="mini" src="https://www.lesentrepriseslaporte.ca/wp-content/uploads/2023/03/nos-realisations-expertise-en-action.jpg" alt="" loading="lazy">
+      <span class="desc">Réparations mineures et petits projets : caniveaux, condamnation de fenêtres ou de portes, fondations pour petits bâtiments.</span>
+    </a>
+  </div>
+</section>
+
+<!-- CHIFFRES -->
+<section class="chiffres">
+  <div class="wrap chiffres-grid">
+    <div class="chiffre reveal"><div class="gros"><span class="compteur" data-cible="18">0</span><em> ans</em></div><div class="lbl">d'expérience sur la Rive-Sud, entreprise familiale depuis 2008</div></div>
+    <div class="chiffre reveal"><div class="gros"><span class="compteur" data-cible="76">0</span></div><div class="lbl">avis Google — et pas un seul sous les 5 étoiles</div></div>
+    <div class="chiffre reveal"><div class="gros">5<em>,</em>0</div><div class="lbl">note parfaite, maintenue projet après projet</div></div>
+    <div class="chiffre reveal"><div class="gros">CAA</div><div class="lbl">entreprise recommandée par CAA-Québec</div></div>
+  </div>
+</section>
+
+<!-- RÉALISATIONS — HORIZONTAL -->
+<section class="rea-sec" id="realisations">
+  <div class="rea-pin">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2 class="display">Sur le terrain</h2>
+        <p class="note">Continuez de défiler : la galerie avance de côté. Photos réelles de chantiers, aucune banque d'images.</p>
+      </div>
+    </div>
+    <div class="rea-track" id="rea-track">
+      <figure class="rea-card" data-curseur="Voir">
+        <span class="idx">/ 01</span>
+        <img src="https://www.lesentrepriseslaporte.ca/wp-content/uploads/2025/03/Excavation-et-pose-de-drain-francais-a-Beloeil.jpg" alt="Pose d'un drain français avec membrane de protection" loading="lazy">
+        <figcaption><span class="t">Drain français</span><span class="d">Pose complète avec membrane de protection, Beloeil</span></figcaption>
+      </figure>
+      <figure class="rea-card etroit" data-curseur="Voir">
+        <span class="idx">/ 02</span>
+        <img src="https://www.lesentrepriseslaporte.ca/wp-content/uploads/2023/03/equipement-de-petite-taille-endroits-limites.jpg" alt="Mini-excavatrice Kubota lettrée aux couleurs des Entreprises Laporte" loading="lazy">
+        <figcaption><span class="t">Accès limité</span><span class="d">Équipement de petite taille, cours étroites</span></figcaption>
+      </figure>
+      <figure class="rea-card" data-curseur="Voir">
+        <span class="idx">/ 03</span>
+        <img src="https://www.lesentrepriseslaporte.ca/wp-content/uploads/2023/03/les-entreprises-laporte-mini-excavation-beloeil.jpg" alt="Réparation de fissure de fondation" loading="lazy">
+        <figcaption><span class="t">Fissure de fondation</span><span class="d">Réparation par injection, scellée pour longtemps</span></figcaption>
+      </figure>
+      <figure class="rea-card etroit" data-curseur="Voir">
+        <span class="idx">/ 04</span>
+        <img src="https://www.lesentrepriseslaporte.ca/wp-content/uploads/2023/03/nos-realisations-expertise-en-action.jpg" alt="Coffrage et travaux de béton" loading="lazy">
+        <figcaption><span class="t">Fondation &amp; béton</span><span class="d">Coffrage et petits travaux de béton</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- AVIS -->
+<section class="avis" id="avis">
+  <div class="wrap avis-grid">
+    <div class="mega reveal">5<em>,</em>0</div>
+    <div class="reveal">
+      <div class="etoiles" aria-label="5 étoiles sur 5">
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"/></svg>
+      </div>
+      <p>Note parfaite sur <strong>76 avis Google</strong>. Fiabilité, écoute, soumissions claires et qualité des travaux : c'est ce que les clients racontent, projet après projet.</p>
+      <div class="caa">
+        <img src="https://www.lesentrepriseslaporte.ca/wp-content/uploads/2023/03/Caa-Recommande-1024x251.png" alt="CAA recommandé">
+        <p><strong>Entreprise recommandée par CAA-Québec</strong> — un gage de confiance vérifié, pas un slogan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <p class="sur reveal">Un projet ? Un problème d'eau ?</p>
+    <h2 class="display reveal">Parlez à <span class="o">Patrick</span></h2>
+    <a class="tel-gros reveal" href="tel:+14504645979">450 464-5979</a>
+    <form class="form-carte reveal" id="form-defi">
+      <h3>Demande express</h3>
+      <p>Trois champs, une minute : Patrick Laporte vous rappelle avec une soumission claire et détaillée. Lun.–ven. 7 h à 19 h, sam. 8 h à 12 h.</p>
+      <div class="champs">
+        <div><label for="d-nom">Nom *</label><input id="d-nom" required autocomplete="name"></div>
+        <div><label for="d-tel">Téléphone *</label><input id="d-tel" required type="tel" autocomplete="tel"></div>
+        <div class="plein"><label for="d-service">Votre besoin *</label>
+          <select id="d-service" required>
+            <option value="">Choisir…</option>
+            <option>Drain français — installation ou réparation</option>
+            <option>Inspection par caméra de mes drains</option>
+            <option>Fissure de fondation — réparation par injection</option>
+            <option>Égout / entrée d'eau</option>
+            <option>Margelle, nivellement ou béton</option>
+            <option>Autre travail de mini-excavation</option>
+          </select></div>
+      </div>
+      <p class="demo-note">Démonstration — ce formulaire est une maquette : aucune demande réelle n'est transmise à l'entreprise.</p>
+      <p style="margin-top:16px"><button class="btn magnet" type="submit">Être rappelé</button></p>
+      <div class="ok-msg">Simulation terminée. Aucune demande n'a été transmise à l'entreprise.</div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap cols">
+    <div>
+      <p><strong style="color:var(--creme)">Les Entreprises Laporte inc.</strong></p>
+      <p style="margin-top:6px">1170, chemin du Ruisseau Nord, Saint-Mathieu-de-Beloeil, QC J3G 2C9 · RBQ : 8357-7965-01</p>
+    </div>
+    <div>
+      <p>Beloeil et la Rive-Sud de Montréal</p>
+      <p style="margin-top:6px"><a href="tel:+14504645979">450 464-5979</a></p>
+    </div>
+    <div>
+      <p>Proposition conceptuelle — démo non officielle.</p>
+      <p style="margin-top:6px">© 2026 Les Entreprises Laporte inc.</p>
+    </div>
+  </div>
+  <div class="geant" aria-hidden="true">LAPORTE</div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+<script>
+// Filet de sécurité : si les librairies d'animation ne chargent pas, on affiche tout.
+window.__defiWatchdog=setTimeout(function(){
+  if(!window.gsap){
+    document.documentElement.classList.add('no-anim');
+    var l=document.getElementById('loader'); if(l) l.style.display='none';
+    document.querySelectorAll('.compteur').forEach(function(el){ el.textContent=el.dataset.cible; });
+  }
+},2600);
+</script>
+<script>
+(function(){
+  if(!window.gsap){ return; }
+  clearTimeout(window.__defiWatchdog);
+  gsap.registerPlugin(ScrollTrigger);
+  document.getElementById('form-defi').addEventListener('submit',function(ev){ ev.preventDefault(); var m=this.querySelector('.ok-msg'); if(m) m.style.display='block'; });
+
+  /* ---------- Défilement fluide (Lenis) ---------- */
+  var lenis=null;
+  if(window.Lenis){
+    lenis=new Lenis({ duration:1.25, smoothWheel:true });
+    lenis.on('scroll',ScrollTrigger.update);
+    gsap.ticker.add(function(t){ lenis.raf(t*1000); });
+    gsap.ticker.lagSmoothing(0);
+    document.querySelectorAll('a[href^="#"]').forEach(function(a){
+      a.addEventListener('click',function(e){
+        var cible=document.querySelector(a.getAttribute('href'));
+        if(cible){ e.preventDefault(); lenis.scrollTo(cible,{offset:-10}); }
+      });
+    });
+  }
+
+  /* ---------- Découpage du titre héros en lettres ---------- */
+  (function(){
+    var h1=document.getElementById('hero-titre');
+    var noeuds=Array.prototype.slice.call(h1.childNodes), html='';
+    noeuds.forEach(function(n){
+      if(n.nodeType===3){
+        n.textContent.split('').forEach(function(c){ html+='<span class="lt">'+c+'</span>'; });
+      }else if(n.nodeType===1){
+        n.textContent.split('').forEach(function(c){ html+='<span class="lt '+n.className+'">'+c+'</span>'; });
+      }
+    });
+    h1.innerHTML=html;
+    gsap.set('#hero-titre .lt',{yPercent:110});
+  })();
+
+  /* ---------- Préchargeur + intro ---------- */
+  var pct={v:0};
+  var intro=gsap.timeline();
+  intro
+    .to('#loader .mot span',{y:0,duration:.7,stagger:.05,ease:'power4.out'},0)
+    .to(pct,{v:100,duration:1.25,ease:'power2.inOut',onUpdate:function(){
+        document.getElementById('loader-pct').textContent=Math.round(pct.v);
+        document.getElementById('loader-barre').style.width=pct.v+'%';
+      }},0)
+    .to('#loader .mot span',{y:'-110%',duration:.5,stagger:.04,ease:'power3.in'},'+=0.1')
+    .to('#loader',{yPercent:-100,duration:.85,ease:'power4.inOut'},'-=0.25')
+    .set('#loader',{display:'none'})
+    .to('#hero-titre .lt',{yPercent:0,duration:1,stagger:.055,ease:'power4.out'},'-=0.55')
+    .from('.hero-meta .tag',{y:24,opacity:0,duration:.6,stagger:.08,ease:'power3.out'},'-=0.6')
+    .from('.hero-sub > *',{y:30,opacity:0,duration:.7,stagger:.12,ease:'power3.out'},'-=0.45')
+    .from('.topbar',{y:-30,opacity:0,duration:.6,ease:'power3.out'},'-=0.5');
+
+  /* ---------- Héros : zoom + parallaxe au scroll ---------- */
+  gsap.to('#hero-img',{scale:1,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+  gsap.to('.hero .fond',{yPercent:14,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+  gsap.to('#hero-titre',{yPercent:-30,opacity:.25,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+
+  /* ---------- Marquise infinie + réaction à la vélocité ---------- */
+  var piste=document.getElementById('marquee-piste');
+  var defile=gsap.to(piste,{xPercent:-50,ease:'none',duration:18,repeat:-1});
+  ScrollTrigger.create({
+    onUpdate:function(self){
+      var v=gsap.utils.clamp(-6,6,self.getVelocity()/-250);
+      gsap.to(defile,{timeScale:v===0?1:Math.abs(v)*1.6+1,duration:.3,overwrite:true});
+      gsap.to(piste,{skewX:v*1.4,duration:.3,overwrite:'auto'});
+      gsap.to('.svc-row .titre, .display',{skewX:gsap.utils.clamp(-4,4,v*0.8),duration:.3,overwrite:'auto'});
+    }
+  });
+
+  /* ---------- Manifeste : les mots s'allument au scroll ---------- */
+  (function(){
+    var p=document.getElementById('manifeste-texte');
+    p.innerHTML=p.textContent.trim().split(/\s+/).map(function(m){ return '<span class="mot">'+m+'</span>'; }).join(' ');
+    gsap.to('#manifeste-texte .mot',{opacity:1,stagger:.06,ease:'none',
+      scrollTrigger:{trigger:'.manifeste',start:'top 75%',end:'bottom 55%',scrub:true}});
+  })();
+
+  /* ---------- Révélations génériques ---------- */
+  gsap.utils.toArray('.reveal').forEach(function(el){
+    gsap.to(el,{opacity:1,y:0,duration:1,ease:'power3.out',
+      scrollTrigger:{trigger:el,start:'top 88%',once:true}});
+  });
+
+  /* ---------- Compteurs ---------- */
+  document.querySelectorAll('.compteur').forEach(function(el){
+    var cible=parseInt(el.dataset.cible,10), obj={v:0};
+    ScrollTrigger.create({trigger:el,start:'top 88%',once:true,onEnter:function(){
+      gsap.to(obj,{v:cible,duration:1.6,ease:'power2.out',onUpdate:function(){ el.textContent=Math.round(obj.v); }});
+    }});
+  });
+
+  /* ---------- Réalisations : défilement horizontal épinglé (bureau) ---------- */
+  var mm=gsap.matchMedia();
+  mm.add('(min-width: 901px)',function(){
+    var track=document.getElementById('rea-track');
+    function distance(){ return Math.max(0, track.scrollWidth - window.innerWidth + 56); }
+    var horiz=gsap.to(track,{x:function(){ return -distance(); },ease:'none',
+      scrollTrigger:{trigger:'.rea-sec',start:'top top',end:function(){ return '+='+distance(); },
+        pin:true,scrub:1,anticipatePin:1,invalidateOnRefresh:true}});
+    gsap.utils.toArray('.rea-card img').forEach(function(img){
+      gsap.fromTo(img,{xPercent:-5},{xPercent:5,ease:'none',
+        scrollTrigger:{trigger:img.closest('.rea-card'),containerAnimation:horiz,start:'left right',end:'right left',scrub:true}});
+    });
+  });
+
+  /* ---------- Pied géant qui monte ---------- */
+  gsap.fromTo('footer .geant',{yPercent:46},{yPercent:18,ease:'none',
+    scrollTrigger:{trigger:'footer',start:'top bottom',end:'bottom bottom',scrub:true}});
+
+  /* ---------- Curseur personnalisé ---------- */
+  if(window.matchMedia('(hover:hover) and (pointer:fine)').matches){
+    var dot=document.querySelector('.cursor-dot'), ring=document.querySelector('.cursor-ring'), vue=ring.querySelector('.vue');
+    var dx=gsap.quickTo(dot,'x',{duration:.08,ease:'power2'}), dy=gsap.quickTo(dot,'y',{duration:.08,ease:'power2'});
+    var rx=gsap.quickTo(ring,'x',{duration:.38,ease:'power3'}), ry=gsap.quickTo(ring,'y',{duration:.38,ease:'power3'});
+    window.addEventListener('mousemove',function(e){ dx(e.clientX); dy(e.clientY); rx(e.clientX); ry(e.clientY); });
+    document.querySelectorAll('a, button, [data-curseur]').forEach(function(el){
+      el.addEventListener('mouseenter',function(){ vue.textContent=el.getAttribute('data-curseur')||''; ring.classList.add('gros'); });
+      el.addEventListener('mouseleave',function(){ ring.classList.remove('gros'); });
+    });
+  } else {
+    document.querySelector('.cursor-dot').style.display='none';
+    document.querySelector('.cursor-ring').style.display='none';
+  }
+
+  /* ---------- Boutons magnétiques ---------- */
+  if(window.matchMedia('(hover:hover)').matches){
+    document.querySelectorAll('.magnet').forEach(function(el){
+      el.addEventListener('mousemove',function(e){
+        var r=el.getBoundingClientRect();
+        gsap.to(el,{x:(e.clientX-r.left-r.width/2)*.32,y:(e.clientY-r.top-r.height/2)*.32,duration:.4,ease:'power3.out'});
+      });
+      el.addEventListener('mouseleave',function(){ gsap.to(el,{x:0,y:0,duration:.7,ease:'elastic.out(1,0.4)'}); });
+    });
+  }
+
+  window.addEventListener('load',function(){ ScrollTrigger.refresh(); });
+})();
+</script>
+</body>
+</html>
