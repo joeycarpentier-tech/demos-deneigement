@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Clavette Émondage inc. — Émondage, élagage et abattage sur la Rive-Sud</title>
+<meta name="description" content="Clavette Émondage inc. à Longueuil : émondage, élagage, abattage, essouchage et haubanage sur la Rive-Sud depuis plus de 20 ans. Urgence 24 h/24. Soumission gratuite. (514) 209-2907.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{ --fond:#10241b; --fond2:#08160f; --panneau:#163325; --ink:#f4f6f1; --acc:#f97316; --acc2:#fb923c; --mut:#a7c4b2; --ligne:rgba(244,246,241,.18); --surligne:#241100 }
+*{margin:0;padding:0;box-sizing:border-box}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{background:var(--fond2);color:var(--ink);font-family:"Inter",system-ui,sans-serif;line-height:1.6;overflow-x:hidden}
+::selection{background:var(--acc);color:var(--surligne)}
+img{display:block;max-width:100%}
+a{color:inherit}
+.disp{font-family:"Archivo",sans-serif;text-transform:uppercase;line-height:.98;font-weight:900;letter-spacing:-.01em}
+.wrap{max-width:1360px;margin:0 auto;padding:0 28px}
+.demo-band{background:#000;color:var(--acc2);text-align:center;font-size:.78rem;font-weight:600;padding:7px 14px;border-bottom:1px solid var(--ligne);position:relative;z-index:80}
+.grain{position:fixed;inset:-50%;width:200%;height:200%;pointer-events:none;z-index:200;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");animation:grain 8s steps(10) infinite}
+@keyframes grain{0%,100%{transform:translate(0,0)}10%{transform:translate(-5%,-8%)}30%{transform:translate(3%,-12%)}50%{transform:translate(8%,4%)}70%{transform:translate(-9%,6%)}90%{transform:translate(4%,10%)}}
+#loader{position:fixed;inset:0;z-index:300;background:var(--fond2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;overflow:hidden}
+#loader .lname{font-family:"Archivo",sans-serif;font-weight:900;font-size:clamp(1.9rem,7vw,4.4rem);letter-spacing:.03em;text-align:center;line-height:1.02;text-transform:uppercase}
+#loader .lname .row{display:block;overflow:hidden}
+#loader .lname .row span{display:inline-block;transform:translateY(110%)}
+#loader .lname em{font-style:normal;color:var(--acc)}
+#loader p{font-size:.72rem;font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:var(--mut)}
+#loader .barre{width:min(420px,70vw);height:2px;background:var(--ligne);overflow:hidden;border-radius:2px}
+#loader .barre i{display:block;height:100%;width:0%;background:linear-gradient(90deg,var(--acc),var(--acc2))}
+#loader .pct{font-family:"Archivo",sans-serif;font-weight:900;font-size:1.05rem;color:var(--acc);letter-spacing:.28em}
+.cursor-dot,.cursor-ring{position:fixed;top:0;left:0;pointer-events:none;z-index:250;border-radius:50%;transform:translate(-50%,-50%)}
+.cursor-dot{width:8px;height:8px;background:var(--acc)}
+.cursor-ring{width:38px;height:38px;border:1.5px solid var(--acc);transition:width .25s,height .25s,background .25s;display:flex;align-items:center;justify-content:center}
+.cursor-ring.gros{width:88px;height:88px;background:var(--acc)}
+.cursor-ring .vue{font-size:.6rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--surligne);opacity:0;transition:opacity .2s;text-align:center;padding:0 6px}
+.cursor-ring.gros .vue{opacity:1}
+@media (hover:none),(pointer:coarse){.cursor-dot,.cursor-ring{display:none}}
+.topbar{position:fixed;top:28px;left:0;right:0;z-index:60;mix-blend-mode:difference;color:#fff}
+.topbar-in{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;max-width:1360px;margin:0 auto}
+.topbar .logo{font-family:"Archivo",sans-serif;font-weight:900;font-size:1.02rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none}
+.topbar nav{display:flex;gap:26px}
+.topbar nav a{text-decoration:none;font-size:.8rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+.topbar .tel{font-weight:800;font-size:.95rem;text-decoration:none}
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;background:var(--fond)}
+.hero .fond-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.42}
+#gl{position:absolute;inset:0;width:100%;height:100%;opacity:0;transition:opacity .9s}
+#gl.pret{opacity:1}
+.hero .voile{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.38) 0%,rgba(0,0,0,.03) 34%,rgba(0,0,0,.42) 68%,var(--fond2) 100%);pointer-events:none}
+.hero-side{position:absolute;top:50%;right:22px;transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl;font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;color:var(--mut);z-index:3}
+.hero-in{position:relative;z-index:2;padding:0 28px 30px;max-width:1360px;margin:0 auto;width:100%}
+.hero-meta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.hero-meta .tag{font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;border:1px solid var(--ligne);border-radius:999px;padding:7px 14px;background:rgba(0,0,0,.35)}
+.hero-meta .tag.plein{background:var(--acc);border-color:var(--acc);color:var(--surligne)}
+.hero h1{font-size:clamp(2.9rem,9.5vw,8.6rem)}
+.hero h1 .lt{display:inline-block;will-change:transform}
+.hero h1 .o{color:var(--acc)}
+.hero-sub{display:flex;justify-content:space-between;align-items:flex-end;gap:26px;flex-wrap:wrap;margin-top:14px}
+.hero-sub p{max-width:560px;font-size:1.06rem}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--acc);color:var(--surligne);font-weight:700;text-decoration:none;padding:15px 28px;border-radius:999px;font-size:.98rem;border:none;cursor:pointer;white-space:nowrap;will-change:transform}
+.btn-ligne{background:transparent;color:var(--ink);border:1.5px solid var(--ligne)}
+.scroll-cue{display:flex;align-items:center;gap:12px;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--mut);margin-top:24px}
+.scroll-cue .trait{width:64px;height:1px;background:var(--acc);position:relative;overflow:hidden}
+.scroll-cue .trait::after{content:"";position:absolute;inset:0;background:#fff;transform:translateX(-100%);animation:glisse 2.2s infinite}
+@keyframes glisse{55%{transform:translateX(0)}100%{transform:translateX(100%)}}
+.marquee{background:var(--acc);color:var(--surligne);overflow:hidden;padding:13px 0;transform:rotate(1.1deg) scale(1.03);margin-top:34px;position:relative;z-index:4}
+.marquee .piste{display:flex;width:max-content;will-change:transform}
+.marquee span{font-family:"Archivo",sans-serif;font-weight:900;text-transform:uppercase;font-size:1.3rem;letter-spacing:.05em;padding:0 18px;white-space:nowrap}
+.marquee span i{font-style:normal;opacity:.45;padding-left:36px}
+.manifeste{padding:130px 0 100px}
+.manifeste .sur{font-size:.78rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--acc);margin-bottom:24px}
+.manifeste p.texte{font-family:"Archivo",sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(1.7rem,4.2vw,3.5rem);line-height:1.18;max-width:1180px}
+.manifeste p.texte .mot{opacity:.13}
+.manifeste p.texte .mot.o{color:var(--acc)}
+section.bloc{padding:20px 0 110px;position:relative}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:20px;border-top:1px solid var(--ligne);padding-top:22px;margin-bottom:8px}
+.sec-head h2{font-size:clamp(2.3rem,5.8vw,4.4rem)}
+.sec-head .note{color:var(--mut);font-size:.9rem;max-width:300px;text-align:right}
+.svc-row{position:relative;display:grid;grid-template-columns:90px 1fr auto;gap:22px;align-items:center;padding:30px 10px;border-bottom:1px solid var(--ligne);overflow:hidden;isolation:isolate}
+.svc-row::before{content:"";position:absolute;inset:0;background:var(--panneau);transform:scaleY(0);transform-origin:bottom;transition:transform .35s ease;z-index:-1}
+.svc-row:hover::before{transform:scaleY(1)}
+.svc-row .num{font-family:"Archivo",sans-serif;font-weight:900;font-size:1.15rem;color:var(--acc)}
+.svc-row .titre{font-family:"Archivo",sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(1.5rem,3.8vw,2.9rem);line-height:1.02;transition:transform .35s ease,color .35s;will-change:transform}
+.svc-row:hover .titre{transform:translateX(14px);color:var(--acc)}
+.svc-row .desc{grid-column:2;max-width:620px;color:var(--mut);font-size:.95rem;margin-top:-6px}
+.svc-row .ico{width:52px;height:52px;grid-row:1/3}
+.svc-row .ico svg{width:100%;height:100%}
+.bande{overflow:hidden;padding:26px 0 6px;white-space:nowrap}
+.bande .mot-geant{font-family:"Archivo",sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(4rem,11vw,10rem);line-height:1;color:transparent;-webkit-text-stroke:1.5px var(--ligne);display:inline-block;will-change:transform}
+.bande .mot-geant b{font-weight:900;color:var(--acc);-webkit-text-stroke:0}
+.extra{padding:0 0 110px}
+.extra-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+@media(max-width:900px){.extra-grid{grid-template-columns:1fr}}
+.carte{background:var(--panneau);border:1px solid var(--ligne);border-radius:18px;padding:30px}
+.carte h3{font-family:"Archivo",sans-serif;font-weight:800;text-transform:uppercase;font-size:1.3rem;margin-bottom:12px}
+.carte p,.carte li{color:var(--mut);font-size:.96rem}
+.carte li{list-style:none;padding:7px 0 7px 24px;position:relative}
+.carte li::before{content:"";position:absolute;left:2px;top:15px;width:14px;height:3px;background:var(--acc)}
+.carte img{border-radius:12px;width:100%;margin-bottom:16px}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:10px}
+.gal figure{border-radius:18px;overflow:hidden;position:relative}
+.gal img{width:100%;height:270px;object-fit:cover}
+.gal figcaption{position:absolute;inset:auto 0 0 0;padding:32px 18px 14px;color:#fff;font-weight:700;font-size:.92rem;background:linear-gradient(transparent,rgba(0,0,0,.85))}
+.chiffres{background:var(--panneau);border-top:1px solid var(--ligne);border-bottom:1px solid var(--ligne);padding:88px 0}
+.chiffres-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+.chiffre .gros{font-family:"Archivo",sans-serif;font-weight:900;font-size:clamp(2.8rem,6.5vw,5.4rem);line-height:1}
+.chiffre .gros em{font-style:normal;color:var(--acc)}
+.chiffre .lbl{color:var(--mut);font-size:.92rem;margin-top:8px;max-width:240px}
+.cta{padding:30px 0 110px}
+.cta .sur{font-size:.78rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--acc);margin-bottom:16px}
+.cta h2{font-size:clamp(2.9rem,9vw,8rem)}
+.cta h2 .o{color:var(--acc)}
+.cta .tel-gros{font-family:"Archivo",sans-serif;font-weight:900;font-size:clamp(2rem,6.5vw,5.2rem);color:var(--ink);text-decoration:none;display:inline-block;margin:16px 0 8px;border-bottom:4px solid var(--acc);line-height:1.1;transition:color .2s}
+.cta .tel-gros:hover{color:var(--acc)}
+.cta .sous{color:var(--mut);max-width:620px;margin-bottom:30px}
+.form-carte{background:var(--panneau);border:1px solid var(--ligne);border-radius:16px;padding:30px;max-width:760px}
+.form-carte h3{font-family:"Archivo",sans-serif;font-weight:800;text-transform:uppercase;font-size:1.4rem;margin-bottom:6px}
+.form-carte>p{color:var(--mut);font-size:.93rem;margin-bottom:18px}
+.champs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.champs .plein{grid-column:1/-1}
+label{font-size:.82rem;font-weight:700;display:block;margin-bottom:5px;letter-spacing:.04em}
+input,select,textarea{width:100%;padding:12px;border:1.5px solid var(--ligne);border-radius:9px;font:inherit;font-size:.95rem;background:var(--fond2);color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--acc);border-color:var(--acc)}
+textarea{resize:vertical;min-height:90px}
+.ok-msg{display:none;background:var(--fond2);border:1.5px solid var(--acc);color:var(--ink);border-radius:9px;padding:12px 14px;margin-top:14px;font-weight:600;font-size:.93rem}
+.demo-note{border:1.5px dashed var(--acc);color:var(--acc2);border-radius:9px;padding:10px 14px;margin-top:16px;font-size:.87rem;font-weight:600}
+footer{border-top:1px solid var(--ligne);padding:44px 0 0;color:var(--mut);font-size:.9rem;overflow:hidden}
+footer .cols{display:flex;justify-content:space-between;gap:26px;flex-wrap:wrap;padding-bottom:34px}
+footer a{color:var(--mut);text-decoration:none}
+footer a:hover{color:var(--acc)}
+footer .geant{font-family:"Archivo",sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(3.4rem,13.5vw,13rem);line-height:.82;text-align:center;color:var(--ligne);white-space:nowrap;transform:translateY(18%);user-select:none}
+.sticky-call{position:fixed;left:16px;right:16px;bottom:16px;z-index:70;text-align:center;padding:15px;border-radius:999px;font-weight:800;color:var(--surligne);background:var(--acc);display:none;text-decoration:none;box-shadow:0 14px 34px rgba(0,0,0,.4)}
+.reveal{opacity:0;transform:translateY(38px)}
+.no-anim .reveal{opacity:1;transform:none}
+.no-anim .manifeste p.texte .mot{opacity:1}
+@media (max-width:900px){
+  .topbar{top:24px}.topbar nav{display:none}
+  .hero-side{display:none}
+  .svc-row{grid-template-columns:52px 1fr}
+  .svc-row .ico{display:none}
+  .chiffres-grid{grid-template-columns:1fr 1fr}
+  .sec-head .note{display:none}
+  .champs{grid-template-columns:1fr}
+  .manifeste{padding:84px 0 64px}
+  .sticky-call{display:block}
+  section.bloc{padding-bottom:70px}
+}
+@media (prefers-reduced-motion:reduce){ .grain,.scroll-cue .trait::after{animation:none} }
+</style>
+</head>
+<body>
+<div class="demo-band">Proposition conceptuelle — démo non officielle réalisée à titre de proposition. Ce site n'est pas le site officiel de l'entreprise.</div>
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"><span class="vue">Voir</span></div>
+<div id="loader" aria-hidden="true">
+  <div class="lname"><span class="row"><span>Clavette</span></span><span class="row"><span><em>Émondage</em></span></span></div>
+  <p>Arboriculture — Longueuil · Rive-Sud</p>
+  <div class="barre"><i id="loader-barre"></i></div>
+  <div class="pct"><span id="loader-pct">0</span> %</div>
+</div>
+<header class="topbar"><div class="topbar-in">
+  <a class="logo" href="#accueil">Clavette Émondage</a>
+  <nav><a href="#services">Services</a><a href="#entreprise">L'entreprise</a><a href="#realisations">Photos</a><a href="#contact">Contact</a></nav>
+  <a class="tel" href="tel:+15142092907" data-curseur="Appeler">(514) 209-2907</a>
+</div></header>
+<header class="hero" id="accueil">
+  <img class="fond-img" src="https://www.emondagerivesud.com/assets/img/slider/slider-1.webp" alt="Travaux d'émondage par Clavette Émondage">
+  <canvas id="gl" aria-hidden="true"></canvas>
+  <div class="voile"></div>
+  <div class="hero-side">Arboriculture — Longueuil — Rive-Sud</div>
+  <div class="hero-in">
+    <div class="hero-meta"><span class="tag plein">Urgence 24 h/24, 7 j/7</span><span class="tag">Plus de 20 ans d'expérience</span><span class="tag">Soumission gratuite</span></div>
+    <h1 class="disp" id="hero-titre">Des arbres en santé, <span class="o">en toute sécurité</span></h1>
+    <div class="hero-sub"><p><strong>Des services professionnels pour des arbres en santé :</strong> émondage, élagage, abattage et entretien d'arbres partout sur la Rive-Sud, de façon efficace, rapide et sécuritaire, en toutes saisons.</p><a class="btn magnet" href="#contact">Soumission gratuite</a></div>
+    <div class="scroll-cue"><span class="trait"></span> Défiler</div>
+  </div>
+</header>
+<div class="marquee" aria-hidden="true"><div class="piste" id="marquee-piste"><span>Émondage<i>•</i></span><span>Élagage<i>•</i></span><span>Abattage<i>•</i></span><span>Déchiquetage<i>•</i></span><span>Essouchage<i>•</i></span><span>Haubanage<i>•</i></span><span>Plantation<i>•</i></span><span>Urgence 24 h/24<i>•</i></span><span>Émondage<i>•</i></span><span>Élagage<i>•</i></span><span>Abattage<i>•</i></span><span>Déchiquetage<i>•</i></span><span>Essouchage<i>•</i></span><span>Haubanage<i>•</i></span><span>Plantation<i>•</i></span><span>Urgence 24 h/24<i>•</i></span></div></div>
+<section class="manifeste" id="manifeste"><div class="wrap">
+  <p class="sur reveal">La mission de Cédric Clavette</p>
+  <p class="texte" id="manifeste-texte" data-forts="sécurité,|santé">Préserver la sécurité, la beauté et la santé de vos arbres : c'est la mission de notre fondateur, arboriculteur d'expérience, et de toute notre équipe, en toutes saisons.</p>
+</div></section>
+<section class="bloc" id="services"><div class="wrap">
+<div class="sec-head reveal"><h2 class="disp">Tous les services<br>liés aux arbres</h2><p class="note">Le fondateur, Cédric Clavette, est un arboriculteur d'expérience dont la mission est de préserver la sécurité, la beauté et la santé de vos arbres.</p></div>
+<article class="svc-row reveal"><span class="num">/ 01</span><h3 class="titre">Élagage</h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="1.6"><path d="M12 3v18M5 8l7-5 7 5M5 16l7 5 7-5"/></svg></span><p class="desc">Des branches qui obstruent une infrastructure ou risquent de tomber : nos élagueurs possèdent les compétences et les équipements pour travailler sécuritairement.</p></article><article class="svc-row reveal"><span class="num">/ 02</span><h3 class="titre">Émondage</h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="1.6"><path d="M12 3v18M5 8l7-5 7 5M5 16l7 5 7-5"/></svg></span><p class="desc">L'entretien d'arbres effectué dans le respect des règles de sécurité de la CNESST pour les travaux en hauteur, avec les techniques recommandées.</p></article><article class="svc-row reveal"><span class="num">/ 03</span><h3 class="titre">Abattage d'arbre</h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="1.6"><path d="M12 3v18M5 8l7-5 7 5M5 16l7 5 7-5"/></svg></span><p class="desc">Un arbre malade, rongé par les insectes ou dangereux doit parfois être abattu : nos professionnels effectuent les travaux selon les normes. Déboisement aussi offert.</p></article><article class="svc-row reveal"><span class="num">/ 04</span><h3 class="titre">Déchiquetage de branches</h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="1.6"><path d="M12 3v18M5 8l7-5 7 5M5 16l7 5 7-5"/></svg></span><p class="desc">Déchiquetage de branches, de troncs et de souches : votre terrain reste propre, et vous pouvez récupérer les copeaux au besoin.</p></article><article class="svc-row reveal"><span class="num">/ 05</span><h3 class="titre">Essouchage</h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="1.6"><path d="M12 3v18M5 8l7-5 7 5M5 16l7 5 7-5"/></svg></span><p class="desc">Des souches aux racines profondes, difficiles à enlever : un service d'essouchage rapide et complet par des professionnels d'expérience.</p></article><article class="svc-row reveal"><span class="num">/ 06</span><h3 class="titre">Haubanage et plantation</h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="1.6"><path d="M12 3v18M5 8l7-5 7 5M5 16l7 5 7-5"/></svg></span><p class="desc">Haubanage pour soutenir un arbre moins solide, et plantation d'arbres, de haies et d'arbustes — le bon arbre au bon endroit.</p></article>
+</div></section>
+<div class="bande" aria-hidden="true"><span class="mot-geant" id="mot-geant">Clavette <b>Émondage</b> — Clavette <b>Émondage</b></span></div>
+<section class="extra" id="entreprise"><div class="wrap">
+<div class="sec-head reveal"><h2 class="disp">L'entreprise</h2><p class="note">Nous prenons soin de vos arbres comme des nôtres.</p></div>
+<div class="extra-grid">
+<div class="carte reveal"><h3>Plus de 20 ans sur la Rive-Sud</h3><p>Notre entreprise d'émondage est active dans la région depuis plus de 20 ans. Nous sommes membres de la Société internationale d'arboriculture (SIAQ) et nous employons les techniques recommandées par le Bureau de normalisation du Québec. Et quand la nature fait des siennes — tempête, branche dangereuse, arbre fragile — nous sommes disponibles 24 h/24, 7 jours sur 7.</p><ul>
+<li>Membre de la Société internationale d'arboriculture (SIAQ)</li><li>Travaux selon les règles de sécurité de la CNESST</li><li>Assurance allant jusqu'à 5 M$</li><li>Déboisement pour les entrepreneurs en construction</li></ul></div>
+<div class="carte reveal"><h3>Zones desservies</h3><p>Rive-Sud : Longueuil, Boucherville, Brossard, Candiac, La Prairie, Saint-Bruno, Saint-Lambert et Sainte-Julie.</p><p style="margin-top:12px">1247, rue Labadie, Longueuil, Québec J4N 1E2 — info@emondagerivesud.com</p></div>
+</div></div></section>
+<section class="extra" id="realisations"><div class="wrap">
+<div class="sec-head reveal"><h2 class="disp">Sur le terrain</h2><p class="note">Photos tirées du site officiel de l'entreprise.</p></div>
+<div class="gal">
+<figure class="reveal"><img src="https://www.emondagerivesud.com/assets/img/slider/slider-1.webp" alt="Émondage en hauteur" loading="lazy"><figcaption>Travaux en hauteur</figcaption></figure>
+<figure class="reveal"><img src="https://www.emondagerivesud.com/assets/img/slider/slider-2.webp" alt="Entretien d'arbres" loading="lazy"><figcaption>Entretien d'arbres</figcaption></figure>
+<figure class="reveal"><img src="https://www.emondagerivesud.com/assets/img/accueil-1.webp" alt="Service d'entretien d'arbres" loading="lazy"><figcaption>Service d'entretien d'arbres</figcaption></figure>
+</div></div></section>
+<section class="chiffres" id="chiffres"><div class="wrap"><div class="chiffres-grid"><div class="chiffre reveal"><div class="gros"><span class="compteur" data-cible="20">0</span><em>+ ans</em></div><p class="lbl">d'activité dans la région de la Rive-Sud</p></div><div class="chiffre reveal"><div class="gros"><span class="compteur" data-cible="5">0</span><em> M$</em></div><p class="lbl">d'assurance, selon les exigences de chaque municipalité</p></div><div class="chiffre reveal"><div class="gros"><span class="compteur" data-cible="24">0</span><em> h / 24</em></div><p class="lbl">service d'urgence, 7 jours sur 7</p></div><div class="chiffre reveal"><div class="gros"><span class="compteur" data-cible="8">0</span><em> villes</em></div><p class="lbl">desservies sur la Rive-Sud, de Longueuil à Sainte-Julie</p></div></div></div></section>
+<section class="cta" id="contact"><div class="wrap">
+  <p class="sur reveal">Contact — urgence 24 h/24</p>
+  <h2 class="disp reveal">Votre soumission <span class="o">gratuite</span></h2>
+  <a class="tel-gros reveal" href="tel:+15142092907" data-curseur="Appeler">(514) 209-2907</a>
+  <p class="sous reveal">Appelez au (514) 209-2907 — urgence 24 h/24, 7 j/7 — ou écrivez à info@emondagerivesud.com. 1247, rue Labadie, Longueuil, Québec J4N 1E2.</p>
+  <form class="form-carte reveal" data-demo>
+    <h3>Demande de soumission</h3><p>Décrivez votre besoin : émondage, abattage, urgence…</p>
+    <div class="champs"><div><label for="cv-nom">Nom *</label><input id="cv-nom" required autocomplete="name"></div><div><label for="cv-tel">Téléphone *</label><input id="cv-tel" required type="tel" autocomplete="tel"></div><div class="plein"><label for="cv-svc">Votre besoin *</label><select id="cv-svc" required><option value="">Choisir…</option><option>Émondage</option><option>Élagage</option><option>Abattage d'arbre</option><option>Déchiquetage de branches</option><option>Essouchage</option><option>Haubanage</option><option>Plantation d'arbres</option><option>Urgence — arbre dangereux</option><option>Autre</option></select></div><div class="plein"><label for="cv-msg">Détails</label><textarea id="cv-msg" placeholder="Ville, type d'arbre, ce qui vous préoccupe…"></textarea></div></div>
+    <p class="demo-note">Démonstration — ce formulaire est une maquette : aucune demande réelle n'est transmise à l'entreprise.</p>
+    <p style="margin-top:16px"><button class="btn magnet" type="submit">Envoyer ma demande</button></p>
+    <div class="ok-msg">Simulation terminée. Aucune demande n'a été transmise à l'entreprise.</div>
+  </form>
+</div></section>
+<footer><div class="wrap cols"><div><p><strong style="color:var(--ink)">Clavette Émondage inc.</strong></p><p style="margin-top:6px">1247, rue Labadie<br>Longueuil, Québec J4N 1E2</p></div><div><p><a href="tel:+15142092907">(514) 209-2907</a> — urgence 24 h/24, 7 j/7</p><p style="margin-top:6px"><a href="mailto:info@emondagerivesud.com">info@emondagerivesud.com</a></p></div><div><p>Rive-Sud : Longueuil, Boucherville, Brossard, Candiac, La Prairie, Saint-Bruno, Saint-Lambert et Sainte-Julie.</p><p style="margin-top:6px">Proposition conceptuelle — démo non officielle.</p></div></div><div class="geant" aria-hidden="true">Clavette</div></footer>
+<a class="sticky-call" href="tel:+15142092907">Appeler — (514) 209-2907</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+<script>
+window.__watchdog=setTimeout(function(){
+  if(!window.gsap){
+    document.documentElement.classList.add('no-anim');
+    var l=document.getElementById('loader'); if(l) l.style.display='none';
+    document.querySelectorAll('.compteur').forEach(function(el){ el.textContent=el.dataset.cible; });
+  }
+},2600);
+document.querySelectorAll('form[data-demo]').forEach(function(f){
+  f.addEventListener('submit',function(e){ e.preventDefault(); var m=f.querySelector('.ok-msg'); if(m) m.style.display='block'; });
+});
+</script>
+<script>
+(function(){
+  if(!window.gsap){ return; }
+  clearTimeout(window.__watchdog);
+  gsap.registerPlugin(ScrollTrigger);
+  var reduit=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var lenis=null;
+  if(window.Lenis && !reduit){
+    lenis=new Lenis({ duration:1.25, smoothWheel:true });
+    lenis.on('scroll',ScrollTrigger.update);
+    gsap.ticker.add(function(t){ lenis.raf(t*1000); });
+    gsap.ticker.lagSmoothing(0);
+    document.querySelectorAll('a[href^="#"]').forEach(function(a){
+      a.addEventListener('click',function(e){
+        var cible=document.querySelector(a.getAttribute('href'));
+        if(cible){ e.preventDefault(); lenis.scrollTo(cible,{offset:-10}); }
+      });
+    });
+  }
+  (function(){
+    var h1=document.getElementById('hero-titre');
+    var noeuds=Array.prototype.slice.call(h1.childNodes), html='';
+    noeuds.forEach(function(n){
+      if(n.nodeType===3){ n.textContent.split('').forEach(function(c){ html+='<span class="lt">'+(c===' '?'&nbsp;':c)+'</span>'; }); }
+      else if(n.nodeName==='BR'){ html+='<br>'; }
+      else if(n.nodeType===1){ n.textContent.split('').forEach(function(c){ html+='<span class="lt '+n.className+'">'+(c===' '?'&nbsp;':c)+'</span>'; }); }
+    });
+    h1.innerHTML=html;
+    gsap.set('#hero-titre .lt',{yPercent:115});
+  })();
+  var pct={v:0};
+  gsap.timeline()
+    .to('#loader .lname .row > span',{y:0,duration:.7,stagger:.09,ease:'power4.out'},0)
+    .to(pct,{v:100,duration:1.3,ease:'power2.inOut',onUpdate:function(){
+        document.getElementById('loader-pct').textContent=Math.round(pct.v);
+        document.getElementById('loader-barre').style.width=pct.v+'%';
+      }},0)
+    .to('#loader .lname .row > span',{y:'-115%',duration:.5,stagger:.06,ease:'power3.in'},'+=0.12')
+    .to('#loader',{yPercent:-100,duration:.85,ease:'power4.inOut'},'-=0.22')
+    .set('#loader',{display:'none'})
+    .to('#hero-titre .lt',{yPercent:0,duration:1,stagger:.028,ease:'power4.out'},'-=0.55')
+    .from('.hero-meta .tag',{y:24,opacity:0,duration:.6,stagger:.08,ease:'power3.out'},'-=0.6')
+    .from('.hero-sub > *',{y:30,opacity:0,duration:.7,stagger:.12,ease:'power3.out'},'-=0.45')
+    .from('.topbar',{y:-30,opacity:0,duration:.6,ease:'power3.out'},'-=0.5');
+  gsap.fromTo('#gl',{scale:1.12},{scale:1,yPercent:10,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+  gsap.to('#hero-titre',{yPercent:-26,opacity:.25,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+  var piste=document.getElementById('marquee-piste');
+  var defile=gsap.to(piste,{xPercent:-50,ease:'none',duration:20,repeat:-1});
+  ScrollTrigger.create({ onUpdate:function(self){
+    var v=gsap.utils.clamp(-6,6,self.getVelocity()/-250);
+    gsap.to(defile,{timeScale:Math.abs(v)*1.6+1,duration:.3,overwrite:true});
+    gsap.to(piste,{skewX:v*1.4,duration:.3,overwrite:'auto'});
+  }});
+  (function(){
+    var p=document.getElementById('manifeste-texte');
+    var forts=(p.getAttribute('data-forts')||'').split('|');
+    p.innerHTML=p.textContent.trim().split(/\s+/).map(function(m){
+      var o=forts.indexOf(m)>=0?' o':'';
+      return '<span class="mot'+o+'">'+m+'</span>';
+    }).join(' ');
+    gsap.to('#manifeste-texte .mot',{opacity:1,stagger:.05,ease:'none',
+      scrollTrigger:{trigger:'.manifeste',start:'top 75%',end:'bottom 55%',scrub:true}});
+  })();
+  gsap.utils.toArray('.reveal').forEach(function(el){
+    gsap.to(el,{opacity:1,y:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%',once:true}});
+  });
+  document.querySelectorAll('.compteur').forEach(function(el){
+    var cible=parseInt(el.dataset.cible,10), obj={v:0};
+    ScrollTrigger.create({trigger:el,start:'top 88%',once:true,onEnter:function(){
+      gsap.to(obj,{v:cible,duration:1.6,ease:'power2.out',onUpdate:function(){ el.textContent=Math.round(obj.v).toLocaleString('fr-CA'); }});
+    }});
+  });
+  gsap.fromTo('#mot-geant',{xPercent:2},{xPercent:-30,ease:'none',
+    scrollTrigger:{trigger:'.bande',start:'top bottom',end:'bottom top',scrub:true}});
+  gsap.fromTo('footer .geant',{yPercent:46},{yPercent:18,ease:'none',
+    scrollTrigger:{trigger:'footer',start:'top bottom',end:'bottom bottom',scrub:true}});
+  if(window.matchMedia('(hover:hover) and (pointer:fine)').matches){
+    var dot=document.querySelector('.cursor-dot'), ring=document.querySelector('.cursor-ring'), vue=ring.querySelector('.vue');
+    var dx=gsap.quickTo(dot,'x',{duration:.08,ease:'power2'}), dy=gsap.quickTo(dot,'y',{duration:.08,ease:'power2'});
+    var rx=gsap.quickTo(ring,'x',{duration:.38,ease:'power3'}), ry=gsap.quickTo(ring,'y',{duration:.38,ease:'power3'});
+    window.addEventListener('mousemove',function(e){ dx(e.clientX); dy(e.clientY); rx(e.clientX); ry(e.clientY); });
+    document.querySelectorAll('a, button').forEach(function(el){
+      el.addEventListener('mouseenter',function(){ vue.textContent=el.getAttribute('data-curseur')||''; ring.classList.add('gros'); });
+      el.addEventListener('mouseleave',function(){ ring.classList.remove('gros'); });
+    });
+  } else {
+    document.querySelector('.cursor-dot').style.display='none';
+    document.querySelector('.cursor-ring').style.display='none';
+  }
+  if(window.matchMedia('(hover:hover)').matches && !reduit){
+    document.querySelectorAll('.magnet').forEach(function(el){
+      el.addEventListener('mousemove',function(e){
+        var r=el.getBoundingClientRect();
+        gsap.to(el,{x:(e.clientX-r.left-r.width/2)*.32,y:(e.clientY-r.top-r.height/2)*.32,duration:.4,ease:'power3.out'});
+      });
+      el.addEventListener('mouseleave',function(){ gsap.to(el,{x:0,y:0,duration:.7,ease:'elastic.out(1,0.4)'}); });
+    });
+  }
+  window.addEventListener('load',function(){ ScrollTrigger.refresh(); });
+})();
+</script>
+
+<script>
+/* HERO WebGL — copeaux projetes : particules GPU en gl.POINTS ejectees depuis
+   le bas de l ecran, en trajectoire parabolique (gravite dans le vertex shader),
+   avec rotation simulee par la taille et des teintes bois/orange. */
+(function(){
+  var canvas=document.getElementById('gl');
+  var gl=null;
+  try{ gl=canvas.getContext('webgl',{antialias:false,alpha:true,powerPreference:'high-performance'}); }catch(e){}
+  if(!gl){ return; }
+  var vs=[
+    'attribute float a_seed;',
+    'uniform float u_time; uniform vec2 u_res; uniform float u_mouse;',
+    'varying float v_mix; varying float v_fade;',
+    'void main(){',
+    '  float duree=1.6+fract(a_seed*3.71)*1.8;',
+    '  float ph=fract(u_time/duree+a_seed*7.0);',
+    '  float dir=fract(a_seed*11.3)>0.5?1.0:-1.0;',
+    '  float x0=(fract(a_seed*5.17)*1.2-0.6)+(u_mouse-0.5)*0.3;',
+    '  float vx=dir*(0.25+fract(a_seed*7.77)*0.75);',
+    '  float vy=1.15+fract(a_seed*9.31)*0.85;',
+    '  float grav=1.55;',
+    '  float tt=ph*duree;',
+    '  float x=x0+vx*tt;',
+    '  float y=-1.02+vy*tt-0.5*grav*tt*tt;',
+    '  v_mix=fract(a_seed*17.7);',
+    '  v_fade=sin(ph*3.14159);',
+    '  gl_Position=vec4(x,y,0.0,1.0);',
+    '  float rot=0.45+0.55*abs(sin(tt*(4.0+fract(a_seed*2.9)*5.0)+a_seed*30.0));',
+    '  gl_PointSize=(3.0+fract(a_seed*4.3)*7.0)*rot*(u_res.y/700.0);',
+    '}'
+  ].join('\n');
+  var fs=[
+    'precision highp float;',
+    'varying float v_mix; varying float v_fade;',
+    'void main(){',
+    '  vec2 c=abs(gl_PointCoord-0.5);',
+    '  float alpha=smoothstep(0.5,0.32,max(c.x,c.y*1.6));',
+    '  vec3 bois=mix(vec3(0.85,0.55,0.18), vec3(0.55,0.32,0.10), v_mix);',
+    '  vec3 col=mix(bois, vec3(0.98,0.45,0.09), step(0.82,v_mix));',
+    '  gl_FragColor=vec4(col, alpha*v_fade*0.95);',
+    '}'
+  ].join('\n');
+  function sh(type,src){ var s=gl.createShader(type); gl.shaderSource(s,src); gl.compileShader(s); return s; }
+  var prog=gl.createProgram();
+  gl.attachShader(prog,sh(gl.VERTEX_SHADER,vs));
+  gl.attachShader(prog,sh(gl.FRAGMENT_SHADER,fs));
+  gl.linkProgram(prog);
+  if(!gl.getProgramParameter(prog,gl.LINK_STATUS)){ return; }
+  gl.useProgram(prog);
+  gl.enable(gl.BLEND); gl.blendFunc(gl.SRC_ALPHA,gl.ONE_MINUS_SRC_ALPHA);
+  var N=340, seeds=new Float32Array(N);
+  for(var i=0;i<N;i++) seeds[i]=Math.random();
+  var buf=gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER,buf);
+  gl.bufferData(gl.ARRAY_BUFFER,seeds,gl.STATIC_DRAW);
+  var loc=gl.getAttribLocation(prog,'a_seed');
+  gl.enableVertexAttribArray(loc); gl.vertexAttribPointer(loc,1,gl.FLOAT,false,0,0);
+  var uTime=gl.getUniformLocation(prog,'u_time'), uRes=gl.getUniformLocation(prog,'u_res'), uMouse=gl.getUniformLocation(prog,'u_mouse');
+  var tx=0.5, mx=0.5;
+  window.addEventListener('mousemove',function(e){ tx=e.clientX/window.innerWidth; },{passive:true});
+  var reduit=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function taille(){ var d=Math.min(window.devicePixelRatio||1,1.75); var w=canvas.clientWidth*d, h=canvas.clientHeight*d;
+    if(canvas.width!==w||canvas.height!==h){ canvas.width=w; canvas.height=h; gl.viewport(0,0,w,h); } }
+  var debut=performance.now(), visible=true;
+  if('IntersectionObserver' in window){ new IntersectionObserver(function(es){ visible=es[0].isIntersecting; },{threshold:0}).observe(canvas); }
+  function draw(t){ taille(); mx+=(tx-mx)*0.04; gl.uniform1f(uTime,t); gl.uniform2f(uRes,canvas.width,canvas.height); gl.uniform1f(uMouse,mx); gl.clearColor(0,0,0,0); gl.clear(gl.COLOR_BUFFER_BIT); gl.drawArrays(gl.POINTS,0,N); if(!canvas.classList.contains('pret')) canvas.classList.add('pret'); }
+  function boucle(now){ requestAnimationFrame(boucle); if(!visible) return; draw((now-debut)/1000); }
+  if(reduit){ draw(2.2); } else { requestAnimationFrame(boucle); }
+})();
+</script>
+</body>
+</html>
