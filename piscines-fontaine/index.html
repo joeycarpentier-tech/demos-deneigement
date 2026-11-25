@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Piscines Fontaine — Piscines creusées sur mesure à Boucherville depuis 1972</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#06283d;--bg2:#041c2c;--acc:#e6c87a;--acc2:#f7e7bd;--txt:#f2f5f3;--mut:rgba(235,242,240,.68);--line:rgba(255,255,255,.12);--card:rgba(255,255,255,.045)}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',system-ui,sans-serif;overflow-x:hidden;line-height:1.6}
+::selection{background:var(--acc);color:var(--bg)}
+h1,h2,h3,.disp{font-family:'Archivo',sans-serif;line-height:1.02;letter-spacing:-.02em}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+#loader{position:fixed;inset:0;z-index:200;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px}
+#loader .lname{font-family:'Archivo';font-weight:900;font-size:clamp(26px,5vw,54px);letter-spacing:.04em;text-transform:uppercase}
+#loader .lname span{color:var(--acc)}
+#loader .lbarw{width:min(420px,72vw);height:3px;background:rgba(255,255,255,.12);overflow:hidden;border-radius:99px}
+#loader .lbar{height:100%;width:0%;background:linear-gradient(90deg,var(--acc),var(--acc2))}
+#loader .lpct{font-family:'Archivo';font-size:15px;color:var(--mut);letter-spacing:.3em}
+#loader .ltag{color:var(--mut);font-size:12px;letter-spacing:.35em;text-transform:uppercase}
+.demo-note{position:fixed;left:14px;bottom:14px;z-index:90;background:rgba(8,12,12,.82);backdrop-filter:blur(8px);border:1px solid var(--line);color:var(--mut);font-size:11.5px;padding:9px 13px;border-radius:10px;max-width:330px}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px clamp(18px,4vw,54px);background:linear-gradient(180deg,rgba(0,0,0,.45),transparent);transition:.4s}
+nav.scrolled{background:rgba(6,10,10,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.logo{font-family:'Archivo';font-weight:900;font-size:20px;letter-spacing:.03em;text-transform:uppercase}
+.logo span{color:var(--acc)}
+nav .links{display:flex;gap:30px;font-size:13.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+nav .links a{opacity:.85}nav .links a:hover{opacity:1;color:var(--acc)}
+.navtel{border:1px solid var(--acc);color:var(--acc);padding:10px 18px;border-radius:99px;font-weight:700;font-size:14px;transition:.3s}
+.navtel:hover{background:var(--acc);color:var(--bg)}
+@media(max-width:860px){nav .links{display:none}}
+.hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;padding:140px clamp(18px,5vw,64px) 84px;overflow:hidden}
+#gl{position:absolute;inset:0;width:100%;height:100%}
+.hero .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.18),transparent 40%,rgba(0,0,0,.55));pointer-events:none}
+.hero-in{position:relative;z-index:2;max-width:980px}
+.kicker{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);background:rgba(0,0,0,.3);backdrop-filter:blur(6px);padding:8px 16px;border-radius:99px;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--acc2);margin-bottom:26px}
+.kicker::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--acc);box-shadow:0 0 14px var(--acc)}
+.hero h1{font-size:clamp(42px,7.4vw,96px);font-weight:900;text-transform:uppercase}
+.hero h1 em{font-style:normal;color:var(--acc)}
+.hero p.lead{margin-top:24px;font-size:clamp(16px,1.6vw,20px);color:var(--mut);max-width:640px}
+.cta-row{display:flex;gap:16px;flex-wrap:wrap;margin-top:36px}
+.btn{display:inline-block;background:var(--acc);color:var(--bg);font-weight:800;padding:16px 30px;border-radius:99px;font-size:15px;transition:.3s;border:1px solid var(--acc)}
+.btn:hover{background:transparent;color:var(--acc)}
+.btn.ghost{background:transparent;color:var(--txt);border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--acc);color:var(--acc)}
+.hero-badges{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+.hero-badges span{border:1px solid var(--line);background:rgba(0,0,0,.28);padding:8px 15px;border-radius:99px;font-size:13px;font-weight:600}
+.scrollhint{position:absolute;right:clamp(18px,4vw,54px);bottom:34px;z-index:2;color:var(--mut);font-size:11px;letter-spacing:.35em;text-transform:uppercase;writing-mode:vertical-rl}
+.marquee{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg2);padding:16px 0;white-space:nowrap}
+.marquee .track{display:inline-block;animation:mq 30s linear infinite;font-family:'Archivo';font-weight:800;text-transform:uppercase;letter-spacing:.14em;font-size:15px;color:var(--mut)}
+@keyframes mq{to{transform:translateX(-50%)}}
+section{padding:clamp(70px,9vw,130px) clamp(18px,5vw,64px);position:relative}
+.wrap{max-width:1240px;margin:0 auto}
+.sec-head{max-width:760px;margin-bottom:54px}
+.sec-head .tag{color:var(--acc);font-size:12px;font-weight:800;letter-spacing:.35em;text-transform:uppercase}
+.sec-head h2{font-size:clamp(32px,4.6vw,58px);font-weight:900;text-transform:uppercase;margin-top:14px}
+.sec-head p{color:var(--mut);margin-top:16px;font-size:17px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:32px 28px;transition:.35s;position:relative;overflow:hidden}
+.card::after{content:"";position:absolute;left:0;top:0;height:3px;width:0;background:linear-gradient(90deg,var(--acc),var(--acc2));transition:.45s}
+.card:hover{transform:translateY(-6px);border-color:var(--acc)}
+.card:hover::after{width:100%}
+.card .num{font-family:'Archivo';font-weight:900;font-size:15px;color:var(--acc);letter-spacing:.2em}
+.card h3{font-size:21px;font-weight:800;margin:14px 0 10px}
+.card p{color:var(--mut);font-size:15px}
+.card a.lnk{display:inline-block;margin-top:16px;color:var(--acc);font-weight:700;font-size:14px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px}
+.stat{border:1px solid var(--line);border-radius:20px;padding:34px 28px;background:linear-gradient(160deg,var(--card),transparent)}
+.stat .big{font-family:'Archivo';font-size:clamp(40px,5vw,64px);font-weight:900;color:var(--acc)}
+.stat .lbl{color:var(--mut);font-size:14.5px;margin-top:6px}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.gal figure{border-radius:20px;overflow:hidden;position:relative;border:1px solid var(--line)}
+.gal img{width:100%;height:300px;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1);filter:saturate(.92)}
+.gal figure:hover img{transform:scale(1.07)}
+.gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:38px 20px 16px;background:linear-gradient(transparent,rgba(0,0,0,.78));font-weight:700;font-size:15px}
+.about{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,70px);align-items:center}
+@media(max-width:900px){.about{grid-template-columns:1fr}}
+.about img{border-radius:22px;height:100%;min-height:340px;object-fit:cover;border:1px solid var(--line)}
+.about h2{font-size:clamp(30px,4vw,50px);font-weight:900;text-transform:uppercase}
+.about p{color:var(--mut);margin-top:18px}
+.checks{margin-top:24px;display:grid;gap:12px}
+.checks li{list-style:none;padding-left:30px;position:relative;font-weight:600}
+.checks li::before{content:"";position:absolute;left:0;top:9px;width:14px;height:8px;border-left:3px solid var(--acc);border-bottom:3px solid var(--acc);transform:rotate(-45deg)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.step{border-top:2px solid var(--line);padding-top:24px}
+.step .n{font-family:'Archivo';font-size:44px;font-weight:900;color:transparent;-webkit-text-stroke:1.5px var(--acc)}
+.step h3{margin:12px 0 8px;font-size:19px}
+.step p{color:var(--mut);font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chips span{border:1px solid var(--line);border-radius:99px;padding:9px 17px;font-weight:600;font-size:14px;background:var(--card)}
+.contact{background:var(--bg2);border-top:1px solid var(--line)}
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,70px)}
+@media(max-width:900px){.cgrid{grid-template-columns:1fr}}
+.cinfo h2{font-size:clamp(30px,4vw,52px);font-weight:900;text-transform:uppercase}
+.cinfo p{color:var(--mut);margin-top:16px}
+.cinfo .row{margin-top:22px;font-size:17px}
+.cinfo .row b{color:var(--acc)}
+form{display:grid;gap:14px}
+form label{font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+form input,form select,form textarea{width:100%;margin-top:6px;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:12px;padding:14px 16px;color:var(--txt);font:inherit;font-size:15px}
+form select option{color:#111}
+form input:focus,form select:focus,form textarea:focus{outline:2px solid var(--acc);border-color:transparent}
+.fnote{font-size:12.5px;color:var(--mut)}
+.fok{display:none;border:1px solid var(--acc);color:var(--acc);border-radius:12px;padding:14px 16px;font-weight:600}
+footer{padding:54px clamp(18px,5vw,64px) 90px;border-top:1px solid var(--line);background:#050808;color:var(--mut);font-size:14px}
+.fgrid{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px}
+footer h4{color:var(--txt);font-family:'Archivo';text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px;font-size:15px}
+footer li{list-style:none;margin:7px 0}
+.fbot{max-width:1240px;margin:36px auto 0;padding-top:20px;border-top:1px solid var(--line);font-size:12.5px}
+.callbar{position:fixed;right:16px;bottom:16px;z-index:95;background:var(--acc);color:var(--bg);font-weight:800;padding:14px 22px;border-radius:99px;box-shadow:0 12px 34px rgba(0,0,0,.45);font-size:14.5px}
+.rv{opacity:0}
+
+
+</style>
+</head>
+<body>
+<div id="loader"><div class="ltag">Boucherville — Depuis 1972</div><div class="lname">Piscines <span>Fontaine</span></div><div class="lbarw"><div class="lbar" id="lbar"></div></div><div class="lpct" id="lpct">0%</div></div>
+<div class="demo-note">Proposition conceptuelle — démo non officielle réalisée à titre de proposition. Ce site n'est pas le site officiel de l'entreprise.</div>
+<nav><a class="logo" href="#accueil">Piscines <span>Fontaine</span></a><div class="links"><a href="#services">Services</a><a href="#realisations">Réalisations</a><a href="#apropos">L'entreprise</a><a href="#contact">Contact</a></div><a class="navtel" href="tel:+14506550689">450 655-0689</a></nav>
+<header class="hero" id="accueil">
+<canvas id="gl" aria-hidden="true"></canvas><div class="veil"></div>
+<div class="hero-in">
+<div class="kicker">Boucherville — Depuis 1972</div>
+<h1>Une piscine creusée à la mesure <em>de vos rêves.</em></h1>
+<p class="lead">Reconnue dans l'industrie de la piscine creusée pour ses multiples innovations, Piscines Fontaine vous offre la meilleure qualité et les meilleures garanties — par un mode de construction unique, sur la Rive-Sud.</p>
+<div class="cta-row"><a class="btn" href="#contact">Démarrer mon projet</a><a class="btn ghost" href="tel:+14506550689">450 655-0689</a></div>
+<div class="hero-badges"><span>Entreprise familiale depuis 1972</span><span>Trois générations</span><span>Boucherville — Rive-Sud</span></div>
+</div><div class="scrollhint">Défiler</div>
+</header>
+<div class="marquee"><div class="track">Piscines creusées sur mesure — Conception par ordinateur — Analyse d'eau — Accessoires — Depuis 1972 — Trois générations — Piscines creusées sur mesure — Conception par ordinateur — Analyse d'eau — Accessoires — Depuis 1972 — Trois générations — </div></div>
+<section id="services"><div class="wrap"><div class="sec-head rv"><div class="tag">Nos services</div><h2>La piscine creusée, de la conception à la baignade</h2><p>Modèles de base ou concept entièrement sur mesure : notre service de conception par ordinateur vous donne un croquis d'ensemble du projet, pour décider en toute confiance.</p></div><div class="grid"><article class="card rv"><div class="num">/ 01</div><h3>Piscines creusées sur mesure</h3><p>La forme qui convient à votre terrain, pour maximiser l'espace — sans compromis sur la qualité du produit ni du service.</p><a class="lnk" href="#contact">Nous joindre</a></article><article class="card rv"><div class="num">/ 02</div><h3>Conception par ordinateur</h3><p>Un croquis d'ensemble du projet proposé, qui facilite chaque décision tout au long de la réalisation.</p><a class="lnk" href="#contact">Nous joindre</a></article><article class="card rv"><div class="num">/ 03</div><h3>Accessoires et analyse d'eau</h3><p>Une gamme complète d'accessoires et produits, un laboratoire d'analyse d'eau et une salle de montre chaleureuse pour vous conseiller.</p><a class="lnk" href="#contact">Nous joindre</a></article></div></div></section>
+<section style="padding-top:0"><div class="wrap"><div class="stats"><div class="stat rv"><div class="big"><span data-count="1972">0</span></div><div class="lbl">année de fondation, par Claude Fontaine et son épouse Céline</div></div><div class="stat rv"><div class="big"><span data-count="3">0</span> générations</div><div class="lbl">la 2e génération (Charles et Eric), puis Carl-André et Catherine</div></div></div></div></section>
+<section id="realisations" style="background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)"><div class="wrap"><div class="sec-head rv"><div class="tag">Réalisations</div><h2>Laissez-vous rêver</h2><p>Des piscines creusées réalisées sur la Rive-Sud et en Montérégie — photos tirées du site de Piscines Fontaine.</p></div><div class="gal"><figure class="rv"><img src="https://piscinesfontaine.com/wp-content/uploads/2020/05/Piscine_Fontaine_installation_piscine_creusee_rive-sud_monteregie_projets.jpg" alt="Projet de piscine creusée Piscines Fontaine" loading="lazy"><figcaption>Projet de piscine creusée Piscines Fontaine</figcaption></figure><figure class="rv"><img src="https://piscinesfontaine.com/wp-content/uploads/2021/06/Piscine_Fontaine_installation_piscine_creusee_rive-sud_monteregie_realisation_04@2x-copy.jpg" alt="Réalisation de piscine creusée par Piscines Fontaine" loading="lazy"><figcaption>Réalisation de piscine creusée par Piscines Fontaine</figcaption></figure><figure class="rv"><img src="https://piscinesfontaine.com/wp-content/uploads/2020/05/Piscine_Fontaine_installation_piscine_creusee_rive-sud_monteregie_bienvenue-1.jpg" alt="Piscine creusée installée par Piscines Fontaine" loading="lazy"><figcaption>Piscine creusée installée par Piscines Fontaine</figcaption></figure><figure class="rv"><img src="https://piscinesfontaine.com/wp-content/uploads/2020/06/Piscine_Fontaine_installation_piscine_creusee_rive-sud_monteregie_realisations.jpg" alt="Réalisations de piscines creusées Piscines Fontaine" loading="lazy"><figcaption>Réalisations de piscines creusées Piscines Fontaine</figcaption></figure></div></div></section>
+<section id="apropos"><div class="wrap"><div class="about"><div class="rv"><img src="https://piscinesfontaine.com/wp-content/uploads/2020/05/Piscine_Fontaine_installation_piscine_creusee_rive-sud_monteregie_bienvenue-1.jpg" alt="Piscine creusée installée par Piscines Fontaine" loading="lazy"></div><div class="rv"><div class="tag" style="color:var(--acc);font-size:12px;font-weight:800;letter-spacing:.35em;text-transform:uppercase">L'entreprise familiale</div><h2 style="margin-top:14px">Trois générations, une même exigence</h2><p>C'est en 1972 que Piscines Fontaine a vu le jour, fondée et dirigée par Claude Fontaine et son épouse Céline. La continuité est maintenant assurée par une deuxième génération, leurs fils Charles et Eric — et la 3e génération est déjà en place avec Carl-André et Catherine.</p><ul class="checks"><li>Qualité de service et de construction remarquables sur la Rive-Sud</li><li>Personnel fiable et professionnel, à l'écoute de vos besoins</li><li>Un objectif simple : vous rendre la baignade agréable</li></ul></div></div></div></section>
+<section id="processus" style="background:var(--bg2);border-top:1px solid var(--line)"><div class="wrap"><div class="sec-head rv"><div class="tag">Fonctionnement</div><h2>De l'idée au premier plongeon</h2></div><div class="steps"><div class="step rv"><div class="n">1</div><h3>Rencontrer l'équipe</h3><p>Parlez de votre projet à notre personnel, à l'écoute de vos besoins.</p></div><div class="step rv"><div class="n">2</div><h3>Conception par ordinateur</h3><p>Recevez un croquis d'ensemble du projet proposé pour décider en toute confiance.</p></div><div class="step rv"><div class="n">3</div><h3>Construction</h3><p>Une construction unique, sans compromis sur la qualité du produit ni du service.</p></div><div class="step rv"><div class="n">4</div><h3>Baignade</h3><p>Accessoires, analyse d'eau et conseils en salle de montre pour profiter de votre piscine.</p></div></div></div></section>
+<section class="contact" id="contact"><div class="wrap"><div class="cgrid">
+<div class="cinfo rv"><h2>Votre cour mérite sa fontaine</h2><p>Appelez au 450 655-0689 ou écrivez à info@piscinesfontaine.com — Boucherville, Rive-Sud.</p><div class="row"><b>Téléphone :</b> 450 655-0689</div><div class="row"><b>Courriel :</b> info@piscinesfontaine.com</div><div class="row"><b>Télécopieur :</b> 450 655-4319</div></div>
+<div class="rv"><form id="dform" novalidate>
+<div><label for="fn">Nom *</label><input id="fn" required type="text" autocomplete="name"></div>
+<div><label for="ft">Téléphone *</label><input id="ft" required type="tel" autocomplete="tel"></div>
+
+<div><label for="fb">Votre besoin *</label><select id="fb" required><option value="">Choisir…</option><option>Piscine creusée sur mesure</option><option>Conception / croquis par ordinateur</option><option>Accessoires ou analyse d'eau</option><option>Autre</option></select></div>
+<div><label for="fm">Message</label><textarea id="fm" rows="4"></textarea></div>
+<p class="fnote">Démonstration — ce formulaire est une maquette : aucune demande réelle n'est transmise à l'entreprise.</p>
+<button class="btn" type="submit" style="cursor:pointer">Envoyer ma demande</button>
+<div class="fok" id="fok">Simulation terminée. Aucune demande n'a été transmise à l'entreprise.</div>
+</form></div>
+</div></div></section>
+<footer><div class="fgrid">
+<div><h4>Piscines <span>Fontaine</span></h4><p>Entreprise familiale depuis 1972. Boucherville, Rive-Sud. Télécopieur : 450 655-4319.</p></div>
+<div><h4>Nous joindre</h4><ul><li>450 655-0689</li><li>info@piscinesfontaine.com</li><li>Boucherville, QC</li><li>Rive-Sud de Montréal</li></ul></div>
+<div><h4>Services</h4><ul><li>Piscines creusées sur mesure</li><li>Conception par ordinateur</li><li>Accessoires et analyse d'eau</li></ul></div>
+<div><h4>Zone desservie</h4><p>Boucherville et la Rive-Sud de Montréal — piscines creusées résidentielles.</p></div>
+</div><div class="fbot">© 2026 Piscines Fontaine. Proposition conceptuelle de site web — démo non officielle.</div></footer>
+<a class="callbar" href="tel:+14506550689">Appeler — 450 655-0689</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  var pct=document.getElementById('lpct'),bar=document.getElementById('lbar'),loader=document.getElementById('loader'),p=0;
+  var iv=setInterval(function(){ p=Math.min(100,p+Math.random()*13+4); pct.textContent=Math.floor(p)+'%'; bar.style.width=p+'%';
+    if(p>=100){ clearInterval(iv); setTimeout(function(){ loader.style.transition='opacity .7s, visibility .7s'; loader.style.opacity='0'; loader.style.visibility='hidden';
+      if(window.gsap){ gsap.from('.hero-in > *',{y:44,opacity:0,duration:1,stagger:.1,ease:'power3.out'}); } },260); } },95);
+  window.addEventListener('scroll',function(){ document.querySelector('nav').classList.toggle('scrolled',window.scrollY>40); },{passive:true});
+  if(window.gsap && window.ScrollTrigger){ gsap.registerPlugin(ScrollTrigger);
+    gsap.utils.toArray('.rv').forEach(function(el){ gsap.fromTo(el,{y:46,opacity:0},{y:0,opacity:1,duration:.95,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%'}}); });
+    document.querySelectorAll('[data-count]').forEach(function(el){ var target=parseFloat(el.getAttribute('data-count')); var obj={v:0};
+      ScrollTrigger.create({trigger:el,start:'top 90%',once:true,onEnter:function(){ gsap.to(obj,{v:target,duration:1.8,ease:'power2.out',onUpdate:function(){ el.textContent=Math.floor(obj.v); }}); }}); });
+  } else { document.querySelectorAll('.rv').forEach(function(e){e.style.opacity=1;}); document.querySelectorAll('[data-count]').forEach(function(e){e.textContent=e.getAttribute('data-count');}); }
+  var f=document.getElementById('dform');
+  f.addEventListener('submit',function(ev){ ev.preventDefault(); document.getElementById('fok').style.display='block'; f.reset(); });
+})();
+</script>
+
+<script>
+(function(){
+  var canvas=document.getElementById('gl');
+  var gl=null;
+  try{ gl=canvas.getContext('webgl',{antialias:false,alpha:false,powerPreference:'high-performance'}); }catch(e){}
+  if(!gl){ canvas.style.display='none'; return; }
+  var vs='attribute vec2 p;varying vec2 vUv;void main(){vUv=p*0.5+0.5;gl_Position=vec4(p,0.0,1.0);}';
+  var fs="\nprecision highp float; varying vec2 vUv; uniform float uTime; uniform vec2 uRes; uniform vec2 uMouse;\nfloat hash(float n){ return fract(sin(n)*43758.5453); }\nvoid main(){\n  vec2 uv=vUv; vec2 asp=vec2(uRes.x/uRes.y,1.0);\n  vec3 col=mix(vec3(0.008,0.07,0.12), vec3(0.02,0.16,0.24), uv.y);\n  col+=vec3(0.10,0.35,0.45)*pow(1.0-uv.y,3.0)*0.5;\n  for(int j=0;j<5;j++){\n    float fj=float(j);\n    float x0=0.14+fj*0.18;\n    float dir=(fj<2.0)?1.0:((fj>2.0)?-1.0:0.0);\n    float speed=0.55+hash(fj*7.0)*0.2;\n    float ph=fract(uTime*speed+fj*0.37);\n    for(int k=0;k<24;k++){\n      float fk=float(k)/23.0;\n      float px=x0+dir*fk*0.30*(0.7+0.3*sin(uTime*0.3+fj));\n      float py=0.06+fk*0.62*(1.0-fk*0.85);\n      float fade=(1.0-abs(ph-fk)*3.0);\n      float d=length((uv-vec2(px,py))*asp);\n      float s=smoothstep(0.016,0.0,d)*max(fade,0.0);\n      vec3 jc=mix(vec3(0.45,0.75,0.90), vec3(0.90,0.78,0.48), fk);\n      col+=jc*s*0.8;\n    }\n    float lx=x0+dir*0.30*(0.7+0.3*sin(uTime*0.3+fj));\n    float sp=sin(uTime*7.0+fj*9.0)*0.5+0.5;\n    col+=vec3(0.90,0.78,0.48)*smoothstep(0.05,0.0,length((uv-vec2(lx,0.07))*asp))*sp*0.5;\n  }\n  float ref=sin(uv.x*46.0+uTime*1.6)*sin(uv.y*90.0-uTime*2.2);\n  col+=vec3(0.90,0.78,0.48)*smoothstep(0.8,1.0,ref)*step(uv.y,0.16)*0.20;\n  float vig=smoothstep(1.25,0.35,distance(uv,vec2(0.5,0.45)));\n  col*=mix(0.72,1.0,vig);\n  gl_FragColor=vec4(col,1.0);\n}";
+  function sh(type,src){ var s=gl.createShader(type); gl.shaderSource(s,src); gl.compileShader(s); return s; }
+  var prog=gl.createProgram();
+  gl.attachShader(prog,sh(gl.VERTEX_SHADER,vs));
+  gl.attachShader(prog,sh(gl.FRAGMENT_SHADER,fs));
+  gl.linkProgram(prog); gl.useProgram(prog);
+  var buf=gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER,buf);
+  gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,3,-1,-1,3]),gl.STATIC_DRAW);
+  var loc=gl.getAttribLocation(prog,'p'); gl.enableVertexAttribArray(loc); gl.vertexAttribPointer(loc,2,gl.FLOAT,false,0,0);
+  var uTime=gl.getUniformLocation(prog,'uTime'),uRes=gl.getUniformLocation(prog,'uRes'),uMouse=gl.getUniformLocation(prog,'uMouse');
+  
+  var mx=0.5,my=0.5,tx=0.5,ty=0.5;
+  window.addEventListener('mousemove',function(e){ tx=e.clientX/window.innerWidth; ty=1-e.clientY/window.innerHeight; },{passive:true});
+  
+  function resize(){ var d=Math.min(window.devicePixelRatio||1,1.75); canvas.width=canvas.clientWidth*d; canvas.height=canvas.clientHeight*d; gl.viewport(0,0,canvas.width,canvas.height); }
+  window.addEventListener('resize',resize); resize();
+  var t0=performance.now();
+  (function loop(now){ requestAnimationFrame(loop); mx+=(tx-mx)*0.045; my+=(ty-my)*0.045;
+    gl.uniform1f(uTime,(now-t0)/1000); gl.uniform2f(uRes,canvas.width,canvas.height); gl.uniform2f(uMouse,mx,my);
+    if(window.__glTick) window.__glTick(gl,(now-t0)/1000);
+    gl.drawArrays(gl.TRIANGLES,0,3); })(t0);
+})();
+</script>
+</body>
+</html>
