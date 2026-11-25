@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Cynthia Watier Esthétique — Soins du visage, épilation laser et médico-esthétique | Saint-Jean-sur-Richelieu</title>
+<meta name="description" content="Cynthia Watier Esthétique, 39 boul. Saint-Luc, Saint-Jean-sur-Richelieu : soins du visage, épilation laser In-Motion, détatouage laser, microneedling, lipocavitation, massothérapie et drainage lymphatique. Réservez en ligne.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ivoire:#f6efe7; --creme:#fdfaf6; --prune:#452a38; --prune-fonce:#2c1822;
+  --rose:#c98a7d; --rose-fonce:#a96a5e; --rose-clair:#ecd3c8; --dore:#c9a25e;
+  --gris:#8a7a80; --ligne:rgba(69,42,56,.16);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:auto}
+body{background:var(--ivoire);color:var(--prune);font-family:"Jost",system-ui,sans-serif;font-weight:300;line-height:1.65;overflow-x:hidden}
+::selection{background:var(--rose);color:#fff}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.serif{font-family:"Cormorant Garamond",serif;font-weight:600;line-height:1.05}
+.wrap{max-width:1280px;margin:0 auto;padding:0 28px}
+.eyebrow{font-size:.72rem;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--rose-fonce)}
+/* bande démo */
+.demo-band{background:var(--prune-fonce);color:#e8c9bd;text-align:center;font-size:.78rem;font-weight:400;letter-spacing:.08em;padding:8px 14px;position:relative;z-index:60}
+.demo-band b{color:#fff;font-weight:600}
+/* grain */
+.grain{position:fixed;inset:-50%;width:200%;height:200%;pointer-events:none;z-index:200;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");animation:grain 9s steps(6) infinite}
+@keyframes grain{0%,100%{transform:translate(0,0)}20%{transform:translate(-4%,3%)}40%{transform:translate(3%,-5%)}60%{transform:translate(-2%,-3%)}80%{transform:translate(4%,4%)}}
+/* loader */
+#loader{position:fixed;inset:0;z-index:300;background:var(--prune-fonce);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;color:var(--ivoire)}
+#loader .mot{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:clamp(2.4rem,8vw,5.6rem);letter-spacing:.05em;overflow:hidden;text-align:center;line-height:1}
+#loader .mot span{display:inline-block;transform:translateY(110%)}
+#loader .mot .r{color:var(--rose);font-style:italic}
+#loader .sous{font-size:.75rem;letter-spacing:.4em;text-transform:uppercase;color:var(--rose-clair)}
+#loader .pct{font-size:.95rem;letter-spacing:.3em;color:var(--dore)}
+#loader .barre{width:min(380px,70vw);height:1px;background:rgba(246,239,231,.2);overflow:hidden}
+#loader .barre i{display:block;height:100%;width:0%;background:var(--rose)}
+/* curseur */
+.cursor-dot,.cursor-ring{position:fixed;top:0;left:0;pointer-events:none;z-index:250;border-radius:50%;transform:translate(-50%,-50%)}
+.cursor-dot{width:7px;height:7px;background:var(--rose-fonce)}
+.cursor-ring{width:36px;height:36px;border:1.5px solid rgba(169,106,94,.8);transition:width .25s,height .25s,background .25s;display:flex;align-items:center;justify-content:center}
+.cursor-ring.gros{width:82px;height:82px;background:rgba(201,138,125,.92);border-color:transparent}
+.cursor-ring .vue{font-size:.6rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#fff;opacity:0;transition:opacity .2s}
+.cursor-ring.gros .vue{opacity:1}
+@media (hover:none){.cursor-dot,.cursor-ring{display:none}}
+/* nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px 34px;transition:background .4s,padding .4s}
+.nav.scrolled{background:rgba(253,250,246,.92);backdrop-filter:blur(12px);padding:12px 34px;box-shadow:0 1px 0 var(--ligne)}
+.nav .logo{font-family:"Cormorant Garamond",serif;font-weight:700;font-size:1.35rem;letter-spacing:.04em;color:#fff}
+.nav.scrolled .logo{color:var(--prune)}
+.nav .logo em{color:var(--rose);font-style:italic}
+.nav.scrolled .logo em{color:var(--rose-fonce)}
+.nav .liens{display:flex;gap:30px;font-size:.82rem;font-weight:400;letter-spacing:.18em;text-transform:uppercase}
+.nav .liens a{color:rgba(255,255,255,.85);position:relative;padding-bottom:3px}
+.nav.scrolled .liens a{color:var(--prune)}
+.nav .liens a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--rose);transition:width .3s}
+.nav .liens a:hover::after{width:100%}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--prune);color:var(--ivoire);font-size:.82rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;padding:15px 30px;border-radius:999px;border:1px solid var(--prune);cursor:pointer;transition:background .3s,color .3s,transform .3s}
+.btn:hover{background:var(--rose-fonce);border-color:var(--rose-fonce)}
+.btn.clair{background:transparent;color:#fff;border-color:rgba(255,255,255,.6)}
+.btn.clair:hover{background:#fff;color:var(--prune)}
+.btn.rose{background:var(--rose);border-color:var(--rose);color:#fff}
+.btn.rose:hover{background:var(--rose-fonce);border-color:var(--rose-fonce)}
+@media(max-width:900px){.nav .liens{display:none}}
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;background:var(--prune-fonce)}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%}
+.hero .voile{position:absolute;inset:0;background:linear-gradient(180deg,rgba(44,24,34,.15) 0%,rgba(44,24,34,.05) 45%,rgba(44,24,34,.78) 100%)}
+.hero .photo{position:absolute;right:6vw;top:14vh;width:min(34vw,430px);aspect-ratio:3/4;object-fit:cover;border-radius:220px 220px 14px 14px;box-shadow:0 40px 80px rgba(0,0,0,.45);border:6px solid rgba(253,250,246,.9)}
+.hero .contenu{position:relative;z-index:2;color:#fff;padding:0 34px 64px;max-width:1280px;width:100%;margin:0 auto}
+.hero h1{font-size:clamp(3rem,8.4vw,7.2rem);font-weight:600;line-height:.98;margin:18px 0 20px}
+.hero h1 em{color:var(--rose-clair);font-style:italic}
+.hero .sous-titre{max-width:560px;font-size:1.12rem;font-weight:300;color:rgba(255,255,255,.88)}
+.hero .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
+.hero .infos{display:flex;gap:34px;flex-wrap:wrap;margin-top:44px;padding-top:26px;border-top:1px solid rgba(255,255,255,.25);font-size:.85rem;letter-spacing:.06em}
+.hero .infos b{display:block;font-family:"Cormorant Garamond",serif;font-size:1.5rem;font-weight:600;letter-spacing:0}
+@media(max-width:900px){.hero .photo{display:none}}
+/* marquee */
+.marquee{background:var(--prune);color:var(--rose-clair);overflow:hidden;padding:16px 0;white-space:nowrap}
+.marquee .piste{display:inline-block;animation:defile 30s linear infinite;font-family:"Cormorant Garamond",serif;font-size:1.35rem;font-weight:500;letter-spacing:.06em}
+.marquee .piste span{margin:0 22px}
+.marquee .piste i{color:var(--dore);font-style:normal}
+@keyframes defile{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+/* manifeste */
+.manifeste{padding:110px 0 90px;background:var(--creme)}
+.manifeste .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:center}
+.manifeste h2{font-size:clamp(2.1rem,4vw,3.4rem);margin:16px 0 22px}
+.manifeste p{font-size:1.06rem;color:#5c4a54}
+.manifeste .citation{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:1.5rem;line-height:1.4;color:var(--prune);border-left:2px solid var(--rose);padding-left:22px;margin-top:28px}
+.manifeste .img-wrap{position:relative}
+.manifeste .img-wrap img{border-radius:14px;aspect-ratio:4/5;object-fit:cover;width:100%}
+.manifeste .badge{position:absolute;left:-24px;bottom:26px;background:var(--prune);color:var(--ivoire);border-radius:12px;padding:18px 22px;box-shadow:0 20px 40px rgba(44,24,34,.3)}
+.manifeste .badge b{font-family:"Cormorant Garamond",serif;font-size:2rem;display:block;line-height:1}
+.manifeste .badge span{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rose-clair)}
+@media(max-width:900px){.manifeste .grid{grid-template-columns:1fr}.manifeste .badge{left:12px}}
+/* services */
+.services{padding:100px 0;background:var(--ivoire)}
+.services .entete{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:54px}
+.services h2{font-size:clamp(2.1rem,4vw,3.4rem);margin-top:14px}
+.services .note{max-width:420px;color:#5c4a54;font-size:.98rem}
+.grille{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.carte{background:var(--creme);border:1px solid var(--ligne);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s}
+.carte:hover{transform:translateY(-8px);box-shadow:0 30px 60px rgba(44,24,34,.16)}
+.carte .visuel{overflow:hidden;aspect-ratio:4/3}
+.carte .visuel img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.carte:hover .visuel img{transform:scale(1.07)}
+.carte .corps{padding:26px 26px 28px;display:flex;flex-direction:column;flex:1}
+.carte .num{font-size:.72rem;letter-spacing:.3em;color:var(--dore);font-weight:500}
+.carte h3{font-family:"Cormorant Garamond",serif;font-size:1.65rem;font-weight:600;margin:8px 0 10px;line-height:1.15}
+.carte p{font-size:.96rem;color:#5c4a54;flex:1}
+.carte .bas{display:flex;justify-content:space-between;align-items:center;margin-top:20px;padding-top:18px;border-top:1px solid var(--ligne)}
+.carte .tarif{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--rose-fonce);font-weight:500}
+.carte .voir{font-size:.82rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--prune);border-bottom:1px solid var(--rose);padding-bottom:2px;cursor:pointer;background:none;border-top:none;border-left:none;border-right:none}
+.carte .voir:hover{color:var(--rose-fonce)}
+@media(max-width:900px){.grille{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.grille{grid-template-columns:1fr}}
+/* fiche service (page par service) */
+.fiche{position:fixed;inset:0;z-index:400;background:rgba(44,24,34,.55);backdrop-filter:blur(6px);display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:5vh 20px}
+.fiche.ouverte{display:flex}
+.fiche .panneau{background:var(--creme);border-radius:20px;max-width:920px;width:100%;overflow:hidden;box-shadow:0 40px 90px rgba(0,0,0,.4)}
+.fiche .panneau img{width:100%;height:340px;object-fit:cover}
+.fiche .panneau .texte{padding:38px 42px 44px}
+.fiche .panneau h3{font-family:"Cormorant Garamond",serif;font-size:2.4rem;font-weight:600;margin:10px 0 14px}
+.fiche .panneau .desc{font-size:1.05rem;color:#5c4a54}
+.fiche .points{display:grid;grid-template-columns:1fr 1fr;gap:12px 26px;margin:26px 0;list-style:none}
+.fiche .points li{font-size:.98rem;padding-left:22px;position:relative}
+.fiche .points li::before{content:"";position:absolute;left:0;top:.6em;width:8px;height:8px;border-radius:50%;background:var(--rose)}
+.fiche .tarif-box{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;background:var(--ivoire);border:1px solid var(--ligne);border-radius:12px;padding:18px 22px;margin-bottom:26px}
+.fiche .tarif-box b{font-family:"Cormorant Garamond",serif;font-size:1.4rem}
+.fiche .tarif-box span{font-size:.88rem;color:#5c4a54;display:block}
+.fiche .actions{display:flex;gap:12px;flex-wrap:wrap}
+.fiche .fermer{position:absolute;top:16px;right:16px;width:44px;height:44px;border-radius:50%;background:var(--creme);border:none;font-size:1.2rem;cursor:pointer;color:var(--prune);z-index:2}
+.fiche .panneau{position:relative}
+@media(max-width:600px){.fiche .points{grid-template-columns:1fr}.fiche .panneau .texte{padding:28px 22px 32px}}
+/* repères */
+.reperes{padding:90px 0;background:var(--prune);color:var(--ivoire)}
+.reperes .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;text-align:center}
+.reperes b{font-family:"Cormorant Garamond",serif;font-size:clamp(2.2rem,4vw,3.4rem);font-weight:600;display:block;color:var(--rose-clair)}
+.reperes span{font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(246,239,231,.75)}
+@media(max-width:800px){.reperes .grid{grid-template-columns:1fr 1fr}}
+/* boutique */
+.boutique{padding:100px 0;background:var(--creme)}
+.boutique .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
+.boutique h2{font-size:clamp(2.1rem,4vw,3.2rem);margin:16px 0 20px}
+.boutique p{color:#5c4a54;font-size:1.05rem}
+.boutique .marques{display:flex;gap:14px;flex-wrap:wrap;margin:26px 0 30px}
+.boutique .marques span{border:1px solid var(--ligne);border-radius:999px;padding:10px 20px;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500;background:var(--ivoire)}
+.boutique img{border-radius:14px;aspect-ratio:4/3;object-fit:cover;width:100%}
+@media(max-width:900px){.boutique .grid{grid-template-columns:1fr}}
+/* galerie */
+.galerie{padding:0 0 100px;background:var(--creme)}
+.galerie .bande{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.galerie img{border-radius:12px;aspect-ratio:1/1;object-fit:cover;width:100%;transition:transform .5s}
+.galerie img:hover{transform:scale(1.03)}
+@media(max-width:800px){.galerie .bande{grid-template-columns:1fr 1fr}}
+/* cta / contact */
+.cta{padding:110px 0;background:var(--prune-fonce);color:var(--ivoire);position:relative;overflow:hidden}
+.cta::before{content:"";position:absolute;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(201,138,125,.35),transparent 65%);top:-220px;right:-120px;pointer-events:none}
+.cta h2{font-size:clamp(2.4rem,5vw,4.2rem);margin:16px 0 20px;position:relative}
+.cta h2 em{color:var(--rose);font-style:italic}
+.cta p{max-width:560px;color:rgba(246,239,231,.85);position:relative}
+.cta .coord{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:56px;position:relative}
+.cta .coord div{border-top:1px solid rgba(246,239,231,.25);padding-top:18px}
+.cta .coord b{display:block;font-size:.75rem;letter-spacing:.28em;text-transform:uppercase;color:var(--rose-clair);margin-bottom:8px;font-weight:500}
+.cta .coord span{font-size:1.05rem}
+.cta .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:40px;position:relative}
+@media(max-width:800px){.cta .coord{grid-template-columns:1fr}}
+footer{background:#1d1016;color:rgba(246,239,231,.65);padding:34px 0;font-size:.85rem}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer a{color:var(--rose-clair)}
+.reveal{opacity:0;transform:translateY(36px)}
+</style>
+</head>
+<body>
+<div class="demo-band">DÉMO — maquette gratuite préparée pour <b>Cynthia Watier Esthétique</b> par Joey Carpentier, développement web — Rive-Sud</div>
+<div class="grain"></div>
+<div id="loader">
+  <div class="mot"><span>Cynthia</span> <span class="r">Watier</span></div>
+  <div class="sous">Esthétique — Saint-Jean-sur-Richelieu</div>
+  <div class="barre"><i id="barre"></i></div>
+  <div class="pct" id="pct">0%</div>
+</div>
+<div class="cursor-dot"></div>
+<div class="cursor-ring"><span class="vue"></span></div>
+
+<nav class="nav" id="nav">
+  <a class="logo" href="#accueil">Cynthia <em>Watier</em></a>
+  <div class="liens">
+    <a href="#services">Soins</a>
+    <a href="#institut">L'institut</a>
+    <a href="#boutique">Boutique</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a class="btn rose magnet" href="https://www.fresha.com/fr/a/cynthia-watier-esthetique-saint-jean-sur-richelieu-39-boul-st-luc-st-jean-sur-richelieu-g46u1mtn" target="_blank" rel="noopener">Réserver</a>
+</nav>
+
+<header class="hero" id="accueil">
+  <canvas id="gl"></canvas>
+  <div class="voile"></div>
+  <img class="photo" src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=900&auto=format&fit=crop" alt="Soin du visage à l'institut Cynthia Watier Esthétique">
+  <div class="contenu">
+    <span class="eyebrow" style="color:var(--rose-clair)">Institut d'esthétique — Saint-Jean-sur-Richelieu</span>
+    <h1 class="serif">La beauté,<br><em>en douceur.</em></h1>
+    <p class="sous-titre">Soins du visage, épilation laser, détatouage et traitements médico-esthétiques — une équipe de spécialistes, des technologies de pointe et un moment rien qu'à vous.</p>
+    <div class="cta-row">
+      <a class="btn rose magnet" href="https://www.fresha.com/fr/a/cynthia-watier-esthetique-saint-jean-sur-richelieu-39-boul-st-luc-st-jean-sur-richelieu-g46u1mtn" target="_blank" rel="noopener">Réserver en ligne</a>
+      <a class="btn clair magnet" href="#services">Découvrir les soins</a>
+    </div>
+    <div class="infos">
+      <div><b>5,0 / 5</b>Note de 23 avis</div>
+      <div><b>39, boul. Saint-Luc</b>Saint-Jean-sur-Richelieu</div>
+      <div><b>514 922-0418</b>Appelez l'institut</div>
+    </div>
+  </div>
+</header>
+
+<div class="marquee" aria-hidden="true">
+  <div class="piste">
+    <span>Soins du visage</span><i>•</i><span>Épilation laser</span><i>•</i><span>Détatouage laser</span><i>•</i><span>Microneedling</span><i>•</i><span>Lipocavitation</span><i>•</i><span>Massothérapie</span><i>•</i><span>Drainage lymphatique</span><i>•</i><span>Manucure</span><i>•</i><span>Pose de cils</span><i>•</i>
+    <span>Soins du visage</span><i>•</i><span>Épilation laser</span><i>•</i><span>Détatouage laser</span><i>•</i><span>Microneedling</span><i>•</i><span>Lipocavitation</span><i>•</i><span>Massothérapie</span><i>•</i><span>Drainage lymphatique</span><i>•</i><span>Manucure</span><i>•</i><span>Pose de cils</span><i>•</i>
+  </div>
+</div>
+
+<section class="manifeste" id="institut">
+  <div class="wrap grid">
+    <div class="reveal">
+      <span class="eyebrow">Notre mission</span>
+      <h2 class="serif">Chaque cliente mérite de se sentir unique.</h2>
+      <p>Chez Cynthia Watier Esthétique, notre mission est de vous offrir une expérience de beauté exceptionnelle. Nous personnalisons nos services selon vos besoins — du simple facial aux traitements avancés médico-esthétiques à la fine pointe de la technologie, vous trouverez tous vos services esthétiques sous le même toit.</p>
+      <p class="citation">« Une équipe de spécialistes passionnés, formés aux dernières techniques de beauté, dans une atmosphère chaleureuse et accueillante. »</p>
+    </div>
+    <div class="img-wrap reveal">
+      <img src="https://img1.wsimg.com/isteam/ip/f76403d9-8df9-44da-9827-e743927154d7/pro-qXTcJCWm%20-%20Copie.jpeg" alt="L'institut Cynthia Watier Esthétique">
+      <div class="badge"><b>5,0 / 5</b><span>23 avis clients</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="entete reveal">
+      <div>
+        <span class="eyebrow">Nos services</span>
+        <h2 class="serif">Une vraie page<br>pour chaque soin.</h2>
+      </div>
+      <p class="note">Fini les boutons qui renvoient ailleurs : chaque soin a sa page, avec sa description, ses bienfaits et son tarif. Touchez un soin pour voir sa fiche complète, puis réservez en ligne.</p>
+    </div>
+    <div class="grille" id="grille-services"></div>
+  </div>
+</section>
+
+<div class="fiche" id="fiche" role="dialog" aria-modal="true">
+  <div class="panneau">
+    <button class="fermer" id="fermer-fiche" aria-label="Fermer">×</button>
+    <img id="fiche-img" src="" alt="">
+    <div class="texte">
+      <span class="eyebrow" id="fiche-cat"></span>
+      <h3 id="fiche-titre"></h3>
+      <p class="desc" id="fiche-desc"></p>
+      <ul class="points" id="fiche-points"></ul>
+      <div class="tarif-box">
+        <div><b id="fiche-tarif">Tarif sur consultation</b><span>Le tarif exact de ce soin s'affiche ici, sur sa page.</span></div>
+        <span id="fiche-duree"></span>
+      </div>
+      <div class="actions">
+        <a class="btn rose magnet" href="https://www.fresha.com/fr/a/cynthia-watier-esthetique-saint-jean-sur-richelieu-39-boul-st-luc-st-jean-sur-richelieu-g46u1mtn" target="_blank" rel="noopener">Réserver ce soin</a>
+        <a class="btn magnet" href="tel:+15149220418">Appeler — 514 922-0418</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="reperes">
+  <div class="wrap grid reveal">
+    <div><b>5,0 / 5</b><span>Note — 23 avis</span></div>
+    <div><b>9</b><span>Services sous un même toit</span></div>
+    <div><b>2</b><span>Lignes de produits en boutique</span></div>
+    <div><b>1</b><span>Adresse — boul. Saint-Luc</span></div>
+  </div>
+</section>
+
+<section class="boutique" id="boutique">
+  <div class="wrap grid">
+    <div class="reveal">
+      <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=1200&auto=format&fit=crop" alt="Produits de soins en boutique">
+    </div>
+    <div class="reveal">
+      <span class="eyebrow">Boutique</span>
+      <h2 class="serif">Prolongez le soin<br>à la maison.</h2>
+      <p>L'institut vous offre des produits haut de gamme pour entretenir votre peau entre vos rendez-vous, choisis par l'équipe selon votre type de peau.</p>
+      <div class="marques"><span>Hale Derma Pure</span><span>Me Line</span></div>
+      <a class="btn magnet" href="https://cynthiawatieresthetique.com/" target="_blank" rel="noopener">Voir la boutique</a>
+    </div>
+  </div>
+</section>
+
+<section class="galerie">
+  <div class="wrap">
+    <div class="bande reveal">
+      <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=900&auto=format&fit=crop" alt="Ambiance spa à l'institut">
+      <img src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?q=80&w=900&auto=format&fit=crop" alt="Moment de détente">
+      <img src="https://images.unsplash.com/photo-1519415943484-9fa1873496d4?q=80&w=900&auto=format&fit=crop" alt="Soin beauté">
+      <img src="https://images.unsplash.com/photo-1610992015732-2449b76344bc?q=80&w=900&auto=format&fit=crop" alt="Manucure soignée">
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--rose-clair)">Prendre rendez-vous</span>
+    <h2 class="serif">Offrez-vous<br><em>un moment pour vous.</em></h2>
+    <p>Réservez en ligne en quelques clics, ou appelez l'institut — l'équipe vous conseillera le soin qui convient à votre peau.</p>
+    <div class="cta-row">
+      <a class="btn rose magnet" href="https://www.fresha.com/fr/a/cynthia-watier-esthetique-saint-jean-sur-richelieu-39-boul-st-luc-st-jean-sur-richelieu-g46u1mtn" target="_blank" rel="noopener">Réserver en ligne</a>
+      <a class="btn clair magnet" href="tel:+15149220418">514 922-0418</a>
+    </div>
+    <div class="coord">
+      <div><b>Adresse</b><span>39, boul. Saint-Luc<br>Saint-Jean-sur-Richelieu, QC J2W 1E3</span></div>
+      <div><b>Téléphone</b><span>514 922-0418</span></div>
+      <div><b>Suivez-nous</b><span><a href="https://www.facebook.com/esthetiquecynthiawatier" target="_blank" rel="noopener">Facebook — Esthétique Cynthia Watier</a></span></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Cynthia Watier Esthétique — 39, boul. Saint-Luc, Saint-Jean-sur-Richelieu</span>
+    <span>Maquette de démonstration préparée par <a href="https://joeycarpentier-tech.github.io/demos-deneigement/portfolio/" target="_blank" rel="noopener">Joey Carpentier</a> — Développement web, Rive-Sud</span>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+<script>
+(function(){
+  /* ---------- Données des soins (textes tirés du site de l'institut) ---------- */
+  var U = function(id){ return "https://images.unsplash.com/" + id + "?q=80&w=1000&auto=format&fit=crop"; };
+  var FRESHA = "https://www.fresha.com/fr/a/cynthia-watier-esthetique-saint-jean-sur-richelieu-39-boul-st-luc-st-jean-sur-richelieu-g46u1mtn";
+  var SOINS = [
+    {id:"visage", num:"01", cat:"Soins du visage", titre:"Soins du visage", img:U("photo-1596178065887-1198b6148b2b"),
+     resume:"Purifier votre peau, ralentir les effets du temps ou simplement vous offrir un moment pour vous.",
+     desc:"Vous avez envie de purifier votre peau, de ralentir les effets du temps ou de simplement vous offrir un moment pour vous ? Nos soins répondront à vos besoins. Vous en ressortirez non seulement avec une peau éclatante, mais aussi avec une sensation de bien-être total.",
+     points:["Soin personnalisé selon votre type de peau","Peau éclatante et sensation de bien-être total","Moment de détente, du simple facial au soin complet","Produits haut de gamme Hale Derma Pure et Me Line"]},
+    {id:"laser", num:"02", cat:"Épilation laser", titre:"Épilation laser In-Motion", img:U("photo-1620916566398-39f1143ab7be"),
+     resume:"Une épilation pratiquement sans douleur et pourtant hautement efficace, grâce au balayage In-Motion.",
+     desc:"Avec la technique de balayage In-Motion, nous délivrons l'énergie tout en douceur, pour des résultats supérieurs et une épilation pratiquement sans douleur — et pourtant hautement efficace.",
+     points:["Technologie In-Motion, balayage en douceur","Résultats supérieurs, séance après séance","Épilation pratiquement sans douleur","Suivi professionnel et personnalisé"]},
+    {id:"detatouage", num:"03", cat:"Détatouage laser", titre:"Détatouage laser", img:U("photo-1487412947147-5cebf100ffc2"),
+     resume:"Des résultats visibles dès la 2e séance, avec un suivi professionnel à chaque étape.",
+     desc:"Détatouage laser : des résultats visibles dès la 2e séance. Notre processus est sécuritaire et adapté à votre peau, et nous offrons un suivi professionnel et personnalisé à chaque étape.",
+     points:["Résultats visibles dès la 2e séance","Processus sécuritaire, adapté à votre peau","Suivi professionnel et personnalisé","Équipe formée aux dernières techniques"]},
+    {id:"microneedling", num:"04", cat:"Médico-esthétique", titre:"Microneedling avec exosomes", img:U("photo-1596704017254-9b121068fb31"),
+     resume:"Stimuler la régénération cellulaire et hydrater en profondeur pour une peau plus jeune et lumineuse.",
+     desc:"En plus des bienfaits réguliers du microneedling, l'ajout d'exosomes aide à stimuler la régénération cellulaire, à hydrater en profondeur et à vous donner une peau plus jeune, lumineuse et saine.",
+     points:["Régénération cellulaire stimulée","Hydratation en profondeur","Peau plus jeune, lumineuse et saine","Traitement avancé à la fine pointe de la technologie"]},
+    {id:"lipocavitation", num:"05", cat:"Silhouette", titre:"Lipocavitation", img:U("photo-1540555700478-4be289fbecef"),
+     resume:"Un traitement silhouette avancé, offert par une équipe de spécialistes.",
+     desc:"La lipocavitation fait partie des traitements avancés médico-esthétiques offerts à l'institut. L'équipe vous reçoit en consultation pour établir un plan adapté à vos objectifs.",
+     points:["Traitement silhouette à la fine pointe","Plan établi en consultation avec l'équipe","Technologies modernes, encadrement professionnel","Combinable avec le drainage lymphatique"]},
+    {id:"massotherapie", num:"06", cat:"Bien-être", titre:"Massothérapie", img:U("photo-1600334129128-685c5582fd35"),
+     resume:"Un moment de détente profonde, dans une atmosphère chaleureuse et accueillante.",
+     desc:"La massothérapie vous offre un moment de détente profonde, prodigué par des spécialistes passionnés, dans une atmosphère chaleureuse et accueillante.",
+     points:["Détente profonde et bien-être total","Massothérapeutes formés et passionnés","Atmosphère chaleureuse et accueillante","À combiner avec un soin du visage"]},
+    {id:"drainage", num:"07", cat:"Bien-être", titre:"Drainage lymphatique", img:U("photo-1616394584738-fc6e612e71b9"),
+     resume:"Un soin doux qui accompagne le corps et favorise la sensation de légèreté.",
+     desc:"Le drainage lymphatique est un soin doux, offert par l'équipe de spécialistes de l'institut, pour accompagner le corps et favoriser une sensation de légèreté et de bien-être.",
+     points:["Technique douce et relaxante","Sensation de légèreté","Complément idéal des soins silhouette","Suivi personnalisé par l'équipe"]},
+    {id:"manucure", num:"08", cat:"Mains et regard", titre:"Manucure et pose de cils", img:U("photo-1604654894610-df63bc536371"),
+     resume:"Des mains soignées et un regard sublimé, sous le même toit que tous vos soins.",
+     desc:"De la manucure à la pose de cils, l'institut réunit tous vos services esthétiques sous le même toit — un seul rendez-vous, une seule adresse.",
+     points:["Manucure soignée","Pose de cils","Tous vos services sous le même toit","Parfaite en complément d'un soin du visage"]},
+    {id:"boutique", num:"09", cat:"Boutique", titre:"Boutique — produits dermo-cosmétiques", img:U("photo-1522337660859-02fbefca4702"),
+     resume:"Hale Derma Pure et Me Line : prolongez vos soins à la maison.",
+     desc:"Chez Cynthia Watier Esthétique, nous vous offrons des produits haut de gamme, dont entre autres Hale Derma Pure et la ligne de produits dermo-cosmétiques Me Line.",
+     points:["Hale Derma Pure","Ligne dermo-cosmétique Me Line","Conseils personnalisés par l'équipe","Disponible à l'institut et en ligne"]}
+  ];
+
+  /* ---------- Grille des soins ---------- */
+  var grille = document.getElementById('grille-services');
+  SOINS.forEach(function(s){
+    var c = document.createElement('article');
+    c.className = 'carte reveal';
+    c.innerHTML = '<div class="visuel"><img src="' + s.img + '" alt="' + s.titre + '" loading="lazy"></div>' +
+      '<div class="corps"><span class="num">' + s.num + ' — ' + s.cat + '</span><h3>' + s.titre + '</h3><p>' + s.resume + '</p>' +
+      '<div class="bas"><span class="tarif">Tarif sur consultation</span><button class="voir" data-soin="' + s.id + '" data-curseur="Voir">Voir le soin</button></div></div>';
+    grille.appendChild(c);
+  });
+
+  /* ---------- Fiche détaillée (la « page » de chaque soin) ---------- */
+  var fiche = document.getElementById('fiche');
+  function ouvrirFiche(id){
+    var s = null;
+    SOINS.forEach(function(x){ if(x.id===id) s=x; });
+    if(!s) return;
+    document.getElementById('fiche-img').src = s.img.replace('w=1000','w=1600');
+    document.getElementById('fiche-img').alt = s.titre;
+    document.getElementById('fiche-cat').textContent = s.cat;
+    document.getElementById('fiche-titre').textContent = s.titre;
+    document.getElementById('fiche-desc').textContent = s.desc;
+    document.getElementById('fiche-duree').textContent = '';
+    var ul = document.getElementById('fiche-points'); ul.innerHTML = '';
+    s.points.forEach(function(p){ var li=document.createElement('li'); li.textContent=p; ul.appendChild(li); });
+    fiche.classList.add('ouverte');
+    document.body.style.overflow = 'hidden';
+  }
+  function fermerFiche(){ fiche.classList.remove('ouverte'); document.body.style.overflow = ''; }
+  grille.addEventListener('click', function(e){
+    var b = e.target.closest('[data-soin]');
+    if(b) ouvrirFiche(b.getAttribute('data-soin'));
+  });
+  document.getElementById('fermer-fiche').addEventListener('click', fermerFiche);
+  fiche.addEventListener('click', function(e){ if(e.target === fiche) fermerFiche(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') fermerFiche(); });
+
+  /* ---------- WebGL — vagues douces rose et prune (hero) ---------- */
+  (function(){
+    var canvas = document.getElementById('gl');
+    var gl = canvas.getContext('webgl', {antialias:true});
+    if(!gl){ return; }
+    function shader(type, src){
+      var sh = gl.createShader(type); gl.shaderSource(sh, src); gl.compileShader(sh);
+      return gl.getShaderParameter(sh, gl.COMPILE_STATUS) ? sh : null;
+    }
+    var vs = shader(gl.VERTEX_SHADER, 'attribute vec2 p; void main(){ gl_Position = vec4(p, 0.0, 1.0); }');
+    var fs = shader(gl.FRAGMENT_SHADER,
+      'precision mediump float; uniform vec2 u_res; uniform float u_t;' +
+      'float vague(vec2 uv, float f, float v, float ph){ return sin(uv.x*f + u_t*v + ph) * 0.5 + 0.5; }' +
+      'void main(){' +
+      ' vec2 uv = gl_FragCoord.xy / u_res;' +
+      ' vec2 p = uv; p.x *= u_res.x / u_res.y;' +
+      ' float n = vague(p, 2.2, 0.35, 0.0) * 0.45 + vague(p, 3.6, -0.22, 1.7) * 0.35 + vague(p, 5.1, 0.5, 3.1) * 0.2;' +
+      ' float m = smoothstep(0.35, 0.95, n);' +
+      ' vec3 prune = vec3(0.17, 0.09, 0.13);' +
+      ' vec3 rose  = vec3(0.79, 0.54, 0.49);' +
+      ' vec3 dore  = vec3(0.79, 0.64, 0.37);' +
+      ' vec3 col = mix(prune, rose, m);' +
+      ' col = mix(col, dore, smoothstep(0.75, 1.0, n) * 0.35);' +
+      ' float vig = 1.0 - length(uv - vec2(0.5, 0.45)) * 0.55;' +
+      ' col *= 0.75 + 0.45 * clamp(vig, 0.0, 1.0);' +
+      ' gl_FragColor = vec4(col, 1.0); }');
+    if(!vs || !fs){ return; }
+    var prog = gl.createProgram();
+    gl.attachShader(prog, vs); gl.attachShader(prog, fs); gl.linkProgram(prog);
+    if(!gl.getProgramParameter(prog, gl.LINK_STATUS)){ return; }
+    gl.useProgram(prog);
+    var buf = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+    var loc = gl.getAttribLocation(prog, 'p');
+    gl.enableVertexAttribArray(loc);
+    gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+    var uRes = gl.getUniformLocation(prog, 'u_res');
+    var uT = gl.getUniformLocation(prog, 'u_t');
+    function resize(){
+      var r = canvas.getBoundingClientRect();
+      canvas.width = Math.max(2, r.width); canvas.height = Math.max(2, r.height);
+      gl.viewport(0, 0, canvas.width, canvas.height);
+    }
+    window.addEventListener('resize', resize); resize();
+    var t0 = performance.now();
+    (function frame(){
+      gl.uniform2f(uRes, canvas.width, canvas.height);
+      gl.uniform1f(uT, (performance.now() - t0) / 1000);
+      gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+      requestAnimationFrame(frame);
+    })();
+  })();
+
+  /* ---------- Loader ---------- */
+  var pct = document.getElementById('pct'), barre = document.getElementById('barre');
+  var prog = {v:0};
+  var mots = document.querySelectorAll('#loader .mot span');
+  if(window.gsap){
+    gsap.to(mots, {y:0, duration:.9, stagger:.12, ease:'power4.out', delay:.15});
+    gsap.to(prog, {v:100, duration:1.6, ease:'power2.inOut', onUpdate:function(){
+      var n = Math.round(prog.v);
+      pct.textContent = n + '%'; barre.style.width = n + '%';
+    }, onComplete:function(){
+      gsap.to('#loader', {yPercent:-100, duration:.9, ease:'power4.inOut', delay:.2, onComplete:function(){
+        document.getElementById('loader').style.display = 'none';
+      }});
+      gsap.from('.hero .contenu > *', {y:34, opacity:0, duration:1, stagger:.09, ease:'power3.out', delay:.55});
+      gsap.from('.hero .photo', {y:60, opacity:0, duration:1.2, ease:'power3.out', delay:.7});
+    }});
+  } else {
+    document.getElementById('loader').style.display = 'none';
+  }
+
+  /* ---------- Défilement doux + révélations ---------- */
+  if(window.Lenis){
+    var lenis = new Lenis({duration:1.15, smoothWheel:true});
+    function raf(t){ lenis.raf(t); requestAnimationFrame(raf); }
+    requestAnimationFrame(raf);
+    if(window.gsap && window.ScrollTrigger){
+      lenis.on('scroll', ScrollTrigger.update);
+      gsap.registerPlugin(ScrollTrigger);
+      document.querySelectorAll('.reveal').forEach(function(el){
+        gsap.to(el, {opacity:1, y:0, duration:1, ease:'power3.out',
+          scrollTrigger:{trigger:el, start:'top 88%'}});
+      });
+    }
+  } else if(window.gsap){
+    document.querySelectorAll('.reveal').forEach(function(el){ el.style.opacity=1; el.style.transform='none'; });
+  }
+
+  /* ---------- Nav au défilement ---------- */
+  var nav = document.getElementById('nav');
+  window.addEventListener('scroll', function(){ nav.classList.toggle('scrolled', window.scrollY > 40); }, {passive:true});
+
+  /* ---------- Curseur ---------- */
+  if(window.matchMedia('(hover:hover)').matches && window.gsap){
+    var dot = document.querySelector('.cursor-dot'), ring = document.querySelector('.cursor-ring'),
+        vue = ring.querySelector('.vue');
+    var dx = gsap.quickTo(dot,'x',{duration:.08,ease:'power2'}), dy = gsap.quickTo(dot,'y',{duration:.08,ease:'power2'});
+    var rx = gsap.quickTo(ring,'x',{duration:.38,ease:'power3'}), ry = gsap.quickTo(ring,'y',{duration:.38,ease:'power3'});
+    window.addEventListener('mousemove', function(e){ dx(e.clientX); dy(e.clientY); rx(e.clientX); ry(e.clientY); });
+    document.addEventListener('mouseover', function(e){
+      var el = e.target.closest('a, button, [data-curseur]');
+      if(el){ vue.textContent = el.getAttribute('data-curseur') || ''; ring.classList.add('gros'); }
+      else { ring.classList.remove('gros'); }
+    });
+    document.querySelectorAll('.magnet').forEach(function(el){
+      el.addEventListener('mousemove', function(e){
+        var r = el.getBoundingClientRect();
+        gsap.to(el, {x:(e.clientX-r.left-r.width/2)*.3, y:(e.clientY-r.top-r.height/2)*.3, duration:.4, ease:'power3.out'});
+      });
+      el.addEventListener('mouseleave', function(){ gsap.to(el, {x:0, y:0, duration:.7, ease:'elastic.out(1,0.4)'}); });
+    });
+  }
+  window.addEventListener('load', function(){ if(window.ScrollTrigger) ScrollTrigger.refresh(); });
+})();
+</script>
+</body>
+</html>
