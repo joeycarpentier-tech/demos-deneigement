@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Climatisation Chauffage St-Hubert — Climatisation et chauffage | Rive-Sud et Montréal</title>
+<meta name="description" content="Climatisation Chauffage St-Hubert : vente, installation et réparation d'appareils de climatisation et de chauffage depuis 20 ans. Thermopompes murales et centrales. 3885, Montée St-Hubert. (450) 443-4490.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --nuit:#0d3a4f; --nuit2:#06202e; --panneau:#0d3247;
+  --neige:#f2fafc; --accent:#a5f3fc; --accent-sur:#06202e; --gris:#a9c9d4; --ligne:rgba(238,242,230,.15);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{background:var(--nuit2);color:var(--neige);font-family:"Inter",system-ui,sans-serif;line-height:1.6;overflow-x:hidden}
+::selection{background:var(--accent);color:var(--accent-sur)}
+img{display:block;max-width:100%}
+a{color:inherit}
+.disp{font-family:"Archivo",sans-serif;text-transform:uppercase;line-height:.98;font-weight:900;letter-spacing:-.01em}
+.wrap{max-width:1360px;margin:0 auto;padding:0 28px}
+.demo-band{background:#000;color:#ffe1b0;text-align:center;font-size:.78rem;font-weight:600;padding:7px 14px;border-bottom:1px solid var(--ligne);position:relative;z-index:80}
+.grain{position:fixed;inset:-50%;width:200%;height:200%;pointer-events:none;z-index:200;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");animation:grain 8s steps(10) infinite}
+@keyframes grain{0%,100%{transform:translate(0,0)}10%{transform:translate(-5%,-8%)}30%{transform:translate(3%,-12%)}50%{transform:translate(8%,4%)}70%{transform:translate(-9%,6%)}90%{transform:translate(4%,10%)}}
+#loader{position:fixed;inset:0;z-index:300;background:var(--nuit2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;overflow:hidden}
+#loader .lname{font-family:"Archivo",sans-serif;font-weight:900;font-size:clamp(1.9rem,6.5vw,4.4rem);letter-spacing:.03em;text-align:center;line-height:1.04;text-transform:uppercase;padding:0 16px}
+#loader .lname .row{display:block;overflow:hidden}
+#loader .lname .row span{display:inline-block;transform:translateY(110%)}
+#loader .lname em{font-style:normal;color:var(--accent)}
+#loader p{font-size:.72rem;font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:var(--gris);text-align:center;padding:0 16px}
+#loader .barre{width:min(420px,70vw);height:2px;background:rgba(255,255,255,.15);overflow:hidden;border-radius:2px}
+#loader .barre i{display:block;height:100%;width:0%;background:var(--accent)}
+#loader .pct{font-family:"Archivo",sans-serif;font-weight:900;font-size:1.05rem;color:var(--accent);letter-spacing:.28em}
+#loader .sig{position:absolute;left:0;right:0;bottom:10%;display:flex;justify-content:center;gap:8px;opacity:.85}
+#loader .sig i{display:block;width:2px;height:34px;background:linear-gradient(180deg,transparent,var(--accent));border-radius:2px}
+.cursor-dot,.cursor-ring{position:fixed;top:0;left:0;pointer-events:none;z-index:250;border-radius:50%;transform:translate(-50%,-50%)}
+.cursor-dot{width:8px;height:8px;background:var(--accent)}
+.cursor-ring{width:38px;height:38px;border:1.5px solid var(--accent);transition:width .25s,height .25s,background .25s;display:flex;align-items:center;justify-content:center;opacity:.85}
+.cursor-ring.gros{width:88px;height:88px;background:var(--accent)}
+.cursor-ring .vue{font-size:.6rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-sur);opacity:0;transition:opacity .2s;text-align:center;padding:0 6px}
+.cursor-ring.gros .vue{opacity:1}
+@media (hover:none),(pointer:coarse){.cursor-dot,.cursor-ring{display:none}}
+.topbar{position:fixed;top:28px;left:0;right:0;z-index:60;mix-blend-mode:difference;color:#fff}
+.topbar-in{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;max-width:1360px;margin:0 auto;gap:18px}
+.topbar .logo{font-family:"Archivo",sans-serif;font-weight:900;font-size:1.02rem;letter-spacing:.05em;text-transform:uppercase;text-decoration:none}
+.topbar nav{display:flex;gap:26px}
+.topbar nav a{text-decoration:none;font-size:.8rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+.topbar .tel{font-weight:800;font-size:.95rem;text-decoration:none;white-space:nowrap}
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;background:linear-gradient(175deg,var(--nuit),var(--nuit2) 70%)}
+#gl{position:absolute;inset:0;width:100%;height:100%;opacity:0;transition:opacity .9s}
+#gl.pret{opacity:1}
+.hero .voile{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.38) 0%,rgba(0,0,0,.03) 34%,rgba(0,0,0,.42) 68%,rgba(0,0,0,.88) 100%);pointer-events:none}
+.hero-side{position:absolute;top:50%;right:22px;transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl;font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;color:rgba(255,255,255,.75);z-index:3}
+.badge-rond{position:absolute;right:34px;bottom:210px;width:128px;height:128px;z-index:4;animation:tourne 16s linear infinite;pointer-events:none}
+.badge-rond svg{width:100%;height:100%}
+.badge-rond text{font-size:10.5px;font-weight:700;letter-spacing:2.6px;fill:var(--neige);text-transform:uppercase}
+.badge-rond .fleche{fill:var(--accent)}
+@keyframes tourne{to{transform:rotate(360deg)}}
+.hero-in{position:relative;z-index:2;padding:0 28px 30px;max-width:1360px;margin:0 auto;width:100%}
+.hero-meta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.hero-meta .tag{font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:7px 14px;background:rgba(0,0,0,.35)}
+.hero-meta .tag.plein{background:var(--accent);border-color:var(--accent);color:var(--accent-sur)}
+.hero h1{font-size:clamp(2.9rem,10vw,9rem)}
+.hero h1 .lt{display:inline-block;will-change:transform}
+.hero h1 .o{color:var(--accent)}
+.hero-sub{display:flex;justify-content:space-between;align-items:flex-end;gap:26px;flex-wrap:wrap;margin-top:14px}
+.hero-sub p{max-width:580px;font-size:1.06rem;color:rgba(255,255,255,.88)}
+.hero-sub p strong{color:#fff}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-sur);font-weight:700;text-decoration:none;padding:15px 28px;border-radius:999px;font-size:.98rem;border:none;cursor:pointer;white-space:nowrap;will-change:transform}
+.scroll-cue{display:flex;align-items:center;gap:12px;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gris);margin-top:24px}
+.scroll-cue .trait{width:64px;height:1px;background:var(--accent);position:relative;overflow:hidden}
+.scroll-cue .trait::after{content:"";position:absolute;inset:0;background:#fff;transform:translateX(-100%);animation:glisse 2.2s infinite}
+@keyframes glisse{55%{transform:translateX(0)}100%{transform:translateX(100%)}}
+.marquee{background:var(--accent);color:var(--accent-sur);overflow:hidden;padding:13px 0;transform:rotate(1.1deg) scale(1.03);margin-top:34px;position:relative;z-index:4}
+.marquee .piste{display:flex;width:max-content;will-change:transform}
+.marquee span{font-family:"Archivo",sans-serif;font-weight:900;text-transform:uppercase;font-size:1.3rem;letter-spacing:.05em;padding:0 18px;white-space:nowrap}
+.marquee span i{font-style:normal;opacity:.45;padding-left:36px}
+.manifeste{padding:130px 0 100px}
+.manifeste .sur{font-size:.78rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin-bottom:24px}
+.manifeste p{font-family:"Archivo",sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(1.8rem,4.4vw,3.7rem);line-height:1.18;max-width:1180px}
+.manifeste p .mot{opacity:.13}
+.manifeste p .mot.o{color:var(--accent)}
+section.bloc{padding:20px 0 110px;position:relative}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:20px;border-top:1px solid var(--ligne);padding-top:22px;margin-bottom:8px}
+.sec-head h2{font-size:clamp(2.4rem,6vw,4.6rem)}
+.sec-head .note{color:var(--gris);font-size:.9rem;max-width:300px;text-align:right}
+.etape-row{position:relative;display:grid;grid-template-columns:90px 1fr auto;gap:22px;align-items:center;padding:30px 10px;border-bottom:1px solid var(--ligne);overflow:hidden;isolation:isolate}
+.etape-row::before{content:"";position:absolute;inset:0;background:var(--panneau);transform:scaleY(0);transform-origin:bottom;transition:transform .35s ease;z-index:-1}
+.etape-row:hover::before{transform:scaleY(1)}
+.etape-row .num{font-family:"Archivo",sans-serif;font-weight:900;font-size:1.15rem;color:var(--accent)}
+.etape-row .titre{font-family:"Archivo",sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(1.5rem,3.8vw,3rem);line-height:1.02;transition:transform .35s ease,color .35s;will-change:transform}
+.etape-row:hover .titre{transform:translateX(14px);color:var(--accent)}
+.etape-row .desc{grid-column:2;max-width:600px;color:var(--gris);font-size:.95rem;margin-top:-6px}
+.etape-row .ico{width:52px;height:52px;grid-row:1/3}
+.etape-row .ico svg{width:100%;height:100%}
+.photos{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:36px}
+.photos figure{border-radius:16px;overflow:hidden;position:relative;border:1px solid var(--ligne)}
+.photos img{width:100%;height:250px;object-fit:cover}
+.photos figcaption{position:absolute;inset:auto 0 0 0;padding:34px 16px 12px;color:#fff;font-weight:700;font-size:.9rem;background:linear-gradient(transparent,rgba(0,0,0,.85))}
+.bande{overflow:hidden;padding:26px 0 6px;white-space:nowrap}
+.bande .mot-geant{font-family:"Archivo",sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(4.2rem,11.5vw,10.5rem);line-height:1;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.28);display:inline-block;will-change:transform}
+.bande .mot-geant b{font-weight:900;color:var(--accent);-webkit-text-stroke:0}
+.chiffres{background:var(--nuit);border-top:1px solid var(--ligne);border-bottom:1px solid var(--ligne);padding:88px 0;will-change:background-color}
+.chiffres-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+.chiffre .gros{font-family:"Archivo",sans-serif;font-weight:900;font-size:clamp(2.6rem,6.4vw,5.2rem);line-height:1}
+.chiffre .gros em{font-style:normal;color:var(--accent)}
+.chiffres.accent-bg .chiffre .gros em{color:var(--accent-sur)}
+.chiffre .lbl{color:var(--gris);font-size:.92rem;margin-top:8px;max-width:240px}
+.atouts{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:34px}
+.atout{border:1px solid var(--ligne);border-radius:14px;padding:20px;background:var(--panneau);font-size:.95rem}
+.atout b{display:block;font-family:"Archivo",sans-serif;text-transform:uppercase;font-size:1rem;margin-bottom:6px;color:var(--accent)}
+.cta{padding:30px 0 110px}
+.cta .sur{font-size:.78rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+.cta h2{font-size:clamp(2.9rem,9vw,8rem)}
+.cta h2 .o{color:var(--accent)}
+.cta .tel-gros{font-family:"Archivo",sans-serif;font-weight:900;font-size:clamp(2rem,6.4vw,5.2rem);color:var(--neige);text-decoration:none;display:inline-block;margin:16px 0 8px;border-bottom:4px solid var(--accent);line-height:1.1;transition:color .2s}
+.cta .tel-gros:hover{color:var(--accent)}
+.cta .sous{color:var(--gris);max-width:620px;margin-bottom:30px}
+.form-carte{background:var(--panneau);border:1px solid var(--ligne);border-radius:16px;padding:30px;max-width:760px}
+.form-carte h3{font-family:"Archivo",sans-serif;font-weight:800;text-transform:uppercase;font-size:1.4rem;margin-bottom:6px}
+.form-carte p{color:var(--gris);font-size:.93rem;margin-bottom:18px}
+.champs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.champs .plein{grid-column:1/-1}
+label{font-size:.82rem;font-weight:700;display:block;margin-bottom:5px;letter-spacing:.04em}
+input,textarea,select{width:100%;padding:12px;border:1.5px solid rgba(255,255,255,.25);border-radius:9px;font:inherit;font-size:.95rem;background:var(--nuit2);color:var(--neige)}
+input:focus,textarea:focus,select:focus{outline:2px solid var(--accent);border-color:var(--accent)}
+textarea{resize:vertical;min-height:90px}
+.ok-msg{display:none;background:rgba(0,0,0,.35);border:1.5px solid var(--accent);color:var(--neige);border-radius:9px;padding:12px 14px;margin-top:14px;font-weight:600;font-size:.93rem}
+.demo-note{border:1.5px dashed var(--accent);color:var(--neige);border-radius:9px;padding:10px 14px;margin-top:16px;font-size:.87rem;font-weight:600}
+footer{border-top:1px solid var(--ligne);padding:44px 0 0;color:var(--gris);font-size:.9rem;overflow:hidden}
+footer .cols{display:flex;justify-content:space-between;gap:26px;flex-wrap:wrap;padding-bottom:34px}
+footer a{color:var(--gris);text-decoration:none}
+footer a:hover{color:var(--accent)}
+footer .geant{font-family:"Archivo",sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(3.4rem,13.5vw,13rem);line-height:.82;text-align:center;color:rgba(255,255,255,.13);white-space:nowrap;transform:translateY(18%);user-select:none}
+.sticky-call{position:fixed;left:16px;right:16px;bottom:16px;z-index:70;text-align:center;padding:15px;border-radius:999px;font-weight:800;color:var(--accent-sur);background:var(--accent);display:none;text-decoration:none;box-shadow:0 14px 34px rgba(0,0,0,.4)}
+.reveal{opacity:0;transform:translateY(38px)}
+.no-anim .reveal{opacity:1;transform:none}
+.no-anim .manifeste p .mot{opacity:1}
+@media (max-width:900px){
+  .topbar{top:24px}.topbar nav{display:none}
+  .hero-side,.badge-rond{display:none}
+  .etape-row{grid-template-columns:52px 1fr}
+  .etape-row .ico{display:none}
+  .chiffres-grid{grid-template-columns:1fr 1fr}
+  .sec-head .note{display:none}
+  .champs{grid-template-columns:1fr}
+  .manifeste{padding:84px 0 64px}
+  .sticky-call{display:block}
+  section.bloc{padding-bottom:70px}
+}
+@media (prefers-reduced-motion:reduce){
+  .grain,.badge-rond,.scroll-cue .trait::after{animation:none}
+}
+
+</style>
+</head>
+<body>
+
+<div class="demo-band">Proposition conceptuelle — démo non officielle réalisée à titre de proposition. Ce site n'est pas le site officiel de l'entreprise.</div>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"><span class="vue">Voir</span></div>
+
+<div id="loader" aria-hidden="true">
+  <div class="lname">
+    <span class="row"><span>Climatisation</span></span><span class="row"><span><em>St-Hubert</em></span></span>
+  </div>
+  <p>Chauffage · Climatisation · Thermopompes</p>
+  <div class="barre"><i id="loader-barre"></i></div>
+  <div class="pct"><span id="loader-pct">0</span> %</div>
+  <div class="sig" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+</div>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="logo" href="#accueil">Climatisation St-Hubert</a>
+    <nav>
+      <a href="#manifeste">L'expertise</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="tel" href="tel:+14504434490" data-curseur="Appeler">(450) 443-4490</a>
+  </div>
+</header>
+
+<header class="hero" id="accueil">
+  <canvas id="gl" aria-hidden="true"></canvas>
+  <div class="voile"></div>
+  <div class="hero-side">Saint-Hubert — Rive-Sud et Montréal</div>
+  <div class="badge-rond" aria-hidden="true">
+    <svg viewBox="0 0 120 120">
+      <defs><path id="cercle-c" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs>
+      <text><textPath href="#cercle-c">Depuis 20 ans • Urgences 24 h / 7 jours • </textPath></text>
+      <path class="fleche" d="M52 74 L60 84 L68 74 L63 74 L63 46 L57 46 L57 74 Z"/>
+    </svg>
+  </div>
+  <div class="hero-in">
+    <div class="hero-meta">
+      <span class="tag plein">Depuis 20 ans</span><span class="tag">Urgences 24 h / 7 jours</span><span class="tag">Évaluation gratuite à domicile</span>
+    </div>
+    <h1 class="disp" id="hero-titre">Le spécialiste du chauffage<br>et de la <span class="o">climatisation</span>.</h1>
+    <div class="hero-sub">
+      <p><strong>L'expert dans le domaine de la climatisation et du chauffage depuis 20 ans</strong> à Montréal et sur la Rive-Sud : vente, installation et réparation d'appareils, en magasin à Saint-Hubert ou à votre domicile.</p>
+      <a class="btn magnet" href="#contact">Demander une soumission</a>
+    </div>
+    <div class="scroll-cue"><span class="trait"></span> Défiler</div>
+  </div>
+</header>
+
+<div class="marquee" aria-hidden="true">
+  <div class="piste" id="marquee-piste">
+    <span>Thermopompes<i>•</i></span><span>Climatisation<i>•</i></span><span>Chauffage<i>•</i></span><span>Ventilation<i>•</i></span><span>Fournaises<i>•</i></span><span>Urgences 24 h / 7 j<i>•</i></span><span>Thermopompes<i>•</i></span><span>Climatisation<i>•</i></span><span>Chauffage<i>•</i></span><span>Ventilation<i>•</i></span><span>Fournaises<i>•</i></span><span>Urgences 24 h / 7 j<i>•</i></span>
+  </div>
+</div>
+
+<section class="manifeste" id="manifeste">
+  <div class="wrap">
+    <p class="sur reveal">L'expertise</p>
+    <p id="manifeste-texte">Techniciens frigoristes certifiés et expérimentés : nous installons, nettoyons et réparons tous les modèles et toutes les marques — achetés chez nous ou non.</p>
+  </div>
+</section>
+
+<section class="bloc" id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2 class="disp">Vente, installation<br>et réparation</h2>
+      <p class="note">Thermopompes, climatiseurs, fournaises et ventilation — en magasin ou à domicile.</p>
+    </div>
+    <article class="etape-row reveal">
+      <span class="num">/ 01</span>
+      <h3 class="titre">Thermopompes murales et centrales</h3>
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#a5f3fc" stroke-width="1.6"><path d="M12 3v18M5 7l7-4 7 4M5 17l7 4 7-4M12 3l-2 3m2-3 2 3M12 21l-2-3m2 3 2-3"/></svg></span>
+      <p class="desc">Refroidir et déshumidifier l'été, chauffer l'hiver : la plupart de nos appareils combinent climatisation, déshumidification et chauffage.</p>
+    </article>
+    <article class="etape-row reveal">
+      <span class="num">/ 02</span>
+      <h3 class="titre">Climatiseurs muraux et centraux</h3>
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#a5f3fc" stroke-width="1.6"><path d="M3 8h9a3 3 0 10-3-3M2 12h13a3 3 0 11-3 3M4 16h6a2.5 2.5 0 11-2.5 2.5"/></svg></span>
+      <p class="desc">Venez choisir votre appareil en magasin, ou un technicien se déplace gratuitement à votre domicile pour évaluer vos besoins.</p>
+    </article>
+    <article class="etape-row reveal">
+      <span class="num">/ 03</span>
+      <h3 class="titre">Chauffage et fournaises</h3>
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#a5f3fc" stroke-width="1.6"><path d="M12 3c2 4 6 6.5 6 11a6 6 0 11-12 0c0-2 1-3.8 2.2-5.2.5 1.2 1.3 2 2.3 2.4C10.2 8.6 10.8 5.6 12 3z"/></svg></span>
+      <p class="desc">Fournaises et solutions de chauffage installées selon les plus hautes normes de qualité, pour maisons, condos, chalets, commerces et entreprises.</p>
+    </article>
+    <article class="etape-row reveal">
+      <span class="num">/ 04</span>
+      <h3 class="titre">Systèmes de ventilation</h3>
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#a5f3fc" stroke-width="1.6"><path d="M3 8h9a3 3 0 10-3-3M2 12h13a3 3 0 11-3 3M4 16h6a2.5 2.5 0 11-2.5 2.5"/></svg></span>
+      <p class="desc">Ventilation et qualité de l'air : des systèmes pensés pour votre bien-être et votre confort au foyer, à prix imbattables.</p>
+    </article>
+    <article class="etape-row reveal">
+      <span class="num">/ 05</span>
+      <h3 class="titre">Réparation et nettoyage</h3>
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#a5f3fc" stroke-width="1.6"><path d="M14.5 6.5a4 4 0 105.2 5.2L14 17.4a2.1 2.1 0 01-3-3l5.7-5.7a4 4 0 00-2.2-2.2z"/></svg></span>
+      <p class="desc">Nettoyage, assainissement, décontamination et réparation de tous les modèles — et pour les urgences, nous sommes disponibles 24 h / 7 jours.</p>
+    </article>
+    <article class="etape-row reveal">
+      <span class="num">/ 06</span>
+      <h3 class="titre">Technologie Inverter</h3>
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#a5f3fc" stroke-width="1.6"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg></span>
+      <p class="desc">Certains de nos appareils sont dotés d'un compresseur Inverter qui module sa vitesse selon la demande, en climatisation comme en chauffage.</p>
+    </article>
+<div class="photos"><figure class="reveal"><img src="https://www.climatisationsthubert.com/assets/img/home-1.jpg" alt="Appareil de climatisation — Climatisation St-Hubert" loading="lazy"><figcaption>Appareil de climatisation — Climatisation St-Hubert</figcaption></figure><figure class="reveal"><img src="https://www.climatisationsthubert.com/assets/img/home-2.jpg" alt="Installation de climatisation — Climatisation St-Hubert" loading="lazy"><figcaption>Installation de climatisation — Climatisation St-Hubert</figcaption></figure><figure class="reveal"><img src="https://www.climatisationsthubert.com/assets/img/contact-1.jpg" alt="Salle de montre — Climatisation St-Hubert" loading="lazy"><figcaption>Salle de montre — Climatisation St-Hubert</figcaption></figure></div>
+  </div>
+</section>
+
+<div class="bande" aria-hidden="true"><span class="mot-geant" id="mot-geant">Climatisation <b>St-Hubert</b> — Climatisation <b>St-Hubert</b></span></div>
+
+<section class="chiffres" id="chiffres">
+  <div class="wrap">
+    <div class="chiffres-grid">
+      <div class="chiffre reveal"><div class="gros"><span class="compteur" data-cible="20">0</span><em> ans</em></div><p class="lbl">D'expérience dans le domaine de la climatisation et du chauffage.</p></div>
+      <div class="chiffre reveal"><div class="gros"><span class="compteur" data-cible="24">0</span><em> h / 7 j</em></div><p class="lbl">Disponibles pour les urgences, jour et nuit, toute la semaine.</p></div>
+      <div class="chiffre reveal"><div class="gros"><span class="compteur" data-cible="6">0</span><em> marques</em></div><p class="lbl">GREE, Goodman, Haier, York, Carrier et Coleman, aux meilleurs prix.</p></div>
+      <div class="chiffre reveal"><div class="gros"><span class="compteur" data-cible="5">0</span><em> zones</em></div><p class="lbl">Montréal, la Rive-Sud, Brossard, Longueuil et Saint-Hubert.</p></div>
+      
+    </div>
+<div class="atouts"><div class="atout reveal"><b>Évaluation gratuite</b>Un technicien se déplace gratuitement à votre domicile pour évaluer vos besoins.</div><div class="atout reveal"><b>Plans de financement</b>Des plans de financement sont disponibles sur nos appareils.</div><div class="atout reveal"><b>Excellentes garanties</b>Des produits de la plus haute qualité, accompagnés d'excellentes garanties.</div><div class="atout reveal"><b>En magasin ou à domicile</b>3885, Montée St-Hubert — ou directement chez vous, selon vos besoins.</div></div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="wrap">
+    <p class="sur reveal">Nous joindre</p>
+    <h2 class="disp reveal">Vos besoins en<br><span class="o">climatisation</span></h2>
+    <a class="tel-gros reveal" href="tel:+14504434490" data-curseur="Appeler">(450) 443-4490</a>
+    <p class="sous reveal">3885, Montée St-Hubert, St-Hubert (Québec) J3Y 4J9 — Lundi au vendredi : 8 h – 17 h · Samedi : sur rendez-vous seulement · Dimanche : fermé. Courriel : climatisationsthubert@hotmail.com · Télécopieur : (450) 443-5813.</p>
+    <form class="form-carte reveal" data-demo id="form-demo">
+      <h3>Demande de soumission</h3>
+      <p>Décrivez votre besoin : thermopompe, climatiseur, fournaise, ventilation ou urgence.</p>
+      <div class="champs">
+<div><label for="f-nom">Nom *</label><input id="f-nom" required autocomplete="name"></div>
+        <div><label for="f-tel">Téléphone *</label><input id="f-tel" required type="tel" autocomplete="tel"></div>
+        <div class="plein"><label for="f-besoin">Votre besoin *</label><select id="f-besoin" required><option value="">Choisir…</option><option>Thermopompe murale</option><option>Thermopompe centrale</option><option>Climatiseur mural ou central</option><option>Fournaise / chauffage</option><option>Ventilation</option><option>Réparation ou nettoyage</option><option>Urgence</option></select></div>
+        <div class="plein"><label for="f-msg">Décrivez votre besoin</label><textarea id="f-msg" placeholder="Ex. : maison unifamiliale à Longueuil, thermopompe murale à remplacer…"></textarea></div>
+      </div>
+      <p class="demo-note">Démonstration — ce formulaire est une maquette : aucune demande réelle n'est transmise à l'entreprise.</p>
+      <p style="margin-top:16px"><button class="btn magnet" type="submit">Envoyer ma demande</button></p>
+      <div class="ok-msg">Simulation terminée. Aucune demande n'a été transmise à l'entreprise.</div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap cols">
+<div><p><strong style="color:var(--neige)">Climatisation Chauffage St-Hubert</strong></p><p style="margin-top:6px">3885, Montée St-Hubert<br>St-Hubert, Québec, J3Y 4J9</p></div>
+    <div><p><a href="tel:+14504434490">(450) 443-4490</a></p><p style="margin-top:6px">Téléc. : (450) 443-5813<br>climatisationsthubert@hotmail.com</p></div>
+    <div><p>Lundi au vendredi : 8 h – 17 h</p><p style="margin-top:6px">Samedi : sur rendez-vous · Dimanche : fermé</p><p style="margin-top:6px">Proposition conceptuelle — démo non officielle.</p></div>
+  </div>
+  <div class="geant" aria-hidden="true">St-Hubert</div>
+</footer>
+<a class="sticky-call" href="tel:+14504434490">Appeler — (450) 443-4490</a>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+<script>
+window.__watchdog=setTimeout(function(){
+  if(!window.gsap){
+    document.documentElement.classList.add('no-anim');
+    var l=document.getElementById('loader'); if(l) l.style.display='none';
+    document.querySelectorAll('.compteur').forEach(function(el){ el.textContent=el.dataset.cible; });
+    var mt=document.getElementById('manifeste-texte');
+    if(mt) mt.querySelectorAll('.mot').forEach(function(m){ m.style.opacity=1; });
+  }
+},2600);
+document.querySelectorAll('form[data-demo]').forEach(function(f){
+  f.addEventListener('submit',function(e){ e.preventDefault(); var m=f.querySelector('.ok-msg'); if(m) m.style.display='block'; });
+});
+</script>
+<script>
+(function(){
+  if(!window.gsap){ return; }
+  clearTimeout(window.__watchdog);
+  gsap.registerPlugin(ScrollTrigger);
+  var reduit=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var lenis=null;
+  if(window.Lenis && !reduit){
+    lenis=new Lenis({ duration:1.25, smoothWheel:true });
+    lenis.on('scroll',ScrollTrigger.update);
+    gsap.ticker.add(function(t){ lenis.raf(t*1000); });
+    gsap.ticker.lagSmoothing(0);
+    document.querySelectorAll('a[href^="#"]').forEach(function(a){
+      a.addEventListener('click',function(e){
+        var cible=document.querySelector(a.getAttribute('href'));
+        if(cible){ e.preventDefault(); lenis.scrollTo(cible,{offset:-10}); }
+      });
+    });
+  }
+  (function(){
+    var h1=document.getElementById('hero-titre');
+    var noeuds=Array.prototype.slice.call(h1.childNodes), html='';
+    noeuds.forEach(function(n){
+      if(n.nodeType===3){ n.textContent.split('').forEach(function(c){ html+='<span class="lt">'+(c===' '?'&nbsp;':c)+'</span>'; }); }
+      else if(n.nodeName==='BR'){ html+='<br>'; }
+      else if(n.nodeType===1){ n.textContent.split('').forEach(function(c){ html+='<span class="lt '+n.className+'">'+(c===' '?'&nbsp;':c)+'</span>'; }); }
+    });
+    h1.innerHTML=html;
+    gsap.set('#hero-titre .lt',{yPercent:115});
+  })();
+  var pct={v:0};
+  gsap.timeline()
+    .to('#loader .lname .row > span',{y:0,duration:.7,stagger:.09,ease:'power4.out'},0)
+    .to(pct,{v:100,duration:1.3,ease:'power2.inOut',onUpdate:function(){
+        document.getElementById('loader-pct').textContent=Math.round(pct.v);
+        document.getElementById('loader-barre').style.width=pct.v+'%';
+      }},0)
+    .to('#loader .lname .row > span',{y:'-115%',duration:.5,stagger:.06,ease:'power3.in'},'+=0.12')
+    .to('#loader',{yPercent:-100,duration:.85,ease:'power4.inOut'},'-=0.22')
+    .set('#loader',{display:'none'})
+    .to('#hero-titre .lt',{yPercent:0,duration:1,stagger:.03,ease:'power4.out'},'-=0.55')
+    .from('.hero-meta .tag',{y:24,opacity:0,duration:.6,stagger:.08,ease:'power3.out'},'-=0.6')
+    .from('.hero-sub > *',{y:30,opacity:0,duration:.7,stagger:.12,ease:'power3.out'},'-=0.45')
+    .from('.badge-rond',{scale:0,opacity:0,duration:.7,ease:'back.out(1.6)'},'-=0.5')
+    .from('.topbar',{y:-30,opacity:0,duration:.6,ease:'power3.out'},'-=0.5');
+  gsap.fromTo('#gl',{scale:1.12},{scale:1,yPercent:10,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+  gsap.to('#hero-titre',{yPercent:-26,opacity:.25,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+  var piste=document.getElementById('marquee-piste');
+  var defile=gsap.to(piste,{xPercent:-50,ease:'none',duration:20,repeat:-1});
+  ScrollTrigger.create({ onUpdate:function(self){
+    var v=gsap.utils.clamp(-6,6,self.getVelocity()/-250);
+    gsap.to(defile,{timeScale:Math.abs(v)*1.6+1,duration:.3,overwrite:true});
+    gsap.to(piste,{skewX:v*1.4,duration:.3,overwrite:'auto'});
+    gsap.to('.etape-row .titre, .disp',{skewX:gsap.utils.clamp(-4,4,v*0.8),duration:.3,overwrite:'auto'});
+  }});
+  (function(){
+    var p=document.getElementById('manifeste-texte');
+    var forts=["certifiés","expérimentés","toutes","marques"];
+    p.innerHTML=p.textContent.trim().split(/\s+/).map(function(m){
+      var nu=m.replace(/[^A-Za-zÀ-ÿ'-]/g,'');
+      var o=forts.indexOf(nu)>=0?' o':'';
+      return '<span class="mot'+o+'">'+m+'</span>';
+    }).join(' ');
+    gsap.to('#manifeste-texte .mot',{opacity:1,stagger:.05,ease:'none',
+      scrollTrigger:{trigger:'.manifeste',start:'top 75%',end:'bottom 55%',scrub:true}});
+  })();
+  gsap.utils.toArray('.reveal').forEach(function(el){
+    gsap.to(el,{opacity:1,y:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%',once:true}});
+  });
+  document.querySelectorAll('.compteur').forEach(function(el){
+    var cible=parseInt(el.dataset.cible,10), obj={v:0};
+    ScrollTrigger.create({trigger:el,start:'top 88%',once:true,onEnter:function(){
+      gsap.to(obj,{v:cible,duration:1.6,ease:'power2.out',onUpdate:function(){ el.textContent=Math.round(obj.v); }});
+    }});
+  });
+  gsap.fromTo('#mot-geant',{xPercent:2},{xPercent:-30,ease:'none',
+    scrollTrigger:{trigger:'.bande',start:'top bottom',end:'bottom top',scrub:true}});
+  gsap.timeline({scrollTrigger:{trigger:'#chiffres',start:'top 65%',end:'bottom 95%',scrub:true}})
+    .set('#chiffres',{className:'chiffres accent-bg'},0)
+    .to('#chiffres',{backgroundColor:'#a5f3fc'},0)
+    .to('#chiffres .gros',{color:'#06202e'},0)
+    .to('#chiffres .lbl',{color:'#06202e'},0);
+  gsap.fromTo('footer .geant',{yPercent:46},{yPercent:18,ease:'none',
+    scrollTrigger:{trigger:'footer',start:'top bottom',end:'bottom bottom',scrub:true}});
+  if(window.matchMedia('(hover:hover) and (pointer:fine)').matches){
+    var dot=document.querySelector('.cursor-dot'), ring=document.querySelector('.cursor-ring'), vue=ring.querySelector('.vue');
+    var dx=gsap.quickTo(dot,'x',{duration:.08,ease:'power2'}), dy=gsap.quickTo(dot,'y',{duration:.08,ease:'power2'});
+    var rx=gsap.quickTo(ring,'x',{duration:.38,ease:'power3'}), ry=gsap.quickTo(ring,'y',{duration:.38,ease:'power3'});
+    window.addEventListener('mousemove',function(e){ dx(e.clientX); dy(e.clientY); rx(e.clientX); ry(e.clientY); });
+    document.querySelectorAll('a, button').forEach(function(el){
+      el.addEventListener('mouseenter',function(){ vue.textContent=el.getAttribute('data-curseur')||''; ring.classList.add('gros'); });
+      el.addEventListener('mouseleave',function(){ ring.classList.remove('gros'); });
+    });
+  } else {
+    document.querySelector('.cursor-dot').style.display='none';
+    document.querySelector('.cursor-ring').style.display='none';
+  }
+  if(window.matchMedia('(hover:hover)').matches && !reduit){
+    document.querySelectorAll('.magnet').forEach(function(el){
+      el.addEventListener('mousemove',function(e){
+        var r=el.getBoundingClientRect();
+        gsap.to(el,{x:(e.clientX-r.left-r.width/2)*.32,y:(e.clientY-r.top-r.height/2)*.32,duration:.4,ease:'power3.out'});
+      });
+      el.addEventListener('mouseleave',function(){ gsap.to(el,{x:0,y:0,duration:.7,ease:'elastic.out(1,0.4)'}); });
+    });
+  }
+  window.addEventListener('load',function(){ ScrollTrigger.refresh(); });
+})();
+</script>
+
+
+<script>
+(function(){
+  var canvas=document.getElementById('gl');
+  var gl=null;
+  try{ gl=canvas.getContext('webgl',{antialias:false,alpha:false,powerPreference:'high-performance'}); }catch(e){}
+  if(!gl){ return; }
+  var vs='attribute vec2 p; void main(){ gl_Position=vec4(p,0.,1.); }';
+  var fs=['precision highp float;',
+    'uniform vec2 u_res; uniform float u_time; uniform vec2 u_mouse;',
+    'float hash(vec2 p){ return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453123); }',
+    'float noise(vec2 p){ vec2 i=floor(p); vec2 f=fract(p); f=f*f*(3.-2.*f);',
+    '  return mix(mix(hash(i),hash(i+vec2(1.,0.)),f.x), mix(hash(i+vec2(0.,1.)),hash(i+vec2(1.,1.)),f.x), f.y); }',
+    'float fbm(vec2 p){ float v=0.; float a=.5; for(int i=0;i<4;i++){ v+=a*noise(p); p*=2.03; a*=.5; } return v; }',
+    'mat2 rot(float a){ float c=cos(a),s=sin(a); return mat2(c,-s,s,c); }',
+    'float cristal(vec2 uv, float echelle, float vitesse, float t, float derive){',
+    '  vec2 g=uv*echelle;',
+    '  g.y+=t*vitesse;',
+    '  g.x+=t*derive + sin(floor(g.y)*1.7+t*.5)*.18;',
+    '  vec2 id=floor(g); vec2 f=fract(g)-.5;',
+    '  float h=hash(id);',
+    '  if(h<.42) return 0.;',
+    '  f=rot(h*6.2831+t*.12*(h-.5))*f;',
+    '  float r=.16+.22*hash(id+4.7);',
+    '  float d=1e5;',
+    '  for(int k=0;k<3;k++){',
+    '    float a=float(k)*1.0472;',
+    '    vec2 dir=vec2(cos(a),sin(a));',
+    '    float le=dot(f,dir);',
+    '    float pe=abs(dot(f,vec2(-dir.y,dir.x)));',
+    '    float seg=(le>-r && le<r) ? pe : 1e5;',
+    '    float ram=1e5;',
+    '    if(le>.25*r && le<.8*r){ ram=abs(pe-abs(le-.5*r)*.9)+.012; }',
+    '    d=min(d,min(seg,ram));',
+    '  }',
+    '  float coeur=smoothstep(.045,.0,length(f));',
+    '  return (smoothstep(.028,.004,d)+coeur)*smoothstep(.55,.3,length(f)); }',
+    'void main(){',
+    '  vec2 st=gl_FragCoord.xy/u_res;',
+    '  vec2 uv=(gl_FragCoord.xy*2.-u_res)/u_res.y;',
+    '  float t=u_time;',
+    '  vec3 col=mix(vec3(.012,.075,.11), vec3(.039,.18,.247), pow(st.y,1.2));',
+    '  col+=vec3(.10,.24,.30)*fbm(vec2(uv.x*1.4-t*.01, uv.y*2.0))*.35*smoothstep(.1,.95,st.y);',
+    '  float halo=smoothstep(.7,.0,length(uv-vec2(.95,.62)));',
+    '  col+=vec3(.64,.95,.99)*halo*.13;',
+    '  float vent=(u_mouse.x-.5)*.5;',
+    '  float c1=cristal(uv+vec2(0.,.1),5.,.045,t,vent*.3);',
+    '  float c2=cristal(uv*1.3+7.3,8.,.085,t,vent*.6);',
+    '  float c3=cristal(uv*1.9+2.1,12.,.14,t,vent);',
+    '  col+=vec3(.72,.96,1.)*c1*.5;',
+    '  col+=vec3(.80,.97,1.)*c2*.65;',
+    '  col+=vec3(.88,.99,1.)*c3*.85;',
+    '  float givre=fbm(uv*5.5+3.0);',
+    '  float coin=smoothstep(.55,.95,(1.-st.y)*.7+(1.-abs(st.x-.5))*0.0+ (pow(abs(st.x-.5)*2.,2.)*.35)) ;',
+    '  float bord=smoothstep(.62,1.,coin+givre*.22-.12);',
+    '  col=mix(col, vec3(.78,.94,.98), bord*.30);',
+    '  col*=1.-.26*pow(length(st-.5)*1.25,2.2);',
+    '  gl_FragColor=vec4(col,1.);',
+    '}'].join('\n');
+  function shader(type,src){ var s=gl.createShader(type); gl.shaderSource(s,src); gl.compileShader(s); return s; }
+  var prog=gl.createProgram();
+  gl.attachShader(prog,shader(gl.VERTEX_SHADER,vs));
+  gl.attachShader(prog,shader(gl.FRAGMENT_SHADER,fs));
+  gl.linkProgram(prog);
+  if(!gl.getProgramParameter(prog,gl.LINK_STATUS)){ return; }
+  gl.useProgram(prog);
+  var buf=gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER,buf);
+  gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1, 3,-1, -1,3]),gl.STATIC_DRAW);
+  var loc=gl.getAttribLocation(prog,'p');
+  gl.enableVertexAttribArray(loc);
+  gl.vertexAttribPointer(loc,2,gl.FLOAT,false,0,0);
+  var uRes=gl.getUniformLocation(prog,'u_res'),
+      uTime=gl.getUniformLocation(prog,'u_time'),
+      uMouse=gl.getUniformLocation(prog,'u_mouse');
+  var mx=.5, tx=.5;
+  window.addEventListener('mousemove',function(e){ tx=e.clientX/window.innerWidth; },{passive:true});
+  var reduit=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function taille(){
+    var d=Math.min(window.devicePixelRatio||1,1.75);
+    var w=Math.floor(canvas.clientWidth*d), h=Math.floor(canvas.clientHeight*d);
+    if(canvas.width!==w||canvas.height!==h){ canvas.width=w; canvas.height=h; gl.viewport(0,0,w,h); }
+  }
+  var debut=performance.now(), visible=true;
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(es){ visible=es[0].isIntersecting; },{threshold:0}).observe(canvas);
+  }
+  function boucle(now){
+    requestAnimationFrame(boucle);
+    if(!visible) return;
+    taille();
+    mx+=(tx-mx)*.04;
+    gl.uniform2f(uRes,canvas.width,canvas.height);
+    gl.uniform1f(uTime,(now-debut)/1000);
+    gl.uniform2f(uMouse,mx,.5);
+    gl.drawArrays(gl.TRIANGLES,0,3);
+    if(!canvas.classList.contains('pret')) canvas.classList.add('pret');
+  }
+  if(reduit){
+    taille();
+    gl.uniform2f(uRes,canvas.width,canvas.height);
+    gl.uniform1f(uTime,4.2);
+    gl.uniform2f(uMouse,.5,.5);
+    gl.drawArrays(gl.TRIANGLES,0,3);
+    canvas.classList.add('pret');
+  } else {
+    requestAnimationFrame(boucle);
+  }
+})();
+</script>
+
+</body>
+</html>
