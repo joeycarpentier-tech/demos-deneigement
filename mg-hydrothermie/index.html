@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>M.G. Hydrothermie inc. — Réparation d'appareils sous pression | Boucherville</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#07332f;--bg2:#052622;--acc:#34d399;--acc2:#a7f3d0;--txt:#f2f5f3;--mut:rgba(235,242,240,.68);--line:rgba(255,255,255,.12);--card:rgba(255,255,255,.045)}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',system-ui,sans-serif;overflow-x:hidden;line-height:1.6}
+::selection{background:var(--acc);color:var(--bg)}
+h1,h2,h3,.disp{font-family:'Archivo',sans-serif;line-height:1.02;letter-spacing:-.02em}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+#loader{position:fixed;inset:0;z-index:200;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px}
+#loader .lname{font-family:'Archivo';font-weight:900;font-size:clamp(26px,5vw,54px);letter-spacing:.04em;text-transform:uppercase}
+#loader .lname span{color:var(--acc)}
+#loader .lbarw{width:min(420px,72vw);height:3px;background:rgba(255,255,255,.12);overflow:hidden;border-radius:99px}
+#loader .lbar{height:100%;width:0%;background:linear-gradient(90deg,var(--acc),var(--acc2))}
+#loader .lpct{font-family:'Archivo';font-size:15px;color:var(--mut);letter-spacing:.3em}
+#loader .ltag{color:var(--mut);font-size:12px;letter-spacing:.35em;text-transform:uppercase}
+.demo-note{position:fixed;left:14px;bottom:14px;z-index:90;background:rgba(8,12,12,.82);backdrop-filter:blur(8px);border:1px solid var(--line);color:var(--mut);font-size:11.5px;padding:9px 13px;border-radius:10px;max-width:330px}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px clamp(18px,4vw,54px);background:linear-gradient(180deg,rgba(0,0,0,.45),transparent);transition:.4s}
+nav.scrolled{background:rgba(6,10,10,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.logo{font-family:'Archivo';font-weight:900;font-size:20px;letter-spacing:.03em;text-transform:uppercase}
+.logo span{color:var(--acc)}
+nav .links{display:flex;gap:30px;font-size:13.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+nav .links a{opacity:.85}nav .links a:hover{opacity:1;color:var(--acc)}
+.navtel{border:1px solid var(--acc);color:var(--acc);padding:10px 18px;border-radius:99px;font-weight:700;font-size:14px;transition:.3s}
+.navtel:hover{background:var(--acc);color:var(--bg)}
+@media(max-width:860px){nav .links{display:none}}
+.hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;padding:140px clamp(18px,5vw,64px) 84px;overflow:hidden}
+#gl{position:absolute;inset:0;width:100%;height:100%}
+.hero .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.18),transparent 40%,rgba(0,0,0,.55));pointer-events:none}
+.hero-in{position:relative;z-index:2;max-width:980px}
+.kicker{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);background:rgba(0,0,0,.3);backdrop-filter:blur(6px);padding:8px 16px;border-radius:99px;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--acc2);margin-bottom:26px}
+.kicker::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--acc);box-shadow:0 0 14px var(--acc)}
+.hero h1{font-size:clamp(42px,7.4vw,96px);font-weight:900;text-transform:uppercase}
+.hero h1 em{font-style:normal;color:var(--acc)}
+.hero p.lead{margin-top:24px;font-size:clamp(16px,1.6vw,20px);color:var(--mut);max-width:640px}
+.cta-row{display:flex;gap:16px;flex-wrap:wrap;margin-top:36px}
+.btn{display:inline-block;background:var(--acc);color:var(--bg);font-weight:800;padding:16px 30px;border-radius:99px;font-size:15px;transition:.3s;border:1px solid var(--acc)}
+.btn:hover{background:transparent;color:var(--acc)}
+.btn.ghost{background:transparent;color:var(--txt);border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--acc);color:var(--acc)}
+.hero-badges{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+.hero-badges span{border:1px solid var(--line);background:rgba(0,0,0,.28);padding:8px 15px;border-radius:99px;font-size:13px;font-weight:600}
+.scrollhint{position:absolute;right:clamp(18px,4vw,54px);bottom:34px;z-index:2;color:var(--mut);font-size:11px;letter-spacing:.35em;text-transform:uppercase;writing-mode:vertical-rl}
+.marquee{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg2);padding:16px 0;white-space:nowrap}
+.marquee .track{display:inline-block;animation:mq 30s linear infinite;font-family:'Archivo';font-weight:800;text-transform:uppercase;letter-spacing:.14em;font-size:15px;color:var(--mut)}
+@keyframes mq{to{transform:translateX(-50%)}}
+section{padding:clamp(70px,9vw,130px) clamp(18px,5vw,64px);position:relative}
+.wrap{max-width:1240px;margin:0 auto}
+.sec-head{max-width:760px;margin-bottom:54px}
+.sec-head .tag{color:var(--acc);font-size:12px;font-weight:800;letter-spacing:.35em;text-transform:uppercase}
+.sec-head h2{font-size:clamp(32px,4.6vw,58px);font-weight:900;text-transform:uppercase;margin-top:14px}
+.sec-head p{color:var(--mut);margin-top:16px;font-size:17px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:32px 28px;transition:.35s;position:relative;overflow:hidden}
+.card::after{content:"";position:absolute;left:0;top:0;height:3px;width:0;background:linear-gradient(90deg,var(--acc),var(--acc2));transition:.45s}
+.card:hover{transform:translateY(-6px);border-color:var(--acc)}
+.card:hover::after{width:100%}
+.card .num{font-family:'Archivo';font-weight:900;font-size:15px;color:var(--acc);letter-spacing:.2em}
+.card h3{font-size:21px;font-weight:800;margin:14px 0 10px}
+.card p{color:var(--mut);font-size:15px}
+.card a.lnk{display:inline-block;margin-top:16px;color:var(--acc);font-weight:700;font-size:14px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px}
+.stat{border:1px solid var(--line);border-radius:20px;padding:34px 28px;background:linear-gradient(160deg,var(--card),transparent)}
+.stat .big{font-family:'Archivo';font-size:clamp(40px,5vw,64px);font-weight:900;color:var(--acc)}
+.stat .lbl{color:var(--mut);font-size:14.5px;margin-top:6px}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.gal figure{border-radius:20px;overflow:hidden;position:relative;border:1px solid var(--line)}
+.gal img{width:100%;height:300px;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1);filter:saturate(.92)}
+.gal figure:hover img{transform:scale(1.07)}
+.gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:38px 20px 16px;background:linear-gradient(transparent,rgba(0,0,0,.78));font-weight:700;font-size:15px}
+.about{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,70px);align-items:center}
+@media(max-width:900px){.about{grid-template-columns:1fr}}
+.about img{border-radius:22px;height:100%;min-height:340px;object-fit:cover;border:1px solid var(--line)}
+.about h2{font-size:clamp(30px,4vw,50px);font-weight:900;text-transform:uppercase}
+.about p{color:var(--mut);margin-top:18px}
+.checks{margin-top:24px;display:grid;gap:12px}
+.checks li{list-style:none;padding-left:30px;position:relative;font-weight:600}
+.checks li::before{content:"";position:absolute;left:0;top:9px;width:14px;height:8px;border-left:3px solid var(--acc);border-bottom:3px solid var(--acc);transform:rotate(-45deg)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.step{border-top:2px solid var(--line);padding-top:24px}
+.step .n{font-family:'Archivo';font-size:44px;font-weight:900;color:transparent;-webkit-text-stroke:1.5px var(--acc)}
+.step h3{margin:12px 0 8px;font-size:19px}
+.step p{color:var(--mut);font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chips span{border:1px solid var(--line);border-radius:99px;padding:9px 17px;font-weight:600;font-size:14px;background:var(--card)}
+.contact{background:var(--bg2);border-top:1px solid var(--line)}
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,70px)}
+@media(max-width:900px){.cgrid{grid-template-columns:1fr}}
+.cinfo h2{font-size:clamp(30px,4vw,52px);font-weight:900;text-transform:uppercase}
+.cinfo p{color:var(--mut);margin-top:16px}
+.cinfo .row{margin-top:22px;font-size:17px}
+.cinfo .row b{color:var(--acc)}
+form{display:grid;gap:14px}
+form label{font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+form input,form select,form textarea{width:100%;margin-top:6px;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:12px;padding:14px 16px;color:var(--txt);font:inherit;font-size:15px}
+form select option{color:#111}
+form input:focus,form select:focus,form textarea:focus{outline:2px solid var(--acc);border-color:transparent}
+.fnote{font-size:12.5px;color:var(--mut)}
+.fok{display:none;border:1px solid var(--acc);color:var(--acc);border-radius:12px;padding:14px 16px;font-weight:600}
+footer{padding:54px clamp(18px,5vw,64px) 90px;border-top:1px solid var(--line);background:#050808;color:var(--mut);font-size:14px}
+.fgrid{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px}
+footer h4{color:var(--txt);font-family:'Archivo';text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px;font-size:15px}
+footer li{list-style:none;margin:7px 0}
+.fbot{max-width:1240px;margin:36px auto 0;padding-top:20px;border-top:1px solid var(--line);font-size:12.5px}
+.callbar{position:fixed;right:16px;bottom:16px;z-index:95;background:var(--acc);color:var(--bg);font-weight:800;padding:14px 22px;border-radius:99px;box-shadow:0 12px 34px rgba(0,0,0,.45);font-size:14.5px}
+.rv{opacity:0}
+
+
+</style>
+</head>
+<body>
+<div id="loader"><div class="ltag">Boucherville — Depuis 1999</div><div class="lname">M.G. <span>Hydrothermie</span></div><div class="lbarw"><div class="lbar" id="lbar"></div></div><div class="lpct" id="lpct">0%</div></div>
+<div class="demo-note">Proposition conceptuelle — démo non officielle réalisée à titre de proposition. Ce site n'est pas le site officiel de l'entreprise.</div>
+<nav><a class="logo" href="#accueil">M.G. <span>Hydrothermie</span></a><div class="links"><a href="#services">Services</a><a href="#realisations">En images</a><a href="#apropos">L'entreprise</a><a href="#contact">Contact</a></div><a class="navtel" href="tel:+14506414110">(450) 641-4110</a></nav>
+<header class="hero" id="accueil">
+<canvas id="gl" aria-hidden="true"></canvas><div class="veil"></div>
+<div class="hero-in">
+<div class="kicker">Appareils sous pression — Boucherville</div>
+<h1>Vos appareils sous pression, <em>au-delà des normes.</em></h1>
+<p class="lead">Spécialisée dans la réparation d'appareils sous pression, avec l'expertise de la chaudronnerie, de la soudure et du chauffage industriel : un service fiable et honnête, d'une qualité exceptionnelle.</p>
+<div class="cta-row"><a class="btn" href="#contact">Demander une soumission gratuite</a><a class="btn ghost" href="tel:+14506414110">(450) 641-4110</a></div>
+<div class="hero-badges"><span>Depuis 1999</span><span>Professionnels certifiés RBQ</span><span>Soumission gratuite</span></div>
+</div><div class="scrollhint">Défiler</div>
+</header>
+<div class="marquee"><div class="track">Appareils sous pression — Réparation de chaudière — Soudage haute pression — Tuyauterie industrielle — Chauffage industriel — Fabrication sur mesure — Hot tap — Appareils sous pression — Réparation de chaudière — Soudage haute pression — Tuyauterie industrielle — Chauffage industriel — Fabrication sur mesure — Hot tap — </div></div>
+<section id="services"><div class="wrap"><div class="sec-head rv"><div class="tag">Nos services</div><h2>Installation, entretien et réparation</h2><p>Évaluation, installation, entretien ou réparation, par des professionnels qualifiés et certifiés, dans le respect du code et des normes en vigueur au Québec (RBQ).</p></div><div class="grid"><article class="card rv"><div class="num">/ 01</div><h3>Appareils sous pression</h3><p>Installation, entretien et réparation d'appareils sous pression : huile, gaz, glycol, fluide thermique, vapeur, eau chaude, etc.</p><a class="lnk" href="#contact">Nous joindre</a></article><article class="card rv"><div class="num">/ 02</div><h3>Réparation de chaudière</h3><p>Réparation de chaudière — tubes, plaque, foyer, etc. — et maintien périodique de vos équipements.</p><a class="lnk" href="#contact">Nous joindre</a></article><article class="card rv"><div class="num">/ 03</div><h3>Réservoirs et autoclaves</h3><p>Réparation de réservoir, d'autoclave, etc., par une équipe qui connaît les appareils sous pression de fond en comble.</p><a class="lnk" href="#contact">Nous joindre</a></article><article class="card rv"><div class="num">/ 04</div><h3>Tuyauterie industrielle et hot tap</h3><p>Tuyauterie industrielle et percement à chaud (hot tap), réalisés dans le respect des normes en vigueur.</p><a class="lnk" href="#contact">Nous joindre</a></article><article class="card rv"><div class="num">/ 05</div><h3>Soudage général et haute pression</h3><p>Soudage général et haute pression, en chaudronnerie comme en réparation spécialisée.</p><a class="lnk" href="#contact">Nous joindre</a></article><article class="card rv"><div class="num">/ 06</div><h3>Chauffage industriel et fabrication</h3><p>Réparation d'échangeur de chaleur, de dégazeur, de réacteur, de serpentin et de refroidisseur (chiller) ; réfection de réfractaire ; fabrication sur mesure, roulage, coupe et pliage.</p><a class="lnk" href="#contact">Nous joindre</a></article></div></div></section>
+<section style="padding-top:0"><div class="wrap"><div class="stats"><div class="stat rv"><div class="big"><span data-count="27">0</span> ans</div><div class="lbl">d'expérience — entreprise fondée en 1999 par Michel Gagné</div></div><div class="stat rv"><div class="big"><span data-count="1999">0</span></div><div class="lbl">année de fondation, à Boucherville</div></div></div></div></section>
+<section id="realisations" style="background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)"><div class="wrap"><div class="sec-head rv"><div class="tag">En images</div><h2>Notre travail, en images</h2><p>Photos tirées du site de M.G. Hydrothermie.</p></div><div class="gal"><figure class="rv"><img src="https://www.mghydrothermie.com/images/accueil_section01_pho01.jpg" alt="Atelier M.G. Hydrothermie" loading="lazy"><figcaption>Atelier M.G. Hydrothermie</figcaption></figure><figure class="rv"><img src="https://www.mghydrothermie.com/images/services_section01_pho01.jpg" alt="Travaux spécialisés" loading="lazy"><figcaption>Travaux spécialisés</figcaption></figure><figure class="rv"><img src="https://www.mghydrothermie.com/images/services_section01_pho02.jpg" alt="Travaux spécialisés" loading="lazy"><figcaption>Travaux spécialisés</figcaption></figure><figure class="rv"><img src="https://www.mghydrothermie.com/images/accueil_ss01.jpg" alt="Équipements industriels" loading="lazy"><figcaption>Équipements industriels</figcaption></figure></div></div></section>
+<section id="apropos"><div class="wrap"><div class="about"><div class="rv"><img src="https://www.mghydrothermie.com/images/accueil_ss02.jpg" alt="Équipements industriels entretenus par M.G. Hydrothermie" loading="lazy"></div><div class="rv"><div class="tag" style="color:var(--acc);font-size:12px;font-weight:800;letter-spacing:.35em;text-transform:uppercase">L'entreprise</div><h2 style="margin-top:14px">À votre service depuis plus de 20 ans</h2><p>Fort de plus de vingt années d'expérience, Michel Gagné a fondé M.G. HYDROTHERMIE INC. en 1999. L'entreprise assure un service fiable, honnête, accompagné d'un travail d'une qualité exceptionnelle. La satisfaction du client est notre priorité. Permis Installation sous Pression publié par l'entreprise : ISP 1008038.</p><ul class="checks"><li>Travaux réalisés par des professionnels qualifiés et certifiés</li><li>Respect du code et des normes en vigueur au Québec (RBQ)</li><li>Maintien périodique de vos équipements assuré</li></ul></div></div></div></section>
+<section id="processus" style="background:var(--bg2);border-top:1px solid var(--line)"><div class="wrap"><div class="sec-head rv"><div class="tag">Fonctionnement</div><h2>De l'évaluation à la remise en service</h2></div><div class="steps"><div class="step rv"><div class="n">1</div><h3>Évaluation</h3><p>Un professionnel qualifié évalue votre appareil et vos besoins.</p></div><div class="step rv"><div class="n">2</div><h3>Soumission gratuite</h3><p>Vous recevez une soumission gratuite, sans engagement.</p></div><div class="step rv"><div class="n">3</div><h3>Travaux certifiés</h3><p>Installation, entretien ou réparation dans le respect du code et des normes en vigueur au Québec.</p></div><div class="step rv"><div class="n">4</div><h3>Maintien périodique</h3><p>Le maintien périodique de vos équipements est assuré.</p></div></div></div></section>
+<section class="contact" id="contact"><div class="wrap"><div class="cgrid">
+<div class="cinfo rv"><h2>Un appareil à évaluer, installer ou réparer ?</h2><p>Soumission gratuite — parlez à un professionnel qualifié.</p><div class="row"><b>Téléphone :</b> (450) 641-4110</div><div class="row"><b>Courriel :</b> admin@mghydrothermie.com</div><div class="row"><b>Adresse :</b> 135, chemin du Tremblay, local K, Boucherville, QC J4B 7K4</div><div class="row"><b>Heures :</b> lundi au vendredi, 8 h à 17 h</div></div>
+<div class="rv"><form id="dform" novalidate>
+<div><label for="fn">Nom *</label><input id="fn" required type="text" autocomplete="name"></div>
+<div><label for="ft">Téléphone *</label><input id="ft" required type="tel" autocomplete="tel"></div>
+
+<div><label for="fb">Votre besoin *</label><select id="fb" required><option value="">Choisir…</option><option>Appareil sous pression</option><option>Réparation de chaudière</option><option>Soudage / tuyauterie</option><option>Chauffage industriel</option><option>Chaudière à vendre</option><option>Autre</option></select></div>
+<div><label for="fm">Message</label><textarea id="fm" rows="4"></textarea></div>
+<p class="fnote">Démonstration — ce formulaire est une maquette : aucune demande réelle n'est transmise à l'entreprise.</p>
+<button class="btn" type="submit" style="cursor:pointer">Envoyer ma demande</button>
+<div class="fok" id="fok">Simulation terminée. Aucune demande n'a été transmise à l'entreprise.</div>
+</form></div>
+</div></div></section>
+<footer><div class="fgrid">
+<div><h4>M.G. <span>Hydrothermie</span></h4><p>Réparation d'appareils sous pression, chaudronnerie, soudure et chauffage industriel, à Boucherville depuis 1999.</p></div>
+<div><h4>Nous joindre</h4><ul><li>(450) 641-4110</li><li>admin@mghydrothermie.com</li><li>135, chemin du Tremblay, local K</li><li>Boucherville, QC J4B 7K4</li><li>Lun.–ven. : 8 h à 17 h</li></ul></div>
+<div><h4>Services</h4><ul><li>Appareils sous pression</li><li>Réparation de chaudière</li><li>Réservoirs et autoclaves</li><li>Tuyauterie industrielle et hot tap</li><li>Soudage général et haute pression</li></ul></div>
+<div><h4>Zone desservie</h4><p>Boucherville et la Rive-Sud.</p></div>
+</div><div class="fbot">© 2026 M.G. Hydrothermie. Proposition conceptuelle de site web — démo non officielle.</div></footer>
+<a class="callbar" href="tel:+14506414110">Appeler — (450) 641-4110</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  var pct=document.getElementById('lpct'),bar=document.getElementById('lbar'),loader=document.getElementById('loader'),p=0;
+  var iv=setInterval(function(){ p=Math.min(100,p+Math.random()*13+4); pct.textContent=Math.floor(p)+'%'; bar.style.width=p+'%';
+    if(p>=100){ clearInterval(iv); setTimeout(function(){ loader.style.transition='opacity .7s, visibility .7s'; loader.style.opacity='0'; loader.style.visibility='hidden';
+      if(window.gsap){ gsap.from('.hero-in > *',{y:44,opacity:0,duration:1,stagger:.1,ease:'power3.out'}); } },260); } },95);
+  window.addEventListener('scroll',function(){ document.querySelector('nav').classList.toggle('scrolled',window.scrollY>40); },{passive:true});
+  if(window.gsap && window.ScrollTrigger){ gsap.registerPlugin(ScrollTrigger);
+    gsap.utils.toArray('.rv').forEach(function(el){ gsap.fromTo(el,{y:46,opacity:0},{y:0,opacity:1,duration:.95,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%'}}); });
+    document.querySelectorAll('[data-count]').forEach(function(el){ var target=parseFloat(el.getAttribute('data-count')); var obj={v:0};
+      ScrollTrigger.create({trigger:el,start:'top 90%',once:true,onEnter:function(){ gsap.to(obj,{v:target,duration:1.8,ease:'power2.out',onUpdate:function(){ el.textContent=Math.floor(obj.v); }}); }}); });
+  } else { document.querySelectorAll('.rv').forEach(function(e){e.style.opacity=1;}); document.querySelectorAll('[data-count]').forEach(function(e){e.textContent=e.getAttribute('data-count');}); }
+  var f=document.getElementById('dform');
+  f.addEventListener('submit',function(ev){ ev.preventDefault(); document.getElementById('fok').style.display='block'; f.reset(); });
+})();
+</script>
+
+<script>
+(function(){
+  var canvas=document.getElementById('gl');
+  var gl=null;
+  try{ gl=canvas.getContext('webgl',{antialias:false,alpha:false,powerPreference:'high-performance'}); }catch(e){}
+  if(!gl){ canvas.style.display='none'; return; }
+  var vs='attribute vec2 p;varying vec2 vUv;void main(){vUv=p*0.5+0.5;gl_Position=vec4(p,0.0,1.0);}';
+  var fs="\nprecision highp float; varying vec2 vUv; uniform float uTime; uniform vec2 uRes; uniform vec2 uMouse;\nvoid main(){\n  vec2 uv=vUv; vec2 asp=vec2(uRes.x/uRes.y,1.0);\n  vec3 col=mix(vec3(0.012,0.10,0.09), vec3(0.028,0.20,0.185), uv.y);\n  float amp=0.05+0.05*uMouse.y;\n  for(int i=0;i<6;i++){\n    float fi=float(i);\n    float base=0.14+fi*0.135;\n    float y=base + sin(uv.x*5.5+uTime*0.7+fi*1.7)*amp + sin(uv.x*11.0-uTime*0.45+fi)*0.018;\n    float d=abs(uv.y-y);\n    float core=smoothstep(0.012,0.0,d);\n    float glow=smoothstep(0.11,0.0,d)*0.35;\n    vec3 c=mix(vec3(0.20,0.83,0.60), vec3(0.55,0.95,0.75), fi/5.0);\n    float pulse=0.75+0.25*sin(uTime*1.4+uv.x*9.0-fi*2.0);\n    col+=c*(core*1.2+glow)*pulse;\n  }\n  float vig=smoothstep(1.25,0.35,distance(uv,vec2(0.5,0.45)));\n  col*=mix(0.72,1.0,vig);\n  gl_FragColor=vec4(col,1.0);\n}";
+  function sh(type,src){ var s=gl.createShader(type); gl.shaderSource(s,src); gl.compileShader(s); return s; }
+  var prog=gl.createProgram();
+  gl.attachShader(prog,sh(gl.VERTEX_SHADER,vs));
+  gl.attachShader(prog,sh(gl.FRAGMENT_SHADER,fs));
+  gl.linkProgram(prog); gl.useProgram(prog);
+  var buf=gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER,buf);
+  gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,3,-1,-1,3]),gl.STATIC_DRAW);
+  var loc=gl.getAttribLocation(prog,'p'); gl.enableVertexAttribArray(loc); gl.vertexAttribPointer(loc,2,gl.FLOAT,false,0,0);
+  var uTime=gl.getUniformLocation(prog,'uTime'),uRes=gl.getUniformLocation(prog,'uRes'),uMouse=gl.getUniformLocation(prog,'uMouse');
+  
+  var mx=0.5,my=0.5,tx=0.5,ty=0.5;
+  window.addEventListener('mousemove',function(e){ tx=e.clientX/window.innerWidth; ty=1-e.clientY/window.innerHeight; },{passive:true});
+  
+  function resize(){ var d=Math.min(window.devicePixelRatio||1,1.75); canvas.width=canvas.clientWidth*d; canvas.height=canvas.clientHeight*d; gl.viewport(0,0,canvas.width,canvas.height); }
+  window.addEventListener('resize',resize); resize();
+  var t0=performance.now();
+  (function loop(now){ requestAnimationFrame(loop); mx+=(tx-mx)*0.045; my+=(ty-my)*0.045;
+    gl.uniform1f(uTime,(now-t0)/1000); gl.uniform2f(uRes,canvas.width,canvas.height); gl.uniform2f(uMouse,mx,my);
+    if(window.__glTick) window.__glTick(gl,(now-t0)/1000);
+    gl.drawArrays(gl.TRIANGLES,0,3); })(t0);
+})();
+</script>
+</body>
+</html>
