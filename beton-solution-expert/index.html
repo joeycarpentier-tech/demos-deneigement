@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Béton Solution Expert — Finition de béton, époxy et béton estampé | Cowansville, Estrie et Montérégie</title>
+<meta name="description" content="Béton Solution Expert Inc. : mise en place, finition et béton estampé, réparation et injection de fissures, époxy et polyaspartique, crépi. Plus de 15 ans d'expérience. Estrie, Montérégie, Centre-du-Québec. 438-507-5706.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{ --fond:#0d1b2e; --fond2:#081120; --panneau:#132238; --texte:#f4f6f9; --accent:#ff8c42; --accent2:#ffb37e; --gris:#a7b6c9; --ligne:rgba(244,246,249,.16); --suraccent:#1c1005; }
+*{margin:0;padding:0;box-sizing:border-box}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{background:var(--fond2);color:var(--texte);font-family:"Inter",system-ui,sans-serif;line-height:1.6;overflow-x:hidden}
+::selection{background:var(--accent);color:var(--suraccent)}
+img{display:block;max-width:100%}
+a{color:inherit}
+.disp{font-family:"Archivo",sans-serif;text-transform:uppercase;line-height:.98;font-weight:900;letter-spacing:-.01em}
+.wrap{max-width:1360px;margin:0 auto;padding:0 28px}
+.demo-band{background:#000;color:var(--accent2);text-align:center;font-size:.78rem;font-weight:600;padding:7px 14px;border-bottom:1px solid var(--ligne);position:relative;z-index:80}
+.grain{position:fixed;inset:-50%;width:200%;height:200%;pointer-events:none;z-index:200;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");animation:grain 8s steps(10) infinite}
+@keyframes grain{0%,100%{transform:translate(0,0)}10%{transform:translate(-5%,-8%)}30%{transform:translate(3%,-12%)}50%{transform:translate(8%,4%)}70%{transform:translate(-9%,6%)}90%{transform:translate(4%,10%)}}
+#loader{position:fixed;inset:0;z-index:300;background:var(--fond2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;overflow:hidden}
+#loader .lname{font-family:"Archivo",sans-serif;font-weight:900;font-size:clamp(2rem,7vw,4.6rem);letter-spacing:.03em;text-align:center;line-height:1.02;text-transform:uppercase}
+#loader .lname .row{display:block;overflow:hidden}
+#loader .lname .row span{display:inline-block;transform:translateY(110%)}
+#loader .lname em{font-style:normal;color:var(--accent)}
+#loader p{font-size:.72rem;font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:var(--gris)}
+#loader .barre{width:min(420px,70vw);height:2px;background:var(--ligne);overflow:hidden;border-radius:2px}
+#loader .barre i{display:block;height:100%;width:0%;background:var(--accent)}
+#loader .pct{font-family:"Archivo",sans-serif;font-weight:900;font-size:1.05rem;color:var(--accent);letter-spacing:.28em}
+.cursor-dot,.cursor-ring{position:fixed;top:0;left:0;pointer-events:none;z-index:250;border-radius:50%;transform:translate(-50%,-50%)}
+.cursor-dot{width:8px;height:8px;background:var(--accent)}
+.cursor-ring{width:38px;height:38px;border:1.5px solid var(--accent);transition:width .25s,height .25s,background .25s;display:flex;align-items:center;justify-content:center}
+.cursor-ring.gros{width:88px;height:88px;background:var(--accent)}
+.cursor-ring .vue{font-size:.6rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--suraccent);opacity:0;transition:opacity .2s;text-align:center;padding:0 6px}
+.cursor-ring.gros .vue{opacity:1}
+@media (hover:none),(pointer:coarse){.cursor-dot,.cursor-ring{display:none}}
+.topbar{position:fixed;top:28px;left:0;right:0;z-index:60;mix-blend-mode:difference;color:#fff}
+.topbar-in{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;max-width:1360px;margin:0 auto}
+.topbar .logo{font-family:"Archivo",sans-serif;font-weight:900;font-size:1.08rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none}
+.topbar nav{display:flex;gap:26px}
+.topbar nav a{text-decoration:none;font-size:.8rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+.topbar .tel{font-weight:800;font-size:.95rem;text-decoration:none}
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;background:var(--fond)}
+#gl{position:absolute;inset:0;width:100%;height:100%;opacity:0;transition:opacity .9s}
+#gl.pret{opacity:1}
+.hero .voile{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,.03) 34%,rgba(0,0,0,.40) 68%,var(--fond2) 100%);pointer-events:none}
+.hero-side{position:absolute;top:50%;right:22px;transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl;font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gris);z-index:3}
+.badge-rond{position:absolute;right:34px;bottom:210px;width:128px;height:128px;z-index:4;animation:tourne 16s linear infinite;pointer-events:none}
+.badge-rond svg{width:100%;height:100%}
+.badge-rond text{font-size:10.5px;font-weight:700;letter-spacing:2.6px;fill:var(--texte);text-transform:uppercase}
+.badge-rond .fleche{fill:var(--accent)}
+@keyframes tourne{to{transform:rotate(360deg)}}
+.hero-in{position:relative;z-index:2;padding:0 28px 30px;max-width:1360px;margin:0 auto;width:100%}
+.hero-meta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.hero-meta .tag{font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;border:1px solid var(--ligne);border-radius:999px;padding:7px 14px;background:rgba(0,0,0,.35)}
+.hero-meta .tag.plein{background:var(--accent);border-color:var(--accent);color:var(--suraccent)}
+.hero h1{font-size:clamp(2.8rem,9.5vw,8.6rem)}
+.hero h1 .lt{display:inline-block;will-change:transform}
+.hero h1 .o{color:var(--accent)}
+.hero-sub{display:flex;justify-content:space-between;align-items:flex-end;gap:26px;flex-wrap:wrap;margin-top:14px}
+.hero-sub p{max-width:580px;font-size:1.06rem;color:var(--texte);opacity:.92}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--suraccent);font-weight:700;text-decoration:none;padding:15px 28px;border-radius:999px;font-size:.98rem;border:none;cursor:pointer;white-space:nowrap;will-change:transform}
+.scroll-cue{display:flex;align-items:center;gap:12px;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gris);margin-top:24px}
+.scroll-cue .trait{width:64px;height:1px;background:var(--accent);position:relative;overflow:hidden}
+.scroll-cue .trait::after{content:"";position:absolute;inset:0;background:#fff;transform:translateX(-100%);animation:glisse 2.2s infinite}
+@keyframes glisse{55%{transform:translateX(0)}100%{transform:translateX(100%)}}
+.marquee{background:var(--accent);color:var(--suraccent);overflow:hidden;padding:13px 0;transform:rotate(1.1deg) scale(1.03);margin-top:34px;position:relative;z-index:4}
+.marquee .piste{display:flex;width:max-content;will-change:transform}
+.marquee span{font-family:"Archivo",sans-serif;font-weight:900;text-transform:uppercase;font-size:1.3rem;letter-spacing:.05em;padding:0 18px;white-space:nowrap}
+.marquee span i{font-style:normal;opacity:.45;padding-left:36px}
+.manifeste{padding:130px 0 100px}
+.manifeste .sur{font-size:.78rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin-bottom:24px}
+.manifeste p.txt{font-family:"Archivo",sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(1.7rem,4.2vw,3.5rem);line-height:1.18;max-width:1180px}
+.manifeste p.txt .mot{opacity:.13}
+.manifeste p.txt .mot.o{color:var(--accent)}
+section.bloc{padding:20px 0 110px;position:relative}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:20px;border-top:1px solid var(--ligne);padding-top:22px;margin-bottom:8px}
+.sec-head h2{font-size:clamp(2.3rem,5.8vw,4.4rem)}
+.sec-head .note{color:var(--gris);font-size:.9rem;max-width:300px;text-align:right}
+.row{position:relative;display:grid;grid-template-columns:90px 1fr auto;gap:22px;align-items:center;padding:30px 10px;border-bottom:1px solid var(--ligne);overflow:hidden;isolation:isolate}
+.row::before{content:"";position:absolute;inset:0;background:var(--panneau);transform:scaleY(0);transform-origin:bottom;transition:transform .35s ease;z-index:-1}
+.row:hover::before{transform:scaleY(1)}
+.row .num{font-family:"Archivo",sans-serif;font-weight:900;font-size:1.15rem;color:var(--accent)}
+.row .titre{font-family:"Archivo",sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(1.4rem,3.6vw,2.7rem);line-height:1.05;transition:transform .35s ease,color .35s;will-change:transform}
+.row:hover .titre{transform:translateX(14px);color:var(--accent)}
+.row .desc{grid-column:2;max-width:600px;color:var(--gris);font-size:.95rem;margin-top:-6px}
+.bande{overflow:hidden;padding:26px 0 6px;white-space:nowrap}
+.bande .mot-geant{font-family:"Archivo",sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(4rem,11vw,10rem);line-height:1;color:transparent;-webkit-text-stroke:1.5px var(--ligne);display:inline-block;will-change:transform}
+.bande .mot-geant b{font-weight:900;color:var(--accent);-webkit-text-stroke:0}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+@media(max-width:900px){.gal{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.gal{grid-template-columns:1fr}}
+.gal figure{border-radius:16px;overflow:hidden;border:1px solid var(--ligne);position:relative}
+.gal img{width:100%;height:280px;object-fit:cover;transition:transform .8s ease}
+.gal figure:hover img{transform:scale(1.06)}
+.gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:36px 18px 14px;background:linear-gradient(transparent,rgba(0,0,0,.9));font-family:"Archivo",sans-serif;font-weight:800;text-transform:uppercase;font-size:1rem;color:#fff}
+.zones{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.zones span{border:1px solid var(--ligne);border-radius:999px;padding:9px 18px;font-weight:600;font-size:.92rem}
+.zones span:first-child{background:var(--accent);color:var(--suraccent);border-color:var(--accent);font-weight:800}
+.chiffres{background:var(--fond);border-top:1px solid var(--ligne);border-bottom:1px solid var(--ligne);padding:88px 0}
+.chiffres-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+.chiffre .gros{font-family:"Archivo",sans-serif;font-weight:900;font-size:clamp(2.2rem,5.5vw,4.4rem);line-height:1.05;text-transform:uppercase}
+.chiffre .gros em{font-style:normal;color:var(--accent)}
+.chiffre .lbl{color:var(--gris);font-size:.92rem;margin-top:8px;max-width:250px}
+.cta{padding:30px 0 110px}
+.cta .sur{font-size:.78rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+.cta h2{font-size:clamp(2.8rem,9vw,7.8rem)}
+.cta h2 .o{color:var(--accent)}
+.cta .tel-gros{font-family:"Archivo",sans-serif;font-weight:900;font-size:clamp(2rem,6.4vw,5rem);color:var(--texte);text-decoration:none;display:inline-block;margin:16px 0 8px;border-bottom:4px solid var(--accent);line-height:1.1;transition:color .2s}
+.cta .tel-gros:hover{color:var(--accent)}
+.cta .mail{display:inline-block;font-size:1.08rem;font-weight:600;color:var(--gris);text-decoration:none;margin-bottom:8px}
+.cta .sous{color:var(--gris);max-width:580px;margin-bottom:30px}
+.form-carte{background:var(--panneau);border:1px solid var(--ligne);border-radius:16px;padding:30px;max-width:760px}
+.form-carte h3{font-family:"Archivo",sans-serif;font-weight:800;text-transform:uppercase;font-size:1.4rem;margin-bottom:6px}
+.form-carte p{color:var(--gris);font-size:.93rem;margin-bottom:18px}
+.champs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.champs .plein{grid-column:1/-1}
+label{font-size:.82rem;font-weight:700;display:block;margin-bottom:5px;letter-spacing:.04em}
+input,select,textarea{width:100%;padding:12px;border:1.5px solid var(--ligne);border-radius:9px;font:inherit;font-size:.95rem;background:var(--fond2);color:var(--texte)}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--accent);border-color:var(--accent)}
+textarea{resize:vertical;min-height:90px}
+.ok-msg{display:none;background:var(--fond);border:1.5px solid var(--accent);color:var(--texte);border-radius:9px;padding:12px 14px;margin-top:14px;font-weight:600;font-size:.93rem}
+.demo-note{border:1.5px dashed var(--accent);color:var(--accent2);border-radius:9px;padding:10px 14px;margin-top:16px;font-size:.87rem;font-weight:600}
+footer{border-top:1px solid var(--ligne);padding:44px 0 0;color:var(--gris);font-size:.9rem;overflow:hidden}
+footer .cols{display:flex;justify-content:space-between;gap:26px;flex-wrap:wrap;padding-bottom:34px}
+footer a{color:var(--gris);text-decoration:none}
+footer a:hover{color:var(--accent)}
+footer .geant{font-family:"Archivo",sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(3.2rem,13vw,12.5rem);line-height:.82;text-align:center;color:var(--ligne);white-space:nowrap;transform:translateY(18%);user-select:none}
+.sticky-call{position:fixed;left:16px;right:16px;bottom:16px;z-index:70;text-align:center;padding:15px;border-radius:999px;font-weight:800;color:var(--suraccent);background:var(--accent);display:none;text-decoration:none;box-shadow:0 14px 34px rgba(0,0,0,.4)}
+.reveal{opacity:0;transform:translateY(38px)}
+.no-anim .reveal{opacity:1;transform:none}
+.no-anim .manifeste p.txt .mot{opacity:1}
+@media (max-width:900px){
+  .topbar{top:24px}.topbar nav{display:none}
+  .hero-side,.badge-rond{display:none}
+  .row{grid-template-columns:52px 1fr}
+  .chiffres-grid{grid-template-columns:1fr 1fr}
+  .sec-head .note{display:none}
+  .champs{grid-template-columns:1fr}
+  .manifeste{padding:84px 0 64px}
+  .sticky-call{display:block}
+  section.bloc{padding-bottom:70px}
+}
+@media (prefers-reduced-motion:reduce){ .grain,.badge-rond,.scroll-cue .trait::after{animation:none} }
+</style>
+</head>
+<body>
+<div class="demo-band">Proposition conceptuelle — démo non officielle réalisée à titre de proposition. Ce site n'est pas le site officiel de l'entreprise.</div>
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"><span class="vue">Voir</span></div>
+<div id="loader" aria-hidden="true">
+  <div class="lname">
+    <span class="row"><span>Béton Solution</span></span>
+    <span class="row"><span><em>Expert</em></span></span>
+  </div>
+  <p>Finition de béton — Estrie · Montérégie</p>
+  <div class="barre"><i id="loader-barre"></i></div>
+  <div class="pct"><span id="loader-pct">0</span> %</div>
+</div>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="logo" href="#accueil">Béton Solution Expert</a>
+    <nav>
+      <a href="#manifeste">Approche</a>
+      <a href="#services">Services</a>
+      <a href="#realisations">Réalisations</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="tel" href="tel:+14385075706" data-curseur="Appeler">438-507-5706</a>
+  </div>
+</header>
+<header class="hero" id="accueil">
+  <canvas id="gl" aria-hidden="true"></canvas>
+  <div class="voile"></div>
+  <div class="hero-side">Finition de béton — Cowansville</div>
+  <div class="badge-rond" aria-hidden="true">
+    <svg viewBox="0 0 120 120">
+      <defs><path id="cercle-c" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs>
+      <text><textPath href="#cercle-c">Estimation gratuite • Plus de 15 ans • </textPath></text>
+      <path class="fleche" d="M52 74 L60 84 L68 74 L63 74 L63 46 L57 46 L57 74 Z"/>
+    </svg>
+  </div>
+  <div class="hero-in">
+    <div class="hero-meta">
+      <span class="tag plein">Plus de 15 ans d'expérience</span>
+      <span class="tag">RBQ : 5820-5717-01</span>
+      <span class="tag">Estimation gratuite</span>
+    </div>
+    <h1 class="disp" id="hero-titre">Chaque dalle s’emboîte.<br><span class="o">Chaque finition compte.</span></h1>
+    <div class="hero-sub">
+      <p>Béton Solution Expert Inc. installe des finitions décoratives et durables — béton estampé, époxy, polyaspartique, crépi — pour le résidentiel, le commercial et l'industriel, en Estrie, en Montérégie et au Centre-du-Québec.</p>
+      <a class="btn magnet" href="#contact">Estimation gratuite</a>
+    </div>
+    <div class="scroll-cue"><span class="trait"></span> Défiler</div>
+  </div>
+</header>
+<div class="marquee" aria-hidden="true"><div class="piste" id="marquee-piste"><span>Béton estampé<i>-</i></span><span>Époxy<i>-</i></span><span>Polyaspartique<i>-</i></span><span>Réparation<i>-</i></span><span>Injection de fissures<i>-</i></span><span>Crépi<i>-</i></span><span>Béton estampé<i>-</i></span><span>Époxy<i>-</i></span><span>Polyaspartique<i>-</i></span><span>Réparation<i>-</i></span><span>Injection de fissures<i>-</i></span><span>Crépi<i>-</i></span></div></div>
+<section class="manifeste" id="manifeste">
+  <div class="wrap">
+    <p class="sur reveal">À propos</p>
+    <p class="txt" id="manifeste-texte" data-fort="expertise|réputation|standards">Une expertise solide, plus de 15 ans d'expérience en installation de finition de béton et de planchers, et une réputation enviable bâtie projet par projet, aux plus hauts standards.</p>
+  </div>
+</section>
+<section class="bloc" id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2 class="disp">Le béton,<br>pièce par pièce</h2>
+      <p class="note">Patio, escaliers, garage, commerce ou cabane à sucre : du plus petit projet au projet d'envergure, le même niveau d'attention.</p>
+    </div>
+    <article class="row reveal">
+      <span class="num">/ 01</span>
+      <h3 class="titre">Mise en place, finition et béton estampé</h3>
+      <p class="desc">Coulage et finition de béton, et béton estampé qui imite la pierre, la brique, le bois ou le carrelage.</p>
+    </article>
+    <article class="row reveal">
+      <span class="num">/ 02</span>
+      <h3 class="titre">Réparation de béton et injection de fissures</h3>
+      <p class="desc">Réparation de béton et injection de fissures, avec une analyse minutieuse de chaque aspect des travaux.</p>
+    </article>
+    <article class="row reveal">
+      <span class="num">/ 03</span>
+      <h3 class="titre">Époxy et polyaspartique décoratif</h3>
+      <p class="desc">Flocons de vinyle, finis métalliques, sable de quartz ou époxy solide : un vaste choix de couleurs, des combinaisons infinies.</p>
+    </article>
+    <article class="row reveal">
+      <span class="num">/ 04</span>
+      <h3 class="titre">Plancher de garage en époxy</h3>
+      <p class="desc">Un plancher de garage durable et décoratif, installé avec les meilleurs produits et équipements.</p>
+    </article>
+    <article class="row reveal">
+      <span class="num">/ 05</span>
+      <h3 class="titre">Crépi de béton et d'acrylique</h3>
+      <p class="desc">Crépi de béton et d'acrylique pour protéger et finir vos surfaces, à l'intérieur comme à l'extérieur.</p>
+    </article>
+    <article class="row reveal">
+      <span class="num">/ 06</span>
+      <h3 class="titre">Produits naturels et décoratifs</h3>
+      <p class="desc">Une vaste gamme de produits de béton naturels, estampés et décoratifs, conseillée par la référence en la matière.</p>
+    </article>
+  </div>
+</section>
+<div class="bande" aria-hidden="true"><span class="mot-geant" id="mot-geant">Béton <b>Expert</b> — Béton <b>Expert</b></span></div>
+<section class="bloc" id="realisations">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2 class="disp">Réalisations</h2>
+      <p class="note">Photos réelles publiées sur le site de l'entreprise.</p>
+    </div>
+    <div class="gal">
+      <figure class="reveal"><img src="https://betonsolutionexpert.ca/wp-content/uploads/2025/02/photo-1.jpg" alt="Mise en place et finition de béton par Béton Solution Expert" loading="lazy"><figcaption>Mise en place et finition</figcaption></figure>
+      <figure class="reveal"><img src="https://betonsolutionexpert.ca/wp-content/uploads/2025/02/Photo-4.jpg" alt="Réparation de béton par Béton Solution Expert" loading="lazy"><figcaption>Réparation de béton</figcaption></figure>
+      <figure class="reveal"><img src="https://betonsolutionexpert.ca/wp-content/uploads/2025/02/6-jpg.jpg" alt="Revêtement époxy par Béton Solution Expert" loading="lazy"><figcaption>Époxy et polyaspartique</figcaption></figure>
+      <figure class="reveal"><img src="https://betonsolutionexpert.ca/wp-content/uploads/2022/10/plancher-de-garage.jpg" alt="Plancher de garage en époxy par Béton Solution Expert" loading="lazy"><figcaption>Plancher de garage</figcaption></figure>
+      <figure class="reveal"><img src="https://betonsolutionexpert.ca/wp-content/uploads/2025/02/Photo-8-1.jpg" alt="Crépi de béton et d'acrylique par Béton Solution Expert" loading="lazy"><figcaption>Crépi</figcaption></figure>
+      <figure class="reveal"><img src="https://betonsolutionexpert.ca/wp-content/uploads/2022/10/beton-solution-expert.jpg" alt="Finition décorative de béton par Béton Solution Expert" loading="lazy"><figcaption>Finition décorative</figcaption></figure>
+      <figure class="reveal"><img src="https://betonsolutionexpert.ca/wp-content/uploads/2025/02/Photo-2.jpeg" alt="Réalisation en béton par Béton Solution Expert" loading="lazy"><figcaption>Finition de béton</figcaption></figure>
+      <figure class="reveal"><img src="https://betonsolutionexpert.ca/wp-content/uploads/2025/02/Photo-3.jpg" alt="Réalisation en béton estampé par Béton Solution Expert" loading="lazy"><figcaption>Béton estampé</figcaption></figure>
+      <figure class="reveal"><img src="https://betonsolutionexpert.ca/wp-content/uploads/2025/02/7-.jpg" alt="Réalisation en époxy par Béton Solution Expert" loading="lazy"><figcaption>Époxy</figcaption></figure>
+    </div>
+    <p class="sur reveal" style="margin-top:52px;font-size:.78rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--accent)">Territoire desservi</p>
+    <div class="zones reveal"><span>Estrie</span><span>Montérégie</span><span>Centre-du-Québec</span><span>Cowansville</span></div>
+  </div>
+</section>
+<section class="chiffres" id="chiffres">
+  <div class="wrap"><div class="chiffres-grid"><div class="chiffre reveal"><div class="gros"><span class="compteur" data-cible="15">0</span><em>+ ans</em></div><p class="lbl">D'expérience en installation de finition de béton et de planchers.</p></div><div class="chiffre reveal"><div class="gros"><em>CCQ</em></div><p class="lbl">Une équipe d'employés minutieux et certifiés CCQ.</p></div><div class="chiffre reveal"><div class="gros"><span class="compteur" data-cible="3">0</span><em> régions</em></div><p class="lbl">Estrie, Montérégie et Centre-du-Québec.</p></div><div class="chiffre reveal"><div class="gros"><em>Gratuite</em></div><p class="lbl">L'estimation, pour démarrer votre projet.</p></div></div></div>
+</section>
+<section class="cta" id="contact">
+  <div class="wrap">
+    <p class="sur reveal">Nous joindre</p>
+    <h2 class="disp reveal">Parlons de <span class="o">votre projet</span></h2>
+    <a class="tel-gros reveal" href="tel:+14385075706" data-curseur="Appeler">438-507-5706</a><br>
+    <a class="mail reveal" href="mailto:betonsolutionexpert@gmail.com">betonsolutionexpert@gmail.com</a>
+    <p class="sous reveal">151, Mc Dermott, app. 201, Cowansville (Québec) J2K 2Y4 — Estrie et toute la Montérégie. Nous vérifions tous les détails, du premier appel à la finition.</p>
+    <form class="form-carte reveal" data-demo id="form-demo">
+      <h3>Demander une estimation gratuite</h3>
+      <p>Quelques champs, une minute : décrivez votre surface et votre projet.</p>
+      <div class="champs">
+        <div><label for="f-nom">Nom *</label><input id="f-nom" required autocomplete="name"></div>
+        <div><label for="f-tel">Téléphone *</label><input id="f-tel" required type="tel" autocomplete="tel"></div>
+        <div class="plein"><label for="f-courriel">Courriel</label><input id="f-courriel" type="email" autocomplete="email"></div>
+        <div class="plein"><label for="f-type">Votre projet *</label>
+          <select id="f-type" required><option value="">Choisir…</option><option>Mise en place, finition ou béton estampé</option><option>Réparation de béton / injection de fissures</option><option>Époxy ou polyaspartique</option><option>Plancher de garage en époxy</option><option>Crépi de béton ou d'acrylique</option><option>Autre</option></select></div>
+        <div class="plein"><label for="f-msg">Décrivez votre projet</label><textarea id="f-msg" placeholder="Ex. : patio en béton estampé, environ 300 pi²…"></textarea></div>
+      </div>
+      <p class="demo-note">Démonstration — ce formulaire est une maquette : aucune demande réelle n'est transmise à l'entreprise.</p>
+      <p style="margin-top:16px"><button class="btn magnet" type="submit">Envoyer ma demande</button></p>
+      <div class="ok-msg">Simulation terminée. Aucune demande n'a été transmise à l'entreprise.</div>
+    </form>
+  </div>
+</section>
+<footer>
+  <div class="wrap cols">
+    <div><p><strong style="color:var(--texte)">Béton Solution Expert</strong></p><p style="margin-top:6px">Finition de béton, époxy et béton estampé — résidentiel, commercial et industriel.</p></div>
+    <div><p>151, Mc Dermott, app. 201, Cowansville, QC J2K 2Y4 · RBQ : 5820-5717-01</p><p style="margin-top:6px"><a href="tel:+14385075706">438-507-5706</a> · <a href="mailto:betonsolutionexpert@gmail.com">betonsolutionexpert@gmail.com</a></p></div>
+    <div><p>Proposition conceptuelle — démo non officielle.</p><p style="margin-top:6px">© 2026 Béton Solution Expert Inc.</p></div>
+  </div>
+  <div class="geant" aria-hidden="true">Expert</div>
+</footer>
+<a class="sticky-call" href="tel:+14385075706">Appeler — 438-507-5706</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+<script>
+window.__watchdog=setTimeout(function(){
+  if(!window.gsap){
+    document.documentElement.classList.add('no-anim');
+    var l=document.getElementById('loader'); if(l) l.style.display='none';
+    document.querySelectorAll('.compteur').forEach(function(el){ el.textContent=el.dataset.cible; });
+    var mt=document.getElementById('manifeste-texte');
+    if(mt) mt.querySelectorAll('.mot').forEach(function(m){ m.style.opacity=1; });
+  }
+},2600);
+document.querySelectorAll('form[data-demo]').forEach(function(f){
+  f.addEventListener('submit',function(e){ e.preventDefault(); var m=f.querySelector('.ok-msg'); if(m) m.style.display='block'; });
+});
+</script>
+<script>
+(function(){
+  if(!window.gsap){ return; }
+  clearTimeout(window.__watchdog);
+  gsap.registerPlugin(ScrollTrigger);
+  var reduit=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var lenis=null;
+  if(window.Lenis && !reduit){
+    lenis=new Lenis({ duration:1.25, smoothWheel:true });
+    lenis.on('scroll',ScrollTrigger.update);
+    gsap.ticker.add(function(t){ lenis.raf(t*1000); });
+    gsap.ticker.lagSmoothing(0);
+    document.querySelectorAll('a[href^="#"]').forEach(function(a){
+      a.addEventListener('click',function(e){
+        var cible=document.querySelector(a.getAttribute('href'));
+        if(cible){ e.preventDefault(); lenis.scrollTo(cible,{offset:-10}); }
+      });
+    });
+  }
+  (function(){
+    var h1=document.getElementById('hero-titre');
+    var noeuds=Array.prototype.slice.call(h1.childNodes), html='';
+    noeuds.forEach(function(n){
+      if(n.nodeType===3){ n.textContent.split('').forEach(function(c){ html+='<span class="lt">'+(c===' '?'&nbsp;':c)+'</span>'; }); }
+      else if(n.nodeName==='BR'){ html+='<br>'; }
+      else if(n.nodeType===1){ n.textContent.split('').forEach(function(c){ html+='<span class="lt '+n.className+'">'+(c===' '?'&nbsp;':c)+'</span>'; }); }
+    });
+    h1.innerHTML=html;
+    gsap.set('#hero-titre .lt',{yPercent:115});
+  })();
+  var pct={v:0};
+  gsap.timeline()
+    .to('#loader .lname .row > span',{y:0,duration:.7,stagger:.09,ease:'power4.out'},0)
+    .to(pct,{v:100,duration:1.3,ease:'power2.inOut',onUpdate:function(){
+        document.getElementById('loader-pct').textContent=Math.round(pct.v);
+        document.getElementById('loader-barre').style.width=pct.v+'%';
+      }},0)
+    .to('#loader .lname .row > span',{y:'-115%',duration:.5,stagger:.06,ease:'power3.in'},'+=0.12')
+    .to('#loader',{yPercent:-100,duration:.85,ease:'power4.inOut'},'-=0.22')
+    .set('#loader',{display:'none'})
+    .to('#hero-titre .lt',{yPercent:0,duration:1,stagger:.025,ease:'power4.out'},'-=0.55')
+    .from('.hero-meta .tag',{y:24,opacity:0,duration:.6,stagger:.08,ease:'power3.out'},'-=0.6')
+    .from('.hero-sub > *',{y:30,opacity:0,duration:.7,stagger:.12,ease:'power3.out'},'-=0.45')
+    .from('.badge-rond',{scale:0,opacity:0,duration:.7,ease:'back.out(1.6)'},'-=0.5')
+    .from('.topbar',{y:-30,opacity:0,duration:.6,ease:'power3.out'},'-=0.5');
+  gsap.fromTo('#gl',{scale:1.12},{scale:1,yPercent:10,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+  gsap.to('#hero-titre',{yPercent:-26,opacity:.25,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+  var piste=document.getElementById('marquee-piste');
+  var defile=gsap.to(piste,{xPercent:-50,ease:'none',duration:22,repeat:-1});
+  ScrollTrigger.create({ onUpdate:function(self){
+    var v=gsap.utils.clamp(-6,6,self.getVelocity()/-250);
+    gsap.to(defile,{timeScale:Math.abs(v)*1.6+1,duration:.3,overwrite:true});
+    gsap.to(piste,{skewX:v*1.4,duration:.3,overwrite:'auto'});
+  }});
+  (function(){
+    var p=document.getElementById('manifeste-texte');
+    var motsFort=p.dataset.fort ? p.dataset.fort.split('|') : [];
+    p.innerHTML=p.textContent.trim().split(/\s+/).map(function(m){
+      var o=motsFort.indexOf(m)>=0 ? ' o' : '';
+      return '<span class="mot'+o+'">'+m+'</span>';
+    }).join(' ');
+    gsap.to('#manifeste-texte .mot',{opacity:1,stagger:.05,ease:'none',
+      scrollTrigger:{trigger:'.manifeste',start:'top 75%',end:'bottom 55%',scrub:true}});
+  })();
+  gsap.utils.toArray('.reveal').forEach(function(el){
+    gsap.to(el,{opacity:1,y:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%',once:true}});
+  });
+  document.querySelectorAll('.compteur').forEach(function(el){
+    var cible=parseInt(el.dataset.cible,10), obj={v:0};
+    if(isNaN(cible)) return;
+    ScrollTrigger.create({trigger:el,start:'top 88%',once:true,onEnter:function(){
+      gsap.to(obj,{v:cible,duration:1.6,ease:'power2.out',onUpdate:function(){ el.textContent=Math.round(obj.v); }});
+    }});
+  });
+  gsap.fromTo('#mot-geant',{xPercent:2},{xPercent:-30,ease:'none',
+    scrollTrigger:{trigger:'.bande',start:'top bottom',end:'bottom top',scrub:true}});
+  gsap.fromTo('footer .geant',{yPercent:46},{yPercent:18,ease:'none',
+    scrollTrigger:{trigger:'footer',start:'top bottom',end:'bottom bottom',scrub:true}});
+  if(window.matchMedia('(hover:hover) and (pointer:fine)').matches){
+    var dot=document.querySelector('.cursor-dot'), ring=document.querySelector('.cursor-ring'), vue=ring.querySelector('.vue');
+    var dx=gsap.quickTo(dot,'x',{duration:.08,ease:'power2'}), dy=gsap.quickTo(dot,'y',{duration:.08,ease:'power2'});
+    var rx=gsap.quickTo(ring,'x',{duration:.38,ease:'power3'}), ry=gsap.quickTo(ring,'y',{duration:.38,ease:'power3'});
+    window.addEventListener('mousemove',function(e){ dx(e.clientX); dy(e.clientY); rx(e.clientX); ry(e.clientY); });
+    document.querySelectorAll('a, button').forEach(function(el){
+      el.addEventListener('mouseenter',function(){ vue.textContent=el.getAttribute('data-curseur')||''; ring.classList.add('gros'); });
+      el.addEventListener('mouseleave',function(){ ring.classList.remove('gros'); });
+    });
+  } else {
+    document.querySelector('.cursor-dot').style.display='none';
+    document.querySelector('.cursor-ring').style.display='none';
+  }
+  if(window.matchMedia('(hover:hover)').matches && !reduit){
+    document.querySelectorAll('.magnet').forEach(function(el){
+      el.addEventListener('mousemove',function(e){
+        var r=el.getBoundingClientRect();
+        gsap.to(el,{x:(e.clientX-r.left-r.width/2)*.32,y:(e.clientY-r.top-r.height/2)*.32,duration:.4,ease:'power3.out'});
+      });
+      el.addEventListener('mouseleave',function(){ gsap.to(el,{x:0,y:0,duration:.7,ease:'elastic.out(1,0.4)'}); });
+    });
+  }
+  window.addEventListener('load',function(){ ScrollTrigger.refresh(); });
+})();
+</script>
+
+
+<script>
+/* HEROS WebGL — dalles polygonales voronoi qui s assemblent. */
+(function(){
+  var canvas=document.getElementById('gl');
+  var gl=null;
+  try{ gl=canvas.getContext('webgl',{antialias:false,alpha:false,powerPreference:'high-performance'}); }catch(e){}
+  if(!gl){ return; }
+  var vs='attribute vec2 p; void main(){ gl_Position=vec4(p,0.,1.); }';
+  var fs=[
+    'precision highp float;',
+    'uniform vec2 u_res; uniform float u_time; uniform vec2 u_mouse;',
+    'vec2 hash2(vec2 p){ return fract(sin(vec2(dot(p,vec2(127.1,311.7)),dot(p,vec2(269.5,183.3))))*43758.5453); }',
+    'void main(){',
+    '  vec2 st=gl_FragCoord.xy/u_res;',
+    '  vec2 uv=(gl_FragCoord.xy*2.-u_res)/u_res.y;',
+    '  float t=u_time;',
+    '  vec3 col=mix(vec3(.012,.035,.075), vec3(.05,.11,.20), pow(st.y,1.3));',
+    '  float cycle=mod(t,11.);',
+    '  float assemble=cycle<5. ? smoothstep(0.,5.,cycle) : (cycle<8.5 ? 1. : 1.-smoothstep(8.5,11.,cycle)*.85);',
+    '  vec2 g=uv*3.2;',
+    '  vec2 id=floor(g); vec2 f=fract(g);',
+    '  float f1=8.; float f2=8.; float quelle=0.;',
+    '  for(int y=-1;y<=1;y++){ for(int x=-1;x<=1;x++){',
+    '    vec2 o=vec2(float(x),float(y));',
+    '    vec2 centre=vec2(.5)+ (hash2(id+o)-.5)*1.5;',
+    '    vec2 pt=o+mix(centre, vec2(.5), assemble);',
+    '    float d=length(pt-f);',
+    '    if(d<f1){ f2=f1; f1=d; quelle=hash2(id+o).x; } else if(d<f2){ f2=d; }',
+    '  }}',
+    '  float joint=smoothstep(.015,.09,f2-f1);',
+    '  vec3 dalle=mix(vec3(.07,.15,.27), vec3(.12,.24,.42), quelle);',
+    '  dalle=mix(dalle, vec3(1.,.55,.26), step(.86,quelle)*.75);',
+    '  col=mix(vec3(.02,.05,.10), dalle, joint);',
+    '  col+=vec3(1.,.55,.26)*(1.-joint)*assemble*.35;',
+    '  float halo=exp(-length(uv-vec2((u_mouse.x-.5)*3.4,.25))*1.3);',
+    '  col+=vec3(1.,.55,.26)*halo*.10;',
+    '  col*=1.-.28*pow(length(st-.5)*1.25,2.2);',
+    '  gl_FragColor=vec4(col,1.);',
+    '}'
+  ].join(String.fromCharCode(10));
+  function shader(type,src){ var s=gl.createShader(type); gl.shaderSource(s,src); gl.compileShader(s); return s; }
+  var prog=gl.createProgram();
+  gl.attachShader(prog,shader(gl.VERTEX_SHADER,vs));
+  gl.attachShader(prog,shader(gl.FRAGMENT_SHADER,fs));
+  gl.linkProgram(prog);
+  if(!gl.getProgramParameter(prog,gl.LINK_STATUS)){ return; }
+  gl.useProgram(prog);
+  var buf=gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER,buf);
+  gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1, 3,-1, -1,3]),gl.STATIC_DRAW);
+  var loc=gl.getAttribLocation(prog,'p');
+  gl.enableVertexAttribArray(loc);
+  gl.vertexAttribPointer(loc,2,gl.FLOAT,false,0,0);
+  var uRes=gl.getUniformLocation(prog,'u_res'),
+      uTime=gl.getUniformLocation(prog,'u_time'),
+      uMouse=gl.getUniformLocation(prog,'u_mouse');
+  var mx=.5, tx=.5;
+  window.addEventListener('mousemove',function(e){ tx=e.clientX/window.innerWidth; },{passive:true});
+  var reduit=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function taille(){
+    var d=Math.min(window.devicePixelRatio||1,1.75);
+    var w=Math.round(canvas.clientWidth*d), h=Math.round(canvas.clientHeight*d);
+    if(canvas.width!==w||canvas.height!==h){ canvas.width=w; canvas.height=h; gl.viewport(0,0,w,h); }
+  }
+  var debut=performance.now(), visible=true;
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(es){ visible=es[0].isIntersecting; },{threshold:0}).observe(canvas);
+  }
+  function boucle(now){
+    requestAnimationFrame(boucle);
+    if(!visible) return;
+    taille();
+    mx+=(tx-mx)*.04;
+    gl.uniform2f(uRes,canvas.width,canvas.height);
+    gl.uniform1f(uTime,(now-debut)/1000);
+    gl.uniform2f(uMouse,mx,.5);
+    gl.drawArrays(gl.TRIANGLES,0,3);
+    if(!canvas.classList.contains('pret')) canvas.classList.add('pret');
+  }
+  if(reduit){
+    taille();
+    gl.uniform2f(uRes,canvas.width,canvas.height);
+    gl.uniform1f(uTime,4.2);
+    gl.uniform2f(uMouse,.5,.5);
+    gl.drawArrays(gl.TRIANGLES,0,3);
+    canvas.classList.add('pret');
+  } else {
+    requestAnimationFrame(boucle);
+  }
+})();
+</script>
+
+</body>
+</html>
