@@ -1,0 +1,166 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="robots" content="noindex, nofollow">
+<title>Plaza Rive-Sud — Centre de réceptions et de congrès à La Prairie | Groupe PMG</title>
+<meta name="description" content="Plaza Rive-Sud, La Prairie : 10 salles de réception polyvalentes, jusqu'à 1300 personnes, à 10 minutes du pont Champlain. Groupe PMG, plus de 30 ans en événementiel. 514 877-5525.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box} body{overflow-x:hidden;line-height:1.6} img{display:block;max-width:100%} a{color:inherit}
+.wrap{max-width:1360px;margin:0 auto;padding:0 28px}
+.demo-band{background:#000;text-align:center;font-size:.78rem;font-weight:600;padding:7px 14px;position:relative;z-index:80}
+.grain{position:fixed;inset:-50%;width:200%;height:200%;pointer-events:none;z-index:200;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");animation:grain 8s steps(10) infinite}
+@keyframes grain{0%,100%{transform:translate(0,0)}50%{transform:translate(8%,4%)}}
+#loader{position:fixed;inset:0;z-index:300;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px}
+#loader .mot{overflow:hidden} #loader .mot span{display:inline-block;transform:translateY(110%)}
+#loader .barre{width:min(420px,70vw);height:2px;overflow:hidden} #loader .barre i{display:block;height:100%;width:0%}
+#loader .pct{letter-spacing:.3em}
+.topbar{position:fixed;top:28px;left:0;right:0;z-index:60;mix-blend-mode:difference;color:#fff}
+.topbar-in{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;max-width:1360px;margin:0 auto}
+.topbar nav{display:flex;gap:26px} .topbar nav a{text-decoration:none;font-size:.82rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
+.hero .fond{position:absolute;inset:0} .hero .fond img{width:100%;height:100%;object-fit:cover}
+#gl{position:absolute;inset:0;width:100%;height:100%;opacity:0;transition:opacity .8s} #gl.pret{opacity:1}
+.hero .voile{position:absolute;inset:0;pointer-events:none}
+.hero-in{position:relative;z-index:2;padding:0 28px 34px;max-width:1360px;margin:0 auto;width:100%}
+.hero-meta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px} .tag{font-size:.74rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:7px 14px}
+.hero-sub{display:flex;justify-content:space-between;align-items:flex-end;gap:26px;flex-wrap:wrap;margin-top:10px} .hero-sub p{max-width:560px;font-size:1.06rem}
+.btn{display:inline-flex;padding:15px 28px;border-radius:999px;font-weight:700;text-decoration:none;border:none;cursor:pointer}
+.marquee{overflow:hidden;padding:13px 0;position:relative;z-index:4} .marquee .piste{display:flex;width:max-content} .marquee span{white-space:nowrap;padding:0 18px;text-transform:uppercase}
+section{padding:110px 0} .sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:20px;border-top:1px solid;padding-top:22px;margin-bottom:8px}
+.svc-row{position:relative;display:grid;grid-template-columns:90px 1fr;gap:22px;padding:30px 10px;text-decoration:none} .svc-row .desc{grid-column:2;max-width:620px;margin-top:-6px}
+.bande{overflow:hidden;padding:26px 0 6px;white-space:nowrap} .mot-geant{display:inline-block;line-height:1;color:transparent}
+.rea-track{display:flex;gap:26px;padding:34px 28px 90px;width:max-content} .rea-card{position:relative;width:min(62vw,760px);height:min(62vh,540px);border-radius:16px;overflow:hidden;flex:none} .rea-card.etroit{width:min(40vw,480px)} .rea-card img{width:100%;height:100%;object-fit:cover} .rea-card figcaption{position:absolute;left:0;right:0;bottom:0;padding:52px 22px 18px;background:linear-gradient(transparent,rgba(0,0,0,.9))}
+.form-carte{border-radius:16px;padding:30px;max-width:760px} .champs{display:grid;grid-template-columns:1fr 1fr;gap:14px} .champs .plein{grid-column:1/-1} label{font-size:.82rem;font-weight:700;display:block;margin-bottom:5px} input,select,textarea{width:100%;padding:12px;border-radius:9px;font:inherit;font-size:.95rem} .ok-msg{display:none;border-radius:9px;padding:12px 14px;margin-top:14px;font-weight:600} .demo-note{border:1.5px dashed;border-radius:9px;padding:10px 14px;margin-top:16px;font-size:.87rem;font-weight:600}
+footer{padding:44px 0 0;overflow:hidden} footer .cols{display:flex;justify-content:space-between;gap:26px;flex-wrap:wrap;padding-bottom:34px} footer .geant{text-align:center;white-space:nowrap;transform:translateY(18%);user-select:none;line-height:.82}
+.reveal{opacity:0;transform:translateY(38px)} .no-anim .reveal{opacity:1;transform:none}
+@media(max-width:900px){.topbar nav{display:none}.rea-track{flex-direction:column;width:auto}.rea-card,.rea-card.etroit{width:100%;height:320px}.champs{grid-template-columns:1fr}}
+
+:root{--pierre:#2e2a24;--pierre2:#211d18;--or:#c8a24a;--or2:#e3c87e;--creme:#f4efe4;--ligne:rgba(244,239,228,.14)}
+body{background:var(--pierre2);color:var(--creme);font-family:Inter,system-ui,sans-serif} .serif{font-family:"Cormorant Garamond",serif;line-height:1.02;font-weight:700}
+.demo-band{color:#d8c491;border-bottom:1px solid var(--ligne)} #loader{background:#14110d} #loader .mot{font-family:"Cormorant Garamond",serif;font-weight:700;font-size:clamp(2.2rem,7vw,4.6rem)} #loader .mot .o{color:var(--or)} #loader .barre{background:rgba(244,239,228,.15)} #loader .barre i{background:linear-gradient(90deg,var(--or),var(--or2))} #loader .pct{color:var(--or);font-family:"Cormorant Garamond",serif}
+.facade{position:absolute;left:0;right:0;bottom:0;height:46%;display:flex;align-items:flex-end;gap:1.2%;padding:0 4%;pointer-events:none;z-index:1} .colonne{flex:1;background:linear-gradient(180deg,rgba(200,162,74,.34),rgba(46,42,36,.92));border-top:3px solid var(--or)}
+.tag.plein{background:var(--or);border-color:var(--or);color:var(--pierre2)} .hero h1{font-size:clamp(2.8rem,8vw,6.8rem)} .hero h1 .o{color:var(--or)} .hero .voile{background:linear-gradient(180deg,rgba(20,17,13,.6),rgba(20,17,13,.1) 40%,rgba(20,17,13,.95))} .hero .fond img{opacity:.45}
+.btn{background:var(--or);color:var(--pierre2)} .btn-ligne{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.55)}
+.marquee{background:var(--or);color:var(--pierre2)} .marquee span{font-family:"Cormorant Garamond",serif;font-weight:700;font-size:1.5rem}
+.kicker{color:var(--or);font-size:.78rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;margin-bottom:16px} .sec-head{border-color:var(--ligne)} .sec-head h2{font-size:clamp(2.4rem,6vw,4.8rem)} .note{opacity:.7;max-width:300px;text-align:right}
+.svc-row{border-bottom:1px solid var(--ligne)} .svc-row .num{font-family:"Cormorant Garamond",serif;font-size:1.3rem;color:var(--or)} .svc-row .titre{font-family:"Cormorant Garamond",serif;font-size:clamp(1.8rem,4.2vw,3.2rem);transition:.35s} .svc-row:hover .titre{transform:translateX(14px);color:var(--or2)} .svc-row .desc{color:#c9bfa8}
+.mot-geant{font-family:"Cormorant Garamond",serif;text-transform:uppercase;font-size:clamp(4.5rem,12vw,11rem);-webkit-text-stroke:1.5px rgba(244,239,228,.28)} .mot-geant b{color:var(--or);-webkit-text-stroke:0}
+.chiffres{background:#1a1712;border-top:1px solid var(--ligne);border-bottom:1px solid var(--ligne);padding:88px 0} .chiffres-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px} @media(max-width:900px){.chiffres-grid{grid-template-columns:1fr 1fr}} .chiffre .gros{font-family:"Cormorant Garamond",serif;font-size:clamp(3.2rem,7vw,6rem);line-height:1} .chiffre .gros em{font-style:normal;color:var(--or)} .chiffre .lbl{color:#c9bfa8;margin-top:8px}
+.cta h2{font-size:clamp(2.6rem,7vw,5.5rem)} .tel-gros{font-family:"Cormorant Garamond",serif;font-size:clamp(2.2rem,6vw,4.6rem);color:#fff;text-decoration:none;border-bottom:3px solid var(--or);display:inline-block;margin:14px 0}
+.form-carte{background:var(--creme);color:var(--pierre2)} input,select,textarea{background:#fffdf7;border:1.5px solid #ddd3ba;color:#2e2a24} .ok-msg{background:#f3ecd4;border:1.5px solid var(--or)} .demo-note{color:#8a8172;border-color:#c9bfa8}
+footer{border-top:1px solid var(--ligne)} footer .geant{font-family:"Cormorant Garamond",serif;font-size:clamp(3rem,13vw,12rem);color:rgba(244,239,228,.12)}
+</style></head><body>
+<div class="demo-band">Proposition conceptuelle — démo non officielle réalisée à titre de proposition. Ce site n'est pas le site officiel de l'entreprise.</div>
+<div class="grain"></div>
+<div id="loader"><div class="mot"><span>PLAZA</span> <span class="o">RIVE-SUD</span></div><div class="barre"><i id="loader-barre"></i></div><div class="pct"><span id="loader-pct">0</span> %</div><p style="letter-spacing:.34em;font-size:.72rem;color:#b3a888">LA PRAIRIE · GROUPE PMG</p></div>
+<div class="topbar"><div class="topbar-in"><div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700">Plaza Rive-Sud</div><nav><a href="#salles">Salles</a><a href="#apropos">À propos</a><a href="#galerie">Galerie</a><a href="#contact">Contact</a></nav><a href="tel:+15148775525" style="text-decoration:none;font-weight:700">514 877-5525</a></div></div>
+<header class="hero"><div class="fond"><img src="https://www.plazarivesud.com/wp-content/uploads/2017/09/Batisse-étang-2-min-min.jpg" alt="Bâtisse de Plaza Rive-Sud et son étang, à La Prairie"><canvas id="gl"></canvas></div><div class="voile"></div>
+<div class="facade" id="facade"></div>
+<div class="hero-in"><div class="hero-meta"><span class="tag plein">Centre de congrès et de réceptions</span><span class="tag">La Prairie — Rive-Sud de Montréal</span></div>
+<h1 class="serif">Votre événement, dans un décor <span class="o">à la hauteur</span></h1>
+<div class="hero-sub"><p><strong>10 salles de réception polyvalentes pouvant accueillir jusqu'à 1300 personnes</strong>, dans un chic secteur verdoyant de La Prairie, à seulement 10 minutes du pont Champlain.</p><div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn magnet" href="#contact">Demande d'information</a><a class="btn btn-ligne magnet" href="#salles">Découvrir les salles</a></div></div></div></header>
+<div class="marquee"><div class="piste" id="marquee-piste"><span>Mariages — Congrès — Conférences — Événements corporatifs — 10 salles — Jusqu'à 1300 personnes — </span><span>Mariages — Congrès — Conférences — Événements corporatifs — 10 salles — Jusqu'à 1300 personnes — </span></div></div>
+<section id="apropos"><div class="wrap"><p class="kicker reveal">À propos</p><h2 class="serif reveal" style="font-size:clamp(2.2rem,5.5vw,4.4rem)">L'expérience du Groupe PMG, depuis plus de 30 ans</h2><p class="reveal" style="max-width:660px;color:#c9bfa8;margin-top:14px">Plaza Rive-Sud fait partie du Groupe PMG, qui œuvre dans le milieu de l'événementiel depuis plus de 30 ans. Venez rencontrer nos conseillers : ils vous offriront un service personnalisé afin de faire de votre événement une réussite.</p></div></section>
+<section class="chiffres"><div class="wrap chiffres-grid">
+<div class="chiffre reveal"><div class="gros"><span class="compteur" data-cible="10">0</span></div><div class="lbl">salles de réception polyvalentes</div></div>
+<div class="chiffre reveal"><div class="gros"><span class="compteur" data-cible="1300">0</span></div><div class="lbl">personnes accueillies en capacité maximale</div></div>
+<div class="chiffre reveal"><div class="gros"><span class="compteur" data-cible="30">0</span><em>+</em></div><div class="lbl">années d'expérience du Groupe PMG en événementiel</div></div>
+<div class="chiffre reveal"><div class="gros"><span class="compteur" data-cible="10">0</span><em> min</em></div><div class="lbl">du pont Champlain, sur la Rive-Sud de Montréal</div></div>
+</div></section>
+<section id="salles"><div class="wrap"><div class="sec-head reveal"><h2 class="serif">Nos salles</h2><p class="note">Nos salles portent des noms inspirés des hérons du site, et s'adaptent à votre montage.</p></div>
+<a class="svc-row reveal" href="#contact"><span class="num">/ 01</span><span class="titre">Mariages</span><span class="desc">Une réception de mariage dans un secteur verdoyant, facile d'accès par les grands axes routiers, sans souci pour le stationnement.</span></a>
+<a class="svc-row reveal" href="#contact"><span class="num">/ 02</span><span class="titre">Congrès et conférences</span><span class="desc">Un centre de congrès complet pour vos réunions d'affaires, congrès et conférences, avec un service personnalisé de nos conseillers.</span></a>
+<a class="svc-row reveal" href="#contact"><span class="num">/ 03</span><span class="titre">Événements corporatifs</span><span class="desc">Des salles polyvalentes pour les événements d'entreprise de toutes tailles, jusqu'aux grands rassemblements de 1300 personnes.</span></a>
+<a class="svc-row reveal" href="#contact"><span class="num">/ 04</span><span class="titre">Fêtes et réceptions</span><span class="desc">Une fête, un banquet, une célébration : choisissez la salle qui correspond à votre nombre d'invités et à votre ambiance.</span></a>
+</div></section>
+<div class="bande"><span class="mot-geant" id="mot-geant">Réceptions <b>·</b> Congrès <b>·</b> Réceptions <b>·</b>&nbsp;</span></div>
+<section class="rea-sec" id="galerie" style="padding-top:20px"><div class="wrap"><div class="sec-head reveal"><h2 class="serif">Le lieu, en images</h2><p class="note">Continuez de défiler : la galerie avance de côté.</p></div></div>
+<div class="rea-track" id="rea-track">
+<figure class="rea-card"><img src="https://www.plazarivesud.com/wp-content/uploads/2017/09/Nossalles-Banniere-2.jpg" alt="Salle de réception de Plaza Rive-Sud" loading="lazy"><figcaption><strong>Nos salles de réception</strong></figcaption></figure>
+<figure class="rea-card etroit"><img src="https://www.plazarivesud.com/wp-content/uploads/2022/10/Photo-grand-heron-e1664909421598.jpg" alt="Salle Grand Héron de Plaza Rive-Sud" loading="lazy"><figcaption><strong>Salle Grand Héron</strong></figcaption></figure>
+<figure class="rea-card"><img src="https://www.plazarivesud.com/wp-content/uploads/2022/10/Photo-le-garage-e1664910048520.jpg" alt="Salle Le Garage de Plaza Rive-Sud" loading="lazy"><figcaption><strong>Salle Le Garage</strong></figcaption></figure>
+<figure class="rea-card etroit"><img src="https://www.plazarivesud.com/wp-content/uploads/2017/09/Bar-accueil.jpg" alt="Bar et hall d'accueil de Plaza Rive-Sud" loading="lazy"><figcaption><strong>Hall d'accueil et bar</strong></figcaption></figure>
+</div></section>
+<section class="cta" id="contact"><div class="wrap"><p class="kicker reveal">Planifiez votre événement</p><h2 class="serif reveal">Parlons de <span style="color:var(--or)">votre date</span></h2><a class="tel-gros reveal" href="tel:+15148775525">514 877-5525</a><p class="reveal"><a href="mailto:info@plazapmg.com" style="color:var(--or2);font-weight:600">info@plazapmg.com</a><br>500, avenue du Golf, La Prairie, QC J5R 0A5</p>
+<form class="form-carte reveal" id="form-plaza"><h3 class="serif" style="font-size:1.6rem">Demande d'information</h3><p style="opacity:.7;margin:6px 0 18px">Dites-nous le type d'événement et le nombre d'invités : un conseiller vous revient avec les disponibilités.</p><div class="champs"><div><label for="z-nom">Nom *</label><input id="z-nom" required autocomplete="name"></div><div><label for="z-tel">Téléphone *</label><input id="z-tel" required type="tel" autocomplete="tel"></div><div class="plein"><label for="z-type">Type d'événement *</label><select id="z-type" required><option value="">Choisir…</option><option>Mariage</option><option>Congrès / conférence</option><option>Événement corporatif</option><option>Fête / réception</option><option>Autre</option></select></div><div class="plein"><label for="z-msg">Détails (date visée, nombre d'invités…)</label><textarea id="z-msg" rows="3" placeholder="Ex. : mariage, environ 200 invités, automne prochain…"></textarea></div></div><p class="demo-note">Démonstration — ce formulaire est une maquette : aucune demande réelle n'est transmise à l'entreprise.</p><p style="margin-top:16px"><button class="btn magnet" type="submit">Envoyer ma demande</button></p><div class="ok-msg">Simulation terminée. Aucune demande n'a été transmise à l'entreprise.</div></form></div></section>
+<footer><div class="wrap cols"><div><p><strong>Plaza Rive-Sud</strong></p><p>500, avenue du Golf<br>La Prairie, QC J5R 0A5</p></div><div><p><a href="tel:+15148775525">514 877-5525</a></p><p><a href="mailto:info@plazapmg.com">info@plazapmg.com</a></p></div><div><p>Une réalisation du Groupe PMG — événementiel depuis plus de 30 ans.</p><p>Proposition conceptuelle — démo non officielle. © 2026 Plaza Rive-Sud</p></div></div><div class="geant">PLAZA RIVE-SUD</div></footer>
+<script>(function(){var f=document.getElementById('facade'); var hs=[38,62,48,78,56,88,66,44,72,52]; hs.forEach(function(h,i){var d=document.createElement('div'); d.className='colonne'; d.style.height=h+'%'; f.appendChild(d);}); if(window.gsap){gsap.from('.colonne',{yPercent:105,duration:1.3,stagger:0.1,ease:'power3.out',delay:1.6});}})();</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+window.__wd=setTimeout(function(){if(!window.gsap){document.documentElement.classList.add('no-anim');var l=document.getElementById('loader');if(l)l.style.display='none';document.querySelectorAll('.compteur').forEach(function(e){e.textContent=e.dataset.cible;});}},2600);
+</script>
+<script>
+(function(){
+ if(!window.gsap) return; clearTimeout(window.__wd); gsap.registerPlugin(ScrollTrigger);
+ var f=document.getElementById('form-plaza'); if(f) f.addEventListener('submit',function(ev){ev.preventDefault(); var m=this.querySelector('.ok-msg'); if(m)m.style.display='block'; var b=this.querySelector('button[type=submit]'); if(b)b.textContent='Simulation terminée';});
+ var pct={v:0};
+ gsap.timeline()
+  .to('#loader .mot span',{y:0,duration:.7,stagger:.05,ease:'power4.out'},0)
+  .to(pct,{v:100,duration:1.25,ease:'power2.inOut',onUpdate:function(){document.getElementById('loader-pct').textContent=Math.round(pct.v); document.getElementById('loader-barre').style.width=pct.v+'%';}},0)
+  .to('#loader .mot span',{y:'-110%',duration:.5,stagger:.04,ease:'power3.in'},'+=0.1')
+  .to('#loader',{yPercent:-100,duration:.85,ease:'power4.inOut'},'-=0.25')
+  .set('#loader',{display:'none'})
+  .from('.hero-meta .tag',{y:24,opacity:0,duration:.6,stagger:.08,ease:'power3.out'},'-=0.5')
+  .from('.hero h1',{y:60,opacity:0,duration:1,ease:'power4.out'},'-=0.45')
+  .from('.hero-sub > *',{y:30,opacity:0,duration:.7,stagger:.12,ease:'power3.out'},'-=0.5')
+  .from('.topbar',{y:-30,opacity:0,duration:.6,ease:'power3.out'},'-=0.5');
+ gsap.utils.toArray('.reveal').forEach(function(el){ gsap.to(el,{opacity:1,y:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%',once:true}}); });
+ document.querySelectorAll('.compteur').forEach(function(el){ var cible=parseInt(el.dataset.cible,10),o={v:0}; ScrollTrigger.create({trigger:el,start:'top 88%',once:true,onEnter:function(){gsap.to(o,{v:cible,duration:1.6,ease:'power2.out',onUpdate:function(){el.textContent=Math.round(o.v).toLocaleString('fr-CA');}});}});});
+ var piste=document.getElementById('marquee-piste'); if(piste){var def=gsap.to(piste,{xPercent:-50,ease:'none',duration:20,repeat:-1}); ScrollTrigger.create({onUpdate:function(s){var v=gsap.utils.clamp(-6,6,s.getVelocity()/-250); gsap.to(def,{timeScale:Math.abs(v)*1.6+1,duration:.3,overwrite:true});}});}
+ gsap.fromTo('.hero .fond',{scale:1.12},{scale:1,yPercent:10,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+ gsap.fromTo('#mot-geant',{xPercent:2},{xPercent:-30,ease:'none',scrollTrigger:{trigger:'.bande',start:'top bottom',end:'bottom top',scrub:true}});
+ gsap.fromTo('footer .geant',{yPercent:46},{yPercent:18,ease:'none',scrollTrigger:{trigger:'footer',start:'top bottom',end:'bottom bottom',scrub:true}});
+ if(window.matchMedia('(min-width: 901px)').matches){ var track=document.getElementById('rea-track'); if(track){ function dist(){return Math.max(0,track.scrollWidth-window.innerWidth+56);} gsap.to(track,{x:function(){return -dist();},ease:'none',scrollTrigger:{trigger:'.rea-sec',start:'top top',end:function(){return '+='+dist();},pin:true,scrub:1,anticipatePin:1,invalidateOnRefresh:true}}); } }
+ if(window.matchMedia('(hover:hover)').matches){ document.querySelectorAll('.magnet').forEach(function(el){ el.addEventListener('mousemove',function(e){var r=el.getBoundingClientRect(); gsap.to(el,{x:(e.clientX-r.left-r.width/2)*.3,y:(e.clientY-r.top-r.height/2)*.3,duration:.4});}); el.addEventListener('mouseleave',function(){gsap.to(el,{x:0,y:0,duration:.7,ease:'elastic.out(1,0.4)'});}); }); }
+ window.addEventListener('load',function(){ScrollTrigger.refresh();});
+})();
+</script>
+
+<script>
+(function(){
+ var canvas=document.getElementById('gl'); var gl=null;
+ try{ gl=canvas.getContext('webgl',{antialias:false,alpha:true,powerPreference:'high-performance'}); }catch(e){}
+ if(!gl){return;}
+ var vs='attribute vec2 p;varying vec2 vUv;void main(){vUv=p*0.5+0.5;gl_Position=vec4(p,0.0,1.0);}';
+ var fs='precision highp float; varying vec2 vUv; uniform float uTime; uniform vec2 uRes; uniform vec2 uMouse;\nvoid main(){ vec2 uv=vUv; vec3 col=mix(vec3(0.13,0.11,0.09),vec3(0.18,0.16,0.13),uv.y);\n float cols=10.0; float id=floor(uv.x*cols); float lx=fract(uv.x*cols);\n float h=0.35+0.45*fract(sin(id*12.9898)*43758.5453);\n float rise=smoothstep(0.0,1.0,clamp(uTime*0.25 - id*0.08,0.0,1.0)); float top=h*rise;\n float inCol=step(uv.y,top)*step(0.12,lx)*step(lx,0.88);\n float cap=step(abs(uv.y-top),0.006)*step(0.08,lx)*step(lx,0.92);\n vec3 stone=mix(vec3(0.22,0.19,0.15),vec3(0.32,0.27,0.20),lx);\n col=mix(col,stone,inCol*0.85); col=mix(col,vec3(0.78,0.63,0.29),cap);\n float glow=exp(-abs(uv.x-uMouse.x)*4.0)*0.08; col+=glow*vec3(0.78,0.63,0.29);\n gl_FragColor=vec4(col,0.92); }';
+ function sh(t,s){var x=gl.createShader(t);gl.shaderSource(x,s);gl.compileShader(x);return x;}
+ var pr=gl.createProgram(); gl.attachShader(pr,sh(gl.VERTEX_SHADER,vs)); gl.attachShader(pr,sh(gl.FRAGMENT_SHADER,fs)); gl.linkProgram(pr);
+ if(!gl.getProgramParameter(pr,gl.LINK_STATUS)){return;}
+ gl.useProgram(pr);
+ var buf=gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER,buf); gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,1,1]),gl.STATIC_DRAW);
+ var loc=gl.getAttribLocation(pr,'p'); gl.enableVertexAttribArray(loc); gl.vertexAttribPointer(loc,2,gl.FLOAT,false,0,0);
+ var uTime=gl.getUniformLocation(pr,'uTime'), uRes=gl.getUniformLocation(pr,'uRes'), uMouse=gl.getUniformLocation(pr,'uMouse');
+ var mx=0.5,my=0.5,tx=0.5,ty=0.5;
+ window.addEventListener('mousemove',function(e){tx=e.clientX/window.innerWidth; ty=1-e.clientY/window.innerHeight;});
+ function size(){var d=Math.min(window.devicePixelRatio||1,1.5); canvas.width=canvas.clientWidth*d; canvas.height=canvas.clientHeight*d; gl.viewport(0,0,canvas.width,canvas.height);}
+ size(); window.addEventListener('resize',size);
+ (function loop(t){ mx+=(tx-mx)*0.04; my+=(ty-my)*0.04; if(uTime)gl.uniform1f(uTime,t*0.001); if(uRes)gl.uniform2f(uRes,canvas.width,canvas.height); if(uMouse)gl.uniform2f(uMouse,mx,my); gl.drawArrays(gl.TRIANGLE_STRIP,0,4); requestAnimationFrame(loop); })(0);
+ canvas.classList.add('pret');
+})();
+</script>
+<style>
+.cursor-dot,.cursor-ring{position:fixed;top:0;left:0;pointer-events:none;z-index:250;border-radius:50%;transform:translate(-50%,-50%)}
+.cursor-dot{width:8px;height:8px;background:#c8a24a}
+.cursor-ring{width:38px;height:38px;border:1.5px solid #c8a24a;transition:width .25s,height .25s}
+.cursor-ring.gros{width:72px;height:72px;background:#c8a24a22}
+@media(hover:none){.cursor-dot,.cursor-ring{display:none}}
+.manifeste{padding:120px 0 90px} .manifeste .sur{font-size:.78rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:#c8a24a;margin-bottom:24px}
+.manifeste p.big{font-size:clamp(1.8rem,4.4vw,3.6rem);line-height:1.18;font-weight:800;max-width:1100px;text-transform:uppercase} .manifeste p.big .mot{opacity:.13}
+.badge-rond{position:absolute;right:34px;bottom:190px;width:128px;height:128px;z-index:4;animation:tourne 14s linear infinite;pointer-events:none} .badge-rond svg{width:100%;height:100%} .badge-rond text{font-size:10px;font-weight:700;letter-spacing:2.4px;fill:#fff;text-transform:uppercase} @keyframes tourne{to{transform:rotate(360deg)}} @media(max-width:900px){.badge-rond{display:none}}
+.scroll-cue{display:flex;align-items:center;gap:12px;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;opacity:.7;margin-top:24px} .scroll-cue .trait{width:64px;height:1px;background:#c8a24a}
+</style>
+<div class="cursor-dot"></div><div class="cursor-ring"></div>
+<script>
+(function(){
+ var sec=document.createElement('section'); sec.className='manifeste'; sec.innerHTML='<div class="wrap"><p class="sur">Le manifeste</p><p class="big" id="manifeste-texte">Dix salles, jusqu'à 1300 personnes, un service personnalisé : votre événement devient une réussite.</p></div>';
+ var mq=document.querySelector('.marquee'); if(mq) mq.after(sec);
+ var hero=document.querySelector('.hero-in'); if(hero){ var cue=document.createElement('div'); cue.className='scroll-cue'; cue.innerHTML='<span class="trait"></span> Défiler'; hero.appendChild(cue);
+  var b=document.createElement('div'); b.className='badge-rond'; b.innerHTML='<svg viewBox="0 0 120 120"><defs><path id="cercle" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs><text><textPath href="#cercle">LA PRAIRIE · GROUPE PMG · PLUS DE 30 ANS · </textPath></text></svg>'; document.querySelector('.hero').appendChild(b); }
+ if(window.gsap){
+   var p=document.getElementById('manifeste-texte'); if(p){ p.innerHTML=p.textContent.trim().split(/\s+/).map(function(m){return '<span class="mot">'+m+'</span>';}).join(' '); gsap.to('#manifeste-texte .mot',{opacity:1,stagger:.06,ease:'none',scrollTrigger:{trigger:'.manifeste',start:'top 75%',end:'bottom 55%',scrub:true}}); }
+   if(window.matchMedia('(hover:hover) and (pointer:fine)').matches){ var dot=document.querySelector('.cursor-dot'),ring=document.querySelector('.cursor-ring'); var dx=gsap.quickTo(dot,'x',{duration:.08}),dy=gsap.quickTo(dot,'y',{duration:.08}),rx=gsap.quickTo(ring,'x',{duration:.38,ease:'power3'}),ry=gsap.quickTo(ring,'y',{duration:.38,ease:'power3'}); window.addEventListener('mousemove',function(e){dx(e.clientX);dy(e.clientY);rx(e.clientX);ry(e.clientY);}); document.querySelectorAll('a,button').forEach(function(el){el.addEventListener('mouseenter',function(){ring.classList.add('gros');}); el.addEventListener('mouseleave',function(){ring.classList.remove('gros');});}); }
+ }
+})();
+</script>
+</body></html>
