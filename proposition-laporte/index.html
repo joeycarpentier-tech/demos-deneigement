@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposition — Système d'acquisition pour Les Entreprises Laporte inc.</title>
+<style>
+  :root{
+    --noir:#0c0e10; --panneau:#15181c; --panneau2:#1b1f24; --ligne:#2a2f36;
+    --creme:#f2efe9; --gris:#9aa3ad; --orange:#f07300; --vert:#3ecf6e;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--noir);color:var(--creme);font-family:"Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;line-height:1.55}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 20px}
+  header{padding:38px 0 8px}
+  .sur{font-size:.72rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--orange)}
+  h1{font-size:clamp(1.8rem,4.6vw,2.8rem);line-height:1.1;margin:10px 0 10px;text-transform:uppercase}
+  h1 .o{color:var(--orange)}
+  .sous{color:var(--gris);max-width:780px;font-size:1.02rem}
+  section{padding:30px 0}
+  h2{font-size:1.3rem;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+  .h2-sous{color:var(--gris);margin-bottom:20px;max-width:820px}
+  .constats{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+  .constat{background:var(--panneau);border:1px solid var(--ligne);border-radius:12px;padding:17px}
+  .constat .t{font-weight:700;margin-bottom:5px}
+  .constat .d{color:var(--gris);font-size:.93rem}
+  .constat .fort{color:var(--vert)}
+  .forfaits{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:900px){.forfaits{grid-template-columns:1fr}}
+  .forfait{background:var(--panneau);border:1px solid var(--ligne);border-radius:14px;padding:24px;display:flex;flex-direction:column}
+  .forfait.reco{border:2px solid var(--orange);position:relative}
+  .badge{position:absolute;top:-13px;left:20px;background:var(--orange);color:#0c0e10;font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;border-radius:999px;padding:5px 13px}
+  .forfait h3{font-size:1.02rem;text-transform:uppercase;letter-spacing:.07em}
+  .prix{font-size:2rem;font-weight:800;margin:12px 0 2px}
+  .prix .par{font-size:.95rem;color:var(--gris);font-weight:600}
+  .mensuel{color:var(--orange);font-weight:800;font-size:1.12rem;margin-bottom:14px}
+  .forfait ul{list-style:none;margin:0 0 6px}
+  .forfait li{padding:7px 0 7px 24px;position:relative;color:#d8d4cc;font-size:.95rem;border-bottom:1px solid var(--ligne)}
+  .forfait li:last-child{border-bottom:none}
+  .forfait li::before{content:"—";position:absolute;left:2px;color:var(--orange);font-weight:800}
+  .forfait li.non{color:var(--gris)}
+  .forfait li.non::before{content:"×";color:var(--gris)}
+  table{width:100%;border-collapse:collapse;background:var(--panneau);border:1px solid var(--ligne);border-radius:12px;overflow:hidden}
+  th,td{text-align:left;padding:13px 16px;border-bottom:1px solid var(--ligne);font-size:.96rem}
+  th{background:var(--panneau2);text-transform:uppercase;font-size:.76rem;letter-spacing:.12em;color:var(--gris)}
+  tr:last-child td{border-bottom:none}
+  td.semaine{color:var(--orange);font-weight:800;white-space:nowrap}
+  .conditions{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+  .cond{background:var(--panneau);border:1px solid var(--ligne);border-radius:12px;padding:17px}
+  .cond .t{font-weight:700;margin-bottom:5px}
+  .cond .d{color:var(--gris);font-size:.93rem}
+  .note{color:var(--gris);font-size:.88rem;margin-top:14px}
+  footer{border-top:1px solid var(--ligne);padding:24px 0 38px;color:var(--gris);font-size:.9rem}
+  footer strong{color:var(--creme)}
+  @media print{body{background:#fff;color:#111}.carte,.constat,.forfait,.cond,table{background:#fff;border-color:#ccc}th{background:#eee}.sous,.h2-sous,.constat .d,.cond .d,.note,footer{color:#444}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <p class="sur">Proposition — préparée pour Les Entreprises Laporte inc.</p>
+    <h1>Un système d'acquisition, <span class="o">pas juste un site web</span></h1>
+    <p class="sous">Votre réputation est déjà faite : 76 avis Google à 5,0 et la recommandation CAA-Québec. Ce qui manque, c'est le tuyau entre cette réputation et vos demandes de soumission. Voici le système proposé : publicité ciblée, site qui convertit, et automatisations qui s'assurent qu'aucune demande ne se perd.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>Le point de départ</h2>
+    <p class="h2-sous">Constats vérifiés sur votre présence actuelle, le 27 novembre 2026.</p>
+    <div class="constats">
+      <div class="constat"><p class="t fort">Une réputation exceptionnelle</p><p class="d">76 avis Google à 5,0, recommandation CAA-Québec, entreprise familiale depuis 2008. C'est votre meilleur vendeur — il mérite d'être vu.</p></div>
+      <div class="constat"><p class="t">Un site qui ne finit pas le travail</p><p class="d">Une image temporaire (« placeholder ») figure toujours sur votre page d'accueil — son fichier est même disparu, l'image est cassée. Tous les textes de services y sont publiés en double.</p></div>
+      <div class="constat"><p class="t">Aucun chemin court vers la soumission</p><p class="d">Pas de formulaire rapide, pas de page dédiée pour vos services à forte valeur (fissures, drain français). Le client convaincu doit chercher et téléphoner.</p></div>
+      <div class="constat"><p class="t">Du contenu qui dort</p><p class="d">Vos vidéos de chantiers sont authentiques et convaincantes, mais elles rejoignent quelques centaines de personnes. En publicité ciblée, elles deviendraient votre moteur de demandes.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Les trois options</h2>
+    <p class="h2-sous">Le budget publicitaire Meta (recommandé : 1 500 $ par mois) s'ajoute à chaque option et est payé directement à Meta — il ne passe pas par nous. Tous les montants sont en dollars canadiens, avant taxes.</p>
+    <div class="forfaits">
+      <div class="forfait">
+        <h3>Option 1 — Acquisition essentielle</h3>
+        <p class="prix">2 250 $ <span class="par">installation</span></p>
+        <p class="mensuel">+ 600 $ / mois de gestion</p>
+        <ul>
+          <li>Refonte du site : accueil corrigé, pages dédiées fissures et drain français</li>
+          <li>Formulaire de soumission standard</li>
+          <li>Configuration des campagnes Meta et du suivi des conversions</li>
+          <li>Gestion et optimisation des campagnes</li>
+          <li>Rapport mensuel</li>
+          <li class="non">Automatisations (notifications, pipeline, rappels)</li>
+          <li class="non">Demandes d'avis Google automatisées</li>
+        </ul>
+      </div>
+      <div class="forfait reco">
+        <span class="badge">Recommandée</span>
+        <h3>Option 2 — Acquisition automatisée</h3>
+        <p class="prix">3 500 $ <span class="par">installation</span></p>
+        <p class="mensuel">+ 850 $ / mois de gestion</p>
+        <ul>
+          <li>Tout ce qui est inclus dans l'option 1</li>
+          <li>Notification immédiate de chaque demande</li>
+          <li>Confirmation automatique envoyée au client</li>
+          <li>Pipeline de suivi des demandes, de la réception aux travaux terminés</li>
+          <li>Rappel interne si une demande n'est pas traitée à temps</li>
+          <li>Demandes d'avis Google automatisées après les travaux</li>
+          <li>Relance automatique des soumissions sans réponse</li>
+          <li>Rapport mensuel détaillé : demandes, coût par demande, contrats</li>
+        </ul>
+      </div>
+      <div class="forfait">
+        <h3>Option 3 — Croissance complète</h3>
+        <p class="prix">4 500 $ <span class="par">installation</span></p>
+        <p class="mensuel">+ 1 250 $ / mois de gestion</p>
+        <ul>
+          <li>Tout ce qui est inclus dans l'option 2</li>
+          <li>Intégration CRM approfondie et automatisations supplémentaires sur mesure</li>
+          <li>Montage régulier de contenus publicitaires à partir de vos chantiers</li>
+          <li>Accompagnement prioritaire et revues de performance plus fréquentes</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note">Détail de l'installation de l'option 2 : refonte du site 1 750 $ + configuration Meta et suivi des conversions 750 $ + installation des automatisations 1 250 $, moins un rabais forfait de 250 $ = 3 500 $.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Le premier mois, semaine par semaine</h2>
+    <p class="h2-sous">Le délai commence à la réception du dépôt, des accès et des contenus nécessaires.</p>
+    <table>
+      <tr><th>Semaine</th><th>Ce qui se fait</th><th>Livrable</th></tr>
+      <tr><td class="semaine">Semaine 1</td><td>Signature, récupération des accès, sauvegarde complète de votre site actuel, configuration du système et des mesures de départ.</td><td>Infrastructure prête, plan validé avec vous</td></tr>
+      <tr><td class="semaine">Semaine 2</td><td>Refonte du site, pages de services, formulaire, notifications, pipeline et demandes d'avis. Tests complets sur ordinateur et téléphone.</td><td>Site approuvé par vous, parcours testé de bout en bout</td></tr>
+      <tr><td class="semaine">Semaine 3</td><td>Préparation des publicités à partir de vos vidéos, audiences, vérification du suivi des conversions, lancement des campagnes.</td><td>Campagnes actives, premières données</td></tr>
+      <tr><td class="semaine">Semaine 4</td><td>Analyse des demandes, ajustement des publicités et du parcours, vérification de la qualité des demandes reçues.</td><td>Premier rapport et plan d'optimisation du mois suivant</td></tr>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Conditions simples</h2>
+    <div class="conditions">
+      <div class="cond"><p class="t">Paiement de l'installation</p><p class="d">50 % à la signature, 50 % à la mise en ligne. La gestion mensuelle commence au lancement des campagnes et est payable d'avance.</p></div>
+      <div class="cond"><p class="t">Engagement</p><p class="d">Trois mois de gestion au départ — le temps de lancer, mesurer et optimiser — puis renouvellement mensuel avec un préavis de 30 jours.</p></div>
+      <div class="cond"><p class="t">Vos actifs restent à vous</p><p class="d">Domaine, site, comptes publicitaires et fiche Google demeurent votre propriété, en tout temps. Nous y avons accès pour travailler, rien de plus.</p></div>
+      <div class="cond"><p class="t">Aucune promesse magique</p><p class="d">Nous ne garantissons pas un nombre de clients. Nous garantissons un système mesuré : vous saurez combien vous investissez, combien de demandes vous recevez et ce qu'elles rapportent.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <strong>Prochaine étape :</strong> une rencontre de 45 minutes pour valider vos objectifs (travaux à vendre cet hiver, capacité de l'équipe, calendrier du printemps), puis la signature et le démarrage la semaine suivante.<br>
+    Préparé par Joey Carpentier — 450-278-3765 — joeycarpentier01@gmail.com
+  </div>
+</footer>
+
+</body>
+</html>
