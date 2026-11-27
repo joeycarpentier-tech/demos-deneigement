@@ -1,1 +1,680 @@
-x
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>MASKA — Usinage lourd &amp; corrugation de rouleaux | Pièces jusqu'à 10 000 lb</title>
+<meta name="description" content="Usinage Maska inc. : usinage conventionnel et CNC 3 axes, corrugation de rouleaux de meuneries, fabrication et réparation de pièces sur mesure. Pièces jusqu'à 10 000 lb, service le même jour en cas d'urgence. 450 799-3625.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --fond:#0a0c0a; --encre:#10130e; --panneau:#141810;
+  --laiton:#e0a92e; --laiton-doux:#f0c35c; --creme:#f3efe4; --gris:#a6ab9d; --ligne:rgba(243,239,228,.14);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{background:var(--fond);color:var(--creme);font-family:"Inter",system-ui,sans-serif;line-height:1.6;overflow-x:hidden}
+::selection{background:var(--laiton);color:#141005}
+img{display:block;max-width:100%}
+a{color:inherit}
+.display{font-family:"Saira Condensed",sans-serif;text-transform:uppercase;line-height:.92;font-weight:700;letter-spacing:.01em}
+.wrap{max-width:1360px;margin:0 auto;padding:0 28px}
+.demo-band{background:#000;color:var(--laiton-doux);text-align:center;font-size:.78rem;font-weight:600;padding:7px 14px;border-bottom:1px solid var(--ligne);position:relative;z-index:80}
+.grain{position:fixed;inset:-50%;width:200%;height:200%;pointer-events:none;z-index:200;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");animation:grain 8s steps(10) infinite}
+@keyframes grain{0%,100%{transform:translate(0,0)}10%{transform:translate(-5%,-8%)}30%{transform:translate(3%,-12%)}50%{transform:translate(8%,4%)}70%{transform:translate(-9%,6%)}90%{transform:translate(4%,10%)}}
+#loader{position:fixed;inset:0;z-index:300;background:#060705;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px}
+#loader .mot{font-family:"Saira Condensed",sans-serif;font-weight:700;font-size:clamp(3.4rem,11vw,7.5rem);letter-spacing:.08em;overflow:hidden;line-height:1}
+#loader .mot span{display:inline-block;transform:translateY(110%)}
+#loader .mot .o{color:var(--laiton)}
+#loader .pct{font-family:"Saira Condensed",sans-serif;font-weight:600;font-size:1.15rem;color:var(--laiton);letter-spacing:.3em}
+#loader .barre{width:min(420px,70vw);height:2px;background:rgba(243,239,228,.15);overflow:hidden}
+#loader .barre i{display:block;height:100%;width:0%;background:var(--laiton)}
+#loader .rainures{width:min(420px,70vw);height:10px;opacity:.5;background:repeating-linear-gradient(90deg,var(--laiton) 0 2px,transparent 2px 9px)}
+.cursor-dot,.cursor-ring{position:fixed;top:0;left:0;pointer-events:none;z-index:250;border-radius:50%;transform:translate(-50%,-50%)}
+.cursor-dot{width:8px;height:8px;background:var(--laiton)}
+.cursor-ring{width:38px;height:38px;border:1.5px solid rgba(224,169,46,.75);transition:width .25s,height .25s,background .25s;display:flex;align-items:center;justify-content:center}
+.cursor-ring.gros{width:84px;height:84px;background:rgba(224,169,46,.92)}
+.cursor-ring .vue{font-size:.62rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#141005;opacity:0;transition:opacity .2s}
+.cursor-ring.gros .vue{opacity:1}
+@media (hover:none),(pointer:coarse){.cursor-dot,.cursor-ring{display:none}}
+#svc-float{position:fixed;top:0;left:0;width:300px;height:210px;z-index:90;pointer-events:none;overflow:hidden;border-radius:6px;opacity:0;visibility:hidden;box-shadow:0 30px 60px rgba(0,0,0,.5)}
+#svc-float img{width:100%;height:100%;object-fit:cover}
+.topbar{position:fixed;top:28px;left:0;right:0;z-index:60;mix-blend-mode:difference;color:#fff}
+.topbar-in{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;max-width:1360px;margin:0 auto}
+.topbar .mot{font-family:"Saira Condensed",sans-serif;font-weight:700;font-size:1.4rem;letter-spacing:.16em;text-transform:uppercase}
+.topbar nav{display:flex;gap:26px}
+.topbar nav a{text-decoration:none;font-size:.82rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+.topbar .tel{font-weight:700;font-size:.92rem;text-decoration:none}
+@media(max-width:760px){.topbar nav{display:none}}
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
+.hero .fond{position:absolute;inset:0;will-change:transform}
+.hero .fond img{width:100%;height:100%;object-fit:cover;object-position:center 40%;filter:saturate(.95)}
+#rainures{position:absolute;inset:0;width:100%;height:100%;opacity:0;transition:opacity .8s}
+#rainures.pret{opacity:1}
+.hero .voile{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,12,10,.5) 0%,rgba(10,12,10,.08) 32%,rgba(10,12,10,.52) 66%,rgba(10,12,10,.97) 100%);pointer-events:none}
+.hero-side{position:absolute;top:50%;right:22px;transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl;font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;color:rgba(243,239,228,.75);z-index:3}
+.badge-rond{position:absolute;right:34px;bottom:200px;width:128px;height:128px;z-index:4;animation:tourne 14s linear infinite;pointer-events:none}
+.badge-rond svg{width:100%;height:100%}
+.badge-rond text{font-size:10.5px;font-weight:700;letter-spacing:2.6px;fill:var(--creme);text-transform:uppercase}
+.badge-rond .fleche{fill:var(--laiton)}
+@keyframes tourne{to{transform:rotate(360deg)}}
+@media(max-width:760px){.badge-rond{display:none}.hero-side{display:none}}
+.hero-in{position:relative;z-index:2;padding:0 28px 30px;max-width:1360px;margin:0 auto;width:100%}
+.hero-meta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.hero-meta .tag{font-size:.74rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;border:1px solid rgba(243,239,228,.4);border-radius:999px;padding:7px 14px}
+.hero-meta .tag.plein{background:var(--laiton);border-color:var(--laiton);color:#141005}
+.hero h1{font-size:clamp(4.6rem,17.5vw,17rem);white-space:nowrap}
+.hero h1 .lt{display:inline-block;will-change:transform}
+.hero h1 .o{color:var(--laiton)}
+.hero-sub{display:flex;justify-content:space-between;align-items:flex-end;gap:26px;flex-wrap:wrap;margin-top:8px}
+.hero-sub p{max-width:540px;font-size:1.06rem;color:#dbd7c9}
+.hero-sub p strong{color:#fff}
+.hero-sub p em{color:var(--laiton);font-style:normal}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--laiton);color:#141005;font-weight:700;text-decoration:none;padding:15px 26px;border-radius:999px;font-size:.95rem;border:1px solid var(--laiton);cursor:pointer;transition:background .25s,color .25s}
+.btn:hover{background:var(--laiton-doux)}
+.btn-ligne{background:transparent;color:var(--creme);border-color:rgba(243,239,228,.45)}
+.btn-ligne:hover{background:rgba(243,239,228,.1);color:#fff}
+.scroll-cue{display:flex;align-items:center;gap:12px;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gris);margin-top:26px}
+.scroll-cue .trait{display:inline-block;width:52px;height:1px;background:var(--laiton)}
+.marquee{border-top:1px solid var(--ligne);border-bottom:1px solid var(--ligne);overflow:hidden;padding:16px 0;background:var(--encre)}
+.marquee .piste{display:flex;gap:0;white-space:nowrap;width:max-content;will-change:transform}
+.marquee span{font-family:"Saira Condensed",sans-serif;font-weight:600;font-size:1.5rem;text-transform:uppercase;letter-spacing:.06em;padding:0 18px}
+.marquee span i{font-style:normal;color:var(--laiton);padding-left:36px}
+.manifeste{padding:110px 0 90px}
+.sur{font-size:.74rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--laiton);margin-bottom:22px}
+#manifeste-texte{font-family:"Saira Condensed",sans-serif;font-weight:600;font-size:clamp(1.9rem,4.2vw,3.4rem);line-height:1.12;text-transform:uppercase;max-width:1050px}
+#manifeste-texte .mot{opacity:.14}
+section{position:relative}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:44px}
+.sec-head h2{font-size:clamp(3rem,7.5vw,6.2rem)}
+.sec-head .note{max-width:380px;color:var(--gris);font-size:.98rem}
+.services{padding:100px 0 110px;background:var(--encre)}
+.svc-row{display:grid;grid-template-columns:70px 1fr 1.2fr;gap:22px;align-items:baseline;padding:30px 10px;border-top:1px solid var(--ligne);text-decoration:none;transition:background .3s,padding-left .3s}
+.svc-row:last-child{border-bottom:1px solid var(--ligne)}
+.svc-row:hover{background:rgba(224,169,46,.05);padding-left:20px}
+.svc-row .num{font-family:"Saira Condensed",sans-serif;font-weight:600;color:var(--laiton);font-size:1.05rem;letter-spacing:.1em}
+.svc-row .titre{font-family:"Saira Condensed",sans-serif;font-weight:700;font-size:clamp(1.6rem,3.4vw,2.6rem);text-transform:uppercase;line-height:1}
+.svc-row .desc{color:var(--gris);font-size:.97rem}
+@media(max-width:760px){.svc-row{grid-template-columns:1fr;gap:6px}}
+.bande{overflow:hidden;padding:26px 0;border-top:1px solid var(--ligne);border-bottom:1px solid var(--ligne)}
+.bande .mot-geant{font-family:"Saira Condensed",sans-serif;font-weight:700;font-size:clamp(4rem,11vw,10rem);line-height:1;white-space:nowrap;text-transform:uppercase;color:transparent;-webkit-text-stroke:1.5px rgba(243,239,228,.4);display:inline-block;will-change:transform}
+.bande .mot-geant b{color:var(--laiton);-webkit-text-stroke:0;font-weight:700}
+.chiffres{padding:100px 0;background:var(--panneau)}
+.chiffres-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:34px}
+@media(max-width:900px){.chiffres-grid{grid-template-columns:repeat(2,1fr)}}
+.chiffre .gros{font-family:"Saira Condensed",sans-serif;font-weight:700;font-size:clamp(2.9rem,5.6vw,4.6rem);line-height:1;color:var(--creme)}
+.chiffre .gros em{font-style:normal;color:var(--laiton);font-size:.55em;margin-left:4px}
+.chiffre .lbl{color:var(--gris);margin-top:10px;font-size:.95rem;max-width:250px}
+.capacites{padding:100px 0 110px}
+.cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:900px){.cap-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.cap-grid{grid-template-columns:1fr}}
+.cap-carte{background:var(--panneau);border:1px solid var(--ligne);border-radius:10px;padding:26px;transition:border-color .3s,transform .3s}
+.cap-carte:hover{border-color:rgba(224,169,46,.55);transform:translateY(-4px)}
+.cap-carte h3{font-family:"Saira Condensed",sans-serif;font-weight:700;font-size:1.55rem;text-transform:uppercase;letter-spacing:.03em;color:var(--creme)}
+.cap-carte .spec{color:var(--laiton);font-weight:700;font-size:1.02rem;margin:8px 0 6px}
+.cap-carte p{color:var(--gris);font-size:.93rem}
+.chips-bloc{margin-top:44px}
+.chips-bloc h4{font-size:.74rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--laiton);margin-bottom:16px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chips span{border:1px solid var(--ligne);border-radius:999px;padding:8px 16px;font-size:.88rem;font-weight:600;color:var(--creme);background:rgba(243,239,228,.03)}
+.rea-sec{padding:100px 0 110px;background:var(--encre);overflow:hidden}
+.rea-track{display:flex;gap:22px;padding:6px 28px 10px;width:max-content;will-change:transform}
+@media(max-width:900px){.rea-track{overflow-x:auto;width:auto;padding-bottom:20px}}
+.rea-card{position:relative;width:520px;max-width:82vw;flex-shrink:0;border-radius:10px;overflow:hidden;background:#000}
+.rea-card.etroit{width:360px}
+.rea-card img{width:100%;height:430px;object-fit:cover}
+.rea-card.etroit img{height:430px}
+.rea-card .idx{position:absolute;top:16px;left:18px;z-index:2;font-family:"Saira Condensed",sans-serif;font-weight:600;letter-spacing:.12em;color:var(--laiton);background:rgba(10,12,10,.65);padding:3px 10px;border-radius:999px}
+.rea-card figcaption{position:absolute;left:0;right:0;bottom:0;padding:44px 20px 18px;background:linear-gradient(180deg,transparent,rgba(6,7,5,.92));display:flex;flex-direction:column;gap:2px}
+.rea-card figcaption .t{font-family:"Saira Condensed",sans-serif;font-weight:700;font-size:1.5rem;text-transform:uppercase}
+.rea-card figcaption .d{color:#cfccc0;font-size:.9rem}
+.cta{padding:110px 0 120px}
+.cta .sur{margin-bottom:14px}
+.cta h2{font-size:clamp(3rem,8vw,6.6rem)}
+.cta h2 .o{color:var(--laiton)}
+.tel-gros{display:inline-block;font-family:"Saira Condensed",sans-serif;font-weight:700;font-size:clamp(2.6rem,7.5vw,5.6rem);color:var(--creme);text-decoration:none;line-height:1.05;margin:16px 0 8px;transition:color .25s}
+.tel-gros:hover{color:var(--laiton)}
+.form-carte{margin-top:44px;background:var(--panneau);border:1px solid var(--ligne);border-radius:14px;padding:34px;max-width:760px}
+.form-carte h3{font-family:"Saira Condensed",sans-serif;font-weight:700;font-size:1.7rem;text-transform:uppercase}
+.form-carte>p{color:var(--gris);font-size:.95rem;margin-top:6px}
+.champs{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px}
+.champs .plein{grid-column:1/-1}
+@media(max-width:600px){.champs{grid-template-columns:1fr}}
+.champs label{display:block;font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gris);margin-bottom:7px}
+.champs input,.champs select,.champs textarea{width:100%;background:var(--encre);border:1px solid var(--ligne);border-radius:8px;color:var(--creme);padding:13px 14px;font:inherit;font-size:.95rem}
+.champs input:focus,.champs select:focus,.champs textarea:focus{outline:2px solid var(--laiton);outline-offset:1px}
+.demo-note{margin-top:18px;font-size:.82rem;color:var(--laiton-doux);border:1px dashed rgba(224,169,46,.5);border-radius:8px;padding:10px 14px}
+.ok-msg{display:none;margin-top:16px;background:rgba(224,169,46,.12);border:1px solid var(--laiton);color:var(--creme);border-radius:8px;padding:12px 16px;font-size:.92rem}
+footer{border-top:1px solid var(--ligne);padding:60px 0 0;overflow:hidden;background:#060705}
+footer .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;color:var(--gris);font-size:.93rem}
+@media(max-width:760px){footer .cols{grid-template-columns:1fr}}
+footer .geant{font-family:"Saira Condensed",sans-serif;font-weight:700;font-size:clamp(5rem,19vw,19rem);line-height:.8;text-align:center;color:rgba(243,239,228,.07);text-transform:uppercase;will-change:transform;margin-top:30px}
+.reveal{opacity:0;transform:translateY(34px)}
+.no-anim .reveal{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<div class="demo-band">Proposition conceptuelle — démo non officielle réalisée à titre de proposition. Ce site n'est pas le site officiel de l'entreprise.</div>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"><span class="vue">Voir</span></div>
+<div id="svc-float" aria-hidden="true"><img id="svc-float-img" src="" alt=""></div>
+
+<div id="loader" aria-hidden="true">
+  <div class="mot"><span>M</span><span>A</span><span>S</span><span>K</span><span class="o">A</span></div>
+  <div class="rainures"></div>
+  <div class="barre"><i id="loader-barre"></i></div>
+  <div class="pct"><span id="loader-pct">0</span> %</div>
+</div>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <div class="mot">Maska</div>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#capacites">Capacités</a>
+      <a href="#realisations">Réalisations</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="tel" href="tel:+14507993625">450 799-3625</a>
+  </div>
+</div>
+
+<!-- HÉROS -->
+<header class="hero" id="accueil">
+  <div class="fond">
+    <img id="hero-img" src="https://usinagemaska.com/wp-content/uploads/2024/02/roll4.jpg" alt="Surface corrugée d'un rouleau de meunerie usiné par Usinage Maska">
+    <canvas id="rainures" aria-hidden="true"></canvas>
+  </div>
+  <div class="voile"></div>
+  <div class="hero-side">Corrugation — Usinage — Fabrication</div>
+  <div class="badge-rond" aria-hidden="true">
+    <svg viewBox="0 0 120 120">
+      <defs><path id="cercle" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs>
+      <text><textPath href="#cercle">10 000 lb · Urgence le même jour · 10 000 lb ·</textPath></text>
+      <path class="fleche" d="M60 48v24m0 0l-8-8m8 8l8-8" stroke="#e0a92e" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(0,-2)"/>
+    </svg>
+  </div>
+  <div class="hero-in">
+    <div class="hero-meta">
+      <span class="tag plein">Pièces jusqu'à 10 000 lb</span>
+      <span class="tag">Urgence : service le même jour</span>
+      <span class="tag">CNC 3 axes</span>
+    </div>
+    <h1 class="display" id="hero-titre" aria-label="Maska">MASK<span class="o">A</span></h1>
+    <div class="hero-sub">
+      <p><strong>L'usinage lourd, montré à sa vraie mesure.</strong> Tournage, fraisage et corrugation de rouleaux de meuneries — des pièces qui pèsent jusqu'à 10 000 lb, usinées selon vos spécifications. <em>Bouge ta souris : les rainures du rouleau réagissent.</em></p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a class="btn magnet" href="#contact">Demander une soumission</a>
+        <a class="btn btn-ligne magnet" href="#capacites">Voir les capacités</a>
+      </div>
+    </div>
+    <div class="scroll-cue"><span class="trait"></span> Défiler</div>
+  </div>
+</header>
+
+<!-- MARQUISE -->
+<div class="marquee" aria-hidden="true">
+  <div class="piste" id="marquee-piste">
+    <span>Usinage conventionnel <i>///</i></span><span>Corrugation de rouleaux <i>///</i></span><span>Fabrication générale <i>///</i></span><span>Réparation de cubeuses <i>///</i></span><span>Modification sur mesure <i>///</i></span><span>Urgence le même jour <i>///</i></span>
+    <span>Usinage conventionnel <i>///</i></span><span>Corrugation de rouleaux <i>///</i></span><span>Fabrication générale <i>///</i></span><span>Réparation de cubeuses <i>///</i></span><span>Modification sur mesure <i>///</i></span><span>Urgence le même jour <i>///</i></span>
+  </div>
+</div>
+
+<!-- MANIFESTE -->
+<section class="manifeste">
+  <div class="wrap">
+    <p class="sur reveal">Le manifeste</p>
+    <p id="manifeste-texte">Ici, les pièces sont grosses, les délais sont courts et le travail est précis. Rouleaux de meunerie, pièces de cubeuses, fabrication sur mesure : quand une usine est arrêtée, on répond le jour même.</p>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2 class="display">Services</h2>
+      <p class="note">Six services, un atelier équipé pour le gros ouvrage. Survolez la liste — la photo suit votre curseur.</p>
+    </div>
+    <a class="svc-row reveal" href="#contact" data-curseur="Go" data-img="https://usinagemaska.com/wp-content/uploads/2024/02/roll4.jpg">
+      <span class="num">/ 01</span>
+      <span class="titre">Corrugation de rouleaux</span>
+      <span class="desc">Notre spécialité : la corrugation de rouleaux de meuneries, la pièce maîtresse des moulins à farine et des usines de transformation du grain.</span>
+    </a>
+    <a class="svc-row reveal" href="#contact" data-curseur="Go" data-img="https://usinagemaska.com/wp-content/uploads/2024/02/IMG_2699-1024x768.jpg">
+      <span class="num">/ 02</span>
+      <span class="titre">Usinage conventionnel</span>
+      <span class="desc">Tournage jusqu'à 36 po de diamètre et fraisage 36 × 36 × 120 po : les grosses pièces passent dans nos machines, pas en sous-traitance.</span>
+    </a>
+    <a class="svc-row reveal" href="#contact" data-curseur="Go" data-img="https://usinagemaska.com/wp-content/uploads/2024/02/IMG_0314-768x1024.jpg">
+      <span class="num">/ 03</span>
+      <span class="titre">Fabrication générale</span>
+      <span class="desc">Fabrication de pièces selon vos besoins et vos spécifications, de l'unité à la petite série, en atelier.</span>
+    </a>
+    <a class="svc-row reveal" href="#contact" data-curseur="Go" data-img="https://usinagemaska.com/wp-content/uploads/2024/02/IMG_0425-768x1024.jpg">
+      <span class="num">/ 04</span>
+      <span class="titre">Réparation de cubeuses</span>
+      <span class="desc">Réparation de pièces de cubeuses pour les meuneries et l'industrie agroalimentaire — remises en état et remises en service.</span>
+    </a>
+    <a class="svc-row reveal" href="#contact" data-curseur="Go" data-img="https://usinagemaska.com/wp-content/uploads/2024/02/IMG_2699-1024x768.jpg">
+      <span class="num">/ 05</span>
+      <span class="titre">Modification sur mesure</span>
+      <span class="desc">Une pièce existante à adapter, agrandir ou transformer ? On modifie sur mesure, selon vos plans et vos contraintes.</span>
+    </a>
+    <a class="svc-row reveal" href="#contact" data-curseur="Go" data-img="https://usinagemaska.com/wp-content/uploads/2024/02/IMG_0314-768x1024.jpg">
+      <span class="num">/ 06</span>
+      <span class="titre">Urgence — le même jour</span>
+      <span class="desc">Une machine arrêtée coûte cher à chaque heure. En cas d'urgence, on offre le service le même jour.</span>
+    </a>
+  </div>
+</section>
+
+<!-- BANDE GÉANTE -->
+<div class="bande" aria-hidden="true"><span class="mot-geant" id="mot-geant">Puissance <b>·</b> Précision <b>·</b> Puissance <b>·</b> Précision <b>·</b>&nbsp;</span></div>
+
+<!-- CHIFFRES -->
+<section class="chiffres" id="chiffres">
+  <div class="wrap chiffres-grid">
+    <div class="chiffre reveal"><div class="gros"><span class="compteur" data-cible="10000">0</span><em>lb</em></div><div class="lbl">poids maximal des pièces en fraisage — du très gros ouvrage</div></div>
+    <div class="chiffre reveal"><div class="gros"><span class="compteur" data-cible="36">0</span><em>po</em></div><div class="lbl">de diamètre en tournage, sur 120 po de longueur</div></div>
+    <div class="chiffre reveal"><div class="gros"><span class="compteur" data-cible="3">0</span><em>axes</em></div><div class="lbl">CNC — tour et fraiseuse 3 axes, en plus du parc conventionnel</div></div>
+    <div class="chiffre reveal"><div class="gros"><span class="compteur" data-cible="5">0</span><em>tonnes</em></div><div class="lbl">de capacité au pont roulant pour manipuler les grosses pièces</div></div>
+  </div>
+</section>
+
+<!-- CAPACITÉS -->
+<section class="capacites" id="capacites">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2 class="display">Capacités</h2>
+      <p class="note">L'équipement réel de l'atelier, avec ses vraies dimensions. C'est ça que vos acheteurs veulent voir.</p>
+    </div>
+    <div class="cap-grid">
+      <div class="cap-carte reveal"><h3>Tournage</h3><div class="spec">36 po dia. · 120 po long</div><p>36 po de diamètre dans le gap, 22 po au-dessus du chariot, 120 po de longueur.</p></div>
+      <div class="cap-carte reveal"><h3>Fraisage</h3><div class="spec">36 × 36 × 120 po · 10 000 lb</div><p>Pièces jusqu'à 10 000 lb, tête universelle.</p></div>
+      <div class="cap-carte reveal"><h3>Rectifieuse cylindrique</h3><div class="spec">18 po dia. × 84 po</div><p>Rectification cylindrique pour les finis qui comptent.</p></div>
+      <div class="cap-carte reveal"><h3>Profileur</h3><div class="spec">36 × 30 × 120 po</div><p>Profilage de grandes pièces, dont les rouleaux de meunerie.</p></div>
+      <div class="cap-carte reveal"><h3>CNC</h3><div class="spec">Tour 3 axes · Fraiseuse 3 axes</div><p>Précision et répétabilité pour les pièces en série.</p></div>
+      <div class="cap-carte reveal"><h3>Pont roulant</h3><div class="spec">5 tonnes</div><p>Manutention sécuritaire des pièces lourdes, du camion à la machine.</p></div>
+    </div>
+    <div class="chips-bloc reveal">
+      <h4>Matériaux travaillés</h4>
+      <div class="chips"><span>Acier</span><span>Acier inoxydable</span><span>Acier trempé</span><span>Aluminium</span><span>Bronze</span><span>Cuivre</span><span>Fonte</span><span>Plastique</span></div>
+    </div>
+    <div class="chips-bloc reveal">
+      <h4>Secteurs d'activités</h4>
+      <div class="chips"><span>Agricole</span><span>Agroalimentaire</span><span>Meuneries</span><span>Manutention du grain</span><span>Alimentaire</span><span>Abattoir</span><span>Transformation</span><span>Commercial</span><span>Industriel</span><span>Transfert pneumatique</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- RÉALISATIONS — HORIZONTAL -->
+<section class="rea-sec" id="realisations">
+  <div class="rea-pin">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2 class="display">Dans l'atelier</h2>
+        <p class="note">Continuez de défiler : la galerie avance de côté. Photos réelles de l'atelier et de ses pièces, aucune banque d'images.</p>
+      </div>
+    </div>
+    <div class="rea-track" id="rea-track">
+      <figure class="rea-card" data-curseur="Voir">
+        <span class="idx">/ 01</span>
+        <img src="https://usinagemaska.com/wp-content/uploads/2024/02/roll4.jpg" alt="Surface corrugée d'un rouleau de meunerie, en gros plan" loading="lazy">
+        <figcaption><span class="t">Corrugation de précision</span><span class="d">La surface corrugée d'un rouleau de meunerie, vue de près</span></figcaption>
+      </figure>
+      <figure class="rea-card" data-curseur="Voir">
+        <span class="idx">/ 02</span>
+        <img src="https://usinagemaska.com/wp-content/uploads/2024/02/IMG_2699-1024x768.jpg" alt="Rouleaux de meunerie corrugés de plusieurs formats, dans l'atelier" loading="lazy">
+        <figcaption><span class="t">Rouleaux de meunerie</span><span class="d">Des rouleaux corrugés de tous formats, prêts pour le moulin</span></figcaption>
+      </figure>
+      <figure class="rea-card etroit" data-curseur="Voir">
+        <span class="idx">/ 03</span>
+        <img src="https://usinagemaska.com/wp-content/uploads/2024/02/IMG_0314-768x1024.jpg" alt="Grosse pièce fabriquée sur mesure, montée sur son support dans l'atelier" loading="lazy">
+        <figcaption><span class="t">Fabrication sur mesure</span><span class="d">Une grosse pièce fabriquée et assemblée dans l'atelier</span></figcaption>
+      </figure>
+      <figure class="rea-card etroit" data-curseur="Voir">
+        <span class="idx">/ 04</span>
+        <img src="https://usinagemaska.com/wp-content/uploads/2024/02/IMG_0425-768x1024.jpg" alt="Arbres tournés polis, rangés dans une caisse de bois prêts à livrer" loading="lazy">
+        <figcaption><span class="t">Pièces tournées</span><span class="d">Arbres tournés, finis et prêts à livrer</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <p class="sur reveal">Une machine arrêtée ? Une pièce à refaire ?</p>
+    <h2 class="display reveal">Parlez à <span class="o">l'atelier</span></h2>
+    <a class="tel-gros reveal" href="tel:+14507993625">450 799-3625</a>
+    <form class="form-carte reveal" id="form-maska">
+      <h3>Demande express</h3>
+      <p>Décrivez la pièce ou le travail : on vous revient avec la marche à suivre. Lun.–ven. 7 h 30 à 16 h — et en cas d'urgence, le service le même jour.</p>
+      <div class="champs">
+        <div><label for="m-nom">Nom *</label><input id="m-nom" required autocomplete="name"></div>
+        <div><label for="m-tel">Téléphone *</label><input id="m-tel" required type="tel" autocomplete="tel"></div>
+        <div class="plein"><label for="m-service">Type de travaux *</label>
+          <select id="m-service" required>
+            <option value="">Choisir…</option>
+            <option>Corrugation de rouleaux de meunerie</option>
+            <option>Usinage conventionnel (tournage, fraisage)</option>
+            <option>Fabrication générale / sur mesure</option>
+            <option>Réparation de pièces de cubeuses</option>
+            <option>Modification d'une pièce existante</option>
+            <option>Urgence — service le même jour</option>
+            <option>Autre</option>
+          </select></div>
+        <div class="plein"><label for="m-msg">Détails (dimensions, matériau, délai)</label><textarea id="m-msg" rows="3"></textarea></div>
+      </div>
+      <p class="demo-note">Démonstration — ce formulaire est une maquette : aucune demande réelle n'est transmise à l'entreprise.</p>
+      <p style="margin-top:16px"><button class="btn magnet" type="submit">Envoyer la demande</button></p>
+      <div class="ok-msg">Simulation terminée. Aucune demande n'a été transmise à l'entreprise.</div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap cols">
+    <div>
+      <p><strong style="color:var(--creme)">Usinage Maska inc.</strong></p>
+      <p style="margin-top:6px">Fabrication, corrugation, machinage, réparation et modification de pièces sur mesure.</p>
+    </div>
+    <div>
+      <p><a href="tel:+14507993625">450 799-3625</a></p>
+      <p style="margin-top:6px">Lundi au vendredi · 7 h 30 à 16 h</p>
+    </div>
+    <div>
+      <p>Proposition conceptuelle — démo non officielle.</p>
+      <p style="margin-top:6px">© 2026 Usinage Maska inc.</p>
+    </div>
+  </div>
+  <div class="geant" aria-hidden="true">Maska</div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+<script>
+(function(){
+  if(!window.gsap){ return; }
+  clearTimeout(window.__maskaWatchdog);
+  gsap.registerPlugin(ScrollTrigger);
+  document.getElementById('form-maska').addEventListener('submit',function(ev){ ev.preventDefault(); var m=this.querySelector('.ok-msg'); if(m) m.style.display='block'; });
+
+  /* ---------- Défilement fluide (Lenis) ---------- */
+  var lenis=null;
+  if(window.Lenis){
+    lenis=new Lenis({ duration:1.25, smoothWheel:true });
+    lenis.on('scroll',ScrollTrigger.update);
+    gsap.ticker.add(function(t){ lenis.raf(t*1000); });
+    gsap.ticker.lagSmoothing(0);
+    document.querySelectorAll('a[href^="#"]').forEach(function(a){
+      a.addEventListener('click',function(e){
+        var cible=document.querySelector(a.getAttribute('href'));
+        if(cible){ e.preventDefault(); lenis.scrollTo(cible,{offset:-10}); }
+      });
+    });
+  }
+
+  /* ---------- Titre héros en lettres ---------- */
+  (function(){
+    var h1=document.getElementById('hero-titre');
+    var noeuds=Array.prototype.slice.call(h1.childNodes), html='';
+    noeuds.forEach(function(n){
+      if(n.nodeType===3){ n.textContent.split('').forEach(function(c){ html+='<span class="lt">'+c+'</span>'; }); }
+      else if(n.nodeType===1){ n.textContent.split('').forEach(function(c){ html+='<span class="lt '+n.className+'">'+c+'</span>'; }); }
+    });
+    h1.innerHTML=html;
+    gsap.set('#hero-titre .lt',{yPercent:110});
+  })();
+
+  /* ---------- Préchargeur + intro ---------- */
+  var pct={v:0};
+  gsap.timeline()
+    .to('#loader .mot span',{y:0,duration:.7,stagger:.05,ease:'power4.out'},0)
+    .to(pct,{v:100,duration:1.25,ease:'power2.inOut',onUpdate:function(){
+        document.getElementById('loader-pct').textContent=Math.round(pct.v);
+        document.getElementById('loader-barre').style.width=pct.v+'%';
+      }},0)
+    .to('#loader .mot span',{y:'-110%',duration:.5,stagger:.04,ease:'power3.in'},'+=0.1')
+    .to('#loader',{yPercent:-100,duration:.85,ease:'power4.inOut'},'-=0.25')
+    .set('#loader',{display:'none'})
+    .to('#hero-titre .lt',{yPercent:0,duration:1,stagger:.055,ease:'power4.out'},'-=0.55')
+    .from('.hero-meta .tag',{y:24,opacity:0,duration:.6,stagger:.08,ease:'power3.out'},'-=0.6')
+    .from('.hero-sub > *',{y:30,opacity:0,duration:.7,stagger:.12,ease:'power3.out'},'-=0.45')
+    .from('.badge-rond',{scale:0,opacity:0,duration:.7,ease:'back.out(1.6)'},'-=0.5')
+    .from('.topbar',{y:-30,opacity:0,duration:.6,ease:'power3.out'},'-=0.5');
+
+  /* ---------- Héros : parallaxe + zoom ---------- */
+  gsap.fromTo('.hero .fond',{scale:1.13},{scale:1,yPercent:12,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+  gsap.to('#hero-titre',{yPercent:-30,opacity:.25,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+
+  /* ---------- Marquise + vélocité ---------- */
+  var piste=document.getElementById('marquee-piste');
+  var defile=gsap.to(piste,{xPercent:-50,ease:'none',duration:20,repeat:-1});
+  ScrollTrigger.create({ onUpdate:function(self){
+    var v=gsap.utils.clamp(-6,6,self.getVelocity()/-250);
+    gsap.to(defile,{timeScale:Math.abs(v)*1.6+1,duration:.3,overwrite:true});
+    gsap.to(piste,{skewX:v*1.4,duration:.3,overwrite:'auto'});
+    gsap.to('.svc-row .titre, .display',{skewX:gsap.utils.clamp(-4,4,v*0.8),duration:.3,overwrite:'auto'});
+  }});
+
+  /* ---------- Manifeste mot à mot ---------- */
+  (function(){
+    var p=document.getElementById('manifeste-texte');
+    p.innerHTML=p.textContent.trim().split(/\s+/).map(function(m){ return '<span class="mot">'+m+'</span>'; }).join(' ');
+    gsap.to('#manifeste-texte .mot',{opacity:1,stagger:.06,ease:'none',
+      scrollTrigger:{trigger:'.manifeste',start:'top 75%',end:'bottom 55%',scrub:true}});
+  })();
+
+  /* ---------- Révélations ---------- */
+  gsap.utils.toArray('.reveal').forEach(function(el){
+    gsap.to(el,{opacity:1,y:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%',once:true}});
+  });
+
+  /* ---------- Compteurs ---------- */
+  document.querySelectorAll('.compteur').forEach(function(el){
+    var cible=parseInt(el.dataset.cible,10), obj={v:0};
+    ScrollTrigger.create({trigger:el,start:'top 88%',once:true,onEnter:function(){
+      gsap.to(obj,{v:cible,duration:1.6,ease:'power2.out',onUpdate:function(){
+        el.textContent=Math.round(obj.v).toString().replace(/\B(?=(\d{3})+(?!\d))/g,' ');
+      }});
+    }});
+  });
+
+  /* ---------- Bande géante contour ---------- */
+  gsap.fromTo('#mot-geant',{xPercent:2},{xPercent:-32,ease:'none',
+    scrollTrigger:{trigger:'.bande',start:'top bottom',end:'bottom top',scrub:true}});
+
+  /* ---------- Chiffres : la section vire au laiton ---------- */
+  gsap.timeline({scrollTrigger:{trigger:'#chiffres',start:'top 65%',end:'bottom 95%',scrub:true}})
+    .to('#chiffres',{backgroundColor:'#e0a92e'},0)
+    .to('#chiffres .gros',{color:'#141005'},0)
+    .to('#chiffres .gros em',{color:'#f3efe4'},0)
+    .to('#chiffres .lbl',{color:'rgba(20,16,5,0.72)'},0);
+
+  /* ---------- Réalisations horizontales (bureau) ---------- */
+  var mm=gsap.matchMedia();
+  mm.add('(min-width: 901px)',function(){
+    var track=document.getElementById('rea-track');
+    function distance(){ return Math.max(0, track.scrollWidth - window.innerWidth + 56); }
+    var horiz=gsap.to(track,{x:function(){ return -distance(); },ease:'none',
+      scrollTrigger:{trigger:'.rea-sec',start:'top top',end:function(){ return '+='+distance(); },
+        pin:true,scrub:1,anticipatePin:1,invalidateOnRefresh:true}});
+    gsap.utils.toArray('.rea-card img').forEach(function(img){
+      gsap.fromTo(img,{xPercent:-5},{xPercent:5,ease:'none',
+        scrollTrigger:{trigger:img.closest('.rea-card'),containerAnimation:horiz,start:'left right',end:'right left',scrub:true}});
+    });
+  });
+
+  /* ---------- Pied géant ---------- */
+  gsap.fromTo('footer .geant',{yPercent:46},{yPercent:18,ease:'none',
+    scrollTrigger:{trigger:'footer',start:'top bottom',end:'bottom bottom',scrub:true}});
+
+  /* ---------- Services : la photo suit le curseur ---------- */
+  if(window.matchMedia('(hover:hover) and (pointer:fine)').matches){
+    var fl=document.getElementById('svc-float'), fimg=document.getElementById('svc-float-img');
+    gsap.set(fl,{xPercent:-50,yPercent:-58,scale:.85});
+    var fx=gsap.quickTo(fl,'x',{duration:.55,ease:'power3'}), fy=gsap.quickTo(fl,'y',{duration:.55,ease:'power3'});
+    window.addEventListener('mousemove',function(e){ fx(e.clientX); fy(e.clientY); });
+    document.querySelectorAll('.svc-row').forEach(function(row){
+      row.addEventListener('mouseenter',function(){
+        var src=row.getAttribute('data-img');
+        if(src && fimg.getAttribute('src')!==src) fimg.setAttribute('src',src);
+        gsap.to(fl,{autoAlpha:1,scale:1,rotate:gsap.utils.random(-5,4),duration:.45,ease:'power3.out'});
+      });
+    });
+    document.getElementById('services').addEventListener('mouseleave',function(){
+      gsap.to(fl,{autoAlpha:0,scale:.85,duration:.35,ease:'power3.out'});
+    });
+  }
+
+  /* ---------- Curseur personnalisé ---------- */
+  if(window.matchMedia('(hover:hover) and (pointer:fine)').matches){
+    var dot=document.querySelector('.cursor-dot'), ring=document.querySelector('.cursor-ring'), vue=ring.querySelector('.vue');
+    var dx=gsap.quickTo(dot,'x',{duration:.08,ease:'power2'}), dy=gsap.quickTo(dot,'y',{duration:.08,ease:'power2'});
+    var rx=gsap.quickTo(ring,'x',{duration:.38,ease:'power3'}), ry=gsap.quickTo(ring,'y',{duration:.38,ease:'power3'});
+    window.addEventListener('mousemove',function(e){ dx(e.clientX); dy(e.clientY); rx(e.clientX); ry(e.clientY); });
+    document.querySelectorAll('a, button, [data-curseur]').forEach(function(el){
+      el.addEventListener('mouseenter',function(){ vue.textContent=el.getAttribute('data-curseur')||''; ring.classList.add('gros'); });
+      el.addEventListener('mouseleave',function(){ ring.classList.remove('gros'); });
+    });
+  } else {
+    document.querySelector('.cursor-dot').style.display='none';
+    document.querySelector('.cursor-ring').style.display='none';
+  }
+
+  /* ---------- Boutons magnétiques ---------- */
+  if(window.matchMedia('(hover:hover)').matches){
+    document.querySelectorAll('.magnet').forEach(function(el){
+      el.addEventListener('mousemove',function(e){
+        var r=el.getBoundingClientRect();
+        gsap.to(el,{x:(e.clientX-r.left-r.width/2)*.32,y:(e.clientY-r.top-r.height/2)*.32,duration:.4,ease:'power3.out'});
+      });
+      el.addEventListener('mouseleave',function(){ gsap.to(el,{x:0,y:0,duration:.7,ease:'elastic.out(1,0.4)'}); });
+    });
+  }
+
+  window.addEventListener('load',function(){ ScrollTrigger.refresh(); });
+})();
+</script>
+<script>
+/* ================= HÉROS CANVAS — les rainures du rouleau glissent =================
+   La photo est redessinée en bandes horizontales fines (les rainures de la
+   corrugation). Chaque bande glisse latéralement selon une onde lente ; près du
+   curseur, l'onde s'amplifie — on dirait que le rouleau tourne sous la main.
+   Aucune lecture de pixels : l'effet fonctionne même sans CORS. */
+(function(){
+  var canvas=document.getElementById('rainures');
+  var heroImg=document.getElementById('hero-img');
+  if(!canvas || !heroImg) return;
+  var reduit=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var ctx=canvas.getContext('2d');
+  var W=0,H=0,DPR=1, pret=false, visible=true;
+  var souris={x:.5,y:.5,energie:0};
+  var dernierX=null, dernierY=null;
+
+  function tailler(){
+    var r=canvas.parentElement.getBoundingClientRect();
+    DPR=Math.min(window.devicePixelRatio||1,1.5);
+    W=Math.max(2,Math.round(r.width)); H=Math.max(2,Math.round(r.height));
+    canvas.width=Math.round(W*DPR); canvas.height=Math.round(H*DPR);
+    ctx.setTransform(DPR,0,0,DPR,0,0);
+  }
+
+  function geometrie(){
+    var echelle=Math.max(W/heroImg.naturalWidth, H/heroImg.naturalHeight)*1.12;
+    var dw=heroImg.naturalWidth*echelle, dh=heroImg.naturalHeight*echelle;
+    return { echelle:echelle, dw:dw, dh:dh, ox:(W-dw)/2, oy:(H-dh)/2 - dh*0.04 };
+  }
+
+  function dessinerStatique(){
+    if(!pret) return;
+    var g=geometrie();
+    ctx.clearRect(0,0,W,H);
+    ctx.drawImage(heroImg,g.ox,g.oy,g.dw,g.dh);
+  }
+
+  var t0=null;
+  function boucle(ts){
+    requestAnimationFrame(boucle);
+    if(!pret || !visible) return;
+    if(t0===null) t0=ts;
+    var t=(ts-t0)/1000;
+    var g=geometrie();
+    var bande=6;
+    var mx=souris.x*W, my=souris.y*H;
+    var maxD=Math.max(4,(g.dw-W)/2 - 3);
+    souris.energie*=0.94;
+    ctx.clearRect(0,0,W,H);
+    for(var y=0;y<H;y+=bande){
+      var distY=Math.abs(y-my);
+      var rayon=190;
+      var proche=Math.max(0,1-distY/rayon);
+      var amp=1.4 + proche*proche*(10+souris.energie*22);
+      var decal=Math.sin(y*0.055 + t*1.6)*amp + Math.sin(y*0.013 - t*0.7)*amp*0.6;
+      if(decal>maxD) decal=maxD; else if(decal<-maxD) decal=-maxD;
+      var sy=(y - g.oy)/g.echelle;
+      ctx.drawImage(heroImg, 0, sy, heroImg.naturalWidth, bande/g.echelle + 1,
+                    g.ox + decal, y, g.dw, bande + 1);
+    }
+    /* reflet laiton discret qui suit le curseur */
+    var grad=ctx.createRadialGradient(mx,my,0,mx,my,240);
+    grad.addColorStop(0,'rgba(224,169,46,'+(0.05+Math.min(0.10,souris.energie*0.12))+')');
+    grad.addColorStop(1,'rgba(224,169,46,0)');
+    ctx.fillStyle=grad;
+    ctx.fillRect(0,0,W,H);
+  }
+
+  function demarrer(){
+    if(pret) return;
+    pret=true;
+    tailler();
+    canvas.classList.add('pret');
+    if(reduit){ dessinerStatique(); return; }
+    requestAnimationFrame(boucle);
+  }
+
+  if(heroImg.complete && heroImg.naturalWidth>0) demarrer();
+  else heroImg.addEventListener('load',demarrer);
+
+  window.addEventListener('resize',function(){ tailler(); if(reduit) dessinerStatique(); });
+
+  var hero=document.querySelector('.hero');
+  hero.addEventListener('mousemove',function(e){
+    var r=hero.getBoundingClientRect();
+    var nx=(e.clientX-r.left)/r.width, ny=(e.clientY-r.top)/r.height;
+    if(dernierX!==null){
+      var v=Math.min(1,(Math.abs(nx-dernierX)+Math.abs(ny-dernierY))*6);
+      souris.energie=Math.min(1.4, souris.energie + v*0.55);
+    }
+    dernierX=nx; dernierY=ny;
+    souris.x=nx; souris.y=ny;
+  });
+  hero.addEventListener('mouseleave',function(){ dernierX=null; dernierY=null; });
+
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(entrees){
+      visible=entrees[0].isIntersecting;
+    },{threshold:0}).observe(hero);
+  }
+})();
+</script>
+<script>
+  window.__maskaWatchdog=setTimeout(function(){
+    if(!window.gsap){
+      document.documentElement.classList.add('no-anim');
+      var l=document.getElementById('loader'); if(l) l.style.display='none';
+    }
+  },2600);
+</script>
+</body>
+</html>
