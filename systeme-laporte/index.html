@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Système d'acquisition — Démonstration Laporte</title>
+<style>
+  :root{
+    --noir:#0c0e10; --panneau:#15181c; --panneau2:#1b1f24; --ligne:#2a2f36;
+    --creme:#f2efe9; --gris:#9aa3ad; --orange:#f07300; --vert:#3ecf6e; --rouge:#e5484d;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--noir);color:var(--creme);font-family:"Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;line-height:1.5}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+  header{border-bottom:1px solid var(--ligne);padding:26px 0 20px}
+  .sur{font-size:.72rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--orange)}
+  h1{font-size:clamp(1.7rem,4.5vw,2.7rem);line-height:1.08;margin:10px 0 8px;text-transform:uppercase;letter-spacing:.01em}
+  h1 .o{color:var(--orange)}
+  .sous{color:var(--gris);max-width:760px}
+  .bandeau-demo{margin-top:14px;display:inline-block;border:1px solid var(--orange);color:var(--orange);border-radius:999px;padding:6px 14px;font-size:.8rem;font-weight:600;letter-spacing:.06em}
+  section{padding:34px 0}
+  h2{font-size:1.25rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
+  .h2-sous{color:var(--gris);margin-bottom:20px;max-width:820px}
+  .grille{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  @media(max-width:860px){.grille{grid-template-columns:1fr}}
+  .carte{background:var(--panneau);border:1px solid var(--ligne);border-radius:14px;padding:22px}
+  .carte h3{font-size:1rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
+  .carte .desc{color:var(--gris);font-size:.92rem;margin-bottom:16px}
+  label{display:block;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gris);margin:12px 0 6px}
+  input,select,textarea{width:100%;background:var(--panneau2);border:1px solid var(--ligne);border-radius:9px;color:var(--creme);padding:12px 13px;font-size:1rem;font-family:inherit}
+  input:focus,select:focus,textarea:focus{outline:2px solid var(--orange);outline-offset:1px}
+  .btn{display:inline-block;color:#0c0e10;background:var(--orange);border:none;border-radius:999px;padding:14px 28px;font-size:1rem;font-weight:700;cursor:pointer;margin-top:18px}
+  .btn:disabled{opacity:.55;cursor:wait}
+  .statuts{list-style:none;margin-top:6px}
+  .statuts li{display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-bottom:1px solid var(--ligne)}
+  .statuts li:last-child{border-bottom:none}
+  .pastille{flex:0 0 auto;width:22px;height:22px;border-radius:50%;border:2px solid var(--ligne);display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:800;color:transparent;margin-top:1px}
+  .ok .pastille{background:var(--vert);border-color:var(--vert);color:#06280f}
+  .attente .pastille{border-color:var(--orange)}
+  .statuts .t{font-weight:700}
+  .statuts .d{color:var(--gris);font-size:.9rem}
+  .reel{font-size:.68rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--vert);color:var(--vert);border-radius:6px;padding:2px 7px;margin-left:8px;vertical-align:2px}
+  .visu{font-size:.68rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--gris);color:var(--gris);border-radius:6px;padding:2px 7px;margin-left:8px;vertical-align:2px}
+  .msg-erreur{display:none;background:#3a1416;border:1px solid var(--rouge);color:#ffb3b5;border-radius:9px;padding:12px 14px;margin-top:14px;font-size:.92rem}
+  .msg-succes{display:none;background:#0f2c18;border:1px solid var(--vert);color:#b9f4cd;border-radius:9px;padding:12px 14px;margin-top:14px;font-size:.95rem}
+  /* Pipeline */
+  .pipeline{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;overflow-x:auto;padding-bottom:8px}
+  @media(max-width:860px){.pipeline{grid-template-columns:repeat(5,minmax(190px,1fr))}}
+  .colonne{background:var(--panneau);border:1px solid var(--ligne);border-radius:12px;padding:12px;min-height:180px}
+  .colonne h4{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gris);margin-bottom:4px}
+  .colonne .nb{font-size:.78rem;color:var(--orange);font-weight:800;margin-bottom:10px}
+  .fiche{background:var(--panneau2);border:1px solid var(--ligne);border-left:4px solid var(--orange);border-radius:9px;padding:11px 12px;margin-bottom:10px}
+  .fiche.nouvelle{border-left-color:var(--vert);box-shadow:0 0 0 1px var(--vert)}
+  .fiche .nom{font-weight:700;font-size:.95rem}
+  .fiche .meta{color:var(--gris);font-size:.82rem;margin-top:2px}
+  .fiche .heure{color:var(--orange);font-size:.78rem;font-weight:700;margin-top:4px}
+  .fiche button{margin-top:9px;background:transparent;border:1px solid var(--orange);color:var(--orange);border-radius:999px;padding:6px 13px;font-size:.8rem;font-weight:700;cursor:pointer}
+  .fiche button:hover{background:var(--orange);color:#0c0e10}
+  .avis-box{display:none;margin-top:18px;background:#0f2c18;border:1px solid var(--vert);border-radius:12px;padding:18px 20px}
+  .avis-box .t{font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#b9f4cd;margin-bottom:6px}
+  .avis-box .apercu{background:var(--panneau);border:1px solid var(--ligne);border-radius:9px;padding:13px 15px;margin-top:10px;color:var(--creme);font-size:.94rem}
+  .autos{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+  .auto{background:var(--panneau);border:1px solid var(--ligne);border-radius:12px;padding:16px}
+  .auto .t{font-weight:700;margin-bottom:4px}
+  .auto .d{color:var(--gris);font-size:.9rem}
+  footer{border-top:1px solid var(--ligne);padding:22px 0 34px;color:var(--gris);font-size:.85rem}
+  .compteur{font-variant-numeric:tabular-nums;color:var(--orange);font-weight:800}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <p class="sur">Les Entreprises Laporte inc. — Proposition</p>
+    <h1>Le système d'acquisition, <span class="o">en direct</span></h1>
+    <p class="sous">Cette page démontre le parcours complet d'une demande de soumission : le formulaire envoie une vraie notification, le client reçoit une vraie confirmation, et la demande apparaît dans le pipeline de suivi. Les fiches déjà présentes dans le pipeline sont des exemples fictifs.</p>
+    <span class="bandeau-demo">Démonstration — données fictives, envois réels</span>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>Étape 1 — Le client fait sa demande</h2>
+    <p class="h2-sous">Le même formulaire court que celui de la maquette du site : trois minutes pour le client, zéro friction. Remplissez-le comme un client le ferait, puis regardez l'étape 2 et le pipeline plus bas.</p>
+    <div class="grille">
+      <div class="carte">
+        <h3>Demande de soumission</h3>
+        <p class="desc">Drain français, fissure, inspection par caméra — la demande part immédiatement, même à 19 h 42 un vendredi.</p>
+        <form id="form-demande">
+          <label for="f-nom">Nom *</label>
+          <input id="f-nom" required autocomplete="name" placeholder="Ex. : Marc Tremblay">
+          <label for="f-tel">Téléphone *</label>
+          <input id="f-tel" required type="tel" autocomplete="tel" placeholder="Ex. : 450 555-1234">
+          <label for="f-courriel">Courriel *</label>
+          <input id="f-courriel" required type="email" autocomplete="email" placeholder="Pour recevoir la confirmation automatique">
+          <label for="f-service">Votre besoin *</label>
+          <select id="f-service" required>
+            <option value="">Choisir…</option>
+            <option>Drain français — installation ou réparation</option>
+            <option>Inspection par caméra de mes drains</option>
+            <option>Fissure de fondation — réparation par injection</option>
+            <option>Égout / entrée d'eau</option>
+            <option>Margelle, nivellement ou béton</option>
+            <option>Autre travail de mini-excavation</option>
+          </select>
+          <label for="f-ville">Municipalité *</label>
+          <input id="f-ville" required placeholder="Ex. : Beloeil">
+          <label for="f-msg">Détails (facultatif)</label>
+          <textarea id="f-msg" rows="3" placeholder="Décrivez le problème en une phrase ou deux."></textarea>
+          <button class="btn" type="submit" id="btn-envoyer">Envoyer la demande</button>
+          <div class="msg-erreur" id="msg-erreur"></div>
+          <div class="msg-succes" id="msg-succes">Demande envoyée. Regardez l'étape 2 : la notification est partie et la demande vient d'entrer dans le pipeline, colonne « Nouveau ».</div>
+        </form>
+      </div>
+      <div class="carte">
+        <h3>Étape 2 — Ce qui se passe tout seul</h3>
+        <p class="desc">Aucune action humaine. Le système travaille pendant que l'équipe est sur un chantier.</p>
+        <ul class="statuts">
+          <li id="st-notif"><span class="pastille">✓</span><div><span class="t">Notification immédiate à l'entreprise</span><span class="reel">Réel</span><div class="d">Un courriel détaillé part à l'instant où le client envoie sa demande. Personne ne peut la manquer.</div></div></li>
+          <li id="st-confirm"><span class="pastille">✓</span><div><span class="t">Confirmation automatique au client</span><span class="reel">Réel</span><div class="d">Le client reçoit un courriel qui confirme la réception de sa demande et le délai de rappel. Il n'appelle pas un concurrent en attendant.</div></div></li>
+          <li id="st-pipeline"><span class="pastille">✓</span><div><span class="t">La demande entre dans le pipeline</span><span class="visu">Visualisation</span><div class="d">Dans le système livré, la fiche est créée automatiquement dans le CRM. Ici, elle apparaît dans le pipeline ci-dessous.</div></div></li>
+          <li id="st-rappel"><span class="pastille">✓</span><div><span class="t">Rappel interne si la demande dort</span><span class="visu">Visualisation</span><div class="d">Si personne ne traite la demande dans le délai convenu, un rappel part. Dans cette démo, le délai est raccourci : <span class="compteur" id="compteur">en attente d'une demande</span></div></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Étape 3 — Le pipeline de suivi</h2>
+    <p class="h2-sous">Chaque demande avance d'une étape à l'autre, de la réception à la fin des travaux. Avancez une fiche jusqu'à « Travaux terminés » pour voir la dernière automatisation se déclencher.</p>
+    <div class="pipeline" id="pipeline">
+      <div class="colonne" data-etape="0"><h4>Nouveau</h4><div class="nb" data-nb></div><div data-cartes></div></div>
+      <div class="colonne" data-etape="1"><h4>Contacté</h4><div class="nb" data-nb></div><div data-cartes></div></div>
+      <div class="colonne" data-etape="2"><h4>Soumission</h4><div class="nb" data-nb></div><div data-cartes></div></div>
+      <div class="colonne" data-etape="3"><h4>Accepté</h4><div class="nb" data-nb></div><div data-cartes></div></div>
+      <div class="colonne" data-etape="4"><h4>Travaux terminés</h4><div class="nb" data-nb></div><div data-cartes></div></div>
+    </div>
+    <div class="avis-box" id="avis-box">
+      <p class="t">Automatisation déclenchée — Demande d'avis Google</p>
+      <p>Le dossier est marqué « Travaux terminés » : le système envoie automatiquement une demande d'avis au client. C'est comme ça que les 76 avis actuels deviennent 150, puis 200 — sans que personne ait à y penser.</p>
+      <div class="apercu" id="avis-apercu"></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Ce que le système fait tout seul</h2>
+    <p class="h2-sous">Sept automatisations, un seul objectif : ne plus jamais perdre une demande de travaux.</p>
+    <div class="autos">
+      <div class="auto"><p class="t">Notification immédiate</p><p class="d">Chaque demande arrive en courriel détaillé, à la seconde où elle est envoyée.</p></div>
+      <div class="auto"><p class="t">Confirmation au client</p><p class="d">Le client sait que sa demande est reçue et quand il sera rappelé.</p></div>
+      <div class="auto"><p class="t">Pipeline automatique</p><p class="d">Chaque demande devient une fiche suivie, de la réception aux travaux terminés.</p></div>
+      <div class="auto"><p class="t">Rappel interne</p><p class="d">Une demande non traitée dans le délai déclenche un rappel à l'équipe.</p></div>
+      <div class="auto"><p class="t">Avis Google automatiques</p><p class="d">Après chaque chantier terminé, le client reçoit une demande d'avis. La réputation travaille toute seule.</p></div>
+      <div class="auto"><p class="t">Relance des soumissions</p><p class="d">Une soumission sans réponse reçoit un suivi automatique poli, au bon moment.</p></div>
+      <div class="auto"><p class="t">Rapport mensuel</p><p class="d">Demandes reçues, coût par demande, contrats gagnés : les chiffres, sans devinettes.</p></div>
+      <div class="auto"><p class="t">Publicité qui alimente le système</p><p class="d">Les campagnes Meta mènent aux pages du site, qui mènent au formulaire, qui mène au pipeline. Un seul tuyau, mesuré de bout en bout.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Page de démonstration préparée pour Les Entreprises Laporte inc. — Les notifications et confirmations envoyées depuis le formulaire sont réelles ; les fiches du pipeline sont des exemples fictifs. Dans le système livré, le pipeline et les rappels roulent dans le CRM de l'entreprise, 24 h sur 24.
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var ETAPES = ["Nouveau","Contacté","Soumission","Accepté","Travaux terminés"];
+  var pipeline = document.getElementById("pipeline");
+
+  function heureActuelle(){
+    try{
+      return new Date().toLocaleTimeString("fr-CA",{hour:"2-digit",minute:"2-digit",timeZone:"America/Toronto"});
+    }catch(e){
+      return new Date().toLocaleTimeString("fr-CA",{hour:"2-digit",minute:"2-digit"});
+    }
+  }
+
+  function creerFiche(donnees, etape, nouvelle){
+    var fiche = document.createElement("div");
+    fiche.className = "fiche" + (nouvelle ? " nouvelle" : "");
+    fiche.dataset.etape = String(etape);
+    var nom = document.createElement("p"); nom.className="nom"; nom.textContent = donnees.nom;
+    var meta = document.createElement("p"); meta.className="meta"; meta.textContent = donnees.service + " — " + donnees.ville;
+    var tel = document.createElement("p"); tel.className="meta"; tel.textContent = donnees.tel;
+    var heure = document.createElement("p"); heure.className="heure"; heure.textContent = donnees.heure;
+    fiche.appendChild(nom); fiche.appendChild(meta); fiche.appendChild(tel); fiche.appendChild(heure);
+    if(etape < 4){
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.textContent = "Avancer → " + ETAPES[etape+1];
+      btn.addEventListener("click", function(){ avancer(fiche); });
+      fiche.appendChild(btn);
+    }
+    return fiche;
+  }
+
+  function placer(fiche){
+    var etape = parseInt(fiche.dataset.etape, 10);
+    var col = pipeline.querySelector('[data-etape="' + etape + '"] [data-cartes]');
+    col.appendChild(fiche);
+    majCompteurs();
+  }
+
+  function majCompteurs(){
+    pipeline.querySelectorAll(".colonne").forEach(function(col){
+      var n = col.querySelectorAll(".fiche").length;
+      col.querySelector("[data-nb]").textContent = n + (n > 1 ? " demandes" : " demande");
+    });
+  }
+
+  function avancer(fiche){
+    var etape = parseInt(fiche.dataset.etape, 10);
+    if(etape >= 4){ return; }
+    etape += 1;
+    fiche.dataset.etape = String(etape);
+    var btn = fiche.querySelector("button");
+    if(btn){
+      if(etape >= 4){ btn.remove(); }
+      else { btn.textContent = "Avancer → " + ETAPES[etape+1]; }
+    }
+    placer(fiche);
+    if(etape === 4){ declencherAvis(fiche); }
+  }
+
+  function declencherAvis(fiche){
+    var nom = fiche.querySelector(".nom").textContent;
+    var prenom = nom.split(" ")[0];
+    var box = document.getElementById("avis-box");
+    var apercu = document.getElementById("avis-apercu");
+    apercu.textContent = "Bonjour " + prenom + ", merci de votre confiance envers Les Entreprises Laporte. Vos travaux sont terminés — si vous êtes satisfait du résultat, un avis Google nous aide énormément et prend moins d'une minute. Merci encore ! — L'équipe Laporte";
+    box.style.display = "block";
+    box.scrollIntoView({behavior:"smooth", block:"nearest"});
+  }
+
+  /* Fiches fictives de départ */
+  var exemples = [
+    {nom:"Sylvie Bergeron", service:"Fissure de fondation", ville:"Saint-Basile-le-Grand", tel:"450 555-0182", heure:"Hier, 16 h 05", etape:0},
+    {nom:"Daniel Côté", service:"Drain français", ville:"Beloeil", tel:"514 555-0117", heure:"Hier, 11 h 32", etape:1},
+    {nom:"Marie-France Roy", service:"Inspection par caméra", ville:"McMasterville", tel:"450 555-0143", heure:"Lundi, 9 h 18", etape:2},
+    {nom:"Gestion Immo Rive-Sud", service:"Fissures — stationnement souterrain", ville:"Longueuil", tel:"450 555-0109", heure:"Vendredi, 14 h 47", etape:3}
+  ];
+  exemples.forEach(function(ex){ placer(creerFiche(ex, ex.etape, false)); });
+  majCompteurs();
+
+  /* Rappel interne (délai de démonstration : 90 secondes) */
+  var rappelTimer = null, compteurTimer = null;
+  function demarrerRappel(){
+    var cible = Date.now() + 90000;
+    var compteur = document.getElementById("compteur");
+    var stRappel = document.getElementById("st-rappel");
+    clearInterval(compteurTimer); clearTimeout(rappelTimer);
+    compteurTimer = setInterval(function(){
+      var reste = Math.max(0, Math.round((cible - Date.now())/1000));
+      compteur.textContent = "rappel dans " + reste + " s si la demande n'est pas traitée (délai réel convenu avec l'entreprise : quelques heures)";
+      if(reste <= 0){ clearInterval(compteurTimer); }
+    }, 500);
+    rappelTimer = setTimeout(function(){
+      stRappel.classList.add("ok");
+      compteur.textContent = "rappel envoyé à l'équipe — la demande attend toujours dans la colonne « Nouveau »";
+    }, 90000);
+  }
+
+  /* Soumission du formulaire — envois réels via FormSubmit */
+  var form = document.getElementById("form-demande");
+  form.addEventListener("submit", function(ev){
+    ev.preventDefault();
+    var btn = document.getElementById("btn-envoyer");
+    var errBox = document.getElementById("msg-erreur");
+    var okBox = document.getElementById("msg-succes");
+    errBox.style.display = "none"; okBox.style.display = "none";
+    btn.disabled = true; btn.textContent = "Envoi en cours…";
+
+    var donnees = {
+      nom: document.getElementById("f-nom").value.trim(),
+      tel: document.getElementById("f-tel").value.trim(),
+      courriel: document.getElementById("f-courriel").value.trim(),
+      service: document.getElementById("f-service").value,
+      ville: document.getElementById("f-ville").value.trim(),
+      message: document.getElementById("f-msg").value.trim()
+    };
+
+    var charge = {
+      name: donnees.nom,
+      telephone: donnees.tel,
+      email: donnees.courriel,
+      service: donnees.service,
+      municipalite: donnees.ville,
+      details: donnees.message || "(aucun détail)",
+      _subject: "Nouvelle demande de soumission — " + donnees.service + " (" + donnees.ville + ")",
+      _template: "table",
+      _autoresponse: "Bonjour " + donnees.nom.split(" ")[0] + ", merci pour votre demande. Les Entreprises Laporte l'ont bien reçue — un membre de l'équipe vous rappellera pendant les heures d'ouverture (lun.–ven. 7 h à 19 h, sam. 8 h à 12 h) pour discuter de votre projet : " + donnees.service + " à " + donnees.ville + ". Pour toute urgence, appelez le 450 464-5979. — Les Entreprises Laporte inc."
+    };
+
+    fetch("https://formsubmit.co/ajax/joeycarpentier01@gmail.com", {
+      method: "POST",
+      headers: {"Content-Type": "application/json", "Accept": "application/json"},
+      body: JSON.stringify(charge)
+    })
+    .then(function(r){ return r.json(); })
+    .then(function(res){
+      btn.disabled = false; btn.textContent = "Envoyer la demande";
+      if(res && (res.success === "true" || res.success === true)){
+        document.getElementById("st-notif").classList.add("ok");
+        document.getElementById("st-confirm").classList.add("ok");
+        document.getElementById("st-pipeline").classList.add("ok");
+        okBox.style.display = "block";
+        var fiche = creerFiche({nom: donnees.nom, service: donnees.service, ville: donnees.ville, tel: donnees.tel, heure: "À l'instant — " + heureActuelle()}, 0, true);
+        placer(fiche);
+        fiche.scrollIntoView({behavior:"smooth", block:"center"});
+        demarrerRappel();
+        form.reset();
+      } else {
+        errBox.textContent = "L'envoi n'a pas abouti (" + ((res && res.message) || "erreur inconnue") + "). Dans le système livré, un mécanisme de secours prend le relais — aucune demande ne se perd.";
+        errBox.style.display = "block";
+      }
+    })
+    .catch(function(){
+      btn.disabled = false; btn.textContent = "Envoyer la demande";
+      errBox.textContent = "Connexion impossible pour l'envoi. Vérifiez le réseau, puis réessayez — dans le système livré, la demande serait conservée et renvoyée automatiquement.";
+      errBox.style.display = "block";
+    });
+  });
+})();
+</script>
+</body>
+</html>
