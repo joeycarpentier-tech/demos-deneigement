@@ -1,1 +1,109 @@
-x
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cedric Legros — Pavé uni et aménagement — Longueuil et Richelieu</title>
+<meta name="description" content="Cedric Legros — Pavé uni et aménagement — Longueuil et Richelieu. Longueuil — Richelieu.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#100d0b;--panel:#1d1611;--ink:#f7f0e8;--muted:#c2ab97;--acc:#e07840;--acc2:#9c4f24;--line:rgba(255,255,255,.09)}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif;line-height:1.6;overflow-x:hidden}
+#loader{position:fixed;inset:0;background:var(--bg);z-index:99;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;transition:opacity .7s ease,visibility .7s}
+#loader.done{opacity:0;visibility:hidden}
+#loader .lname{font-size:clamp(22px,4vw,34px);font-weight:800;letter-spacing:3px;text-transform:uppercase}
+#loader .lsub{color:var(--muted);letter-spacing:2px;font-size:13px;text-transform:uppercase}
+#loader .bar{width:min(320px,70vw);height:3px;background:rgba(255,255,255,.12);overflow:hidden;border-radius:2px}
+#loader .bar i{display:block;height:100%;width:0;background:var(--acc);animation:load 1.6s ease forwards}
+@keyframes load{to{width:100%}}
+header{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+#bg{position:absolute;inset:0;width:100%;height:100%}
+.hero{position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:120px 24px 80px;width:100%}
+.kicker{color:var(--acc);letter-spacing:3px;text-transform:uppercase;font-size:13px;font-weight:700}
+h1{font-size:clamp(38px,6.5vw,68px);line-height:1.05;font-weight:900;margin:16px 0 20px}
+h1 span{color:var(--acc)}
+.hero p{max-width:620px;color:var(--muted);font-size:18px}
+.cta{display:inline-block;margin-top:32px;background:var(--acc);color:#0b0e13;font-weight:800;padding:15px 30px;border-radius:8px;text-decoration:none;letter-spacing:.4px}
+.cta.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);margin-left:12px}
+nav{position:absolute;top:0;left:0;right:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:22px 32px}
+nav .brand{font-weight:800;letter-spacing:2px;text-transform:uppercase}
+nav .brand b{color:var(--acc)}
+nav a{color:var(--muted);text-decoration:none;margin-left:22px;font-size:14px}
+section{max-width:1100px;margin:0 auto;padding:90px 24px}
+h2{font-size:clamp(26px,4vw,38px);font-weight:800;margin-bottom:10px}
+.sub{color:var(--muted);max-width:640px;margin-bottom:42px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:28px;transition:transform .35s ease,border-color .35s}
+.card:hover{transform:translateY(-6px);border-color:var(--acc)}
+.card h3{font-size:19px;margin-bottom:8px}
+.card p{color:var(--muted);font-size:15px}
+.card .n{font-size:30px;font-weight:900;color:var(--acc);opacity:.85}
+.photos{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.photos figure{border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+.photos img{width:100%;height:230px;object-fit:cover;display:block;transition:transform .6s ease}
+.photos figure:hover img{transform:scale(1.05)}
+.note{color:var(--muted);font-size:13px;margin-top:12px;font-style:italic}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.step{border-left:3px solid var(--acc);padding:6px 0 6px 18px}
+.step h3{margin-bottom:6px}
+.step p{color:var(--muted);font-size:15px}
+.zone{display:flex;flex-wrap:wrap;gap:10px}
+.zone span{border:1px solid var(--line);background:var(--panel);padding:8px 16px;border-radius:99px;font-size:14px}
+form{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:32px;display:grid;gap:14px}
+.sim{display:inline-block;background:rgba(255,255,255,.08);border:1px dashed var(--acc);color:var(--acc);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;padding:6px 12px;border-radius:6px;font-weight:700}
+form input,form select,form textarea{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:13px 15px;color:var(--ink);font-size:15px;font-family:inherit;width:100%}
+form button{background:var(--acc);color:#0b0e13;border:0;font-weight:800;padding:15px;border-radius:8px;font-size:16px;cursor:pointer}
+#ok{display:none;background:rgba(80,200,140,.12);border:1px solid rgba(80,200,140,.5);padding:14px 18px;border-radius:8px}
+footer{border-top:1px solid var(--line);padding:36px 24px;text-align:center;color:var(--muted);font-size:14px}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:640px){nav a{display:none}.cta.ghost{margin-left:0;margin-top:12px}}
+</style>
+</head>
+<body>
+<div id="loader"><div class="lname">Cedric Legros</div><div class="bar"><i></i></div><div class="lsub">Longueuil — Richelieu</div></div>
+<header>
+<canvas id="bg"></canvas>
+<nav><div class="brand">Cedric <b>Legros</b></div><div><a href="#services">Services</a><a href="#realisations">Réalisations</a><a href="#processus">Processus</a><a href="#contact">Contact</a></div></nav>
+<div class="hero">
+<div class="kicker">Pavé uni — Aménagement extérieur</div>
+<h1>Un pavé uni qui <span>relève toute l'entrée.</span></h1>
+<p>Cedric Legros aménage vos entrées, allées et terrasses en pavé uni à Longueuil et Richelieu. Les réservations pour la saison 2026 sont en cours — réservez votre place au calendrier dès maintenant.</p>
+<a class="cta" href="#contact">Demander une soumission</a>
+<a class="cta ghost" href="#services">Voir les services</a>
+</div>
+</header>
+<section id="services"><h2 class="reveal">Nos services</h2><p class="sub reveal">Le pavé uni, posé une fois et posé comme il faut.</p><div class="grid"><div class="card reveal"><div class="n">01</div><h3>Entrées en pavé uni</h3><p>Une entrée solide et droite, posée sur une base préparée selon les règles de l'art.</p></div><div class="card reveal"><div class="n">02</div><h3>Allées et terrasses</h3><p>Des surfaces de pavé uni qui structurent votre cour et se vivent à l'année.</p></div><div class="card reveal"><div class="n">03</div><h3>Aménagement complet</h3><p>Du plan à la pose, un aménagement extérieur qui tient compte de votre terrain et de vos goûts.</p></div></div></section>
+<section id="realisations"><h2 class="reveal">Réalisations</h2><p class="sub reveal">Un aperçu du type de projets que nous réalisons dans le secteur.</p><div class="photos"><figure class="reveal"><img src="https://images.unsplash.com/photo-1598902108854-10e335adac99?w=1200&q=80" alt="Cedric Legros — photo d'illustration" loading="lazy"></figure><figure class="reveal"><img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1200&q=80" alt="Cedric Legros — photo d'illustration" loading="lazy"></figure><figure class="reveal"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80" alt="Cedric Legros — photo d'illustration" loading="lazy"></figure></div><p class="note">Photos d'illustration — elles présentent le type de travaux, et non des chantiers précis de l'entreprise.</p></section>
+<section id="processus"><h2 class="reveal">Comment ça se passe</h2><p class="sub reveal">Simple, du premier contact à la fin des travaux.</p><div class="steps"><div class="step reveal"><h3>1. Votre demande</h3><p>Vous décrivez la surface visée — entrée, allée ou terrasse — et on planifie la saison 2026 ensemble.</p></div><div class="step reveal"><h3>2. La soumission</h3><p>Mesures, choix de pavés et soumission détaillée.</p></div><div class="step reveal"><h3>3. La pose</h3><p>Excavation, base, pose et joints : une surface nette, prête à rouler dessus.</p></div></div></section>
+<section><h2 class="reveal">Zone desservie</h2><p class="sub reveal">Nous nous déplaçons dans les secteurs suivants :</p><div class="zone"><span>Longueuil</span><span>Richelieu</span><span>Rive-Sud de Montréal</span></div></section>
+<section id="contact"><h2 class="reveal">Demander une soumission</h2><p class="sub reveal">Décrivez votre projet — nous vous revenons rapidement pour en discuter.</p>
+<form id="f"><span class="sim">Simulation — formulaire de démonstration</span>
+<input required type="text" placeholder="Votre nom" aria-label="Votre nom">
+<input type="tel" placeholder="Téléphone" aria-label="Téléphone">
+<input type="email" placeholder="Courriel" aria-label="Courriel">
+<select aria-label="Service demandé"><option>Entrées en pavé uni</option><option>Allées et terrasses</option><option>Aménagement complet</option></select>
+<textarea rows="4" placeholder="Décrivez votre projet" aria-label="Décrivez votre projet"></textarea>
+<div id="ok">Merci ! Votre demande a bien été reçue. (Simulation — aucun envoi réel n'a été fait.)</div>
+<button type="submit">Envoyer ma demande</button></form></section>
+<footer>Cedric Legros — Longueuil — Richelieu<br>Maquette de site web personnalisée, préparée pour Cedric Legros.</footer>
+<script>
+var c=document.getElementById('bg'),x=c.getContext('2d'),W,H,pr=0;
+function rs(){W=c.width=c.offsetWidth;H=c.height=c.offsetHeight}rs();addEventListener('resize',rs);
+(function loop(){pr+=.0022;if(pr>1.3)pr=0;x.clearRect(0,0,W,H);
+var bw=92,bh=44,rows=9,cols=Math.ceil(W/bw)+1,maxc=pr*rows*cols,idx=0;
+for(var r=0;r<rows;r++){for(var col=0;col<cols;col++){idx++;
+if(idx>maxc)continue;var off=(r%2)*bw/2,px=col*bw+off-bw/2,py=H*.34+r*(bh+6);
+x.fillStyle='rgba(200,120,70,.16)';x.strokeStyle='rgba(230,170,110,.4)';
+x.fillRect(px,py,bw-6,bh);x.strokeRect(px,py,bw-6,bh)}}
+requestAnimationFrame(loop)})();
+</script>
+<script>
+window.addEventListener('load',function(){setTimeout(function(){document.getElementById('loader').classList.add('done')},1500)});
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+document.getElementById('f').addEventListener('submit',function(ev){ev.preventDefault();document.getElementById('ok').style.display='block';this.reset();window.scrollTo({top:document.getElementById('ok').offsetTop-140,behavior:'smooth'})});
+</script>
+</body>
+</html>
