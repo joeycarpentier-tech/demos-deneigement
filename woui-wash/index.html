@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Woui Wash — Lavage à haute pression résidentiel — Brossard</title>
+<meta name="description" content="Woui Wash — Lavage à haute pression résidentiel — Brossard.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#071a1c;--panel:#0e2a2d;--ink:#eefaf7;--muted:#9fc6c0;--acc:#2dd4bf;--acc2:#0d9488;--line:rgba(255,255,255,.09)}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif;line-height:1.6;overflow-x:hidden}
+#loader{position:fixed;inset:0;background:var(--bg);z-index:99;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;transition:opacity .7s ease,visibility .7s}
+#loader.done{opacity:0;visibility:hidden}
+#loader .lname{font-size:clamp(22px,4vw,34px);font-weight:800;letter-spacing:3px;text-transform:uppercase}
+#loader .lsub{color:var(--muted);letter-spacing:2px;font-size:13px;text-transform:uppercase}
+#loader .bar{width:min(320px,70vw);height:3px;background:rgba(255,255,255,.12);overflow:hidden;border-radius:2px}
+#loader .bar i{display:block;height:100%;width:0;background:var(--acc);animation:load 1.6s ease forwards}
+@keyframes load{to{width:100%}}
+header{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+#bg{position:absolute;inset:0;width:100%;height:100%}
+.hero{position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:120px 24px 80px;width:100%}
+.kicker{color:var(--acc);letter-spacing:3px;text-transform:uppercase;font-size:13px;font-weight:700}
+h1{font-size:clamp(38px,6.5vw,68px);line-height:1.05;font-weight:900;margin:16px 0 20px}
+h1 span{color:var(--acc)}
+.hero p{max-width:620px;color:var(--muted);font-size:18px}
+.cta{display:inline-block;margin-top:32px;background:var(--acc);color:#0b0e13;font-weight:800;padding:15px 30px;border-radius:8px;text-decoration:none;letter-spacing:.4px}
+.cta.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);margin-left:12px}
+nav{position:absolute;top:0;left:0;right:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:22px 32px}
+nav .brand{font-weight:800;letter-spacing:2px;text-transform:uppercase}
+nav .brand b{color:var(--acc)}
+nav a{color:var(--muted);text-decoration:none;margin-left:22px;font-size:14px}
+section{max-width:1100px;margin:0 auto;padding:90px 24px}
+h2{font-size:clamp(26px,4vw,38px);font-weight:800;margin-bottom:10px}
+.sub{color:var(--muted);max-width:640px;margin-bottom:42px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:28px;transition:transform .35s ease,border-color .35s}
+.card:hover{transform:translateY(-6px);border-color:var(--acc)}
+.card h3{font-size:19px;margin-bottom:8px}
+.card p{color:var(--muted);font-size:15px}
+.card .n{font-size:30px;font-weight:900;color:var(--acc);opacity:.85}
+.photos{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.photos figure{border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+.photos img{width:100%;height:230px;object-fit:cover;display:block;transition:transform .6s ease}
+.photos figure:hover img{transform:scale(1.05)}
+.note{color:var(--muted);font-size:13px;margin-top:12px;font-style:italic}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.step{border-left:3px solid var(--acc);padding:6px 0 6px 18px}
+.step h3{margin-bottom:6px}
+.step p{color:var(--muted);font-size:15px}
+.zone{display:flex;flex-wrap:wrap;gap:10px}
+.zone span{border:1px solid var(--line);background:var(--panel);padding:8px 16px;border-radius:99px;font-size:14px}
+form{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:32px;display:grid;gap:14px}
+.sim{display:inline-block;background:rgba(255,255,255,.08);border:1px dashed var(--acc);color:var(--acc);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;padding:6px 12px;border-radius:6px;font-weight:700}
+form input,form select,form textarea{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:13px 15px;color:var(--ink);font-size:15px;font-family:inherit;width:100%}
+form button{background:var(--acc);color:#0b0e13;border:0;font-weight:800;padding:15px;border-radius:8px;font-size:16px;cursor:pointer}
+#ok{display:none;background:rgba(80,200,140,.12);border:1px solid rgba(80,200,140,.5);padding:14px 18px;border-radius:8px}
+footer{border-top:1px solid var(--line);padding:36px 24px;text-align:center;color:var(--muted);font-size:14px}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:640px){nav a{display:none}.cta.ghost{margin-left:0;margin-top:12px}}
+</style>
+</head>
+<body>
+<div id="loader"><div class="lname">Woui Wash</div><div class="bar"><i></i></div><div class="lsub">Brossard — Rive-Sud de Montréal</div></div>
+<header>
+<canvas id="bg"></canvas>
+<nav><div class="brand">Woui <b>Wash</b></div><div><a href="#services">Services</a><a href="#realisations">Réalisations</a><a href="#processus">Processus</a><a href="#contact">Contact</a></div></nav>
+<div class="hero">
+<div class="kicker">Lavage à haute pression — Brossard</div>
+<h1>Propre, <span>comme neuf.</span></h1>
+<p>Lavage à haute pression résidentiel à Brossard : revêtements, entrées et surfaces extérieures retrouvent leur éclat — les avant/après parlent d'eux-mêmes.</p>
+<a class="cta" href="#contact">Demander une soumission</a>
+<a class="cta ghost" href="#services">Voir les services</a>
+</div>
+</header>
+<section id="services"><h2 class="reveal">Nos services</h2><p class="sub reveal">Lavage à haute pression — Brossard, fait avec soin.</p><div class="grid"><div class="card reveal"><div class="n">01</div><h3>Lavage à haute pression résidentiel</h3><p>Lavage à haute pression des surfaces extérieures de votre résidence, à Brossard.</p></div><div class="card reveal"><div class="n">02</div><h3>Extérieur de maison</h3><p>Le revêtement extérieur et les surfaces autour de la maison sont nettoyés en profondeur.</p></div><div class="card reveal"><div class="n">03</div><h3>Des avant/après qui parlent</h3><p>Les résultats avant/après sont montrés en vidéo : la différence se voit.</p></div></div></section>
+<section id="realisations"><h2 class="reveal">Réalisations</h2><p class="sub reveal">Un aperçu du type de nettoyage extérieur réalisé dans le secteur.</p><div class="photos"><figure class="reveal"><img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1200&q=80" alt="Woui Wash — photo d'illustration" loading="lazy"></figure><figure class="reveal"><img src="https://images.unsplash.com/photo-1558317374-067fb5f30001?w=1200&q=80" alt="Woui Wash — photo d'illustration" loading="lazy"></figure><figure class="reveal"><img src="https://images.unsplash.com/photo-1603712725038-e9334ae8f39f?w=1200&q=80" alt="Woui Wash — photo d'illustration" loading="lazy"></figure></div><p class="note">Photos d'illustration — elles présentent le type de travaux, et non des chantiers précis de l'entreprise.</p></section>
+<section id="processus"><h2 class="reveal">Comment ça se passe</h2><p class="sub reveal">Simple, du premier contact à la fin des travaux.</p><div class="steps"><div class="step reveal"><h3>1. Les surfaces à laver</h3><p>Vous nous dites ce qui a besoin d'un bon lavage.</p></div><div class="step reveal"><h3>2. La soumission</h3><p>On regarde les surfaces et on vous remet une soumission.</p></div><div class="step reveal"><h3>3. Le lavage</h3><p>Lavage à haute pression complet — et l'avant/après se voit tout de suite.</p></div></div></section>
+<section><h2 class="reveal">Zone desservie</h2><p class="sub reveal">Nous nous déplaçons dans les secteurs suivants :</p><div class="zone"><span>Brossard</span><span>Rive-Sud de Montréal</span></div></section>
+<section id="contact"><h2 class="reveal">Demander une soumission</h2><p class="sub reveal">Décrivez votre projet — nous vous revenons rapidement pour en discuter.</p>
+<form id="f"><span class="sim">Simulation — formulaire de démonstration</span>
+<input required type="text" placeholder="Votre nom" aria-label="Votre nom">
+<input type="tel" placeholder="Téléphone" aria-label="Téléphone">
+<input type="email" placeholder="Courriel" aria-label="Courriel">
+<select aria-label="Service demandé"><option>Lavage à haute pression résidentiel</option><option>Extérieur de maison</option><option>Des avant/après qui parlent</option></select>
+<textarea rows="4" placeholder="Décrivez votre projet" aria-label="Décrivez votre projet"></textarea>
+<div id="ok">Merci ! Votre demande a bien été reçue. (Simulation — aucun envoi réel n'a été fait.)</div>
+<button type="submit">Envoyer ma demande</button></form></section>
+<footer>Woui Wash — Brossard — Rive-Sud de Montréal<br>Maquette de site web personnalisée, préparée pour Woui Wash.</footer>
+<script>
+var c=document.getElementById('bg'),x=c.getContext('2d'),W,H;
+function rs(){W=c.width=c.offsetWidth;H=c.height=c.offsetHeight}rs();addEventListener('resize',rs);
+var B=[];for(var i=0;i<55;i++){B.push({x:Math.random()*2000,y:Math.random()*1200,r:3+Math.random()*11,v:.4+Math.random()*1.1,ph:Math.random()*6.28})}
+(function loop(){x.clearRect(0,0,W,H);
+for(var i=0;i<B.length;i++){var b=B[i];b.y-=b.v;b.x+=Math.sin(b.y/50+b.ph)*.5;if(b.y<-16){b.y=H+16;b.x=Math.random()*W}
+x.strokeStyle='rgba(45,212,191,.45)';x.lineWidth=1.4;x.beginPath();x.arc(b.x%(W+20),b.y,b.r,0,6.29);x.stroke()}
+requestAnimationFrame(loop)})();
+</script>
+<script>
+window.addEventListener('load',function(){setTimeout(function(){document.getElementById('loader').classList.add('done')},1500)});
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+document.getElementById('f').addEventListener('submit',function(ev){ev.preventDefault();document.getElementById('ok').style.display='block';this.reset();window.scrollTo({top:document.getElementById('ok').offsetTop-140,behavior:'smooth'})});
+</script>
+</body>
+</html>
